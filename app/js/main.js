@@ -8,6 +8,7 @@ require('angular-aria');
 require('angular-animate');
 require('angular-material');
 require('angular-bootstrap-npm');
+require('angular-translate');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -23,18 +24,16 @@ angular.element(document).ready(function() {
     'app.services',
     'app.directives',
     'ngMaterial',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'pascalprecht.translate'
   ];
 
   // mount on window for testing
-  window.app = angular.module('app', requires);
-
-  angular.module('app').constant('AppSettings', require('./constants'));
-
-  angular.module('app').config(require('./routes'));
-
-  angular.module('app').run(require('./on_run'));
+  window.app = angular.module('app', requires)
+    .constant('AppSettings', require('./constants'))
+    .config(require('./routes'))
+    .config(require('./translations'))
+    .run(require('./on_run'));
 
   angular.bootstrap(document, ['app']);
-
 });
