@@ -7,9 +7,17 @@ var gulpif       = require('gulp-if');
 var handleErrors = require('../util/handleErrors');
 var browserSync  = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
+var minifyCss    = require('gulp-minify-css');
 
-gulp.task('styles', function () {
+gulp.task('css', function () {
+  return gulp.src(config.styles.css)
+    .pipe(minifyCss())
+    .on('error', handleErrors)
+    .pipe(gulp.dest(config.styles.destCss))
+    .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true })));
+});
 
+gulp.task('styles', ['css'], function () {
   return gulp.src(config.styles.src)
     .pipe(sass({
       sourceComments: global.isProd ? 'none' : 'map',
@@ -20,5 +28,6 @@ gulp.task('styles', function () {
     .on('error', handleErrors)
     .pipe(gulp.dest(config.styles.dest))
     .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true })));
-
 });
+
+

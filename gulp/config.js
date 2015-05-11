@@ -6,11 +6,13 @@ module.exports = {
 
   'styles': {
     'src' : 'app/styles/**/*.scss',
-    'dest': 'build/css'
+    'dest': 'build/css',
+    'css' : ['node_modules/angular-material/angular-material.css'],
+    'destCss': 'build/css/styles.css'
   },
 
   'scripts': {
-    'src' : 'app/js/**/*.js',
+    'src' : ['app/js/**/*.js'],
     'dest': 'build/js'
   },
 

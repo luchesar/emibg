@@ -4,6 +4,10 @@ var angular = require('angular');
 
 // angular modules
 require('angular-ui-router');
+require('angular-aria');
+require('angular-animate');
+require('angular-material');
+require('angular-bootstrap-npm');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -17,7 +21,9 @@ angular.element(document).ready(function() {
     'templates',
     'app.controllers',
     'app.services',
-    'app.directives'
+    'app.directives',
+    'ngMaterial',
+    'ui.bootstrap'
   ];
 
   // mount on window for testing
