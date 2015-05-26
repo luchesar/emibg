@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -it --rm --name gulp -v "$PWD":/usr/src/prj -w /usr/src/prj luchesar/node-npm-gulp:0.10.38 npm $@
