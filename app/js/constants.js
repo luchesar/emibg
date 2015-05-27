@@ -1,7 +1,7 @@
 'use strict';
 
 var AppSettings = {
-  appTitle: 'Example Application',
+  appTitle: 'Emi',
   apiUrl: '/api/v1'
 };
 

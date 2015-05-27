@@ -29,18 +29,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">{{'HOME' | translate }}</a>
+        <a class="navbar-brand" href="#" ui-sref="app.home">{{'HOME' | translate }}</a>
       </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
       
         <ul class="nav navbar-nav">
-         <li class="active"><a href="#">{{'NEWS' | translate }}</a></li>
-          <li><a href="#">{{'ANALYSIS' | translate }}</a></li>
-          <li><a href="#">{{'EVENTS' | translate }}</a></li>
-          <li class="active"><a href="#">{{'ENERGOPEDIA' | translate }}</a></li>
-          <li><a href="#">{{'PARTNERS' | translate }}</a></li>
+         <li ui-sref-active="active"><a href="#" ui-sref="app.home.news">{{'NEWS' | translate }}</a></li>
+          <li ui-sref-active="active"><a href="#" ui-sref="app.home.analysis">{{'ANALYSIS' | translate }}</a></li>
+          <li ui-sref-active="active"><a href="#" ui-sref="app.home.events">{{'EVENTS' | translate }}</a></li>
+          <li ui-sref-active="active"><a href="#" ui-sref="app.home.energopedia">{{'ENERGOPEDIA' | translate }}</a></li>
+          <li ui-sref-active="active"><a href="#" ui-sref="app.home.partners">{{'PARTNERS' | translate }}</a></li>
           
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -50,6 +50,7 @@
 <div layout="row" layout-wrap>
   <div flex="66">
     [flex="66"]
+    <ui-view/>
   </div>
   <div flex="34">
     [flex="34"]
