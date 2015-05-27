@@ -1,18 +1,3 @@
-<md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2>
-          <md-button>{{ 'HOME' | translate }}</md-button>
-          <md-button>{{'ABOUT_US' | translate }}</md-button>
-          <md-button>{{'CONTACT' | translate }}</md-button>
-        </h2>
-        <span flex></span>
-        <div>
-        <ng-include src="'fragments/lang.html'"></ng-include>
-        </div>
-      </div>
-    </md-toolbar>
-</div>
-
 <!-- Top banner  -->
 <div layout="row" layout-wrap>
 </div>
@@ -33,25 +18,47 @@
       </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" >
       
         <ul class="nav navbar-nav">
-          <li ui-sref-active="active"><a href="#" ui-sref="app.menu.news">{{'NEWS' | translate }}</a></li>
-          <li class="dropdown" ui-sref-active="active">
-              <a href="#" ui-sref="app.menu.analysis">{{'ANALYSIS' | translate }}</a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.news" ng-click="navCollapsed=true">{{'NEWS' | translate }}</a>
+          </li>
+          <li class="dropdown" ui-sref-active="active" dropdown>
+              <a href="#" ui-sref="app.menu.analysis.all" dropdown-toggle>{{'ANALYSIS' | translate }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li ui-sref-active="active">
+                  <a href="#"ui-sref="app.menu.analysis.emis" ng-click="navCollapsed=true">{{'EMIS_ANALYSIS' | translate }}</a>
+                </li>
+                <li ui-sref-active="active">
+                  <a href="#"ui-sref="app.menu.analysis.summaries" ng-click="navCollapsed=true">{{'SUMMARIES' | translate}}</a>
+                </li>
               </ul>
           </li>
-          <li ui-sref-active="active"><a href="#" ui-sref="app.menu.events">{{'EVENTS' | translate }}</a></li>
-          <li ui-sref-active="active"><a href="#" ui-sref="app.menu.energopedia">{{'ENERGOPEDIA' | translate }}</a></li>
-          <li ui-sref-active="active"><a href="#" ui-sref="app.menu.partners">{{'PARTNERS' | translate }}</a></li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.events" ng-click="navCollapsed=true">{{'EVENTS' | translate }}</a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">{{'ENERGOPEDIA' | translate }}</a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.partners" ng-click="navCollapsed=true">{{'PARTNERS' | translate }}</a>
+          </li>
+        </ul>
+
+        <ul ui-sref-active="active" class="nav navbar-nav navbar-right">
+          <li><a href="#">{{'EN' | translate }}</a></li>
+          <li dropdown>
+            <a href="#" dropdown-toggle>{{'ABOUT_US' | translate }} <b class="caret"></b></a>
+            <ul ui-sref-active="active" class="dropdown-menu">
+              <li ui-sref-active="active">
+                <a href="#" ui-sref="app.menu.about.details" ng-click="navCollapsed=true">{{'DETAILS' | translate }}</a>
+              </li>
+              <li ui-sref-active="active">
+                <a href="#" ui-sref="app.menu.about.contact" ng-click="navCollapsed=true">{{'CONTACT' | translate }}</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>

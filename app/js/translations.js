@@ -4,6 +4,7 @@
  * @ngInject
  */
 function Translations($translateProvider) {
+  $translateProvider.useSanitizeValueStrategy('escaped');
   $translateProvider
     .translations('en', {
       HOME: 'Home',
@@ -15,7 +16,9 @@ function Translations($translateProvider) {
       ANALYSIS: "Analysis",
       EVENTS: 'Events',
       ENERGOPEDIA: 'Energopedia',
-      PARTNERS: 'Partners'
+      PARTNERS: 'Partners',
+      EMIS_ANALYSIS: 'EMI\'s',
+      SUMMARIES: 'Summaries'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -27,7 +30,9 @@ function Translations($translateProvider) {
       ANALYSIS: 'Анализи',
       EVENTS: 'Събития',
       ENERGOPEDIA: 'Енергопедия',
-      PARTNERS: 'Партньори'
+      PARTNERS: 'Партньори',
+      EMIS_ANALYSIS: 'на EMI',
+      SUMMARIES: 'Резюмета'
     });
   $translateProvider.preferredLanguage('bg');
 }
