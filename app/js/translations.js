@@ -9,9 +9,9 @@ function Translations($translateProvider) {
     .translations('en', {
       HOME: 'Home',
       ABOUT_US: 'About us',
+      DETAILS: 'Details',
       CONTACT: 'Countact',
-      EN: 'En',
-      BG: 'Бг',
+      OTHER_LANG: 'Български',
       NEWS: 'News',
       ANALYSIS: "Analysis",
       EVENTS: 'Events',
@@ -23,9 +23,9 @@ function Translations($translateProvider) {
     .translations('bg', {
       HOME: 'Начало',
       ABOUT_US: 'За нас',
+      DETAILS: 'Детайли',
       CONTACT: 'Контакти',
-      EN: 'En',
-      BG: 'Бг',
+      OTHER_LANG: 'English',
       NEWS: 'Новини',
       ANALYSIS: 'Анализи',
       EVENTS: 'Събития',

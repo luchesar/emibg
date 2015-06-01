@@ -47,7 +47,11 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">{{'EN' | translate }}</a></li>
+          <li>
+            <a ng-href="{{otherLangURL}}" translate>
+              OTHER_LANG
+            </a>
+          </li>
           <li ui-sref-active="active" dropdown>
             <a href="#" ui-sref="app.menu.about" dropdown-toggle>{{'ABOUT_US' | translate }} <b class="caret"></b></a>
             <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
