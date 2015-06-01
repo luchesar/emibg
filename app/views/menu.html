@@ -25,7 +25,7 @@
             <a href="#" ui-sref="app.menu.news" ng-click="navCollapsed=true">{{'NEWS' | translate }}</a>
           </li>
           <li class="dropdown" ui-sref-active="active" dropdown>
-              <a href="#" ui-sref="app.menu.analysis.all" dropdown-toggle>{{'ANALYSIS' | translate }} <b class="caret"></b></a>
+              <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>{{'ANALYSIS' | translate }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li ui-sref-active="active">
                   <a href="#"ui-sref="app.menu.analysis.emis" ng-click="navCollapsed=true">{{'EMIS_ANALYSIS' | translate }}</a>
@@ -46,10 +46,10 @@
           </li>
         </ul>
 
-        <ul ui-sref-active="active" class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
           <li><a href="#">{{'EN' | translate }}</a></li>
-          <li dropdown>
-            <a href="#" dropdown-toggle>{{'ABOUT_US' | translate }} <b class="caret"></b></a>
+          <li ui-sref-active="active" dropdown>
+            <a href="#" ui-sref="app.menu.about" dropdown-toggle>{{'ABOUT_US' | translate }} <b class="caret"></b></a>
             <ul ui-sref-active="active" class="dropdown-menu">
               <li ui-sref-active="active">
                 <a href="#" ui-sref="app.menu.about.details" ng-click="navCollapsed=true">{{'DETAILS' | translate }}</a>
