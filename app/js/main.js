@@ -7,6 +7,7 @@ require('angular-ui-router');
 require('angular-aria');
 require('angular-animate');
 require('angular-material');
+require('angular-touch');
 require('angular-bootstrap-npm');
 require('angular-translate');
 require('./templates');
@@ -23,6 +24,7 @@ angular.element(document).ready(function() {
     'app.controllers',
     'app.services',
     'app.directives',
+    'ngTouch',
     'ngMaterial',
     'ui.bootstrap',
     'pascalprecht.translate'

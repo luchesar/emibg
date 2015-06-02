@@ -92,6 +92,7 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
+    "angular-touch": "^1.4.0",
     "angular-translate": "~2.7.0"
   }
 }
