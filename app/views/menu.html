@@ -1,11 +1,7 @@
-<!-- Top banner  -->
-<div layout="row" layout-wrap>
-</div>
-<!-- Top banner end -->
-
 <!-- Menu -->
     <nav class="navbar navbar-inverse" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container-fluid">
       <div class="navbar-header">
 
         <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -64,15 +60,25 @@
             </ul>
           </li>
         </ul>
+        </div>
       </div><!-- /.navbar-collapse -->
+      </div>
     </nav>
 <!-- Menu end -->
 
-<div layout="row" layout-sm="column">
+<!--<div layout="row" layout-sm="column">
   <div flex="66" style="border-style: solid;border: 5px">
     <ui-view/>
   </div>
   <div flex="34" style="border-style: solid;border: 5px">
     [flex="34"]
+  </div>
+</div>-->
+
+<div class="row">
+  <div class="col-sm-8 col-md-8">
+    <ui-view/>
+  </div>
+  <div class="col-sm-4 col-md-4">
   </div>
 </div>
