@@ -1,7 +1,7 @@
 <div ng-controller="SliderCtrl">
   <carousel interval="myInterval">
     <slide ng-repeat="slide in slides" active="slide.active">
-      <img ng-src="{{slide.image}}" style="width:100%;">
+      <img ng-src="{{slide.image}}" style="width:100%;" class="img-thumbnail">
       <div class="carousel-caption">
         <h4>Slide {{$index}}</h4>
         <p>{{slide.text}}</p>
