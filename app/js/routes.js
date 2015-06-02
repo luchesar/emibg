@@ -8,7 +8,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   $locationProvider.html5Mode(true);
 
   $urlRouterProvider
-    .when('/', '/bg')
+    .when('/', '/bg/home')
     .otherwise('/bg');
 
   $stateProvider
@@ -21,6 +21,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   .state('app.menu', {
     url: '',
     templateUrl: 'menu.html'
+  })
+  .state('app.menu.home', {
+    url: '/home',
+    templateUrl: 'fragments/slider.html'
   })
   .state('app.menu.news', {
     url: '/news',
