@@ -49,11 +49,11 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.energopedia', {
     url: '/energopedia',
-    template: '<div>energopedia</div>'
+    templateUrl: 'fragments/energopedia.html'
   })
   .state('app.menu.partners', {
     url: '/partners',
-    template: '<div>partners</div>'
+    templateUrl: 'fragments/partners.html'
   })
   .state('app.menu.about', {
     url: '/about',
