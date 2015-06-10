@@ -6,7 +6,7 @@ var articles = [
        en: "Article one"
      },
      category: ["analysis", "emis"],
-     tumb: "thumbs/thumb1.jpg",
+     tumb: "images/thumbs/thumb1.jpg",
      author: {
        bg: "Пейчо Пейковски",
        en: "Peicho Peikowski"
@@ -24,7 +24,7 @@ var articles = [
        en: ""
      },
      category: ["news"],
-     tumb: "thumbs/thumb2.jpg",
+     tumb: "images/thumbs/thumb2.jpg",
      author: {
        bg: "Трайчо Косто",
        en: ""//no english translation
@@ -36,8 +36,15 @@ var articles = [
      },
      tags: ["tag1", "tag2"]
    }
-]
+ ];
 
 var categories = [
     "news", "analysis", "emis", "resumes", "events", "energopedia", "partners"
 ]
+
+var data = {
+    articles: articles,
+    caterogies: categories
+}
+
+module.exports = data;
