@@ -7,9 +7,7 @@ var controllersModule = require('./_index');
 */
 function AllArticlesCtrl($scope, ArticleService) {
   $scope.testValue = "test value"
-  $scope.allArticles = function() {
-      return ArticleService.allArticles();
-  }
+  $scope.allArticles = ArticleService.allArticles();
 }
 
 controllersModule.controller('AllArticlesCtrl', AllArticlesCtrl);
