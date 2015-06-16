@@ -2,6 +2,7 @@
 
 var servicesModule = require('./_index.js');
 var data = require('../data.js');
+var _ = require('lazy.js');
 
 /**
  * @ngInject
@@ -26,8 +27,12 @@ function ArticleService($q, $http) {
     return data.articles;
   }
 
-  return service;
+  service.article = function(id) {
+    return _(data.articles).findWhere({ id: id });
+  }
 
+  return service;
 }
 
 servicesModule.service('ArticleService', ArticleService);
+

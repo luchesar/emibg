@@ -68,6 +68,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/contact',
     template: '<div>about.contact</div>'
   })
+  .state('app.menu.article', {
+    url: '/article/{id:int}',
+    templateUrl: 'fragments/full-article.html'
+  })
 }
 
 module.exports = Routes;

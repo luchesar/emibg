@@ -1,6 +1,6 @@
 var articles = [
    { 
-     id: "1",
+     id: 1,
      title: {
        bg: "Статия 1",
        en: "Article one"
@@ -18,7 +18,7 @@ var articles = [
      }
    },
    { 
-     id: "2",
+     id: 2,
      title: {
        bg: "Article 2",
        en: ""

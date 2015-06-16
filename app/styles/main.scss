@@ -35,13 +35,7 @@ md-whiteframe.clickable:hover {
     background-color: #f1f1f1;
     cursor: pointer;
     box-shadow: 5px 10px 10px -3px rgba(0,0,0,.2),8px 12px 13px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
- //   -webkit-box-shadow:0px 0px 25px rgba(0, 82, 204, 0.5);
- //   -moz-box-shadow:0px 0px 25px rgba(0, 82, 204, 0.5);
- //   -o-box-shadow:0px 0px 25px rgba(0, 82, 204, 0.5);
- //   box-shadow:0px 0px 25px rgba(0, 82, 204, 0.5);
-
-    /*-webkit-transform: scale(1.05) rotate(1deg);*/
-    /*-moz-transform: scale(1.05) rotate(1deg);*/
-    /*-o-transform: scale(1.05) rotate(1deg);*/
-    /*transform: scale(1.05) rotate(1deg);*/
+    -webkit-box-shadow:5px 10px 10px -3px rgba(0,0,0,.2),8px 12px 13px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+    -moz-box-shadow:5px 10px 10px -3px rgba(0,0,0,.2),8px 12px 13px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+    -o-box-shadow:5px 10px 10px -3px rgba(0,0,0,.2),8px 12px 13px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
 }
