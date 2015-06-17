@@ -69,7 +69,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     template: '<div>about.contact</div>'
   })
   .state('app.menu.article', {
-    url: '/article/{id:int}',
+    url: '/article/{id:string}',
     templateUrl: 'fragments/full-article.html'
   })
 }
