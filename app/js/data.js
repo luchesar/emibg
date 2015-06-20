@@ -103,9 +103,21 @@ var categories = [
     "news", "analysis", "emis", "resumes", "events", "energopedia", "partners"
 ]
 
+var partners = [
+  {
+    "title": "4EZ",
+    "site" : "kjkg"
+  },
+  {
+    "title": "MEZ",
+    "site" : "kjkg"
+  }
+]
+
 var data = {
   articles: articles,
-  categories: categories
+  categories: categories,
+  partners: partners
 };
 
 module.exports = data;
