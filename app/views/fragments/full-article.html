@@ -1,5 +1,5 @@
 <div ng-controller="FullArticleCtrl">
-    <h3><b>{{ article.title.bg }}</b></h3>
+    <h3><b>{{ article.title | lang }}</b></h3>
     <md-divider></md-divider>
     <p><div ng-bind-html="articleHtml"></div></p>
 </div>

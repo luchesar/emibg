@@ -1,6 +1,6 @@
 <md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref="app.menu.article({ id: article.id })">
     <div style="margin: 5px;">
         <img ng-src="{{article.tumb}}" class="img-thumbnail"  ></img>
-        <span>{{article.title.bg}}</span>
+        <span>{{article.title | lang}}</span>
     </div>
 </md-whiteframe>

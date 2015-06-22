@@ -14,6 +14,7 @@ require('./templates');
 require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
+require('./filters/_index');
 
 // create and bootstrap application
 angular.element(document).ready(function() {
@@ -24,6 +25,7 @@ angular.element(document).ready(function() {
     'app.controllers',
     'app.services',
     'app.directives',
+    'app.filters',
     'ngTouch',
     'ngMaterial',
     'ui.bootstrap',
