@@ -30,6 +30,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/news',
     templateUrl: 'fragments/news.html'
   })
+  .state('app.menu.news.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
+  })
   .state('app.menu.analysis', {
     url: '/analysis',
     abstract: true,
@@ -39,9 +43,17 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/emis',
     template: '<div>analysis.emis</div>'
   })
+  .state('app.menu.analysis.emis.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
+  })
   .state('app.menu.analysis.summaries', {
     url: '/summaries',
     template: '<div>analysis.summaries</div>'
+  })
+  .state('app.menu.analysis.summaries.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
   })
   .state('app.menu.events', {
     url: '/events',
@@ -50,6 +62,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   .state('app.menu.energopedia', {
     url: '/energopedia',
     templateUrl: 'fragments/energopedia.html'
+  })
+  .state('app.menu.analysis.energopedia.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
   })
   .state('app.menu.partners', {
     url: '/partners',

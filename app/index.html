@@ -14,7 +14,22 @@
   <body>
   
     <div class="container">
+
+      <div class="row banner">
+        <div class="col-sm-8 col-md-8">
+          The Banner
+          <ng-import src="views/fragments/banner.html"/>
+        </div>
+      </div>
+
       <div ui-view></div>
+
+      <div class="row footer">
+        <div class="col-sm-8 col-md-8">
+          The Footer
+          <ng-import src="views/fragments/footer.html"/>
+        </div>
+      </div>
     </div>
       <script src="js/main.js"></script>
   </body>
