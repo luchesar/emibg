@@ -104,14 +104,141 @@ var categories = [
 ]
 
 var partners = [
-  {
-    "title": "4EZ",
-    "site" : "kjkg"
+  { 
+     "title": {
+       "bg": "ЕВН България",
+       "en": "EVN Bulgaria"
+     },
+     "tumb": "images/partners_thumbs/emi_members_evn.jpg",
+     "site": "http://www.evn.bg/"
   },
-  {
-    "title": "MEZ",
-    "site" : "kjkg"
-  }
+
+  { 
+     "title": {
+       "bg": "Енерго-Про България",
+       "en": "Energo-Pro Bulgaria"
+     },
+     "tumb": "images/partners_thumbs/emi_members_energo-pro.jpg",
+     "site": "https://www.energo-pro.bg/"
+  },
+
+{ 
+     "title": {
+       "bg": "Овергаз Инк.",
+       "en": "Overgas"
+     },
+     "tumb": "images/partners_thumbs/emi_members_overgas.jpg",
+     "site": "http://www.overgas.bg/"
+  },
+
+  { 
+     "title": {
+       "bg": "ЧЕЗ България",
+       "en": "CEZ Bulgaria"
+     },
+     "tumb": "images/partners_thumbs/emi_members_cez.jpg",
+     "site": "http://www.cez.bg/"
+  },
+
+  { 
+     "title": {
+       "bg": "Българска Асоциация за Природен Газ",
+       "en": "Bulgarian Association Natural Gas"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_naturalgas.jpg",
+     "site": "http://www.naturalgas.bg/"
+  },
+
+  { 
+     "title": {
+       "bg": "Българска стопанска камара",
+       "en": "Bulgarian Industrial Association"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bia.jpg",
+     "site": "http://www.bia-bg.com/"
+  },
+
+  { 
+     "title": {
+       "bg": "Българска федерация на индустриалните енергийн консуматори",
+       "en": "Bulgarian Industrial Association"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bfiec.jpg",
+     "site": "http://bfiec.org/"
+  },
+
+  { 
+     "title": {
+       "bg": "Български енергиен и минен форум",
+       "en": "Bulgarian Energy and Mining Forum"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bulenergy.jpg",
+     "site": "http://bulenergyforum.org"
+  },
+
+  { 
+     "title": {
+       "bg": "Българско училище за политика",
+       "en": "Bulgarian School of politics"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_school_politics.jpg",
+     "site": "http://www.schoolofpolitics.org"
+  },
+
+  { 
+     "title": {
+       "bg": "Дипломатически институт при МВнР",
+       "en": "Diplomatic Institute - Ministry of Foreign Affairs"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bdi.jpg",
+     "site": "http://bdi.mfa.government.bg/"
+  },
+
+  { 
+     "title": {
+       "bg": "Национален комитет на България в Световния енергиен съвет",
+       "en": "National Committee of Bulgaria for the World Energy Council"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_wec.jpg",
+     "site": "http://www.wec-bulgaria.org/about-us/wec/"
+  },
+
+  { 
+     "title": {
+       "bg": "Черноморски изследователски енергиен център",
+       "en": "Black Sea Energy Research Centre"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bserc.jpg",
+     "site": "http://www.bserc.eu/"
+  },
+
+  { 
+     "title": {
+       "bg": "Университет за национално и световно стопанство",
+       "en": "University of National and World Economy"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_unwe.jpg",
+     "site": "http://www.unwe.bg/"
+  },
+
+  { 
+     "title": {
+       "bg": "3E News",
+       "en": "3E News"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_3e.jpg",
+     "site": "http://3e-news.net/"
+  },
+
+  { 
+     "title": {
+       "bg": "Капитал",
+       "en": "Capital"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_capital.jpg",
+     "site": "http://www.capital.bg/"
+  },
+
 ]
 
 var data = {
