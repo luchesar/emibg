@@ -3,8 +3,7 @@
        <div ng-repeat="partner in allPartners" layout="column" layout-fill style="padding-bottom: 13px;" >
            <md-whiteframe class="md-whiteframe-z4" layout layout-align="left center">
               <div style="margin: 5px;">
-                  <img ng-src="{{parter.tumb}}" class="img-thumbnail"  ></img>
-                  <span>{{partner.title}}</span>
+                  <a ng-href= "{{partner.site}}" target="_blank"><img ng-src="{{partner.tumb}}" class="img-thumbnail-partners"></img>{{partner.title | lang}}</a>
               </div>
           </md-whiteframe>
        </div>
