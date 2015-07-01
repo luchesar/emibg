@@ -7,11 +7,12 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function ArticleService($q, $http) {
+//function ArticleService($q, $http) {
+function ArticleService() {
 
   var service = {};
 
-  service.get = function() {
+  /*service.get = function() {
     var deferred = $q.defer();
 
     $http.get('apiPath').success(function(data) {
@@ -21,15 +22,24 @@ function ArticleService($q, $http) {
     });
 
     return deferred.promise;
+  };*/
+
+ /**
+  * Returns the articles that have all the categories.
+  * param categories - either a string or an array of string.
+  * return: An array of the articles matching all the passed categories.
+  */
+  service.filter = function(categories) {
+    return [];
   };
 
   service.allArticles = function() {
     return data.articles;
-  }
+  };
 
   service.article = function(id) {
     return _(data.articles).findWhere({ id: id });
-  }
+  };
 
   return service;
 }
