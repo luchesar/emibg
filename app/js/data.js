@@ -125,7 +125,7 @@ var articles = [
        "bg": "БЕХ обещава на ЕК да стимулира пазарната конкуренция",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "emis"],
      "tumb": "images/thumbs/thumb3.jpg",
      "author": {
        "bg": "Весела Катрева",
@@ -145,7 +145,7 @@ var articles = [
        "bg": "Ново дело на ЕК срещу България",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["abalysis", "emis"],
      "tumb": "images/thumbs/thumb5.jpg",
      "author": {
        "bg": "",
@@ -165,7 +165,7 @@ var articles = [
        "bg": "Наредба за намаляване на ВЕИ-плащанията за индустрията",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "emis"],
      "tumb": "images/thumbs/thumb4.jpg",
      "author": {
        "bg": "",
@@ -185,7 +185,7 @@ var articles = [
        "bg": "Всички компании, получаващи приходи от регулирани цени",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "emis"],
      "tumb": "images/thumbs/thumb2.jpg",
      "author": {
        "bg": "Весела Катрева",
@@ -205,7 +205,7 @@ var articles = [
        "bg": "Пазарът за допълнителни услуги в Италия",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "emis"],
      "tumb": "images/thumbs/thumb1.jpg",
      "author": {
        "bg": "Дияна Стоянова",
@@ -225,7 +225,7 @@ var articles = [
        "bg": "ЕК е стартирала секторно проучване на механизмите",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "summaries"],
      "tumb": "images/thumbs/thumb4.jpg",
      "author": {
        "bg": "",
@@ -245,7 +245,7 @@ var articles = [
        "bg": "Германия планира да принуди старите въглищни централи",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "summaries"],
      "tumb": "images/thumbs/thumb3.jpg",
      "author": {
        "bg": "",
@@ -265,7 +265,7 @@ var articles = [
        "bg": "редвижда се изграждането на нова междусистемна връзка",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", "summaries"],
      "tumb": "images/thumbs/thumb1.jpg",
      "author": {
        "bg": "",
@@ -285,7 +285,7 @@ var articles = [
        "bg": "Ofgem санкционира производителя на електрическа енергия SSE",
        "en": "" 
      },
-     "category": ["news"],
+     "category": ["analysis", ""],
      "tumb": "images/thumbs/thumb2.jpg",
      "author": {
        "bg": "",

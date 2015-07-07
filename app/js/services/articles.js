@@ -30,7 +30,9 @@ function ArticleService() {
   * return: An array of the articles matching all the passed categories.
   */
   service.filter = function(categories) {
-    return [];
+    return _(data.articles).filter(function(article){
+        return _(categories).without(article.category).isEmpty();
+    }).toArray();
   };
 
   service.allArticles = function() {
