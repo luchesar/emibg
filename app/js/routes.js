@@ -15,8 +15,11 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   .state('app', {
     url: '/{lang:(?:bg|en)}',
     abstract: true,
-    template: '<ui-view/>',
-    title: 'Energy Management Institute'
+    views: {
+       'banner': { templateUrl: 'fragments/banner.html' },
+       'content': { template: '<ui-view/>' },
+       'footer': { templateUrl: 'fragments/footer.html' }
+    }
   })
   .state('app.menu', {
     url: '',
