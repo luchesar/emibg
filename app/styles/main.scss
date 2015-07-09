@@ -58,35 +58,28 @@ md-whiteframe.clickable:hover {
   border: 2.5px solid #d0d0d0;
 }
 
-html,body
-{
-height:100%;
+html,body {
+  height:100%;
 }
 
-#wrap
-{
-min-height: 100%; 
+#wrap {
+  min-height: 100%; 
 }
 
-#main
-{
-overflow:auto;
-padding-bottom:150px; /* this needs to be bigger than footer height*/
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
 
-.footer
-{
-position: relative;
-margin-top: -150px; /* negative value of footer height */
-height: 150px;
-clear:both;
-padding-top:20px;
-color:#fff;
-} 
 
-.footer {
-  text-align: center;
-  color: #9d9d9d;
-  background-color: #353535;
+footer {
+  color: #666;
+  background: #222;
+  padding: 17px 0 18px 0;
+  border-top: 1px solid #000;
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
 }
-
