@@ -12,23 +12,18 @@
       <link rel="stylesheet" href="css/styles.css/angular-material.css">
   </head>
   <body>
-  
-    <div class="container">
-
-      <div class="row banner">
-          <div class="col-md-12">
+    <div id="wrap">
+      <div id="main" class="container">
+        <div class="row banner">
+           <div class="col-md-12">
               <div ui-view="banner"></div>
-          </div>
-      </div>
-
-      <div ui-view="content"></div>
-
-      <div class="row footer">
-        <div class="col-sm-12 col-md-12">
-           <div ui-view="footer"></div>
+           </div>
         </div>
+
+        <div ui-view="content"></div>
       </div>
     </div>
-      <script src="js/main.js"></script>
+    <div ui-view="footer"></div>
+    <script src="js/main.js"></script>
   </body>
 </html>
