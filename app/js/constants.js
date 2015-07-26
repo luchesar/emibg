@@ -1,7 +1,7 @@
 'use strict';
 
 var AppSettings = {
-  appTitle: 'Emi',
+  appTitle: 'EMI Energy Management Institute',
   apiUrl: '/api/v1'
 };
 
