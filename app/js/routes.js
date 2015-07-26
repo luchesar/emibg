@@ -75,9 +75,13 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     abstract: true,
     template: '<ui-view/>'
   })
-  .state('app.menu.about.details', {
+  .state('app.menu.about.mission', {
     url: '/details',
-    template: '<div>about.details</div>'
+    template: '<div>about.mission</div>'
+  })
+  .state('app.menu.about.team', {
+    url: '/details',
+    template: '<div>about.team</div>'
   })
   .state('app.menu.about.contact', {
     url: '/contact',

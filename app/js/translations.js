@@ -9,7 +9,8 @@ function Translations($translateProvider) {
     .translations('en', {
       HOME: 'Home',
       ABOUT_US: 'About us',
-      DETAILS: 'Details',
+      MISSION: 'Mission',
+      TEAM: 'Team',
       CONTACT: 'Countact',
       OTHER_LANG: 'Бг',
       NEWS: 'News',
@@ -23,7 +24,8 @@ function Translations($translateProvider) {
     .translations('bg', {
       HOME: 'Начало',
       ABOUT_US: 'За нас',
-      DETAILS: 'Детайли',
+      MISSION: 'Мисия',
+      TEAM: 'Екип',
       CONTACT: 'Контакти',
       OTHER_LANG: 'En',
       NEWS: 'Новини',
