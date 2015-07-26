@@ -565,7 +565,7 @@ var articles = [
      "id": "29",
      "title": {
        "bg": "ЕК представи концепция за Европейски енергиен съюз",
-       "en": "EC has a new conception for the European Energy Uniton" 
+       "en": "EC has a new concept for the European Energy Uniton" 
      },
      "category": ["analysis", "emis"],
      "tumb": "images/thumbs/thumb2.jpg",
