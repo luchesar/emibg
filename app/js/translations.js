@@ -26,7 +26,12 @@ function Translations($translateProvider) {
       ABOUT_MISSION_CONTENT_2: 'EMI as a think tank offers innovative ideas in the field of energy policy by participating in the energy policy debate with its studies which are founded on an academic approach. EMI provides a neutral platform for contacts and information exchange as a part of developing network and it actively creates partnerships in the diverse fields of its activity. EMI also contributes to the improvement of qualifications of both industry experts and students. The better understanding of the consumers in energy issues and the accumulation of public knowledge on energy topics will be enabled by making relevant comprehensive information available. For this purposes EMI cooperates actively with the media and takes advantage of the modern forms of internet communication.',
       ABOUT_MISSION_CONTENT_3: 'Since March 2014 EMI is a fully-pledged Bulgarian member of the biggest association on electricity industry in Europe - EURELECTRIC.',
       ABOUT_TEAM_CONTENT: 'team EN',
-      ABOUT_CONTACT_CONTENT: 'contact EN'
+      ABOUT_CONTACT_CONTENT: 'contact EN', 
+      EMI: 'Energy Management  Institute',
+      ADDRESS: 'Address:',
+      SOFIA_1000: 'Sofia, 1000',
+      STREET: 'Lege Str. 5',
+      FLOOR: '1th Floor'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -48,7 +53,12 @@ function Translations($translateProvider) {
       ABOUT_MISSION_CONTENT_2: 'EMI в ролята си на институт за публична политика предлага иновативни идеи в сферата на енергетиката като представя изследвания, използвайки академичен подход. EMI предоставя неутрална платформа за контакти и информационен обмен като създава предпоставки за сътрудничество в мрежа и активно създава партньорства в различните сфери на дейността си. EMI допринася за повишаването на квалификацията както на експертите от сектора, така и на студентите. Подобряването на ориентацията на потребителите по енергийни теми и натрупването на публично познание по енергийни въпроси се осъществяват чрез предоставяне на достъпна информация. За целта EMI съдейства активно с медиите като отдава и съществено значение на многообразните съвременни форми на интернет комуникацията.',
       ABOUT_MISSION_CONTENT_3: 'От март 2014 г. EMI е представител за България на най-голямата браншова асоциация на електроенергийната индустрия в Европа - EURELECTRIC.',
       ABOUT_TEAM_CONTENT: 'TEAM BG',
-      ABOUT_CONTACT_CONTENT: 'CONTACT BG'
+      ABOUT_CONTACT_CONTENT: 'CONTACT BG', 
+      EMI: 'Институт за Енергиен Мениджмънт', 
+      ADDRESS: 'Адрес:',
+      SOFIA_1000: 'София, 1000',
+      STREET: 'ул. Леге 5',
+      FLOOR: '1ви етаж'
     });
   $translateProvider.preferredLanguage('bg');
 }
