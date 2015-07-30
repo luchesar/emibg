@@ -988,10 +988,33 @@ var partners = [
 
 ]
 
+var events = [
+   { 
+     "id": "1",
+     "title": {
+       "bg": "TEST BG",
+       "en": "TEST EN"
+     },
+     "category": ["events"],
+     "tumb": "images/thumbs/thumb1.jpg",
+     "author": {
+       "bg": "Весела Катрева",
+       "en": "Vesela Katreva"
+     },
+     "date": "23/12/2014T21:45:53.234",
+     "html": {
+      "bg": "<p>html test bg</p>",
+      "en": "<p>html test EN</p>"
+     }
+   }
+
+   ]
+
 var data = {
   articles: articles,
   categories: categories,
-  partners: partners
+  partners: partners,
+  events:events
 };
 
 module.exports = data;

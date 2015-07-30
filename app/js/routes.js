@@ -60,7 +60,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.events', {
     url: '/events',
-    template: '<div>events</div>'
+    templateUrl: 'fragments/events.html'
   })
   .state('app.menu.energopedia', {
     url: '/energopedia',
@@ -76,16 +76,16 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     template: '<ui-view/>'
   })
   .state('app.menu.about.mission', {
-    url: '/details',
-    template: '<div>about.mission</div>'
+    url: '/mission',
+    templateUrl: 'fragments/about_mission.html'
   })
   .state('app.menu.about.team', {
-    url: '/details',
-    template: '<div>about.team</div>'
+    url: '/team',
+    templateUrl: 'fragments/about_team.html'
   })
   .state('app.menu.about.contact', {
     url: '/contact',
-    template: '<div>about.contact</div>'
+    templateUrl: 'fragments/about_contact.html'
   })
   .state('app.menu.article', {
     url: '/article/{id:string}',
