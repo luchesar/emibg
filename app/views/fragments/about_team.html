@@ -1,23 +1,18 @@
-<!--
 
 <div ng-controller="AllTeamsCtrl" layout="column">
    <md-content layout-padding>
        <div ng-repeat="team in allTeams" layout="column" layout-fill style="padding-bottom: 13px;" >
            <md-whiteframe class="md-whiteframe-z4" layout layout-align="left center">
               <div style="margin: 5px;">
-                  <img ng-src="{{team.image}}" class="img-thumbnail-partners"></img>
-                  <p>"{{team.name}}"</p>
-                  <p>"{{team.job}}"</p>
-                  <p>"{{team.email}}"</p>
-                  <p>"{{team.phone}}"</p>
+                  <!--<img class="img-image-teams" ng-src="{{team.image}}"></img>!-->
+                  	<div>
+	                  <p>{{team.name | lang}}</p>
+	                  <p>{{team.job | lang}}</p>
+	                  <p>{{team.email}}</p>
+	                  <p>{{team.phone | lang}}</p>
+	                 </div> 
               </div>
           </md-whiteframe>
        </div>
    </md-content>
-</div>
-
--->
-
-<div ng-controller="GreetingController">
-  {{ greeting }}
 </div>

@@ -1026,7 +1026,7 @@ var events = [
         "bg": "(02) 980 07 03",
         "en": "+359 2 980 07 03"
       },
-      "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+      "image": "images/thumbs/thumb1.jpg" 
     },
 
     {
@@ -1044,7 +1044,7 @@ var events = [
             "bg": "(02) 980 07 03",
             "en": "+359 2 980 07 03"
           },
-          "image": "images/partners_thumbs/emi_members_overgas.jpg"  
+          "image": "images/thumbs/thumb2.jpg"  
         },
 
         {
@@ -1062,7 +1062,7 @@ var events = [
             "bg": "(02) 980 07 22",
             "en": "+359 2 980 07 22"
           },
-          "image": "images/partners_thumbs/emi_members_overgas.jpg"  
+          "image": "images/thumbs/thumb3.jpg"  
         },
 
         {
@@ -1080,7 +1080,7 @@ var events = [
               "bg": "(02) 980 07 14",
               "en": "+359 2 980 07 14"
             },
-            "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+            "image": "images/thumbs/thumb4.jpg" 
           },
 
           {
@@ -1098,7 +1098,7 @@ var events = [
               "bg": "(02) 980 07 13",
               "en": "+359 2 980 07 13"
             },
-            "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+            "image": "images/thumbs/thumb5.jpg" 
           },
 
    ]

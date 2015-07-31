@@ -54,6 +54,21 @@ md-whiteframe.clickable:hover {
   height: 50px;  
 }
 
+.img-image-teams {
+  padding: 4px;
+  line-height: 1.42857;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  width: 140px;
+  height: 140px; 
+  float: right; 
+}
+
 .img-thumbnail-partners:hover {
   border: 2.5px solid #d0d0d0;
 }
