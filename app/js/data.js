@@ -1010,11 +1010,105 @@ var events = [
 
    ]
 
+   var teams = [
+   {
+      "id": "1",
+      "name": {
+        "bg": "Славчо Нейков",
+        "en": "Slavtcho Neykov"
+      },
+      "job": {
+        "bg": "Председател на УС",
+        "en": "Chair of the Management Board of EMI"
+      },
+      "email": "slavtcho.neykov@emi-bg.com",
+      "phone": {
+        "bg": "(02) 980 07 03",
+        "en": "+359 2 980 07 03"
+      },
+      "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+    },
+
+    {
+          "id": "2",
+          "name": {
+            "bg": "Иванка Диловска",
+            "en": "Ivanka Dilovska"
+          },
+          "job": {
+            "bg": "Член на УС",
+            "en": "Member of  the Management Board of EMI"
+          },
+          "email": "ivanka.dilovska@emi-bg.com",
+          "phone": {
+            "bg": "(02) 980 07 03",
+            "en": "+359 2 980 07 03"
+          },
+          "image": "images/partners_thumbs/emi_members_overgas.jpg"  
+        },
+
+        {
+          "id": "3",
+          "name": {
+            "bg": "Жана Георгиева",
+            "en": "Jana Georgieva"
+          },
+          "job": {
+            "bg": "Политики и анализи",
+            "en": "Policy and Research"
+          },
+          "email": "jana.georgieva@emi-bg.com",
+          "phone": {
+            "bg": "(02) 980 07 22",
+            "en": "+359 2 980 07 22"
+          },
+          "image": "images/partners_thumbs/emi_members_overgas.jpg"  
+        },
+
+        {
+            "id": "4",
+            "name": {
+              "bg": "Весела Катрева",
+              "en": "Vesela Katreva"
+            },
+            "job": {
+              "bg": "Програми и проекти",
+              "en": "Programmes and Projects"
+            },
+            "email": "vesela.katreva@emi-bg.com",
+            "phone": {
+              "bg": "(02) 980 07 14",
+              "en": "+359 2 980 07 14"
+            },
+            "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+          },
+
+          {
+            "id": "5",
+            "name": {
+              "bg": "Дияна Стоянова",
+              "en": "Diyana Stoyanova"
+            },
+            "job": {
+              "bg": "Програми и проекти",
+              "en": "Programmes and Projects"
+            },
+            "email": "diyana.stoyanova@emi-bg.com",
+            "phone": {
+              "bg": "(02) 980 07 13",
+              "en": "+359 2 980 07 13"
+            },
+            "image": "images/partners_thumbs/emi_members_overgas.jpg" 
+          },
+
+   ]
+
 var data = {
   articles: articles,
   categories: categories,
   partners: partners,
-  events:events
+  events:events,
+  teams: teams
 };
 
 module.exports = data;
