@@ -92,9 +92,10 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
-    "angular-google-chart": "https://registry.npmjs.org/angular-google-chart/-/angular-google-chart-0.0.11.tgz",
+    "angular-chart.js": "^0.7.2",
     "angular-touch": "^1.4.0",
     "angular-translate": "~2.7.0",
+    "chart.js": "^1.0.2",
     "lazy.js": "^0.4.0"
   }
 }

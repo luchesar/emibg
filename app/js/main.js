@@ -10,7 +10,7 @@ require('angular-material');
 require('angular-touch');
 require('angular-bootstrap-npm');
 require('angular-translate');
-require('angular-google-chart')
+require('angular-chart.js');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -30,8 +30,8 @@ angular.element(document).ready(function() {
     'ngTouch',
     'ngMaterial',
     'ui.bootstrap',
-    'googlechart',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'chart.js'
   ];
 
   // mount on window for testing
