@@ -1,1 +1,18 @@
-<div>test</div>
+<div ng-controller="AllEventsCtrl" layout="column">
+   <md-content layout-padding>
+       <div ng-repeat="event in allEvents" layout="column" layout-fill style="padding-bottom: 13px;" >
+           <md-whiteframe class="md-whiteframe-z4" layout layout-align="left center">
+              <div style="margin: 5px;">
+                  <!--<img class="img-image-teams" ng-src="{{team.image}}"></img>!-->
+                  	<div>
+	                  <p>{{event.title | lang}}</p>
+	                  <p>{{event.type | lang}}</p>
+	                  <p>{{event.organiser  | lang}}</p>
+	                  <p>{{event.place | lang}}</p>
+	                  <p>{{event.date_begin}}</p>
+	                 </div> 
+              </div>
+          </md-whiteframe>
+       </div>
+   </md-content>
+</div>
