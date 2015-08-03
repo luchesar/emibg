@@ -8,7 +8,7 @@ var _ = require('lazy.js');
  * @ngInject
  */
 //function ArticleService($q, $http) {
-function ArticleService() {
+function ArticleService($stateParams) {
 
   var service = {};
 
@@ -32,6 +32,11 @@ function ArticleService() {
   service.filter = function(categories) {
     return _(data.articles).filter(function(article){
         return _(categories).without(article.category).isEmpty();
+    }).filter(function(article) {
+       if($stateParams.lang)
+         return article.title[$stateParams.lang];
+       else
+         return true;
     }).toArray();
   };
 

@@ -1004,10 +1004,10 @@ var events = [
        "en": "Diplomatic Institute and Energy Management Institute"
      },
      "place": {
-       "bg": "",
+       "bg": "София",
        "en": "Sofia"
      },
-     "date_begin": "15/09/2015T13:00:00.000",
+     "date_begin": "15/09/2015T13:00",
      "date_end": "",
      "access": {
        "bg": "регистрация",

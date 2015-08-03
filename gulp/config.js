@@ -7,7 +7,7 @@ module.exports = {
   'styles': {
     'src' : 'app/styles/**/*.scss',
     'dest': 'build/css',
-    'css' : ['node_modules/angular-material/angular-material.css'],
+    'css' : ['node_modules/angular-material/angular-material.css', 'node_modules/angular-chart.js/dist/angular-chart.css'],
     'destCss': 'build/css/styles.css'
   },
 
