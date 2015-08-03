@@ -1,1 +1,10 @@
-<div>test</div>
+<div ng-controller="AllEventsCtrl" layout="column">
+   <ui-view/>
+   <md-content layout-padding>
+       <div ng-repeat="event in AllEvents" layout="column" layout-fill style="padding-bottom: 13px;" >
+       	<p>{{event.title | lang}}</p>
+       	<p>{{event.type | lang}}</p>
+           <!--<flat-article></flat-article>!-->
+       </div>
+   </md-content>
+</div>
