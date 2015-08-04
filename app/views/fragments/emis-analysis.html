@@ -1,8 +1,12 @@
 <div ng-controller="AllArticlesCtrl" layout="column">
    <ui-view/>
-   <md-content layout-padding>
-       <div ng-repeat="article in filter(['analysis', 'emis'])" layout="column" layout-fill style="padding-bottom: 13px;" >
-           <flat-article></flat-article>
+   <div >
+       <div ng-repeat="rowArticles in emisAnalysis" layout="column" layout-fill style="padding-bottom: 13px;" >
+            <div class="row">
+               <div class="col-sm-6 col-md-6" ng-repeat="article in rowArticles">
+                  <flat-article></flat-article>
+               </div>
+           </div>
        </div>
-   </md-content>
+   </div>
 </div>
