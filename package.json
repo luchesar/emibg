@@ -82,8 +82,8 @@
     "vinyl-source-stream": "^0.1.1",
     "watchify": "^2.0.0",
     "gulp-minify-css": "~1.1.1",
-    "bootstrap-sass": "~3.3.4",
-    "angular-bootstrap-npm": "~0.13.0"
+    "bootstrap-sass": "3.3.4",
+    "angular-bootstrap-npm": "0.13.3"
   },
   "scripts": {
     "pretest": "npm install",
