@@ -14,14 +14,14 @@
       <link rel="stylesheet" href="css/styles.css/">
   </head>
   <body>
+    <div class="banner">
+      <div class="container">
+          <div ui-view="banner"></div>
+      </div>
+    </div>
+
     <div id="wrap">
       <div id="main" class="container">
-        <div class="row banner">
-           <div class="col-md-12">
-              <div ui-view="banner"></div>
-           </div>
-        </div>
-
         <div ui-view="content"></div>
       </div>
     </div>
