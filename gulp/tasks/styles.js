@@ -8,12 +8,14 @@ var handleErrors = require('../util/handleErrors');
 var browserSync  = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCss    = require('gulp-minify-css');
+var concat       = require('gulp-concat');
 
 gulp.task('css', function () {
   return gulp.src(config.styles.css)
     .pipe(minifyCss())
+    .pipe(concat(config.styles.destCss))
     .on('error', handleErrors)
-    .pipe(gulp.dest(config.styles.destCss))
+    .pipe(gulp.dest('./'))
     .pipe(gulpif(browserSync.active, browserSync.reload({ stream: true })));
 });
 

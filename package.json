@@ -96,6 +96,7 @@
     "angular-touch": "^1.4.0",
     "angular-translate": "~2.7.0",
     "chart.js": "^1.0.2",
+    "gulp-concat": "^2.6.0",
     "lazy.js": "^0.4.0"
   }
 }
