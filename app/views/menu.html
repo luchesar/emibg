@@ -10,7 +10,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" ui-sref="app.menu.home">{{'HOME' | translate }}</a>
+        <a class="navbar-brand" href="#" ui-sref="app.menu.home">
+            <i class="icon-home"></i>
+        </a>
       </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,47 +20,81 @@
       
         <ul class="nav navbar-nav">
           <li ui-sref-active="active">
-            <a href="#" ui-sref="app.menu.news" ng-click="navCollapsed=true">{{'NEWS' | translate }}</a>
+            <a href="#" ui-sref="app.menu.news" ng-click="navCollapsed=true">
+                <i class="icon-doc"></i>
+                {{'NEWS' | translate }}
+            </a>
           </li>
           <li class="dropdown" ui-sref-active="active" dropdown>
-              <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>{{'ANALYSIS' | translate }} <b class="caret"></b></a>
+              <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>
+                <i class="icon-doc"></i>
+                {{'ANALYSIS' | translate }} <b class="caret"></b>
+              </a>
               <ul class="dropdown-menu inverse-dropdown">
                 <li ui-sref-active="active">
-                  <a href="#"ui-sref="app.menu.analysis.emis" ng-click="navCollapsed=true">{{'EMIS_ANALYSIS' | translate }}</a>
+                  <a href="#"ui-sref="app.menu.analysis.emis" ng-click="navCollapsed=true">
+                    <i class="icon-doc"></i>
+                    {{'EMIS_ANALYSIS' | translate }}
+                  </a>
                 </li>
                 <li ui-sref-active="active">
-                  <a href="#"ui-sref="app.menu.analysis.summaries" ng-click="navCollapsed=true">{{'SUMMARIES' | translate}}</a>
+                  <a href="#"ui-sref="app.menu.analysis.summaries" ng-click="navCollapsed=true">
+                    <i class="icon-doc"></i>
+                    {{'SUMMARIES' | translate}}
+                  </a>
                 </li>
               </ul>
           </li>
           <li ui-sref-active="active">
-            <a href="#" ui-sref="app.menu.events" ng-click="navCollapsed=true">{{'EVENTS' | translate }}</a>
+            <a href="#" ui-sref="app.menu.events" ng-click="navCollapsed=true">
+                <i class="icon-doc"></i>
+                {{'EVENTS' | translate }}
+            </a>
           </li>
           <li ui-sref-active="active">
-            <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">{{'ENERGOPEDIA' | translate }}</a>
+            <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">
+                <i class="icon-doc"></i>
+                {{'ENERGOPEDIA' | translate }}
+            </a>
           </li>
           <li ui-sref-active="active">
-            <a href="#" ui-sref="app.menu.partners" ng-click="navCollapsed=true">{{'PARTNERS' | translate }}</a>
+            <a href="#" ui-sref="app.menu.partners" ng-click="navCollapsed=true">
+                <i class="icon-slideshare"></i>
+                {{'PARTNERS' | translate }}
+            </a>
           </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a ng-href="{{otherLangURL}}" translate>
-              OTHER_LANG
+            <a ng-href="{{otherLangURL}}">
+              <i class="icon-language"></i>
+              {{'OTHER_LANG' | translate }}
             </a>
           </li>
           <li ui-sref-active="active" dropdown>
-            <a href="#" ui-sref="app.menu.about" dropdown-toggle>{{'ABOUT_US' | translate }} <b class="caret"></b></a>
+            <a href="#" ui-sref="app.menu.about" dropdown-toggle>
+                <i class="icon-vcard"></i>
+                {{'ABOUT_US' | translate }} <b class="caret"></b>
+            </a>
             <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
               <li ui-sref-active="active">
-                <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">{{'MISSION' | translate }}</a>
+                <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">
+                    <i class="icon-language"></i>
+                    {{'MISSION' | translate }}
+                </a>
               </li>
               <li ui-sref-active="active">
-                <a href="#" ui-sref="app.menu.about.team" ng-click="navCollapsed=true">{{'TEAM' | translate }}</a>
+                <a href="#" ui-sref="app.menu.about.team" ng-click="navCollapsed=true">
+                    <i class="icon-language"></i>
+                    {{'TEAM' | translate }}
+                </a>
               </li>
               <li ui-sref-active="active">
-                <a href="#" ui-sref="app.menu.about.contact" ng-click="navCollapsed=true">{{'CONTACT' | translate }}</a>
+                <a href="#" ui-sref="app.menu.about.contact" ng-click="navCollapsed=true">
+                    <i class="icon-location"></i>
+                    {{'CONTACT' | translate }}
+                </a>
               </li>
             </ul>
           </li>
