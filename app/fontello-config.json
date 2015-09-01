@@ -7,6 +7,12 @@
   "ascent": 850,
   "glyphs": [
     {
+      "uid": "d73eceadda1f594cec0536087539afbf",
+      "css": "heart",
+      "code": 59405,
+      "src": "fontawesome"
+    },
+    {
       "uid": "31972e4e9d080eaa796290349ae6c1fd",
       "css": "users",
       "code": 59396,
@@ -47,6 +53,24 @@
       "css": "map",
       "code": 59398,
       "src": "entypo"
+    },
+    {
+      "uid": "e566d3f1d24f22981f6552d5188e7265",
+      "css": "gplus",
+      "code": 59404,
+      "src": "zocial"
+    },
+    {
+      "uid": "b1ec8e90c2c85cf0035849980a3789b3",
+      "css": "twitter",
+      "code": 59403,
+      "src": "zocial"
+    },
+    {
+      "uid": "6f7586c6f99798c3c1de6123d1f6cfa9",
+      "css": "facebook",
+      "code": 59402,
+      "src": "zocial"
     },
     {
       "uid": "22cfc7af2c4f158b37317c65c92b48c2",

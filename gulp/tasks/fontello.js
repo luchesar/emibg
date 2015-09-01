@@ -8,9 +8,9 @@ gulp.task('fontello', function() {
 
   fontello.run({
     config:'app/fontello-config.json',
-    cssPath:'app/styles/fontello',
-    cssFontPath:'images/',
-    fontPath:'app/images'
+    cssPath:'app/styles/fontello/',
+    cssFontPath:'images/fontello/',
+    fontPath:'app/images/fontello/'
   });
   console.log("Fontello task finished");
 });
