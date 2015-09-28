@@ -13,6 +13,9 @@
   </div>
    <div ng-controller="HomeCtrl">
       <br/>
+      <div style="width: 100%; text-align: center; font-size:200%;">
+            {{'NEWS' | translate }}
+      </div>
       <div class="row">
         <div class="col-sm-6 col-md-6">
             <div ng-repeat="article in mainNews" layout="column" layout-fill style="padding-bottom: 13px;">
@@ -28,6 +31,9 @@
       <br/>
       <div class="row">
           <div class="col-sm-6 col-md-6">
+            <div style="width: 100%; text-align: center; font-size:200%;">
+              {{'ANALYSIS' | translate }}
+            </div>
             <div ng-repeat="article in mainAnalysis" layout="column" layout-fill>
                 <tile-article/>
             </div>
@@ -36,7 +42,17 @@
                 <flat-article/>
             </div>
           </div>
-          <div class="col-sm-8 col-md-8">
+          <div class="col-sm-6 col-md-6">
+            <div style="width: 100%; text-align: center; font-size:200%;">
+              {{'EVENTS' | translate }}
+            </div>
+            <div ng-repeat="article in mainNews" layout="column" layout-fill>
+                <tile-article/>
+            </div>
+            <br/>
+            <div ng-repeat="article in news" layout="column" layout-fill style="padding-bottom: 7px;">
+                <flat-article/>
+            </div>
           </div>
       </div>
    </div>
