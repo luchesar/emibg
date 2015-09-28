@@ -29,6 +29,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/home',
     templateUrl: 'fragments/home.html'
   })
+  .state('app.menu.home.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
+  })
   .state('app.menu.news', {
     url: '/news',
     templateUrl: 'fragments/news.html'
