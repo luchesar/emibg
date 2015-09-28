@@ -1,0 +1,13 @@
+<md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref=".article({ id: article.id })">
+  <md-card class="clickable" ui-sref=".article({ id: article.id })">
+    <img ng-src="{{article.tumb}}" class="md-card-image" alt="Washed Out">
+    <md-card-content>
+      <a href="">
+        <h2 class="md-title">{{article.title | lang | limitTo:200}}</h2>
+      </a>
+      <p>
+        {{article.html | lang | htmlToPlainText | limitTo: 180}}...
+      </p>
+    </md-card-content>
+  </md-card>
+</md-whiteframe>

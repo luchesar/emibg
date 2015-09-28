@@ -27,7 +27,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.home', {
     url: '/home',
-    templateUrl: 'fragments/slider.html'
+    templateUrl: 'fragments/home.html'
   })
   .state('app.menu.news', {
     url: '/news',
