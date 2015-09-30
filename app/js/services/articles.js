@@ -8,7 +8,7 @@ var _ = require('lazy.js');
  * @ngInject
  */
 //function ArticleService($q, $http) {
-function ArticleService() {
+function ArticleService($stateParams) {
 
   var service = {};
 
@@ -34,6 +34,17 @@ function ArticleService() {
         return _(categories).without(article.category).isEmpty();
     });
   };
+
+  service.filterChunked = function(categories, rowSize) {
+      return service.filter(categories)
+        .filter(function(article) {
+           if($stateParams.lang)
+             return article.title[$stateParams.lang];
+           else
+             return true;
+        })
+        .chunk(rowSize || 3).toArray();
+  }
 
   service.allArticles = function() {
     return data.articles;
