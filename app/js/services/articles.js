@@ -36,14 +36,14 @@ function ArticleService($stateParams) {
   };
 
   service.filterChunked = function(categories, rowSize) {
-      return service.filter(categories)
-        .filter(function(article) {
-           if($stateParams.lang)
-             return article.title[$stateParams.lang];
-           else
-             return true;
-        })
-        .chunk(rowSize || 3).toArray();
+    return service.filter(categories)
+      .filter(function(article) {
+         if($stateParams.lang)
+           return article.title[$stateParams.lang];
+         else
+           return true;
+      })
+      .chunk(rowSize || 3).toArray();
   }
 
   service.allArticles = function() {

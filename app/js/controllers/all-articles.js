@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function AllArticlesCtrl($scope, ArticleService, $stateParams) {
+function AllArticlesCtrl($scope, ArticleService) {
   $scope.news = ArticleService
     .filterChunked(['news'], 2);
 
