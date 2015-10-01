@@ -17,7 +17,7 @@ function PagingService() {
   }
 
   service.init = function($scope, $stateParams, $state) {
-    $scope.itemsPerPage = 6;
+    $scope.itemsPerPage = 4;
     $scope.pageCount = Math.ceil($scope.itemsCount / $scope.itemsPerPage);
     $scope.page = pageNumber($scope, $stateParams);
 

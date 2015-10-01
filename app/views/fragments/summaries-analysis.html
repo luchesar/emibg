@@ -8,5 +8,8 @@
                </div>
            </div>
        </div>
+       Page {{page}} of {{pageCount}}
+       <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>
+       <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
    </div>
 </div>

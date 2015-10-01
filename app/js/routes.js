@@ -55,7 +55,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: 'fragments/full-article.html'
   })
   .state('app.menu.analysis.summaries', {
-    url: '/summaries',
+url: '/summaries/{page:int}',
     templateUrl: 'fragments/summaries-analysis.html'
   })
   .state('app.menu.analysis.summaries.article', {
