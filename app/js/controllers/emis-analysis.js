@@ -5,9 +5,15 @@ var controllersModule = require('./_index');
 /**
 * @ngInject
 */
-function EmisAnalysisCtrl($scope, ArticleService) {
-  $scope.emisAnalysis = ArticleService
-    .filterChunked(['analysis', 'emis'], 2);
+function EmisAnalysisCtrl($scope, $stateParams, $state, ArticleService, PagingService) {
+  $scope.itemsCount = ArticleService.filterSize(['analysis', 'emis']);
+  PagingService.init($scope, $stateParams, $state);
+  $scope.emisAnalysis = ArticleService.filterPaged(
+    ['analysis', 'emis'],
+    $scope.page,
+    $scope.itemsPerPage,
+    2
+  );
 }
 
 controllersModule.controller('EmisAnalysisCtrl', EmisAnalysisCtrl);

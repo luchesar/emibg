@@ -47,7 +47,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     template: '<ui-view/>'
   })
   .state('app.menu.analysis.emis', {
-    url: '/emis',
+    url: '/emis/{page:int}',
     templateUrl: 'fragments/emis-analysis.html'
   })
   .state('app.menu.analysis.emis.article', {
