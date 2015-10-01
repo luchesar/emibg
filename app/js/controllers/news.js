@@ -5,11 +5,23 @@ var controllersModule = require('./_index');
 /**
 * @ngInject
 */
-function NewsCtrl($scope, ArticleService) {
-  $scope.page = 1;
+function NewsCtrl($scope, $stateParams, $state, ArticleService) {
+  var pageNumber = function() {
+    var p = $stateParams.page;
+    if (p < 1) {
+      return 1;
+    } else if (p > $scope.pageCount) {
+      return $scope.pageCount;
+    } else {
+      return p;
+    }
+  }
+
   $scope.itemsPerPage = 6;
   $scope.itemsCount = ArticleService.filterSize(['news']);
   $scope.pageCount = Math.ceil($scope.itemsCount / $scope.itemsPerPage);
+  $scope.page = pageNumber();
+
   $scope.news = ArticleService.filterPaged(
     ['news'],
     $scope.page,
@@ -18,12 +30,7 @@ function NewsCtrl($scope, ArticleService) {
   );
 
   $scope.$watch('page', function() {
-    $scope.news = ArticleService.filterPaged(
-      ['news'],
-      $scope.page,
-      $scope.itemsPerPage,
-      2
-    );
+    $state.go('.', {page: $scope.page});
   });
 
   $scope.hasNext = function() {

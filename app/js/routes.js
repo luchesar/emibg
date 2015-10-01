@@ -34,7 +34,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     templateUrl: 'fragments/full-article.html'
   })
   .state('app.menu.news', {
-    url: '/news',
+    url: '/news/{page:int}',
     templateUrl: 'fragments/news.html'
   })
   .state('app.menu.news.article', {
