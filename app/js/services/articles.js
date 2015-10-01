@@ -29,21 +29,34 @@ function ArticleService($stateParams) {
   * param categories - either a string or an array of string.
   * return: An array of the articles matching all the passed categories.
   */
-  service.filter = function(categories) {
-    return _(data.articles).filter(function(article){
+  var filter = function(categories) {
+    return _(data.articles)
+      .filter(function(article){
         return _(categories).without(article.category).isEmpty();
-    });
-  };
-
-  service.filterChunked = function(categories, rowSize) {
-    return service.filter(categories)
+      })
       .filter(function(article) {
          if($stateParams.lang)
            return article.title[$stateParams.lang];
          else
            return true;
-      })
-      .chunk(rowSize || 3).toArray();
+      });
+  };
+
+  service.filter = filter
+
+  service.filterPaged = function(categories, page, itemsPerPage, itemsPerRow) {
+    return _(filter(categories).toArray())
+      .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+      .chunk(itemsPerRow || 3).toArray();
+  }
+
+  service.filterSize = function(categories) {
+    return filter(categories).size();
+  }
+
+  service.filterChunked = function(categories, itemsPerRow) {
+    return filter(categories)
+      .chunk(itemsPerRow || 3).toArray();
   }
 
   service.allArticles = function() {
