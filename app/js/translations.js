@@ -31,7 +31,9 @@ function Translations($translateProvider) {
       ADDRESS: 'Address:',
       SOFIA_1000: 'Sofia, 1000',
       STREET: 'Lege Str. 5',
-      FLOOR: '1th Floor'
+      FLOOR: '1th Floor',
+      PAGE: 'Page',
+      OF: 'of'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -58,7 +60,9 @@ function Translations($translateProvider) {
       ADDRESS: 'Адрес:',
       SOFIA_1000: 'София, 1000',
       STREET: 'ул. Леге 5',
-      FLOOR: '1ви етаж'
+      FLOOR: '1ви етаж',
+      PAGE: 'Страница',
+      OF: 'от'
     });
   $translateProvider.preferredLanguage('bg');
 }
