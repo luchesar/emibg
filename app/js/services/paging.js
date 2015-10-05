@@ -7,6 +7,7 @@ function PagingService() {
 
   var pageNumber = function($scope, $stateParams) {
     var p = $stateParams.page;
+    p = p || 1;
     if (p < 1) {
       return 1;
     } else if (p > $scope.pageCount) {

@@ -63,8 +63,12 @@ url: '/summaries/{page:int}',
     templateUrl: 'fragments/full-article.html'
   })
   .state('app.menu.events', {
-    url: '/events',
+    url: '/events/{page:int}',
     templateUrl: 'fragments/events.html'
+  })
+  .state('app.menu.events.event', {
+    url: '/event/{id:string}',
+    templateUrl: 'fragments/full-event.html'
   })
   .state('app.menu.energopedia', {
     url: '/energopedia',

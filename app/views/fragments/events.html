@@ -1,18 +1,15 @@
 <div ng-controller="AllEventsCtrl" layout="column">
-   <md-content layout-padding>
-       <div ng-repeat="event in allEvents" layout="column" layout-fill style="padding-bottom: 13px;" >
-           <md-whiteframe class="md-whiteframe-z4" layout layout-align="left center">
-              <div style="margin: 5px;">
-                  <!--<img class="img-image-teams" ng-src="{{team.image}}"></img>!-->
-                  	<div>
-	                  <p>{{event.title | lang}}</p>
-	                  <p>{{event.type | lang}}</p>
-	                  <p>{{event.organiser  | lang}}</p>
-	                  <p>{{event.place | lang}}</p>
-	                  <p>{{event.date_begin}}</p>
-	                 </div> 
-              </div>
-          </md-whiteframe>
+   <ui-view/>
+   <div >
+       <div ng-repeat="rowEvents in events" layout="column" layout-fill style="padding-bottom: 13px;" >
+            <div class="row">
+               <div class="col-sm-6 col-md-6" ng-repeat="event in rowEvents">
+                  <flat-event></flat-event>
+               </div>
+           </div>
        </div>
-   </md-content>
+       {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}
+       <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>
+       <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
+   </div>
 </div>

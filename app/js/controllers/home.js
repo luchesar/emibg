@@ -9,7 +9,7 @@ var _ = require('lazy.js');
 function HomeCtrl($scope, ArticleService, EventService) {
   var news = ArticleService.filter(['news']).take(6);
   var analysis = ArticleService.filter(['analysis']).take(5);
-  var events =_( EventService.allEvents()).take(5);
+  var events = EventService.filter().take(5);
 
   $scope.mainNews = news.take(1).toArray();
   $scope.news = news.drop(1).toArray();

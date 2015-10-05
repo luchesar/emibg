@@ -42,7 +42,6 @@ function SliderCtrl($scope) {
       }
     }
   ];
-  
 }
 
 controllersModule.controller('SliderCtrl', SliderCtrl);
