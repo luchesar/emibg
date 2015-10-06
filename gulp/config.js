@@ -10,6 +10,7 @@ module.exports = {
     'css' : [
       'node_modules/angular-material/angular-material.css',
       'node_modules/angular-chart.js/dist/angular-chart.css',
+      'node_modules/fullcalendar/dist/fullcalendar.css',
       'app/styles/fontello/**/*.css'
     ],
     'destCss': 'build/css/styles.css'
