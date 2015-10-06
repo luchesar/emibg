@@ -1,7 +1,11 @@
 'use strict';
 
-var angular = require('angular');
+window.moment = require('moment');
+window.jQuery = require('jquery');
+window.$ = window.jQuery;
+require('fullcalendar');
 
+var angular = require('angular');
 // angular modules
 require('angular-ui-router');
 require('angular-aria');
@@ -11,6 +15,7 @@ require('angular-touch');
 require('angular-bootstrap-npm');
 require('angular-translate');
 require('angular-chart.js');
+require('angular-ui-calendar');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -31,7 +36,8 @@ angular.element(document).ready(function() {
     'ngMaterial',
     'ui.bootstrap',
     'pascalprecht.translate',
-    'chart.js'
+    'chart.js',
+    'ui.calendar'
   ];
 
   // mount on window for testing

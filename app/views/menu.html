@@ -138,7 +138,9 @@
     <div class="row">
       <div class="col-sm-12 col-md-12">
         <md-whiteframe class="md-whiteframe-z4" layout layout-align="center" >
-            <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=320&amp;wkst=2&amp;hl=bg&amp;bgcolor=%23FFFFFF&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%23691426&amp;ctz=Europe%2FSofia" style=" border-width:0 " width="400" height="320" frameborder="0" scrolling="no"></iframe>
+           <div ng-controller="CalendarTestCtrl">
+               <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
+           </div>
         </md-whiteframe>
       </div>
     </div>
