@@ -1,0 +1,13 @@
+<md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref=".event({ id: event.id })">
+  <md-card class="clickable" ui-sref=".event({ id: event.id })">
+    <img ng-src="{{event.tumb}}" class="md-card-image" alt="Washed Out">
+    <md-card-content class="text-snippet">
+      <a href="">
+        <h2 class="md-title">{{event.title | lang | limitTo:200}}</h2>
+      </a>
+      <p>
+        {{event.html | lang | htmlToPlainText | limitTo: 220}}...
+      </p>
+    </md-card-content>
+  </md-card>
+</md-whiteframe>
