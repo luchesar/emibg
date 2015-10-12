@@ -7,13 +7,11 @@ var moment = require('moment');
 /**
 * @ngInject
 */
-function CalendarTestCtrl($scope,$compile,$state, $filter, EventService, uiCalendarConfig) {
+function CalendarCtrl($scope, $compile, $state, $filter, EventService, uiCalendarConfig) {
    var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-
-    $scope.changeTo = 'Hungarian';
 
     /* event source that contains custom events on the scope */
     $scope.events = EventService.filter().map(function(event){
@@ -62,4 +60,4 @@ function CalendarTestCtrl($scope,$compile,$state, $filter, EventService, uiCalen
     $scope.eventSources = [$scope.events];
 }
 
-controllersModule.controller('CalendarTestCtrl', CalendarTestCtrl);
+controllersModule.controller('CalendarCtrl', CalendarCtrl);
