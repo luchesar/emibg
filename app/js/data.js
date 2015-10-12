@@ -1007,8 +1007,8 @@ var events = [
        "bg": "София",
        "en": "Sofia"
      },
-     "date_begin": "15/09/2015T13:00",
-     "date_end": "",
+     "start": "2015-10-04T13:00+02:00",
+     "end": "",
      "access": {
        "bg": "регистрация",
        "en": "free registration"
@@ -1038,8 +1038,8 @@ var events = [
        "bg": "2 София",
        "en": "2 Sofia"
      },
-     "date_begin": "15/09/2015T13:00",
-     "date_end": "",
+     "start": "2015-10-18T13:00+02:00",
+     "end": "",
      "access": {
        "bg": "2 регистрация",
        "en": "2 free registration"
@@ -1069,8 +1069,8 @@ var events = [
        "bg": "3 София",
        "en": "3 Sofia"
      },
-     "date_begin": "15/09/2015T13:00",
-     "date_end": "",
+     "start": "2015-10-17T13:00+02:00",
+     "end": "",
      "access": {
        "bg": "3 регистрация",
        "en": "3 free registration"
@@ -1100,8 +1100,8 @@ var events = [
        "bg": "4 София",
        "en": "4 Sofia"
      },
-     "date_begin": "15/09/2015T13:00",
-     "date_end": "",
+     "start": "2015-10-10T10:00+02:00",
+     "end": "",
      "access": {
        "bg": "4 регистрация",
        "en": "4 free registration"
@@ -1131,8 +1131,8 @@ var events = [
        "bg": "5 София",
        "en": "5 Sofia"
      },
-     "date_begin": "15/09/2015T13:00",
-     "date_end": "",
+     "start": "2015-10-12T18:00+02:00",
+     "end": "",
      "access": {
        "bg": "5 регистрация",
        "en": "5 free registration"

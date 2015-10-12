@@ -2,11 +2,12 @@
 
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
+var moment = require('moment');
 
 /**
 * @ngInject
 */
-function CalendarTestCtrl($scope,$compile,uiCalendarConfig) {
+function CalendarTestCtrl($scope,$compile,$state, $filter, EventService, uiCalendarConfig) {
    var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -15,18 +16,19 @@ function CalendarTestCtrl($scope,$compile,uiCalendarConfig) {
     $scope.changeTo = 'Hungarian';
 
     /* event source that contains custom events on the scope */
-    $scope.events = [
-      {title: 'All Day Event',start: new Date(y, m, 1)},
-      {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-      {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29)}
-    ];
+    $scope.events = EventService.filter().map(function(event){
+      console.log("Adding event:" + event);
+      return {
+        id: event.id,
+        title: $filter('lang')(event.title),
+        start: moment(event.start).toDate(),
+        end: moment(event.end).toDate()
+      };
+    }).toArray();
 
     /* alert on eventClick */
-    $scope.alertOnEventClick = function( date, jsEvent, view){
-        $scope.alertMessage = (date.title + ' was clicked ');
+    $scope.eventClick = function( event, jsEvent, view){
+        $state.go("app.menu.events.event", {page: 1, id: event.id})
     };
 
     /* Change View */
@@ -52,7 +54,7 @@ function CalendarTestCtrl($scope,$compile,uiCalendarConfig) {
           center: '',
           right: 'today prev,next'
         },
-        eventClick: $scope.alertOnEventClick,
+        eventClick: $scope.eventClick,
         eventRender: $scope.eventRender
     };
 
