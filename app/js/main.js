@@ -4,6 +4,7 @@ window.moment = require('moment');
 window.jQuery = require('jquery');
 window.$ = window.jQuery;
 require('fullcalendar');
+require('fullcalendar/dist/lang-all.js')
 
 var angular = require('angular');
 // angular modules

@@ -4,14 +4,20 @@ var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
 
+var currentLang = function(stateParams, translate) {
+    if (stateParams.lang !== undefined) {
+        return stateParams.lang;
+    } else {
+        return translate.proposedLanguage();
+    }
+}
+
 /**
 * @ngInject
 */
-function CalendarCtrl($scope, $compile, $state, $filter, EventService, uiCalendarConfig) {
-   var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
+function CalendarCtrl($scope,
+        $compile, $state, $stateParams, $translate, $filter,
+        EventService, uiCalendarConfig) {
 
     /* event source that contains custom events on the scope */
     $scope.events = EventService.filter().map(function(event){
@@ -39,19 +45,20 @@ function CalendarCtrl($scope, $compile, $state, $filter, EventService, uiCalenda
      /* Render Tooltip */
     $scope.eventRender = function( event, element, view ) { 
         element.attr({'tooltip': event.title,
-                     'tooltip-append-to-body': true});
+                      'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
 
     /* config object */
     $scope.uiConfig = {
         height: 450,
-        editable: true,
+        editable: false,
         header: {
           left: 'title',
           center: '',
           right: 'today prev,next'
         },
+        lang: currentLang($stateParams, $translate),
         eventClick: $scope.eventClick,
         eventRender: $scope.eventRender
     };

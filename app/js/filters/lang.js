@@ -17,7 +17,7 @@ function LangFilter($stateParams, $translate) {
   return function(translation) {
     var current = currentLang($stateParams, $translate);
     var result = translation[current];
-    
+
     return result || translation.bg;
   };
 }
