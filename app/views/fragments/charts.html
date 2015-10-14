@@ -1,6 +1,8 @@
 <div ng-controller="ChartsCtrl">
     <div ng-repeat="chart in charts">
-        <div chart/>
+        <chart-panel/>
+        <br/>
+        <md-divider ng-if="!$last"></md-divider>
     </div>
 </div>
 

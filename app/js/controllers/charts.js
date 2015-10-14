@@ -21,7 +21,8 @@ function ChartsCtrl($scope, $filter) {
        data: [
          [65, 59, 80, 81, 56, 55, 40],
          [28, 48, 40, 19, 86, 27, 90]
-       ]
+       ],
+       legend: false
     },
     {
        type: 'chart-pie',
@@ -30,7 +31,8 @@ function ChartsCtrl($scope, $filter) {
           en: "Renewable energy sources share in Bulgaria"
        },
        labels: [{bg:"Вятър",en:'Wind'}, {bg:"ВЕЦ",en:'Water'}, {bg:"Слънчева", en:"Sun"}],
-       data: [40, 40, 20]
+       data: [40, 40, 20],
+       legend: true
     },
     {
        type: 'chart-bar',
@@ -44,7 +46,8 @@ function ChartsCtrl($scope, $filter) {
          [40, 40, 20],
          [39, 39, 22],
          [20, 20, 60]
-       ]
+       ],
+       legend: false
     }
   ]
 
@@ -54,7 +57,8 @@ function ChartsCtrl($scope, $filter) {
         title: $filter("lang")(chart.title),
         labels: $filter("lang")(chart.labels),
         series: $filter("lang")(chart.series),
-        data: chart.data
+        data: chart.data,
+        legend: chart.legend
     }
   }).toArray();
 
