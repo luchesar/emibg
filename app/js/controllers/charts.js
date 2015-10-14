@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function ChartsSliderCtrl($scope, $filter) {
+function ChartsCtrl($scope, $filter) {
   $scope.myInterval = 10000;
 
   var charts = [
@@ -61,4 +61,4 @@ function ChartsSliderCtrl($scope, $filter) {
   $scope.charts = translatedCharts;
 }
 
-controllersModule.controller('ChartsSliderCtrl', ChartsSliderCtrl);
+controllersModule.controller('ChartsCtrl', ChartsCtrl);
