@@ -1,8 +1,8 @@
 <div ng-controller="ChartsSliderCtrl">
   <carousel interval="myInterval">
     <slide ng-repeat="chart in charts">
-       <canvas id="bar" class="chart chart-bar" data="chart.data" labels="chart.labels"  legend="false" series="chart.series"></canvas>
-       <canvas id="bar" class="chart chart-line" data="chart.data" labels="chart.labels"  legend="false" series="chart.series"></canvas>
+        <chart type="chart-bar"/>
+        <chart type="chart-line"/>
     </slide>
   </carousel>
 </div>

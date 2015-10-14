@@ -7,6 +7,9 @@ var controllersModule = require('./_index');
 */
 function ChartsSliderCtrl($scope) {
   $scope.myInterval = 10000;
+  var lbls1 = [
+
+  ];
   var charts = $scope.charts = [
     {
        type: 'chart-bar',
