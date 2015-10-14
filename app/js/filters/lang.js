@@ -1,6 +1,7 @@
 'use strict'
 
 var filtersModule = require('./_index');
+var _ = require('lazy.js');
 
 var currentLang = function(stateParams, translate) {
     if (stateParams.lang !== undefined) {
@@ -14,11 +15,26 @@ var currentLang = function(stateParams, translate) {
 * @ngInject
 */
 function LangFilter($stateParams, $translate) {
-  return function(translation) {
-    var current = currentLang($stateParams, $translate);
-    var result = translation[current];
+  var translateObject = function(instance, lang) {
+    return instance[lang] || instance.bg;
+  };
 
-    return result || translation.bg;
+  var translateArray = function(array, lang) {
+    return  _(array).map(function(instance) { 
+        return translateObject(instance, lang);
+    }).toArray();
+  }
+
+  return function(translation) {
+    var lang = currentLang($stateParams, $translate);
+
+    if (translation && translation.constructor === String)
+        return translation;
+    else if (translation && translation.constructor === Array)
+        return translateArray(translation, lang);
+    else if (translation)
+        return translateObject(translation, lang);
+    else return "";
   };
 }
 
