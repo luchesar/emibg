@@ -8,13 +8,13 @@ var directivesModule = require('./_index.js');
 function chart($compile) {
 
   return {
-    restrict: 'E',
+    restrict: 'A',
     compile: function(element, attributes) {
-        var type = attributes.type;
-        var template = '<canvas class="chart ' + type + '" data="chart.data" labels="chart.labels" legend="false" series="chart.series"></canvas>';
-        element.html(template);
-        var compiledChart = $compile(element.find('.chart'));
         return function(scope, element, attributes) {
+            var template = '<canvas class="chart ' + scope.chart.type + '" data="chart.data" labels="chart.labels" legend="false" series="chart.series"></canvas>';
+            element.html(template);
+            element.removeAttr('chart');
+            var compiledChart = $compile(element);
             compiledChart(scope);
         }
     }
