@@ -31,6 +31,18 @@
       "src": "fontawesome"
     },
     {
+      "uid": "555ef8c86832e686fef85f7af2eb7cde",
+      "css": "left-big",
+      "code": 59406,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ad6b3fbb5324abe71a9c0b6609cbb9f1",
+      "css": "right-big",
+      "code": 59408,
+      "src": "fontawesome"
+    },
+    {
       "uid": "4fc9b8c122d1b5ca3df42a104a655e8b",
       "css": "language",
       "code": 59401,
@@ -89,6 +101,12 @@
       "css": "doc",
       "code": 59394,
       "src": "linecons"
+    },
+    {
+      "uid": "221947bea81f49a11b863c686a7bd235",
+      "css": "search",
+      "code": 59407,
+      "src": "websymbols"
     }
   ]
 }
