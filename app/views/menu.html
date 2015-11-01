@@ -143,36 +143,24 @@
   </div>
 </div>-->
 
-<div class="row">
-  <div class="col-sm-8 col-md-8">
+<div layout="row" layout-sm="column">
+  <div flex="67" flex-sm="100" layout-margin >
     <ui-view/>
   </div>
-  <div class="col-sm-4 col-md-4">
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
+  <div flex="33" flex-sm="100" layout="column">
         <md-whiteframe class="md-whiteframe-z4" layout layout-align="center" >
             <div ng-include="'fragments/charts.html'"></div>
         </md-whiteframe>
-      </div>
-    </div>
     </p>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
         <md-whiteframe class="md-whiteframe-z4" layout layout-align="center" >
             <iframe src="https://player.vimeo.com/video/24632029?color=10f000" width="350" height="225" frameborder="0"></iframe>
         </md-whiteframe>
-      </div>
-    </div>
     </p>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
         <md-whiteframe class="md-whiteframe-z4" layout layout-align="center" >
            <div ng-controller="CalendarCtrl">
                <div ui-calendar="uiConfig" class="calendar" ng-model="eventSources"></div>
            </div>
         </md-whiteframe>
-      </div>
-    </div>
     </p>
   </div>
 </div>

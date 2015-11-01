@@ -103,6 +103,10 @@ url: '/summaries/{page:int}',
     url: '/article/{id:string}',
     templateUrl: 'fragments/full-article.html'
   })
+  .state('app.search', {
+    url: 'search',
+    templateUrl: 'search.html'
+  });
 }
 
 module.exports = Routes;

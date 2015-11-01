@@ -1,9 +1,9 @@
 <md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref=".article({ id: article.id })">
-    <div class="row" style="margin: 5px;">
-        <div class="col-sm-4 col-md-4" style="padding-left:0">
+    <div layout="row" layout-sm="column">
+        <div flex layout-padding>
             <img ng-src="{{article.tumb}}" class="img-thumbnail"  ></img>
         </div>
-        <div class="col-sm-8 col-md-8">
+        <div flex layout-padding>
             <a href="">
                 <b><h4>{{article.title | lang | limitTo:200}}</h4></b>
             </a>

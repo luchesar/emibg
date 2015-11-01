@@ -14,14 +14,14 @@
   </head>
   <body>
     <div class="banner">
-      <div class="container">
           <div ui-view="banner"></div>
-      </div>
     </div>
 
+        <div layout="column" layout-align="end" class="layout-max-width" >
     <div id="wrap">
-      <div id="main" class="container">
-        <div ui-view="content"></div>
+      <div id="main">
+          <div ui-view="content"></div>
+        </div>
       </div>
     </div>
     <div ui-view="footer"></div>

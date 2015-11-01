@@ -9,6 +9,11 @@ body {
   padding: $half-space;
 }
 
+.layout-max-width {
+  width: 100%;
+  max-width: 1200px;
+}
+
 .inverse-dropdown{
   background-color: #222;
   border-color: #080808;
