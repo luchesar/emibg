@@ -1,24 +1,70 @@
 <div ng-controller="MenuCtrl">
+   <md-toolbar>
+    <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Search">
+              <ng-md-icon icon="search"></ng-md-icon> 
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Translate">
+              <ng-md-icon icon="translate"></ng-md-icon> 
+            </md-button>
+        <span flex></span>
+    </div>
+    <md-tabs md-selected="tabs.selectedIndex">
+        <md-tab id="tab1" aria-controls="tab1-content">Tab 1</md-tab>
+        <md-tab id="tab2" aria-controls="tab2-content">Tab 2</md-tab>
+        <md-tab id="tab3" aria-controls="tab3-content">Tab 3</md-tab>
+    </md-tabs>
+</md-toolbar> 
+   <!--<md-toolbar layout="row" layout-align="left start">
+        <div flex="100" layout="column">
+            <md-tabs>
+                <md-tab ui-sref="app.menu.home" md-active="$state.is('app.menu.home')">
+                    <md-tab-label>
+                       <ng-md-icon icon="home"></ng-md-icon> 
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.news({page: 1})" md-active="$state.is('app.menu.news')">
+                    <md-tab-label>
+                        {{'NEWS' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.events({page: 1})">
+                    <md-tab-label>
+                        {{'ANALYSIS' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.events({page: 1})">
+                    <md-tab-label>
+                        {{'EVENTS' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.energopedia">
+                    <md-tab-label>
+                        {{'ENERGOPEDIA' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.partners">
+                    <md-tab-label>
+                        {{'PARTNERS' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+                <md-tab ui-sref="app.menu.about">
+                    <md-tab-label>
+                        {{'ABOUT_US' | translate }}
+                    </md-tab-label> 
+                </md-tab>
+            </md-tabs>
+        </div>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Search">
+              <ng-md-icon icon="search"></ng-md-icon> 
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Translate">
+              <ng-md-icon icon="translate"></ng-md-icon> 
+            </md-button>
+        </div>
+    </md-toolbar>-->
 <!-- Menu -->
-    <nav class="navbar navbar-inverse" role="navigation" ng-show="searchVisible" class="ng-hide">
-      <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" ng-click="hideSearch()">
-                <i class="icon-left-big"></i>
-               Назад
-            </a>
-              <form class="navbar-form navbar-left">
-                  <input id="searchField" type="text" class="form-control" placeholder="Search" ng-model="search.text">
-              </form>
-          </div>
-       </div>
-    </nav>
     <nav class="navbar navbar-inverse" role="navigation" ng-show="!searchVisible">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="container-fluid">
@@ -34,7 +80,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#" ui-sref="app.menu.home">
-            <i class="icon-home"></i>
+           <ng-md-icon icon="home" style="fill: pink"></ng-md-icon> 
         </a>
       </div>
     

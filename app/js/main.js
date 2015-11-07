@@ -17,6 +17,7 @@ require('angular-bootstrap-npm');
 require('angular-translate');
 require('angular-chart.js');
 require('angular-ui-calendar');
+require('angular-material-icons');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -38,7 +39,8 @@ angular.element(document).ready(function() {
     'ui.bootstrap',
     'pascalprecht.translate',
     'chart.js',
-    'ui.calendar'
+    'ui.calendar',
+    'ngMdIcons'
   ];
 
   // mount on window for testing
