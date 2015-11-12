@@ -21,6 +21,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
        'footer': { templateUrl: 'fragments/footer.html' }
     }
   })
+  .state('app.search', {
+    url: '/search',
+    templateUrl: 'search.html'
+  })
   .state('app.menu', {
     url: '',
     templateUrl: 'menu.html'
