@@ -15,6 +15,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   .state('app', {
     url: '/{lang:(?:bg|en)}',
     abstract: true
+    /*views: {
+       'banner@': { templateUrl: 'views/fragments/banner.html' },
+       'footer@': { templateUrl: 'views/fragments/footer.html' }
+    }*/
   })
   .state('app.search', {
     url: '/search',
