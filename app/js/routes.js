@@ -14,20 +14,21 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider
   .state('app', {
     url: '/{lang:(?:bg|en)}',
-    abstract: true,
-    views: {
-       'banner': { templateUrl: 'fragments/banner.html' },
-       'content': { template: '<ui-view/>' },
-       'footer': { templateUrl: 'fragments/footer.html' }
-    }
+    abstract: true
   })
   .state('app.search', {
     url: '/search',
-    templateUrl: 'search.html'
+    views: {
+       'menu@': { templateUrl: 'search.html' },
+       'content@': { template: '<ui-view/>' }
+    }
   })
   .state('app.menu', {
     url: '',
-    templateUrl: 'menu.html'
+    views: {
+       'menu@': { templateUrl: 'menu.html' },
+       'content@': { template: '<ui-view/>' }
+    }
   })
   .state('app.menu.home', {
     url: '/home',
