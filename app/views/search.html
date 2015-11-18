@@ -1,6 +1,6 @@
 <div ng-controller="SearchCtrl">
 <!-- Menu -->
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation" ng-keypress="{esc: 'onEsk($event)'}">
       <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle">
@@ -13,8 +13,9 @@
                 <i class="icon-left-big"></i>
                Назад
             </a>
-              <form class="navbar-form navbar-left">
-                  <input id="searchField" type="text" class="form-control" placeholder="Search" ng-model="search.text">
+              <form class="navbar-form navbar-left" ng-submit="search()">
+                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="Search" ng-change="onChange($event)" ng-model="searchTerm">
+                  <input type="submit" value="Търси">
               </form>
           </div>
        </div>
