@@ -46,6 +46,11 @@ angular.element(document).ready(function() {
     .constant('AppSettings', require('./constants'))
     .config(require('./routes'))
     .config(require('./translations'))
+    .config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('green')
+        .accentPalette('blue');
+    })
     .run(require('./on_run'));
 
   angular.bootstrap(document, ['app']);

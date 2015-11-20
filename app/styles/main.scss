@@ -94,14 +94,14 @@ html,body {
 .banner {
 //  background-image: url(/images/footer1.jpg);
   //width:100%;
-  height:150px;
+//  height:150px;
 //  background-size:cover;
 }
 
-.banner img {
-  width:100%;
-  height:150px;
-}
+//.banner img {
+//  width:100%;
+//  height:150px;
+//}
 
 footer {
   color: #ffffff;
@@ -133,4 +133,25 @@ footer {
     left:0;
     top:0;
     background:linear-gradient(transparent 150px, white);
+}
+
+// angular material experiment
+md-tabs.noTabPanel md-tabs-wrapper {
+    display: none !important;
+}
+
+md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; // round toolbar buttons
+  }
+}
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
 }
