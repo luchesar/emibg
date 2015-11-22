@@ -1,4 +1,6 @@
 <div ng-controller="SearchCtrl">
+   <ui-view/>
+       <div layout="column" layout-fill>Търсене във всички статии и събития</div>
    <div >
        <div ng-repeat="rowItems in items" layout="column" layout-fill style="padding-bottom: 13px;" >
            <div class="row">
@@ -7,8 +9,11 @@
                </div>
            </div>
        </div>
+       <div ng-hide="!items.length">
        {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}} tet test test
        <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>
        <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
+       </div>
    </div>
+   <div ng-hide="items.length" layout="column" layout-fill>Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.</div>
 </div>

@@ -4,7 +4,6 @@ var controllersModule = require('./_index');
 
 function SearchMenuCtrl($scope, $stateParams, $rootScope, $state, SearchService, PagingService) {
   $scope.searchTerm = "";
-  $scope.foundItems = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
 
@@ -21,9 +20,8 @@ function SearchMenuCtrl($scope, $stateParams, $rootScope, $state, SearchService,
     $scope.goBack();
   };
 
-  $scope.onChange = function($event) {
-//      $state.go($rootScope.previousState, $rootScope.previousStateParams);
-    console.log("changed");
+  $scope.search = function() {
+    $state.go("app.search.result", {q: $scope.searchTerm, page: 1});
   };
 }
 

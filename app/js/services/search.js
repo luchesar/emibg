@@ -31,7 +31,8 @@ function SearchService($stateParams, $filter) {
   service.search = function(searchTerm) {
     return filter().filter(function(item) {
        if (!searchTerm) return true;
-       return lang(item.title).indexOf(searchTerm) > -1;
+       return lang(item.title).toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ||
+              lang(item.html).toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
     });
   };
 

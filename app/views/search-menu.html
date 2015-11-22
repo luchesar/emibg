@@ -14,8 +14,8 @@
                Назад
             </a>
               <form class="navbar-form navbar-left" ng-submit="search()">
-                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="Search" ng-change="onChange($event)" ng-model="searchTerm">
-                  <input type="submit" value="Търси">
+                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="Search" ng-change="search()" ng-model="searchTerm">
+                  <input type="button" value="Търси" ng-click="search()">
               </form>
           </div>
        </div>

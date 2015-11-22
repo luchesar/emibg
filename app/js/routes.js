@@ -27,6 +27,14 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     url: '/search?{q:string}&{page:int}',
     templateUrl: 'search.html'
   })
+  .state('app.search.result.event', {
+    url: '/event/{id:string}',
+    templateUrl: 'fragments/full-event.html'
+  })
+  .state('app.search.result.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
+  })
   .state('app.menu', {
     url: '',
     views: {
