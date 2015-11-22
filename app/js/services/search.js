@@ -3,35 +3,43 @@
 var servicesModule = require('./_index.js');
 var data = require('../data.js');
 var _ = require('lazy.js');
+var moment = require('moment');
 
-function SearchService($stateParams) {
+function SearchService($stateParams, $filter) {
 
   var service = {};
+  var lang = $filter('lang');
 
-  var searchArticles = function(searchTerm) {
-    return _(data.articles).filter(function(article) {
-        var title = article.title[$stateParams.lang];
-        var html = article.
-        article.title.indexOf(searchTrem) > -1 ||
-        article.html
-    }).map(function(article) {
-        article.type = "article";
-    });
-  };
-
-  var searchEvents = function(searchTerm) {
-    return _(data.events).filter(function(event) {
-    
-    }).map(function(event) {
-        event.type = "event";
-    });
+  var filter = function() {
+    var items = data.articles.map(function(art) {
+        art.type = 'article';
+        return art;
+      })
+      .concat(data.events.map(function(ev){
+        ev.type = 'event';
+        return ev;
+      }))
+      .sort(item => moment(item.date).toDate());
+      return items.filter(function(item) {
+         if($stateParams.lang)
+           return item.title[$stateParams.lang];
+         else
+           return true;
+      });
   };
 
   service.search = function(searchTerm) {
-    return searchArticles(searchTerm)
-        .concat(searchEvents(searchTerm));
-  }:
+    return filter().filter(function(item) {
+       if (!searchTerm) return true;
+       return lang(item.title).indexOf(searchTerm) > -1;
+    });
+  };
 
+  service.paged = function(searchTerm, page, itemsPerPage, itemsPerRow) {
+    return _(service.search(searchTerm))
+      .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+      .chunk(itemsPerRow || 3).toArray();
+  }
   return service;
 }
 

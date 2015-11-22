@@ -1,23 +1,14 @@
 <div ng-controller="SearchCtrl">
-<!-- Menu -->
-    <nav class="navbar navbar-inverse" role="navigation" ng-keypress="{esc: 'onEsk($event)'}">
-      <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" ng-click="goBack()">
-                <i class="icon-left-big"></i>
-               Назад
-            </a>
-              <form class="navbar-form navbar-left" ng-submit="search()">
-                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="Search" ng-change="onChange($event)" ng-model="searchTerm">
-                  <input type="submit" value="Търси">
-              </form>
-          </div>
+   <div >
+       <div ng-repeat="rowItems in items" layout="column" layout-fill style="padding-bottom: 13px;" >
+           <div class="row">
+               <div class="col-sm-6 col-md-6" ng-repeat="item in rowItems">
+                 <div item></div>
+               </div>
+           </div>
        </div>
-    </nav>
+       {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}} tet test test
+       <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>
+       <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
+   </div>
 </div>

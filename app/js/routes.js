@@ -21,10 +21,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
     }*/
   })
   .state('app.search', {
-    url: '/search',
+    url: '/search?{q:string}&{page:int}',
     views: {
-       'menu@': { templateUrl: 'search.html' },
-       'content@': { template: '<ui-view/>' }
+       'menu@': { templateUrl: 'search-menu.html' },
+       'content@': { templateUrl: 'search.html' }
     }
   })
   .state('app.menu', {

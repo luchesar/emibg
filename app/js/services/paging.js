@@ -17,12 +17,12 @@ function PagingService() {
     }
   }
 
-  service.init = function($scope, $stateParams, $state) {
+  service.init = function($scope, $stateParams, $state, onPageChange) {
     $scope.itemsPerPage = 4;
     $scope.pageCount = Math.ceil($scope.itemsCount / $scope.itemsPerPage);
     $scope.page = pageNumber($scope, $stateParams);
 
-    $scope.$watch('page', function() {
+    $scope.$watch('page', onPageChange || function() {
       $state.go('.', {page: $scope.page});
     });
 
