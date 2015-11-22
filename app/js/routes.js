@@ -15,17 +15,17 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   .state('app', {
     url: '/{lang:(?:bg|en)}',
     abstract: true
-    /*views: {
-       'banner@': { templateUrl: 'views/fragments/banner.html' },
-       'footer@': { templateUrl: 'views/fragments/footer.html' }
-    }*/
   })
   .state('app.search', {
-    url: '/search?{q:string}&{page:int}',
+    url: '',
     views: {
        'menu@': { templateUrl: 'search-menu.html' },
-       'content@': { templateUrl: 'search.html' }
+       'content@': { template: '<ui-view/>' }
     }
+  })
+  .state('app.search.result', {
+    url: '/search?{q:string}&{page:int}',
+    templateUrl: 'search.html'
   })
   .state('app.menu', {
     url: '',
