@@ -125,6 +125,10 @@ url: '/summaries/{page:int}',
     url: '/article/{id:string}',
     templateUrl: 'fragments/full-article.html'
   })
+  .state('app.menu.chart', {
+    url: '/chart/{id:string}',
+    templateUrl: 'fragments/single-chart.html'
+  })
 }
 
 module.exports = Routes;

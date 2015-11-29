@@ -2,10 +2,13 @@
   <div>
   <carousel interval="myInterval">
     <slide ng-repeat="slide in slides">
-      <div ng-repeat="chart in slide">
-        <chart-panel/>
-        <br/>
-        <md-divider ng-if="!$last"></md-divider>
+      <div ng-repeat="chart in slide" >
+        <div> chart.id: {{chart.id}}</div>
+        <div ui-sref="app.menu.chart({id:chart.id})">
+          <chart-panel/>
+          <br/>
+          <md-divider ng-if="!$last"></md-divider>
+        </div>
       </div>
     </slide>
   </carousel>
