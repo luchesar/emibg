@@ -1,58 +1,3 @@
-var homeItemsSlider = [
-    {type: "article", id: "1"},
-    {type: "event", id: "1"},
-    {type: "article", id: "2"}
-]
-var homeChartsSlider = [
-    ["2", "1", "3"],
-    ["3", "2", "1"]
-];
-
-  var charts = [
-    {
-       id: "1",
-       type: 'chart-line',
-       title: {
-          bg: "Цени на петрола и газта 2015",
-          en: "Gas and oil prices 2015"
-       },
-       labels: [{bg:"Януари",en:"January"}, {bg:"Февруари",en:"February"}, {bg:"Март",en:"March"}, {bg:"Април",en:"April"}, {bg:"Май",en:"May"}, {bg:"Юни",en:"June"}, {bg:"Юли",en:"July"}],
-       series: [{bg:"Цена на Газта",en:'Price of Gas'}, {bg:"Цена на Петрола",en:'Price of Petrol'}],
-       data: [
-         [65, 59, 80, 81, 56, 55, 40],
-         [28, 48, 40, 19, 86, 27, 90]
-       ],
-       legend: false
-    },
-    {
-       id: "2",
-       type: 'chart-pie',
-       title: {
-          bg: "Дял на възобновими източници в България",
-          en: "Renewable energy sources share in Bulgaria"
-       },
-       labels: [{bg:"Вятър",en:'Wind'}, {bg:"ВЕЦ",en:'Water'}, {bg:"Слънчева", en:"Sun"}],
-       data: [40, 40, 20],
-       legend: true
-    },
-    {
-       id: "3",
-       type: 'chart-bar',
-       title: {
-          bg: "Дял на енергията произведена от възобновими източници",
-          en: "Energy generate from renewable sources share"
-       },
-       labels: [{bg:"България",en:"Bulgaria"}, {bg:"Сърбия",en:"Serbia"}, {bg:"ЕС",en:"EU"}],
-       series: [{bg:"Вятър",en:'Wind'}, {bg:"ВЕЦ",en:'Water'}, {bg:"Слънчева", en:"Sun"}],
-       data: [
-         [40, 40, 20],
-         [39, 39, 22],
-         [20, 20, 60]
-       ],
-       legend: false
-    }
-  ]
-
 var articles = [
    { 
      "id": "1",
@@ -1305,9 +1250,7 @@ var data = {
   categories: categories,
   partners: partners,
   events:events,
-  teams: teams,
-  charts: charts,
-  homeChartsSlider: homeChartsSlider
+  teams: teams
 };
 
 module.exports = data;
