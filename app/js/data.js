@@ -1,7 +1,7 @@
 var homeItemsSlider = [
     {type: "article", id: "1"},
-    {type: "event", id: "1"},
-    {type: "article", id: "2"}
+    {type: "event", id: "4"},
+    {type: "article", id: "7"}
 ]
 var homeChartsSlider = [
     ["2", "1", "3"],
@@ -1307,7 +1307,8 @@ var data = {
   events:events,
   teams: teams,
   charts: charts,
-  homeChartsSlider: homeChartsSlider
+  homeChartsSlider: homeChartsSlider,
+  homeItemsSlider: homeItemsSlider
 };
 
 module.exports = data;

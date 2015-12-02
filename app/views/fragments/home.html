@@ -1,17 +1,19 @@
 <div layout="column">
    <ui-view/>
-   <div ng-controller="SliderCtrl">
-      <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}" style="width:100%;" class="img-thumbnail">
-          <div class="carousel-caption">
-            <h2>{{slide.title | lang}}</h2>
-            <p>{{slide.text | lang}}</p>
-          </div>
-        </slide>
-      </carousel>
-  </div>
    <div ng-controller="HomeCtrl">
+      <div>
+          <carousel interval="myInterval">
+            <slide ng-repeat="slide in slideItems" active="slide.active">
+              <div  class="clickable" us-sref="{{slide.sref}}">
+                <img ng-src="{{slide.tumb}}" style="width:100%;" class="img-thumbnail">
+                <div class="carousel-caption">
+                  <h2>{{slide.title | lang}}</h2>
+                  <p> {{slide.html | lang | htmlToPlainText | limitTo: 180}}...</p>
+                </div>
+              </div>  
+            </slide>
+          </carousel>
+      </div>
       <br/>
       <div style="width: 100%; text-align: center; font-size:200%;">
             {{'NEWS' | translate }}
