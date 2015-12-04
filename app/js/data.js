@@ -61,7 +61,14 @@ var articles = [
        "en": "15 Infrastructural Project will be funded by the European Union"
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: {
+          fill: true, 
+          horizontalAlign: "center", 
+          verticalAlign: "center"
+        }
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -81,7 +88,14 @@ var articles = [
        "en": "Petr Dokladal: Energetics cannot tolereate more compromises" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: {
+          fill: true, 
+          horizontalAlign: "center", 
+          verticalAlign: "center"
+        }
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -101,7 +115,14 @@ var articles = [
        "en": "High Efficiency Cogeneration"
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: {
+          fill: true, 
+          horizontalAlign: "center", 
+          verticalAlign: "center"
+        }
+     },
      "author": {
        "bg": "",
        "en": "Vesela Katreva"
@@ -121,7 +142,14 @@ var articles = [
        "en": "Greenhouse Gas Emission Factors"
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: {
+          fill: true, 
+          horizontalAlign: "center", 
+          verticalAlign: "center"
+        }
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -141,7 +169,10 @@ var articles = [
        "en": "KEVR certificates bulgargas" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: {fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": ""
@@ -161,7 +192,14 @@ var articles = [
        "en": "" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: {
+          fill: true, 
+          horizontalAlign: "center", 
+          verticalAlign: "center"
+        }
+     },
      "author": {
        "bg": "Иванка Диловска",
        "en": ""
@@ -181,7 +219,10 @@ var articles = [
        "en": "BEH promises EU to stimulate the competition" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -193,7 +234,6 @@ var articles = [
      },
      "tags": ["BEH", "EC"]
    },
-
    { 
      "id": "8",
      "title": {
@@ -201,7 +241,10 @@ var articles = [
        "en": "New lawsuit agains Bulgaria" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Иванка Диловска",
        "en": "Ivanka Dilovska"
@@ -213,15 +256,17 @@ var articles = [
      },
      "tags": ["economy", "budget", "EC"]
    },
-
-{ 
+   { 
      "id": "9",
      "title": {
        "bg": "Наредба за намаляване на ВЕИ-плащанията за индустрията",
        "en": "Descreased payments for the VEI-industry" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Жана Георгиева",
        "en": "Jana georgieva"
@@ -241,7 +286,10 @@ var articles = [
        "en": "" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": ""
@@ -261,7 +309,10 @@ var articles = [
        "en": "Services Market in Italy" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -281,7 +332,10 @@ var articles = [
        "en": "EK launches new reseach in the energy sector" 
      },
      "category": ["new"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Жана Георгиева",
        "en": "Jana Georgieva"
@@ -301,7 +355,10 @@ var articles = [
        "en": "Germany plans to force the old charcoal factories to decrease the CO2 emmissions" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -321,7 +378,10 @@ var articles = [
        "en": "A new intersystem connecion will be developed" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -341,7 +401,10 @@ var articles = [
        "en": "Ofgem wil apply sanctions to the energy supplier SSE" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -362,7 +425,10 @@ var articles = [
        "en": "Energy board would assist BG government" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Ivanka Dilovska"
@@ -383,7 +449,10 @@ var articles = [
        "en": "Energy suppliers advise how to save energy" 
      },
      "category": ["news"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Diyana Stoyanova"
@@ -403,7 +472,10 @@ var articles = [
        "en": "EMI: changes in the energy law"
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -423,7 +495,10 @@ var articles = [
        "en": "EC accuses Gasprom in missuse of its position" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -443,7 +518,10 @@ var articles = [
        "en": "Greenhouse Gas emission factors"
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Vesela Katreva"
@@ -463,7 +541,10 @@ var articles = [
        "en": "Power Purchase Agreements Prices – Decreased"
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -483,7 +564,10 @@ var articles = [
        "en": "Gas prices have descresed to the levels of 2010" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": ""
@@ -503,7 +587,10 @@ var articles = [
        "en": "" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Иванка Диловска",
        "en": ""
@@ -523,7 +610,10 @@ var articles = [
        "en": "Brikel - high efficiency supplier " 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": "Vesela Katreva"
@@ -543,7 +633,10 @@ var articles = [
        "en": "Modern TEC - important advntage in the current energy state" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Иванка Диловска",
        "en": "Ivanka Dilovska"
@@ -563,7 +656,10 @@ var articles = [
        "en": "EURELECTRIC suggests a new energy model" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Жана Георгиева",
        "en": "Jana georgieva"
@@ -583,7 +679,10 @@ var articles = [
        "en": "" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": ""
@@ -603,7 +702,10 @@ var articles = [
        "en": "Europarliament voted for stability" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -623,7 +725,10 @@ var articles = [
        "en": "EC has a new concept for the European Energy Uniton" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Жана Георгиева",
        "en": "Jana Georgieva"
@@ -643,7 +748,10 @@ var articles = [
        "en": "5 suggestions from the system operators" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -663,7 +771,10 @@ var articles = [
        "en": "Monopols: to be regulated, not manipulated" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -683,7 +794,10 @@ var articles = [
        "en": "How oftenthe electricity meter readings are taken in each EU county" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -695,8 +809,6 @@ var articles = [
      },
      "tags": ["readings", "energy"]
    },
-
-
    { 
      "id": "33",
      "title": {
@@ -704,7 +816,10 @@ var articles = [
        "en": "SEWRC announced the results of the EDC audits" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Ivanka Dilovska"
@@ -725,7 +840,10 @@ var articles = [
        "en": "The indebtedness has blocked the energy system" 
      },
      "category": ["analysis", "emis"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Diyana Stoyanova"
@@ -745,7 +863,10 @@ var articles = [
        "en": "" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Иванка Диловска",
        "en": ""
@@ -765,7 +886,10 @@ var articles = [
        "en": "" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Весела Катрева",
        "en": ""
@@ -785,7 +909,10 @@ var articles = [
        "en": "New Report about EC was released" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Жана Георгиева",
        "en": "Jana Georgieva"
@@ -805,7 +932,10 @@ var articles = [
        "en": "We need stronger EC" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -825,7 +955,10 @@ var articles = [
        "en": "BG: Energy Sector Economics behind the Political Turmoil" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": ""
@@ -845,7 +978,10 @@ var articles = [
        "en": "The Bulgarian Energy Sector in 2012" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "Дияна Стоянова",
        "en": "Diyana Stoyanova"
@@ -866,7 +1002,10 @@ var articles = [
        "en": "CPC: Obstacles for the competition in electricity" 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Ivanka Dilovska"
@@ -886,7 +1025,10 @@ var articles = [
        "en": "Never Ending Audits....." 
      },
      "category": ["analysis", "summaries"],
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "author": {
        "bg": "",
        "en": "Diyana Stoyanova"
@@ -1068,7 +1210,10 @@ var events = [
        "bg": "регистрация",
        "en": "free registration"
      },
-     "tumb": "images/thumbs/thumb1.jpg",
+     "image": {
+        url: "images/thumbs/thumb1.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "html": {
       "bg": "<div style=text-align:justify><b><font size=6><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></b></div><h1 style=text-align:center><span style=font-size:18px><b><b><span style=color:#000>Конференция &bdquo;Енергийна сигурност и енергийна&nbsp;</span></b></b><b><b><span style=color:#000>инфраструктура в Югоизточна Европа&ldquo;</span></b></b></span></h1><div style=text-align:justify>&nbsp;</div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Организатори:<br></span></span><span style=line-height:114%;color:#000>Дипломатически институт при Министъра на външните работи и Институт за енергиен мениджмънт<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Дати:</span></span><span style=line-height:114%;color:#000>15-16 септември 2015 г.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br></span><span style=color:#036><span style=line-height:114%>Място:</span></span><span style=line-height:114%;color:#000>София, хотел Балкан Шератон<br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000><br></span><span style=color:#036>Участници:</span><span style=line-height:114%>Правителствени представители от България и региона на ЮИЕ, Европейска комисия, Енергийна общност, ЕБВР, Световна банка, Евроелектрик, Еврогаз, представители на бизнеса и бизнес партньори и др.</span></span></div><div style=text-align:justify><span style=font-size:15px>&nbsp;</span></div><div style=text-align:justify>&nbsp;</div><span style=font-size:15px><div style=text-align:justify><span style=color:#036>Концепция:</span></div></span><div style=text-align:justify;line-height:normal><span style=font-size:15px><span style=color:#000>Целостта на енергийните инфраструктури и надеждната им експлоатация са от жизнено важно значение за благоденствието на гражданите и функционирането на икономиката. Постоянно променящите се заплахи &ndash; природни или свързани с човешка дейност&nbsp;- определят необходимостта от непрекъснат преглед, оценка и осъвременяване на политиките и практиките за защита на енергийната инфраструктура.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br>Действията в тази връзка на европейско, регионално, международно и национално ниво имат нужда от критичен преглед с цел усъвършенстване на подхода и гарантиране на адекватна реакция спрямо новите предизвикателства. Уязвимостта на енергийната инфраструктура както от природни, така и от умишлени и неумишлени човешки заплахи е все по-силна. Поради това нуждата от създаване и функциониране на подходящи структури и механизми, които да регулират и управляват рисковете за ключови инфраструктури &ndash; независимо дали се управляват от държавни&nbsp;или частни дружества - е все така осезаема.<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000>На тази база конференцията &bdquo;Енергийна сигурност и енергийна инфраструктура в Югоизточна Европа&ldqldquo;&nbsp;ще отвори дебата върху следните въпроси:<br></span></span></div><span style=font-size:15px><br></span><ul><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Какви са потенциалните и съществуващите посегателства и как най-успешно може да се управлява променящата се среда, за да се гарантира максимална защита на енергийната инфраструктура;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Съвременните предизвикателства пред управлението на риска на регионално ниво;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Казуси от практиката и форми на сътрудничество &ndash; какво е необходимо да се промени и как;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Ролята на общите европейски решения и отговорността на националните правителства.</span></span></li></ul><div style=text-align:justify><span style=font-size:15px><span style=color:#000>Програмата на конференцията ще се фокусира върху политически, стратегически и оперативни въпроси и е насочена към всички заинтересовани страни &ndash; правителствени институции на национално, регионално и европейско ниво, частен сектор, гражданското общество и международни организации и донори, оператори на енергийна инфраструктура</span></span></div><div style=text-align:justify;line-height:normal>&nbsp;</div><span style=font-size:15px><div style=text-align:justify;line-height:normal><b><br></b></div><hr><div style=text-align:justify;line-height:normal><span style=color:#036><span style=font-size:15px><b>ИНДИКАТИВЕН ДНЕВЕН РЕД:</b></span></span></div></span><span style=color:#036><span style=font-size:15px></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=line-height:114%>Двудневната конференция ще бъде организирана в три панела.</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br></span><span style=line-height:114%>ДЕН 1 &ndash; 15.09.2015 (предвидено начало &ndash; 13.00)</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Официално откриване</span></b><span style=line-height:114%>/<b>Политически панел</b> &ndash; включва изявления на официални лица &ndash; правителствени и международни институции. (<i>Гласът на политиците</i>)</span></span></span></div><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Стратегически панел</span></b><span style=line-height:114%>: конкретни европейски и национални политики и стратегии; прилагане на Директива 2008/114/ЕС в светлината на съвременните рискове и заплахи пред сигурността на енергийната инфраструктура. (<i>Гласът на експертите</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>ДЕН 2 &ndash; 16.09.2015</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%>Бизнес панел:</span></b><span style=line-height:114%>Практически казуси, технологични решения, &nbsp;тесните места в комуникацията между политическите решения и &nbsp;конкретните проблеми на операторите на енергийната инфраструктура (<i>Гласът на бизнеса</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>Заключителна част</span></b><span style=line-height:114%>&ndash; обобщение. <i>Предвиден край на конференцията &ndash; 13.00</i></span></div></span></span><span style=font-size:15px><div style=text-align:justify>&nbsp;</div></span><hr><div style=text-align:justify><br><span style=font-size:15px><span style=line-height:114%>За допълнителна информация: &nbsp;</span></span><span style=font-size:15px><a href=mailto:Diyana.Stoyanova@emi-bg.com><span style=line-height:114%>Diyana.Stoyanova@emi-bg.com</span></a><span style=line-height:114%>&nbsp;или</span></span></div><span style=font-size:15px><div><a href=mailto:Ina.Kirilova@mfa.bg><span style=line-height:114%>Ina.Kirilova@mfa.bg</span></a><span style=line-height:114%>&nbsp;</span></div><br></span><span style=font-size:15px><br></span><br>",
       "en": "<h1 align=center style=text-align:center><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:18px><span lang=EN-US>Conference</span> &bdquo;<span lang=EN-US>Energy Security</span><span lang=EN-US></span><span lang=EN-US>and Energy Infrastructure<br>in South East Europe</span>&ldquo;</span></h1><p class=MsoNormal><span style=font-size:15px><br></span><span style=color:#036><span style=font-size:18px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Organizers</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Diplomatic Institute to the Minister of Foreign Affairs and Energy Management Institute</span></span></p><p class=MsoNormal><span style=font-size:15px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br></span></span><span style=font-size:18px><span style=color:#036><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Indicative date</span></span><span class=SubtitleChar><span style=line-height:114%;font-family:&quot>:</span></span></span></span> 15-16 September 2015</span></p><p class=MsoNormal><span style=color:#036><span style=font-size:17px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br>Venue</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Sofia</span></span></p><p class=MsoSubtitle><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:17px><span style=color:#036><span lang=EN-US>Participants</span>:</span></span></p><p class=MsoNormal><span style=font-size:15px><span lang=EN-US>Government representatives of Bulgaria and the region, European Commission, Energy Community, EBRD, World Bank, Eurelectric, Eurogas</span>,<span lang=EN-US>business representatives etc.</span></span></p><p style=text-align:justify class=MsoSubtitle>&nbsp;</p><span style=font-size:15px><p class=MsoSubtitle style=text-align:justify><span lang=EN-US><br></span><span style=color:#036><span style=font-size:17px><span lang=EN-US>Concept</span>:</span></span> <span lang=EN-US style=line-height:114%;color:windowtext>The incorruption of the energy infrastructure and its reliable exploitation are crucial for the welfare of citizens and for the economy. Permanently changing threats &ndash; natural and human related &ndash; require the necessity of continuous review, assessment and modernization of policies and practices for energy infrastructure protection.<br><br></span></p><p style=text-align:justify class=MsoNormal><span class=hps><span lang=EN>Actions in this</span></span><span lang=EN><span class=hps>regard</span> at <span class=hps>EU, regional, international and national</span> <span class=hps>level need</span> <span class=hps>to be critically reviewed</span> <span class=hps>in order to improve</span> <span class=hps>the approach</span> <span class=hps>and to ensure an adequate response</span> <span class=hps>to</span> <span class=hps>new challenges. T</span></span><span lang=EN-US>the vulnerability of the European infrastructure of natural, as well as deliberate and undeliberate human threats is getting stronger. Therefore, the need for establishment and function of suitable structure and mechanisms, which regulate and manage the risks for key infrastructure &ndash; regardless whether it is managed by privately or state owned companies - is still tangible.&nbsp;</span></p><p>&nbsp;</p></span><p style=line-height:normal;text-align:justify class=MsoNormal><span style=font-size:15px><span lang=EN-US><br>In this respect the Conference Energy Security and Energy Infrastructure in SEE will open the debate on the following topics</span>:</span></p><ul><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Which are the existing and the future threats and how can the changing environment be successfully managed to guarantee maximal protection over the energy infrastructure</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The current threats and challenges of the risk managements at regional level</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Case studies and modes of cooperation &ndash; what changes are needed and how to be achieved</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The role of common European decisions and the responsibility of national governments</span></span></li></ul><p style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>The conference program focuses on the political, strategic and operational issues and addresses to all stakeholders &ndash; government authorities at national, regional and European level, private sector, civil society and international organizations and donors, operators of energy infrastructure.<br></span></span></span></p><span style=font-size:13px><p style=text-align:justify><span style=font-family:Verdana><span lang=EN-US><br></span></span></p></span><hr><p class=MsoSubtitle style=text-align:justify><span style=color:#036><span style=font-size:13px><strong>Provisional Agenda:</strong><br><br>The two- day conference will be organized in three panels.<br><br><u>DAY 1. 15.09.2015</u><br>(opening - 13.00h)<br><br><strong><span style=color:#036>Official opening/Political panel:</span></strong> Official statements from governmental and international authorities. (The Voice of Politicians)<br><br><strong>Strategic panel:</strong>Concrete European and national policies and strategies; implementation of Directive 2008/114/ЕС in the light of the current risk and threats of energy security. (The Voice of Experts)<br><br><u>DAY 2. 16.09.2015</u><br><strong><br>Business panel:</strong> Case studies, technological solutions, bottlenecks in the communication between political decisions and concrete problems of the operators of energy infrastructure. (The Voice of Business)<br><br><strong>Closing panel:</strong> General conclusion. Conference closure &ndash; 13.00h<br>&nbsp;</span></span></p><hr><p class=MsoNormal style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US><br></span></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>For further information, please contact</span></span></span><span style=font-size:15px><span style=font-family:Verdana><a href=mailto:Diyana.Stoyanova@emi-bg.com><span lang=EN-GB>Diyana.Stoyanova@emi-bg.com</span></a></span></span><span style=font-family:Verdana><span style=font-size:15px><span lang=EN-GB>&nbsp; or Ina.Kirilova@mfa.bg<br><br></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>&nbsp;</span></span></span></p><div style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana></span></span></div>"
@@ -1099,7 +1244,10 @@ var events = [
        "bg": "2 регистрация",
        "en": "2 free registration"
      },
-     "tumb": "images/thumbs/thumb2.jpg",
+     "image": {
+        url: "images/thumbs/thumb2.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "html": {
       "bg": "<div style=text-align:justify><b><font size=6><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></b></div><h1 style=text-align:center><span style=font-size:18px><b><b><span style=color:#000>Конференция &bdquo;Енергийна сигурност и енергийна&nbsp;</span></b></b><b><b><span style=color:#000>инфраструктура в Югоизточна Европа&ldquo;</span></b></b></span></h1><div style=text-align:justify>&nbsp;</div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Организатори:<br></span></span><span style=line-height:114%;color:#000>Дипломатически институт при Министъра на външните работи и Институт за енергиен мениджмънт<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Дати:</span></span><span style=line-height:114%;color:#000>15-16 септември 2015 г.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br></span><span style=color:#036><span style=line-height:114%>Място:</span></span><span style=line-height:114%;color:#000>София, хотел Балкан Шератон<br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000><br></span><span style=color:#036>Участници:</span><span style=line-height:114%>Правителствени представители от България и региона на ЮИЕ, Европейска комисия, Енергийна общност, ЕБВР, Световна банка, Евроелектрик, Еврогаз, представители на бизнеса и бизнес партньори и др.</span></span></div><div style=text-align:justify><span style=font-size:15px>&nbsp;</span></div><div style=text-align:justify>&nbsp;</div><span style=font-size:15px><div style=text-align:justify><span style=color:#036>Концепция:</span></div></span><div style=text-align:justify;line-height:normal><span style=font-size:15px><span style=color:#000>Целостта на енергийните инфраструктури и надеждната им експлоатация са от жизнено важно значение за благоденствието на гражданите и функционирането на икономиката. Постоянно променящите се заплахи &ndash; природни или свързани с човешка дейност&nbsp;- определят необходимостта от непрекъснат преглед, оценка и осъвременяване на политиките и практиките за защита на енергийната инфраструктура.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br>Действията в тази връзка на европейско, регионално, международно и национално ниво имат нужда от критичен преглед с цел усъвършенстване на подхода и гарантиране на адекватна реакция спрямо новите предизвикателства. Уязвимостта на енергийната инфраструктура както от природни, така и от умишлени и неумишлени човешки заплахи е все по-силна. Поради това нуждата от създаване и функциониране на подходящи структури и механизми, които да регулират и управляват рисковете за ключови инфраструктури &ndash; независимо дали се управляват от държавни&nbsp;или частни дружества - е все така осезаема.<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000>На тази база конференцията &bdquo;Енергийна сигурност и енергийна инфраструктура в Югоизточна Европа&ldqldquo;&nbsp;ще отвори дебата върху следните въпроси:<br></span></span></div><span style=font-size:15px><br></span><ul><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Какви са потенциалните и съществуващите посегателства и как най-успешно може да се управлява променящата се среда, за да се гарантира максимална защита на енергийната инфраструктура;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Съвременните предизвикателства пред управлението на риска на регионално ниво;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Казуси от практиката и форми на сътрудничество &ndash; какво е необходимо да се промени и как;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Ролята на общите европейски решения и отговорността на националните правителства.</span></span></li></ul><div style=text-align:justify><span style=font-size:15px><span style=color:#000>Програмата на конференцията ще се фокусира върху политически, стратегически и оперативни въпроси и е насочена към всички заинтересовани страни &ndash; правителствени институции на национално, регионално и европейско ниво, частен сектор, гражданското общество и международни организации и донори, оператори на енергийна инфраструктура</span></span></div><div style=text-align:justify;line-height:normal>&nbsp;</div><span style=font-size:15px><div style=text-align:justify;line-height:normal><b><br></b></div><hr><div style=text-align:justify;line-height:normal><span style=color:#036><span style=font-size:15px><b>ИНДИКАТИВЕН ДНЕВЕН РЕД:</b></span></span></div></span><span style=color:#036><span style=font-size:15px></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=line-height:114%>Двудневната конференция ще бъде организирана в три панела.</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br></span><span style=line-height:114%>ДЕН 1 &ndash; 15.09.2015 (предвидено начало &ndash; 13.00)</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Официално откриване</span></b><span style=line-height:114%>/<b>Политически панел</b> &ndash; включва изявления на официални лица &ndash; правителствени и международни институции. (<i>Гласът на политиците</i>)</span></span></span></div><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Стратегически панел</span></b><span style=line-height:114%>: конкретни европейски и национални политики и стратегии; прилагане на Директива 2008/114/ЕС в светлината на съвременните рискове и заплахи пред сигурността на енергийната инфраструктура. (<i>Гласът на експертите</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>ДЕН 2 &ndash; 16.09.2015</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%>Бизнес панел:</span></b><span style=line-height:114%>Практически казуси, технологични решения, &nbsp;тесните места в комуникацията между политическите решения и &nbsp;конкретните проблеми на операторите на енергийната инфраструктура (<i>Гласът на бизнеса</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>Заключителна част</span></b><span style=line-height:114%>&ndash; обобщение. <i>Предвиден край на конференцията &ndash; 13.00</i></span></div></span></span><span style=font-size:15px><div style=text-align:justify>&nbsp;</div></span><hr><div style=text-align:justify><br><span style=font-size:15px><span style=line-height:114%>За допълнителна информация: &nbsp;</span></span><span style=font-size:15px><a href=mailto:Diyana.Stoyanova@emi-bg.com><span style=line-height:114%>Diyana.Stoyanova@emi-bg.com</span></a><span style=line-height:114%>&nbsp;или</span></span></div><span style=font-size:15px><div><a href=mailto:Ina.Kirilova@mfa.bg><span style=line-height:114%>Ina.Kirilova@mfa.bg</span></a><span style=line-height:114%>&nbsp;</span></div><br></span><span style=font-size:15px><br></span><br>",
       "en": "<h1 align=center style=text-align:center><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:18px><span lang=EN-US>Conference</span> &bdquo;<span lang=EN-US>Energy Security</span><span lang=EN-US></span><span lang=EN-US>and Energy Infrastructure<br>in South East Europe</span>&ldquo;</span></h1><p class=MsoNormal><span style=font-size:15px><br></span><span style=color:#036><span style=font-size:18px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Organizers</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Diplomatic Institute to the Minister of Foreign Affairs and Energy Management Institute</span></span></p><p class=MsoNormal><span style=font-size:15px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br></span></span><span style=font-size:18px><span style=color:#036><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Indicative date</span></span><span class=SubtitleChar><span style=line-height:114%;font-family:&quot>:</span></span></span></span> 15-16 September 2015</span></p><p class=MsoNormal><span style=color:#036><span style=font-size:17px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br>Venue</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Sofia</span></span></p><p class=MsoSubtitle><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:17px><span style=color:#036><span lang=EN-US>Participants</span>:</span></span></p><p class=MsoNormal><span style=font-size:15px><span lang=EN-US>Government representatives of Bulgaria and the region, European Commission, Energy Community, EBRD, World Bank, Eurelectric, Eurogas</span>,<span lang=EN-US>business representatives etc.</span></span></p><p style=text-align:justify class=MsoSubtitle>&nbsp;</p><span style=font-size:15px><p class=MsoSubtitle style=text-align:justify><span lang=EN-US><br></span><span style=color:#036><span style=font-size:17px><span lang=EN-US>Concept</span>:</span></span> <span lang=EN-US style=line-height:114%;color:windowtext>The incorruption of the energy infrastructure and its reliable exploitation are crucial for the welfare of citizens and for the economy. Permanently changing threats &ndash; natural and human related &ndash; require the necessity of continuous review, assessment and modernization of policies and practices for energy infrastructure protection.<br><br></span></p><p style=text-align:justify class=MsoNormal><span class=hps><span lang=EN>Actions in this</span></span><span lang=EN><span class=hps>regard</span> at <span class=hps>EU, regional, international and national</span> <span class=hps>level need</span> <span class=hps>to be critically reviewed</span> <span class=hps>in order to improve</span> <span class=hps>the approach</span> <span class=hps>and to ensure an adequate response</span> <span class=hps>to</span> <span class=hps>new challenges. T</span></span><span lang=EN-US>the vulnerability of the European infrastructure of natural, as well as deliberate and undeliberate human threats is getting stronger. Therefore, the need for establishment and function of suitable structure and mechanisms, which regulate and manage the risks for key infrastructure &ndash; regardless whether it is managed by privately or state owned companies - is still tangible.&nbsp;</span></p><p>&nbsp;</p></span><p style=line-height:normal;text-align:justify class=MsoNormal><span style=font-size:15px><span lang=EN-US><br>In this respect the Conference Energy Security and Energy Infrastructure in SEE will open the debate on the following topics</span>:</span></p><ul><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Which are the existing and the future threats and how can the changing environment be successfully managed to guarantee maximal protection over the energy infrastructure</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The current threats and challenges of the risk managements at regional level</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Case studies and modes of cooperation &ndash; what changes are needed and how to be achieved</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The role of common European decisions and the responsibility of national governments</span></span></li></ul><p style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>The conference program focuses on the political, strategic and operational issues and addresses to all stakeholders &ndash; government authorities at national, regional and European level, private sector, civil society and international organizations and donors, operators of energy infrastructure.<br></span></span></span></p><span style=font-size:13px><p style=text-align:justify><span style=font-family:Verdana><span lang=EN-US><br></span></span></p></span><hr><p class=MsoSubtitle style=text-align:justify><span style=color:#036><span style=font-size:13px><strong>Provisional Agenda:</strong><br><br>The two- day conference will be organized in three panels.<br><br><u>DAY 1. 15.09.2015</u><br>(opening - 13.00h)<br><br><strong><span style=color:#036>Official opening/Political panel:</span></strong> Official statements from governmental and international authorities. (The Voice of Politicians)<br><br><strong>Strategic panel:</strong>Concrete European and national policies and strategies; implementation of Directive 2008/114/ЕС in the light of the current risk and threats of energy security. (The Voice of Experts)<br><br><u>DAY 2. 16.09.2015</u><br><strong><br>Business panel:</strong> Case studies, technological solutions, bottlenecks in the communication between political decisions and concrete problems of the operators of energy infrastructure. (The Voice of Business)<br><br><strong>Closing panel:</strong> General conclusion. Conference closure &ndash; 13.00h<br>&nbsp;</span></span></p><hr><p class=MsoNormal style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US><br></span></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>For further information, please contact</span></span></span><span style=font-size:15px><span style=font-family:Verdana><a href=mailto:Diyana.Stoyanova@emi-bg.com><span lang=EN-GB>Diyana.Stoyanova@emi-bg.com</span></a></span></span><span style=font-family:Verdana><span style=font-size:15px><span lang=EN-GB>&nbsp; or Ina.Kirilova@mfa.bg<br><br></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>&nbsp;</span></span></span></p><div style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana></span></span></div>"
@@ -1130,7 +1278,10 @@ var events = [
        "bg": "3 регистрация",
        "en": "3 free registration"
      },
-     "tumb": "images/thumbs/thumb3.jpg",
+     "image": {
+        url: "images/thumbs/thumb3.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "html": {
       "bg": "<div style=text-align:justify><b><font size=6><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></b></div><h1 style=text-align:center><span style=font-size:18px><b><b><span style=color:#000>Конференция &bdquo;Енергийна сигурност и енергийна&nbsp;</span></b></b><b><b><span style=color:#000>инфраструктура в Югоизточна Европа&ldquo;</span></b></b></span></h1><div style=text-align:justify>&nbsp;</div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Организатори:<br></span></span><span style=line-height:114%;color:#000>Дипломатически институт при Министъра на външните работи и Институт за енергиен мениджмънт<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Дати:</span></span><span style=line-height:114%;color:#000>15-16 септември 2015 г.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br></span><span style=color:#036><span style=line-height:114%>Място:</span></span><span style=line-height:114%;color:#000>София, хотел Балкан Шератон<br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000><br></span><span style=color:#036>Участници:</span><span style=line-height:114%>Правителствени представители от България и региона на ЮИЕ, Европейска комисия, Енергийна общност, ЕБВР, Световна банка, Евроелектрик, Еврогаз, представители на бизнеса и бизнес партньори и др.</span></span></div><div style=text-align:justify><span style=font-size:15px>&nbsp;</span></div><div style=text-align:justify>&nbsp;</div><span style=font-size:15px><div style=text-align:justify><span style=color:#036>Концепция:</span></div></span><div style=text-align:justify;line-height:normal><span style=font-size:15px><span style=color:#000>Целостта на енергийните инфраструктури и надеждната им експлоатация са от жизнено важно значение за благоденствието на гражданите и функционирането на икономиката. Постоянно променящите се заплахи &ndash; природни или свързани с човешка дейност&nbsp;- определят необходимостта от непрекъснат преглед, оценка и осъвременяване на политиките и практиките за защита на енергийната инфраструктура.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br>Действията в тази връзка на европейско, регионално, международно и национално ниво имат нужда от критичен преглед с цел усъвършенстване на подхода и гарантиране на адекватна реакция спрямо новите предизвикателства. Уязвимостта на енергийната инфраструктура както от природни, така и от умишлени и неумишлени човешки заплахи е все по-силна. Поради това нуждата от създаване и функциониране на подходящи структури и механизми, които да регулират и управляват рисковете за ключови инфраструктури &ndash; независимо дали се управляват от държавни&nbsp;или частни дружества - е все така осезаема.<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000>На тази база конференцията &bdquo;Енергийна сигурност и енергийна инфраструктура в Югоизточна Европа&ldqldquo;&nbsp;ще отвори дебата върху следните въпроси:<br></span></span></div><span style=font-size:15px><br></span><ul><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Какви са потенциалните и съществуващите посегателства и как най-успешно може да се управлява променящата се среда, за да се гарантира максимална защита на енергийната инфраструктура;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Съвременните предизвикателства пред управлението на риска на регионално ниво;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Казуси от практиката и форми на сътрудничество &ndash; какво е необходимо да се промени и как;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Ролята на общите европейски решения и отговорността на националните правителства.</span></span></li></ul><div style=text-align:justify><span style=font-size:15px><span style=color:#000>Програмата на конференцията ще се фокусира върху политически, стратегически и оперативни въпроси и е насочена към всички заинтересовани страни &ndash; правителствени институции на национално, регионално и европейско ниво, частен сектор, гражданското общество и международни организации и донори, оператори на енергийна инфраструктура</span></span></div><div style=text-align:justify;line-height:normal>&nbsp;</div><span style=font-size:15px><div style=text-align:justify;line-height:normal><b><br></b></div><hr><div style=text-align:justify;line-height:normal><span style=color:#036><span style=font-size:15px><b>ИНДИКАТИВЕН ДНЕВЕН РЕД:</b></span></span></div></span><span style=color:#036><span style=font-size:15px></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=line-height:114%>Двудневната конференция ще бъде организирана в три панела.</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br></span><span style=line-height:114%>ДЕН 1 &ndash; 15.09.2015 (предвидено начало &ndash; 13.00)</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Официално откриване</span></b><span style=line-height:114%>/<b>Политически панел</b> &ndash; включва изявления на официални лица &ndash; правителствени и международни институции. (<i>Гласът на политиците</i>)</span></span></span></div><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Стратегически панел</span></b><span style=line-height:114%>: конкретни европейски и национални политики и стратегии; прилагане на Директива 2008/114/ЕС в светлината на съвременните рискове и заплахи пред сигурността на енергийната инфраструктура. (<i>Гласът на експертите</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>ДЕН 2 &ndash; 16.09.2015</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%>Бизнес панел:</span></b><span style=line-height:114%>Практически казуси, технологични решения, &nbsp;тесните места в комуникацията между политическите решения и &nbsp;конкретните проблеми на операторите на енергийната инфраструктура (<i>Гласът на бизнеса</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>Заключителна част</span></b><span style=line-height:114%>&ndash; обобщение. <i>Предвиден край на конференцията &ndash; 13.00</i></span></div></span></span><span style=font-size:15px><div style=text-align:justify>&nbsp;</div></span><hr><div style=text-align:justify><br><span style=font-size:15px><span style=line-height:114%>За допълнителна информация: &nbsp;</span></span><span style=font-size:15px><a href=mailto:Diyana.Stoyanova@emi-bg.com><span style=line-height:114%>Diyana.Stoyanova@emi-bg.com</span></a><span style=line-height:114%>&nbsp;или</span></span></div><span style=font-size:15px><div><a href=mailto:Ina.Kirilova@mfa.bg><span style=line-height:114%>Ina.Kirilova@mfa.bg</span></a><span style=line-height:114%>&nbsp;</span></div><br></span><span style=font-size:15px><br></span><br>",
       "en": "<h1 align=center style=text-align:center><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:18px><span lang=EN-US>Conference</span> &bdquo;<span lang=EN-US>Energy Security</span><span lang=EN-US></span><span lang=EN-US>and Energy Infrastructure<br>in South East Europe</span>&ldquo;</span></h1><p class=MsoNormal><span style=font-size:15px><br></span><span style=color:#036><span style=font-size:18px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Organizers</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Diplomatic Institute to the Minister of Foreign Affairs and Energy Management Institute</span></span></p><p class=MsoNormal><span style=font-size:15px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br></span></span><span style=font-size:18px><span style=color:#036><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Indicative date</span></span><span class=SubtitleChar><span style=line-height:114%;font-family:&quot>:</span></span></span></span> 15-16 September 2015</span></p><p class=MsoNormal><span style=color:#036><span style=font-size:17px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br>Venue</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Sofia</span></span></p><p class=MsoSubtitle><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:17px><span style=color:#036><span lang=EN-US>Participants</span>:</span></span></p><p class=MsoNormal><span style=font-size:15px><span lang=EN-US>Government representatives of Bulgaria and the region, European Commission, Energy Community, EBRD, World Bank, Eurelectric, Eurogas</span>,<span lang=EN-US>business representatives etc.</span></span></p><p style=text-align:justify class=MsoSubtitle>&nbsp;</p><span style=font-size:15px><p class=MsoSubtitle style=text-align:justify><span lang=EN-US><br></span><span style=color:#036><span style=font-size:17px><span lang=EN-US>Concept</span>:</span></span> <span lang=EN-US style=line-height:114%;color:windowtext>The incorruption of the energy infrastructure and its reliable exploitation are crucial for the welfare of citizens and for the economy. Permanently changing threats &ndash; natural and human related &ndash; require the necessity of continuous review, assessment and modernization of policies and practices for energy infrastructure protection.<br><br></span></p><p style=text-align:justify class=MsoNormal><span class=hps><span lang=EN>Actions in this</span></span><span lang=EN><span class=hps>regard</span> at <span class=hps>EU, regional, international and national</span> <span class=hps>level need</span> <span class=hps>to be critically reviewed</span> <span class=hps>in order to improve</span> <span class=hps>the approach</span> <span class=hps>and to ensure an adequate response</span> <span class=hps>to</span> <span class=hps>new challenges. T</span></span><span lang=EN-US>the vulnerability of the European infrastructure of natural, as well as deliberate and undeliberate human threats is getting stronger. Therefore, the need for establishment and function of suitable structure and mechanisms, which regulate and manage the risks for key infrastructure &ndash; regardless whether it is managed by privately or state owned companies - is still tangible.&nbsp;</span></p><p>&nbsp;</p></span><p style=line-height:normal;text-align:justify class=MsoNormal><span style=font-size:15px><span lang=EN-US><br>In this respect the Conference Energy Security and Energy Infrastructure in SEE will open the debate on the following topics</span>:</span></p><ul><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Which are the existing and the future threats and how can the changing environment be successfully managed to guarantee maximal protection over the energy infrastructure</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The current threats and challenges of the risk managements at regional level</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Case studies and modes of cooperation &ndash; what changes are needed and how to be achieved</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The role of common European decisions and the responsibility of national governments</span></span></li></ul><p style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>The conference program focuses on the political, strategic and operational issues and addresses to all stakeholders &ndash; government authorities at national, regional and European level, private sector, civil society and international organizations and donors, operators of energy infrastructure.<br></span></span></span></p><span style=font-size:13px><p style=text-align:justify><span style=font-family:Verdana><span lang=EN-US><br></span></span></p></span><hr><p class=MsoSubtitle style=text-align:justify><span style=color:#036><span style=font-size:13px><strong>Provisional Agenda:</strong><br><br>The two- day conference will be organized in three panels.<br><br><u>DAY 1. 15.09.2015</u><br>(opening - 13.00h)<br><br><strong><span style=color:#036>Official opening/Political panel:</span></strong> Official statements from governmental and international authorities. (The Voice of Politicians)<br><br><strong>Strategic panel:</strong>Concrete European and national policies and strategies; implementation of Directive 2008/114/ЕС in the light of the current risk and threats of energy security. (The Voice of Experts)<br><br><u>DAY 2. 16.09.2015</u><br><strong><br>Business panel:</strong> Case studies, technological solutions, bottlenecks in the communication between political decisions and concrete problems of the operators of energy infrastructure. (The Voice of Business)<br><br><strong>Closing panel:</strong> General conclusion. Conference closure &ndash; 13.00h<br>&nbsp;</span></span></p><hr><p class=MsoNormal style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US><br></span></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>For further information, please contact</span></span></span><span style=font-size:15px><span style=font-family:Verdana><a href=mailto:Diyana.Stoyanova@emi-bg.com><span lang=EN-GB>Diyana.Stoyanova@emi-bg.com</span></a></span></span><span style=font-family:Verdana><span style=font-size:15px><span lang=EN-GB>&nbsp; or Ina.Kirilova@mfa.bg<br><br></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>&nbsp;</span></span></span></p><div style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana></span></span></div>"
@@ -1161,7 +1312,10 @@ var events = [
        "bg": "4 регистрация",
        "en": "4 free registration"
      },
-     "tumb": "images/thumbs/thumb4.jpg",
+     "image": {
+        url: "images/thumbs/thumb4.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "html": {
       "bg": "<div style=text-align:justify><b><font size=6><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></b></div><h1 style=text-align:center><span style=font-size:18px><b><b><span style=color:#000>Конференция &bdquo;Енергийна сигурност и енергийна&nbsp;</span></b></b><b><b><span style=color:#000>инфраструктура в Югоизточна Европа&ldquo;</span></b></b></span></h1><div style=text-align:justify>&nbsp;</div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Организатори:<br></span></span><span style=line-height:114%;color:#000>Дипломатически институт при Министъра на външните работи и Институт за енергиен мениджмънт<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Дати:</span></span><span style=line-height:114%;color:#000>15-16 септември 2015 г.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br></span><span style=color:#036><span style=line-height:114%>Място:</span></span><span style=line-height:114%;color:#000>София, хотел Балкан Шератон<br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000><br></span><span style=color:#036>Участници:</span><span style=line-height:114%>Правителствени представители от България и региона на ЮИЕ, Европейска комисия, Енергийна общност, ЕБВР, Световна банка, Евроелектрик, Еврогаз, представители на бизнеса и бизнес партньори и др.</span></span></div><div style=text-align:justify><span style=font-size:15px>&nbsp;</span></div><div style=text-align:justify>&nbsp;</div><span style=font-size:15px><div style=text-align:justify><span style=color:#036>Концепция:</span></div></span><div style=text-align:justify;line-height:normal><span style=font-size:15px><span style=color:#000>Целостта на енергийните инфраструктури и надеждната им експлоатация са от жизнено важно значение за благоденствието на гражданите и функционирането на икономиката. Постоянно променящите се заплахи &ndash; природни или свързани с човешка дейност&nbsp;- определят необходимостта от непрекъснат преглед, оценка и осъвременяване на политиките и практиките за защита на енергийната инфраструктура.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br>Действията в тази връзка на европейско, регионално, международно и национално ниво имат нужда от критичен преглед с цел усъвършенстване на подхода и гарантиране на адекватна реакция спрямо новите предизвикателства. Уязвимостта на енергийната инфраструктура както от природни, така и от умишлени и неумишлени човешки заплахи е все по-силна. Поради това нуждата от създаване и функциониране на подходящи структури и механизми, които да регулират и управляват рисковете за ключови инфраструктури &ndash; независимо дали се управляват от държавни&nbsp;или частни дружества - е все така осезаема.<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000>На тази база конференцията &bdquo;Енергийна сигурност и енергийна инфраструктура в Югоизточна Европа&ldqldquo;&nbsp;ще отвори дебата върху следните въпроси:<br></span></span></div><span style=font-size:15px><br></span><ul><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Какви са потенциалните и съществуващите посегателства и как най-успешно може да се управлява променящата се среда, за да се гарантира максимална защита на енергийната инфраструктура;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Съвременните предизвикателства пред управлението на риска на регионално ниво;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Казуси от практиката и форми на сътрудничество &ndash; какво е необходимо да се промени и как;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Ролята на общите европейски решения и отговорността на националните правителства.</span></span></li></ul><div style=text-align:justify><span style=font-size:15px><span style=color:#000>Програмата на конференцията ще се фокусира върху политически, стратегически и оперативни въпроси и е насочена към всички заинтересовани страни &ndash; правителствени институции на национално, регионално и европейско ниво, частен сектор, гражданското общество и международни организации и донори, оператори на енергийна инфраструктура</span></span></div><div style=text-align:justify;line-height:normal>&nbsp;</div><span style=font-size:15px><div style=text-align:justify;line-height:normal><b><br></b></div><hr><div style=text-align:justify;line-height:normal><span style=color:#036><span style=font-size:15px><b>ИНДИКАТИВЕН ДНЕВЕН РЕД:</b></span></span></div></span><span style=color:#036><span style=font-size:15px></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=line-height:114%>Двудневната конференция ще бъде организирана в три панела.</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br></span><span style=line-height:114%>ДЕН 1 &ndash; 15.09.2015 (предвидено начало &ndash; 13.00)</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Официално откриване</span></b><span style=line-height:114%>/<b>Политически панел</b> &ndash; включва изявления на официални лица &ndash; правителствени и международни институции. (<i>Гласът на политиците</i>)</span></span></span></div><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Стратегически панел</span></b><span style=line-height:114%>: конкретни европейски и национални политики и стратегии; прилагане на Директива 2008/114/ЕС в светлината на съвременните рискове и заплахи пред сигурността на енергийната инфраструктура. (<i>Гласът на експертите</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>ДЕН 2 &ndash; 16.09.2015</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%>Бизнес панел:</span></b><span style=line-height:114%>Практически казуси, технологични решения, &nbsp;тесните места в комуникацията между политическите решения и &nbsp;конкретните проблеми на операторите на енергийната инфраструктура (<i>Гласът на бизнеса</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>Заключителна част</span></b><span style=line-height:114%>&ndash; обобщение. <i>Предвиден край на конференцията &ndash; 13.00</i></span></div></span></span><span style=font-size:15px><div style=text-align:justify>&nbsp;</div></span><hr><div style=text-align:justify><br><span style=font-size:15px><span style=line-height:114%>За допълнителна информация: &nbsp;</span></span><span style=font-size:15px><a href=mailto:Diyana.Stoyanova@emi-bg.com><span style=line-height:114%>Diyana.Stoyanova@emi-bg.com</span></a><span style=line-height:114%>&nbsp;или</span></span></div><span style=font-size:15px><div><a href=mailto:Ina.Kirilova@mfa.bg><span style=line-height:114%>Ina.Kirilova@mfa.bg</span></a><span style=line-height:114%>&nbsp;</span></div><br></span><span style=font-size:15px><br></span><br>",
       "en": "<h1 align=center style=text-align:center><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:18px><span lang=EN-US>Conference</span> &bdquo;<span lang=EN-US>Energy Security</span><span lang=EN-US></span><span lang=EN-US>and Energy Infrastructure<br>in South East Europe</span>&ldquo;</span></h1><p class=MsoNormal><span style=font-size:15px><br></span><span style=color:#036><span style=font-size:18px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Organizers</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Diplomatic Institute to the Minister of Foreign Affairs and Energy Management Institute</span></span></p><p class=MsoNormal><span style=font-size:15px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br></span></span><span style=font-size:18px><span style=color:#036><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Indicative date</span></span><span class=SubtitleChar><span style=line-height:114%;font-family:&quot>:</span></span></span></span> 15-16 September 2015</span></p><p class=MsoNormal><span style=color:#036><span style=font-size:17px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br>Venue</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Sofia</span></span></p><p class=MsoSubtitle><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:17px><span style=color:#036><span lang=EN-US>Participants</span>:</span></span></p><p class=MsoNormal><span style=font-size:15px><span lang=EN-US>Government representatives of Bulgaria and the region, European Commission, Energy Community, EBRD, World Bank, Eurelectric, Eurogas</span>,<span lang=EN-US>business representatives etc.</span></span></p><p style=text-align:justify class=MsoSubtitle>&nbsp;</p><span style=font-size:15px><p class=MsoSubtitle style=text-align:justify><span lang=EN-US><br></span><span style=color:#036><span style=font-size:17px><span lang=EN-US>Concept</span>:</span></span> <span lang=EN-US style=line-height:114%;color:windowtext>The incorruption of the energy infrastructure and its reliable exploitation are crucial for the welfare of citizens and for the economy. Permanently changing threats &ndash; natural and human related &ndash; require the necessity of continuous review, assessment and modernization of policies and practices for energy infrastructure protection.<br><br></span></p><p style=text-align:justify class=MsoNormal><span class=hps><span lang=EN>Actions in this</span></span><span lang=EN><span class=hps>regard</span> at <span class=hps>EU, regional, international and national</span> <span class=hps>level need</span> <span class=hps>to be critically reviewed</span> <span class=hps>in order to improve</span> <span class=hps>the approach</span> <span class=hps>and to ensure an adequate response</span> <span class=hps>to</span> <span class=hps>new challenges. T</span></span><span lang=EN-US>the vulnerability of the European infrastructure of natural, as well as deliberate and undeliberate human threats is getting stronger. Therefore, the need for establishment and function of suitable structure and mechanisms, which regulate and manage the risks for key infrastructure &ndash; regardless whether it is managed by privately or state owned companies - is still tangible.&nbsp;</span></p><p>&nbsp;</p></span><p style=line-height:normal;text-align:justify class=MsoNormal><span style=font-size:15px><span lang=EN-US><br>In this respect the Conference Energy Security and Energy Infrastructure in SEE will open the debate on the following topics</span>:</span></p><ul><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Which are the existing and the future threats and how can the changing environment be successfully managed to guarantee maximal protection over the energy infrastructure</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The current threats and challenges of the risk managements at regional level</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Case studies and modes of cooperation &ndash; what changes are needed and how to be achieved</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The role of common European decisions and the responsibility of national governments</span></span></li></ul><p style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>The conference program focuses on the political, strategic and operational issues and addresses to all stakeholders &ndash; government authorities at national, regional and European level, private sector, civil society and international organizations and donors, operators of energy infrastructure.<br></span></span></span></p><span style=font-size:13px><p style=text-align:justify><span style=font-family:Verdana><span lang=EN-US><br></span></span></p></span><hr><p class=MsoSubtitle style=text-align:justify><span style=color:#036><span style=font-size:13px><strong>Provisional Agenda:</strong><br><br>The two- day conference will be organized in three panels.<br><br><u>DAY 1. 15.09.2015</u><br>(opening - 13.00h)<br><br><strong><span style=color:#036>Official opening/Political panel:</span></strong> Official statements from governmental and international authorities. (The Voice of Politicians)<br><br><strong>Strategic panel:</strong>Concrete European and national policies and strategies; implementation of Directive 2008/114/ЕС in the light of the current risk and threats of energy security. (The Voice of Experts)<br><br><u>DAY 2. 16.09.2015</u><br><strong><br>Business panel:</strong> Case studies, technological solutions, bottlenecks in the communication between political decisions and concrete problems of the operators of energy infrastructure. (The Voice of Business)<br><br><strong>Closing panel:</strong> General conclusion. Conference closure &ndash; 13.00h<br>&nbsp;</span></span></p><hr><p class=MsoNormal style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US><br></span></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>For further information, please contact</span></span></span><span style=font-size:15px><span style=font-family:Verdana><a href=mailto:Diyana.Stoyanova@emi-bg.com><span lang=EN-GB>Diyana.Stoyanova@emi-bg.com</span></a></span></span><span style=font-family:Verdana><span style=font-size:15px><span lang=EN-GB>&nbsp; or Ina.Kirilova@mfa.bg<br><br></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>&nbsp;</span></span></span></p><div style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana></span></span></div>"
@@ -1192,16 +1346,16 @@ var events = [
        "bg": "5 регистрация",
        "en": "5 free registration"
      },
-     "tumb": "images/thumbs/thumb5.jpg",
+     "image": {
+        url: "images/thumbs/thumb5.jpg",
+        config: { fill: true, horizontalAlign: "center", verticalAlign: "center"}
+     },
      "html": {
       "bg": "<div style=text-align:justify><b><font size=6><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></b></div><h1 style=text-align:center><span style=font-size:18px><b><b><span style=color:#000>Конференция &bdquo;Енергийна сигурност и енергийна&nbsp;</span></b></b><b><b><span style=color:#000>инфраструктура в Югоизточна Европа&ldquo;</span></b></b></span></h1><div style=text-align:justify>&nbsp;</div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Организатори:<br></span></span><span style=line-height:114%;color:#000>Дипломатически институт при Министъра на външните работи и Институт за енергиен мениджмънт<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#036><span style=line-height:114%>Дати:</span></span><span style=line-height:114%;color:#000>15-16 септември 2015 г.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br></span><span style=color:#036><span style=line-height:114%>Място:</span></span><span style=line-height:114%;color:#000>София, хотел Балкан Шератон<br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000><br></span><span style=color:#036>Участници:</span><span style=line-height:114%>Правителствени представители от България и региона на ЮИЕ, Европейска комисия, Енергийна общност, ЕБВР, Световна банка, Евроелектрик, Еврогаз, представители на бизнеса и бизнес партньори и др.</span></span></div><div style=text-align:justify><span style=font-size:15px>&nbsp;</span></div><div style=text-align:justify>&nbsp;</div><span style=font-size:15px><div style=text-align:justify><span style=color:#036>Концепция:</span></div></span><div style=text-align:justify;line-height:normal><span style=font-size:15px><span style=color:#000>Целостта на енергийните инфраструктури и надеждната им експлоатация са от жизнено важно значение за благоденствието на гражданите и функционирането на икономиката. Постоянно променящите се заплахи &ndash; природни или свързани с човешка дейност&nbsp;- определят необходимостта от непрекъснат преглед, оценка и осъвременяване на политиките и практиките за защита на енергийната инфраструктура.</span></span></div><div style=text-align:justify><span style=font-size:15px><span style=line-height:114%><br>Действията в тази връзка на европейско, регионално, международно и национално ниво имат нужда от критичен преглед с цел усъвършенстване на подхода и гарантиране на адекватна реакция спрямо новите предизвикателства. Уязвимостта на енергийната инфраструктура както от природни, така и от умишлени и неумишлени човешки заплахи е все по-силна. Поради това нуждата от създаване и функциониране на подходящи структури и механизми, които да регулират и управляват рисковете за ключови инфраструктури &ndash; независимо дали се управляват от държавни&nbsp;или частни дружества - е все така осезаема.<br><br></span></span></div><div style=text-align:justify><span style=font-size:15px><span style=color:#000>На тази база конференцията &bdquo;Енергийна сигурност и енергийна инфраструктура в Югоизточна Европа&ldqldquo;&nbsp;ще отвори дебата върху следните въпроси:<br></span></span></div><span style=font-size:15px><br></span><ul><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Какви са потенциалните и съществуващите посегателства и как най-успешно може да се управлява променящата се среда, за да се гарантира максимална защита на енергийната инфраструктура;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Съвременните предизвикателства пред управлението на риска на регионално ниво;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Казуси от практиката и форми на сътрудничество &ndash; какво е необходимо да се промени и как;</span><br></span></li><li style=text-align:justify><span style=font-size:15px><span style=color:#000>Ролята на общите европейски решения и отговорността на националните правителства.</span></span></li></ul><div style=text-align:justify><span style=font-size:15px><span style=color:#000>Програмата на конференцията ще се фокусира върху политически, стратегически и оперативни въпроси и е насочена към всички заинтересовани страни &ndash; правителствени институции на национално, регионално и европейско ниво, частен сектор, гражданското общество и международни организации и донори, оператори на енергийна инфраструктура</span></span></div><div style=text-align:justify;line-height:normal>&nbsp;</div><span style=font-size:15px><div style=text-align:justify;line-height:normal><b><br></b></div><hr><div style=text-align:justify;line-height:normal><span style=color:#036><span style=font-size:15px><b>ИНДИКАТИВЕН ДНЕВЕН РЕД:</b></span></span></div></span><span style=color:#036><span style=font-size:15px></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=line-height:114%>Двудневната конференция ще бъде организирана в три панела.</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br></span><span style=line-height:114%>ДЕН 1 &ndash; 15.09.2015 (предвидено начало &ndash; 13.00)</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Официално откриване</span></b><span style=line-height:114%>/<b>Политически панел</b> &ndash; включва изявления на официални лица &ndash; правителствени и международни институции. (<i>Гласът на политиците</i>)</span></span></span></div><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%><br>Стратегически панел</span></b><span style=line-height:114%>: конкретни европейски и национални политики и стратегии; прилагане на Директива 2008/114/ЕС в светлината на съвременните рискове и заплахи пред сигурността на енергийната инфраструктура. (<i>Гласът на експертите</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>ДЕН 2 &ndash; 16.09.2015</span></b></div></span></span><div style=text-align:justify><span style=color:#036><span style=font-size:15px><b><span style=line-height:114%>Бизнес панел:</span></b><span style=line-height:114%>Практически казуси, технологични решения, &nbsp;тесните места в комуникацията между политическите решения и &nbsp;конкретните проблеми на операторите на енергийната инфраструктура (<i>Гласът на бизнеса</i>)</span></span></span></div><div style=text-align:justify>&nbsp;</div><span style=color:#036><span style=font-size:15px><div style=text-align:justify><b><span style=line-height:114%><br>Заключителна част</span></b><span style=line-height:114%>&ndash; обобщение. <i>Предвиден край на конференцията &ndash; 13.00</i></span></div></span></span><span style=font-size:15px><div style=text-align:justify>&nbsp;</div></span><hr><div style=text-align:justify><br><span style=font-size:15px><span style=line-height:114%>За допълнителна информация: &nbsp;</span></span><span style=font-size:15px><a href=mailto:Diyana.Stoyanova@emi-bg.com><span style=line-height:114%>Diyana.Stoyanova@emi-bg.com</span></a><span style=line-height:114%>&nbsp;или</span></span></div><span style=font-size:15px><div><a href=mailto:Ina.Kirilova@mfa.bg><span style=line-height:114%>Ina.Kirilova@mfa.bg</span></a><span style=line-height:114%>&nbsp;</span></div><br></span><span style=font-size:15px><br></span><br>",
       "en": "<h1 align=center style=text-align:center><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:18px><span lang=EN-US>Conference</span> &bdquo;<span lang=EN-US>Energy Security</span><span lang=EN-US></span><span lang=EN-US>and Energy Infrastructure<br>in South East Europe</span>&ldquo;</span></h1><p class=MsoNormal><span style=font-size:15px><br></span><span style=color:#036><span style=font-size:18px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Organizers</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Diplomatic Institute to the Minister of Foreign Affairs and Energy Management Institute</span></span></p><p class=MsoNormal><span style=font-size:15px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br></span></span><span style=font-size:18px><span style=color:#036><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot>Indicative date</span></span><span class=SubtitleChar><span style=line-height:114%;font-family:&quot>:</span></span></span></span> 15-16 September 2015</span></p><p class=MsoNormal><span style=color:#036><span style=font-size:17px><span class=SubtitleChar><span lang=EN-US style=line-height:114%;font-family:&quot><br>Venue</span><span style=line-height:114%;font-family:&quot>:</span></span></span></span><span style=font-size:15px><span lang=EN-US>Sofia</span></span></p><p class=MsoSubtitle><span style=font-size:15px><span lang=EN-US><br></span></span><span style=font-size:17px><span style=color:#036><span lang=EN-US>Participants</span>:</span></span></p><p class=MsoNormal><span style=font-size:15px><span lang=EN-US>Government representatives of Bulgaria and the region, European Commission, Energy Community, EBRD, World Bank, Eurelectric, Eurogas</span>,<span lang=EN-US>business representatives etc.</span></span></p><p style=text-align:justify class=MsoSubtitle>&nbsp;</p><span style=font-size:15px><p class=MsoSubtitle style=text-align:justify><span lang=EN-US><br></span><span style=color:#036><span style=font-size:17px><span lang=EN-US>Concept</span>:</span></span> <span lang=EN-US style=line-height:114%;color:windowtext>The incorruption of the energy infrastructure and its reliable exploitation are crucial for the welfare of citizens and for the economy. Permanently changing threats &ndash; natural and human related &ndash; require the necessity of continuous review, assessment and modernization of policies and practices for energy infrastructure protection.<br><br></span></p><p style=text-align:justify class=MsoNormal><span class=hps><span lang=EN>Actions in this</span></span><span lang=EN><span class=hps>regard</span> at <span class=hps>EU, regional, international and national</span> <span class=hps>level need</span> <span class=hps>to be critically reviewed</span> <span class=hps>in order to improve</span> <span class=hps>the approach</span> <span class=hps>and to ensure an adequate response</span> <span class=hps>to</span> <span class=hps>new challenges. T</span></span><span lang=EN-US>the vulnerability of the European infrastructure of natural, as well as deliberate and undeliberate human threats is getting stronger. Therefore, the need for establishment and function of suitable structure and mechanisms, which regulate and manage the risks for key infrastructure &ndash; regardless whether it is managed by privately or state owned companies - is still tangible.&nbsp;</span></p><p>&nbsp;</p></span><p style=line-height:normal;text-align:justify class=MsoNormal><span style=font-size:15px><span lang=EN-US><br>In this respect the Conference Energy Security and Energy Infrastructure in SEE will open the debate on the following topics</span>:</span></p><ul><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Which are the existing and the future threats and how can the changing environment be successfully managed to guarantee maximal protection over the energy infrastructure</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The current threats and challenges of the risk managements at regional level</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>Case studies and modes of cooperation &ndash; what changes are needed and how to be achieved</span></span></li><li style=text-align:justify><span style=font-size:15px><span lang=EN-US style=color:windowtext>The role of common European decisions and the responsibility of national governments</span></span></li></ul><p style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>The conference program focuses on the political, strategic and operational issues and addresses to all stakeholders &ndash; government authorities at national, regional and European level, private sector, civil society and international organizations and donors, operators of energy infrastructure.<br></span></span></span></p><span style=font-size:13px><p style=text-align:justify><span style=font-family:Verdana><span lang=EN-US><br></span></span></p></span><hr><p class=MsoSubtitle style=text-align:justify><span style=color:#036><span style=font-size:13px><strong>Provisional Agenda:</strong><br><br>The two- day conference will be organized in three panels.<br><br><u>DAY 1. 15.09.2015</u><br>(opening - 13.00h)<br><br><strong><span style=color:#036>Official opening/Political panel:</span></strong> Official statements from governmental and international authorities. (The Voice of Politicians)<br><br><strong>Strategic panel:</strong>Concrete European and national policies and strategies; implementation of Directive 2008/114/ЕС in the light of the current risk and threats of energy security. (The Voice of Experts)<br><br><u>DAY 2. 16.09.2015</u><br><strong><br>Business panel:</strong> Case studies, technological solutions, bottlenecks in the communication between political decisions and concrete problems of the operators of energy infrastructure. (The Voice of Business)<br><br><strong>Closing panel:</strong> General conclusion. Conference closure &ndash; 13.00h<br>&nbsp;</span></span></p><hr><p class=MsoNormal style=text-align:justify><span style=color:#036><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US><br></span></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>For further information, please contact</span></span></span><span style=font-size:15px><span style=font-family:Verdana><a href=mailto:Diyana.Stoyanova@emi-bg.com><span lang=EN-GB>Diyana.Stoyanova@emi-bg.com</span></a></span></span><span style=font-family:Verdana><span style=font-size:15px><span lang=EN-GB>&nbsp; or Ina.Kirilova@mfa.bg<br><br></span></span></span></p><p class=MsoNormal style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana><span lang=EN-US>&nbsp;</span></span></span></p><div style=text-align:justify><span style=font-size:15px><span style=font-family:Verdana></span></span></div>"
      },
      "tags": ["energy", "security", "EU"]
    }
-
-
-
 
    ]
 

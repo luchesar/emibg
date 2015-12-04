@@ -17,6 +17,7 @@ require('angular-bootstrap-npm');
 require('angular-translate');
 require('angular-chart.js');
 require('angular-ui-calendar');
+require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
