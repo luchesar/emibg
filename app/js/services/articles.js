@@ -8,7 +8,7 @@ var _ = require('lazy.js');
  * @ngInject
  */
 //function ArticleService($q, $http) {
-function ArticleService($stateParams) {
+function ArticleService($stateParams, Articles) {
 
   var service = {};
 
@@ -45,6 +45,16 @@ function ArticleService($stateParams) {
   service.filter = filter
 
   service.filterPaged = function(categories, page, itemsPerPage, itemsPerRow) {
+    var where = { category: {inq: categories}}
+    where["title." + $stateParams.lang] = {regexp: "[^$]"};
+    Articles.count({filter: {where: where}})
+      .$promise
+      .then( count => console.log(count))
+      .catch(err => console.log(err));
+    Articles.find({where: where, order: 'id DESC', limit: itemsPerPage, skip: page * itemsPerPage})
+      .$promise
+      .then( articles => console.log(articles))
+      .catch(err => console.log(err));
     return _(filter(categories).toArray())
       .slice((page - 1) * itemsPerPage, page * itemsPerPage)
       .chunk(itemsPerRow || 3).toArray();

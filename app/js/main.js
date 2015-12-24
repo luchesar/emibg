@@ -17,12 +17,14 @@ require('angular-bootstrap-npm');
 require('angular-translate');
 require('angular-chart.js');
 require('angular-ui-calendar');
+require('angular-resource');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
 require('./filters/_index');
+require('./lb-services.js');
 
 // create and bootstrap application
 angular.element(document).ready(function() {
@@ -39,7 +41,9 @@ angular.element(document).ready(function() {
     'ui.bootstrap',
     'pascalprecht.translate',
     'chart.js',
-    'ui.calendar'
+    'ui.calendar',
+    'ngResource',
+    'lbServices'
   ];
 
   // mount on window for testing
