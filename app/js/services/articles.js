@@ -42,18 +42,24 @@ function ArticleService($stateParams, Articles) {
       });
   };
 
+  var whereClause = function(categories) {
+    var where = { category: {inq: categories}}
+    where["title." + $stateParams.lang] = {regexp: "[^$]"};
+    return where;
+  }
+
   service.filter = filter
 
   service.filterPaged = function(categories, page, itemsPerPage, itemsPerRow) {
-    var where = { category: {inq: categories}}
-    where["title." + $stateParams.lang] = {regexp: "[^$]"};
-    Articles.count({filter: {where: where}})
-      .$promise
-      .then( count => console.log(count))
-      .catch(err => console.log(err));
-    Articles.find({where: where, order: 'id DESC', limit: itemsPerPage, skip: page * itemsPerPage})
-      .$promise
-      .then( articles => console.log(articles))
+    Articles.find({
+      filter: {
+        where: whereClause(categories),
+        order: 'id DESC',
+        limit: itemsPerPage,
+        skip: (page -1) * itemsPerPage
+      }
+    }).$promise
+      .then( articles => _(articles).chunk(itemsPerRow || 3).toArray())
       .catch(err => console.log(err));
     return _(filter(categories).toArray())
       .slice((page - 1) * itemsPerPage, page * itemsPerPage)
@@ -61,7 +67,7 @@ function ArticleService($stateParams, Articles) {
   }
 
   service.filterSize = function(categories) {
-    return filter(categories).size();
+    return Articles.count({filter: {where: whereClause(categories)}}).$promise;
   }
 
   service.filterChunked = function(categories, itemsPerRow) {
