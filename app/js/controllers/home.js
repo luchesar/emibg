@@ -8,8 +8,8 @@ var data = require('../data.js');
 * @ngInject
 */
 function HomeCtrl($scope, ArticleService, EventService) {
-  var news = ArticleService.filter(['news']).take(6);
-  var analysis = ArticleService.filter(['analysis']).take(5);
+  var news = ArticleService.filter(['news'], 6);
+  var analysis = ArticleService.filter(['analysis'], 5);
   var events = EventService.filter().take(5);
 
   $scope.slideItems = data.homeItemsSlider.map(function(slide){
