@@ -20,16 +20,18 @@ function CalendarCtrl($scope,
         EventService, uiCalendarConfig) {
 
     /* event source that contains custom events on the scope */
-    $scope.events = EventService.filter().map(function(event){
-      console.log("Adding event:" + event);
-      return {
-        id: event.id,
-        title: $filter('lang')(event.title),
-        start: moment(event.start).toDate(),
-        end: moment(event.end).toDate()
-      };
-    }).toArray();
-
+    $scope.events = EventService.filter(10000)
+    .then(function(items) {
+        $scope.events = items.map(function(event){
+          console.log("Adding event:" + event);
+          return {
+            id: event.id,
+            title: $filter('lang')(event.title),
+            start: moment(event.start).toDate(),
+            end: moment(event.end).toDate()
+          };
+        });
+    });
     /* alert on eventClick */
     $scope.eventClick = function( event, jsEvent, view){
         $state.go("app.menu.events.event", {page: 1, id: event.id})

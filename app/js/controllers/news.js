@@ -17,7 +17,7 @@ function NewsCtrl($scope, $stateParams, $state, ArticleService, PagingService) {
       $scope.itemsPerPage,
       2
     ).then(items => $scope.news = items);
- })
+ });
 }
 
 controllersModule.controller('NewsCtrl', NewsCtrl);

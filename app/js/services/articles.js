@@ -17,9 +17,6 @@ function ArticleService($stateParams, $q, $http, Articles) {
   }
 
   service.filterPaged = function(categories, page, itemsPerPage, itemsPerRow) {
-    /*return $http.get('/api/articles/count?filter={"where":{"category":{"inq":["news"]},"title.bg":{"regexp":"[^$]"}}}')
-    .then(response => response.data)
-    .then(articles => _(articles).chunk(itemsPerRow || 3).toArray());*/
     return Articles.find({
       filter: {
         where: whereClause(categories),
