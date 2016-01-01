@@ -38,7 +38,8 @@ function EventService($stateParams, $q, $http, Events) {
   }
 
   service.filterSize = function() {
-    return Events.count({filter: {where: whereClause()}}).$promise;
+    var query = "/api/events/count?where[title." + $stateParams.lang + "][regexp]=[^$]"
+    return $http.get(query).then(response => response.data);
   }
 
   service.event = function(id) {

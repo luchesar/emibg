@@ -38,16 +38,14 @@ function ArticleService($stateParams, $q, $http, Articles) {
   }
 
   service.filterSize = function(categories) {
-    return Articles
-      .count({and: [
-        {"title.bg":{regexp: "[^$]"}},
-        {category: {inq: categories}}
-      ]})
-      .$promise;
+    var query = "/api/articles/count?where[title." + $stateParams.lang + "][regexp]=[^$]"
+    for (var i = 0; i < categories.length; i++) {
+      query = query + "&where[category][inq][" + i + "]=" + categories[i];
+    }
+    return $http.get(query).then(response => response.data);
   }
 
   service.article = function(id) {
-    var defered = $q.defer();
     return $http.get("/api/articles/" + id).then(response => response.data);
   };
 
