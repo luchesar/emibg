@@ -7,14 +7,17 @@ var _ = require('lazy.js');
 * @ngInject
 */
 function SummariesAnalysisCtrl($scope, $stateParams, $state, ArticleService, PagingService) {
-  $scope.itemsCount = ArticleService.filterSize(['analysis', 'summaries']);
-  PagingService.init($scope, $stateParams, $state);
-  $scope.summariesAnalysis = ArticleService.filterPaged(
-    ['analysis', 'summaries'],
-    $scope.page,
-    $scope.itemsPerPage,
-    2
-  );
+  ArticleService.filterSize(['summaries'])
+  .then(function(count) {
+    $scope.itemsCount = count.count;
+    PagingService.init($scope, $stateParams, $state);
+    ArticleService.filterPaged(
+      ['summaries'],
+      $scope.page,
+      $scope.itemsPerPage,
+      2
+    ).then(items => $scope.summariesAnalysis = items);
+  });
 }
 
 controllersModule.controller('SummariesAnalysisCtrl', SummariesAnalysisCtrl);

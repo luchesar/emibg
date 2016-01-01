@@ -39,7 +39,10 @@ function ArticleService($stateParams, $q, $http, Articles) {
 
   service.filterSize = function(categories) {
     return Articles
-      .count({filter: {where: whereClause(categories)}})
+      .count({and: [
+        {"title.bg":{regexp: "[^$]"}},
+        {category: {inq: categories}}
+      ]})
       .$promise;
   }
 
