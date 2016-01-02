@@ -27,14 +27,14 @@ function HomeCtrl($scope, $q, HomeItemsSlider, ArticleService, EventService) {
       if (slide.type === "article") {
         return ArticleService.article(slide.itemId)
           .then(function(article) {
-            article.sref = ".article({ id:" + slide.itemId + " })";
+            article.sref = ".article({ id:'" + slide.itemId + "' })";
             article.type = slide.type;
             return article;
           });
       } else if (slide.type === "event") {
         return EventService.event(slide.itemId)
           .then(function(event) {
-            event.sref = ".event({ id:" + slide.itemId + " })";
+            event.sref = ".event({ id:'" + slide.itemId + "' })";
             event.type = slide.type;
             return event;
           });
