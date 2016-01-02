@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function HomeCtrl($scope, HomeItemsSlider, ArticleService, EventService) {
+function HomeCtrl($scope, $q, HomeItemsSlider, ArticleService, EventService) {
   ArticleService.filter(['news'], 6).then(function(news) {
     $scope.mainNews = _(news).take(1).toArray();
     $scope.news = _(news).drop(1).toArray();
@@ -23,18 +23,25 @@ function HomeCtrl($scope, HomeItemsSlider, ArticleService, EventService) {
   });// TODO show the error
 
   HomeItemsSlider.find().$promise.then(function(slides) {
-    $scope.slideItems = slides.map(function(slide){
-          var item = null;
-          if (slide.type === "article") {
-                  item = ArticleService.article(slide.id);
-                  item.sref = ".article({ id:" + slide.id + " })";
-          } else if (slide.type === "event") {
-                  item = EventService.event(slide.id);
-                  item.sref = ".event({ id:" + slide.id + " })";
-          }
-          item.type = slide.type;
-          return item;
+    var promises = slides.map(function(slide) {
+      if (slide.type === "article") {
+        return ArticleService.article(slide.itemId)
+          .then(function(article) {
+            article.sref = ".article({ id:" + slide.itemId + " })";
+            article.type = slide.type;
+            return article;
+          });
+      } else if (slide.type === "event") {
+        return EventService.event(slide.itemId)
+          .then(function(event) {
+            event.sref = ".event({ id:" + slide.itemId + " })";
+            event.type = slide.type;
+            return event;
+          });
+      }
     });
+    $q.all(promises)
+    .then(slideItems => $scope.slideItems = slideItems);
   });
 }
 
