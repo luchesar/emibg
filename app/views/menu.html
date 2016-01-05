@@ -2,7 +2,7 @@
 <!-- Menu -->
     <nav class="navbar navbar-inverse" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="container-fluid">
+      <div class="container-fluid, header-nav">
       <div class="navbar-header">
 
         <a ng-href="#" class="navbar-toggle" ui-sref="app.search.result({q:'',page:1})">
@@ -14,29 +14,35 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" ui-sref="app.menu.home">
+        <!--<a class="navbar-brand" href="#" ui-sref="app.menu.home">
             <i class="icon-home"></i>
-        </a>
+        </a>-->
       </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" >
         <ul class="nav navbar-nav">
           <li ui-sref-active="active">
+            <a href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
+                <i class="icon-home"></i>
+                {{'' | translate }} <!--doesnt seem to work when there is not text-->
+            </a>
+          </li>
+          <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.news({page: 1})" ng-click="navCollapsed=true">
-                <i class="icon-doc"></i>
+                <i class="icon-graduation-cap"></i>
                 {{'NEWS' | translate }}
             </a>
           </li>
           <li class="dropdown" ui-sref-active="active" dropdown>
               <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>
-                <i class="icon-doc"></i>
+                <i class="icon-graduation-cap"></i>
                 {{'ANALYSIS' | translate }} <b class="caret"></b>
               </a>
               <ul class="dropdown-menu inverse-dropdown">
                 <li ui-sref-active="active">
                   <a href="#"ui-sref="app.menu.analysis.emis({page: 1})" ng-click="navCollapsed=true">
-                    <i class="icon-doc"></i>
+                    <i class="icon-emo-sunglasses"></i>
                     {{'EMIS_ANALYSIS' | translate }}
                   </a>
                 </li>
@@ -56,7 +62,7 @@
           </li>
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">
-                <i class="icon-doc"></i>
+                <i class="icon-heart"></i>
                 {{'ENERGOPEDIA' | translate }}
             </a>
           </li>

@@ -11,11 +11,11 @@
             </button>
             <a class="navbar-brand" href="#" ng-click="goBack()">
                 <i class="icon-left-big"></i>
-               Назад
+               {{'BACK' | translate }}
             </a>
               <form class="navbar-form navbar-left" ng-submit="search()">
-                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="Search" ng-change="search()" ng-model="searchTerm">
-                  <input type="button" value="Търси" ng-click="search()">
+                  <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm">
+                  <input type="button" class="btn btn-warning" value="{{'SEARCH' | translate }}" ng-click="search()">
               </form>
           </div>
        </div>

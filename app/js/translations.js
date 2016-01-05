@@ -33,7 +33,9 @@ function Translations($translateProvider) {
       STREET: 'Lege Str. 5',
       FLOOR: '1th Floor',
       PAGE: 'Page',
-      OF: 'of'
+      OF: 'of',
+      SEARCH: 'Search',
+      BACK: 'Back'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -62,7 +64,9 @@ function Translations($translateProvider) {
       STREET: 'ул. Леге 5',
       FLOOR: '1ви етаж',
       PAGE: 'Страница',
-      OF: 'от'
+      OF: 'от',
+      SEARCH: 'Търси',
+      BACK: 'Назад'
     });
   $translateProvider.preferredLanguage('bg');
 }

@@ -1,24 +1,13 @@
 @import 'vars';
 @import 'typography';
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+@import 'global-styles';
 
 body {
   font-family: Helvetica, sans-serif;
   color: $font-color--dark;
   background-color: $background--light;
   padding: $half-space;
-}
-
-.inverse-dropdown{
-  background-color: #222;
-  border-color: #080808;
-  &>li>a{
-    color: #999;
-    &:hover{
-      color: #fff;
-      background-color: #000;
-    }
-  }
 }
 
 .carousel-control.left, .carousel-control.right {
