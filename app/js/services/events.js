@@ -1,41 +1,49 @@
 'use strict';
 
 var servicesModule = require('./_index.js');
-var data = require('../data.js');
 var _ = require('lazy.js');
 
 /**
  * @ngInject
  */
 //function EventService($q, $http) {
-function EventService($stateParams) {
+function EventService($stateParams, $q, $http, Events) {
 
   var service = {};
 
-  var filter = function() {
-    return _(data.events)
-      .filter(function(event) {
-         if($stateParams.lang)
-           return event.title[$stateParams.lang];
-         else
-           return true;
-      });
-  };
-
-  service.filter = filter;
-
-  service.paged = function(page, itemsPerPage, itemsPerRow) {
-    return _(filter().toArray())
-      .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-      .chunk(itemsPerRow || 3).toArray();
+  var whereClause = function() {
+    var where = {}
+    where["title." + $stateParams.lang] = {regexp: "[^$]"};
+    return where;
+  }
+  
+  service.filterPaged = function(page, itemsPerPage, itemsPerRow) {
+    return Events.find({
+      filter: {
+        where: whereClause(),
+        order: 'id DESC',
+        limit: itemsPerPage,
+        skip: (page -1) * itemsPerPage
+      }
+    }).$promise
+      .then(items => 
+          _(items).chunk(itemsPerRow || 3).toArray()
+      );
   }
 
-  service.eventsSize = function() {
-    return filter().size();
+  service.filter = function(length) {
+    return Events.find({
+      filter: { where: whereClause(), limit: length }
+    }).$promise;
+  }
+
+  service.filterSize = function() {
+    var query = "/api/events/count?where[title." + $stateParams.lang + "][regexp]=[^$]"
+    return $http.get(query).then(response => response.data);
   }
 
   service.event = function(id) {
-    return _(data.events).findWhere({ id: id });
+    return $http.get("/api/events/" + id).then(response => response.data);
   };
 
   return service;

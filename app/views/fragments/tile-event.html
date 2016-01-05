@@ -1,6 +1,8 @@
 <md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref=".event({ id: event.id })">
   <md-card class="clickable" ui-sref=".event({ id: event.id })">
-    <img ng-src="{{event.tumb}}" class="md-card-image" alt="Washed Out">
+    <div liquid-cfg="event.image.config" style="width:100%; height:270px;">
+      <img ng-src="{{event.image.url}}" class="md-card-image" alt="Washed Out">
+    </div>
     <md-card-content class="text-snippet">
       <a href="">
         <h2 class="md-title">{{event.title | lang | limitTo:200}}</h2>

@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function ArticleService($stateParams, $q, $http, Articles) {
+function ArticleService($stateParams, Articles) {
 
   var service = {};
 
@@ -38,15 +38,13 @@ function ArticleService($stateParams, $q, $http, Articles) {
   }
 
   service.filterSize = function(categories) {
-    var query = "/api/articles/count?where[title." + $stateParams.lang + "][regexp]=[^$]"
-    for (var i = 0; i < categories.length; i++) {
-      query = query + "&where[category][inq][" + i + "]=" + categories[i];
-    }
-    return $http.get(query).then(response => response.data);
+    return Articles
+      .count({filter: {where: whereClause(categories)}})
+      .$promise;
   }
 
   service.article = function(id) {
-    return $http.get("/api/articles/" + id).then(response => response.data);
+    return Articles.find({filter: { where: {id: { eq: id}}}});
   };
 
   return service;
