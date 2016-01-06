@@ -13,4 +13,4 @@
 
 global.isProd = false;
 
-require('./gulp');
+require('./client/gulp');
