@@ -11,6 +11,8 @@ module.exports = {
       'node_modules/angular-material/angular-material.css',
       'node_modules/angular-chart.js/dist/angular-chart.css',
       'node_modules/fullcalendar/dist/fullcalendar.css',
+      'node_modules/bootstrap-social/bootstrap-social.css',
+      'node_modules/bootstrap-social/assets/css/font-awesome.css',
       'app/styles/fontello/**/*.css'
     ],
     'destCss': 'build/css/styles.css'
@@ -27,7 +29,11 @@ module.exports = {
   },
 
   'fonts': {
-    'src' : ['app/fonts/**/*', 'node_modules/bootstrap-sass/assets/fonts/**/*'],
+    'src' : [
+      'app/fonts/**/*', 
+      'node_modules/bootstrap-sass/assets/fonts/**/*',
+      'node_modules/bootstrap-social/assets/fonts/**/*'
+    ],
     'dest': 'build/fonts'
   },
 
