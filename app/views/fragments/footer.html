@@ -1,33 +1,58 @@
-<!-- Footer -->
-<footer class="footer">
-    <div class="container" style="margin:0 auto;">
-        <div class="row">
-            <div class="col-md-4 col-sd-4 ">
-                <h4>Company</h4>
+<footer class="footer">       
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-sm-12">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget">
+              <h2><a href="#" ui-sref="app.menu.home" onclick="scroll(0,0)">{{'HOME' | translate }}</h2>
                 <ul>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
+                    <li><a href="#" ui-sref="app.menu.news({page: 1})" onclick="scroll(0,0)">{{'NEWS' | translate }}</a></li>
+                    <li>{{'ANALYSIS' | translate }}</li>
+                        <ul>
+                             <li><a href="#" ui-sref="app.menu.analysis.emis({page: 1})" onclick="scroll(0,0)">&nbsp;&nbsp;&nbsp;{{'EMIS_ANALYSIS' | translate }}</a></li>
+                             <li><a href="#" ui-sref="app.menu.analysis.summaries({page: 1})" onclick="scroll(0,0)">&nbsp;&nbsp;&nbsp;{{'SUMMARIES' | translate }}</a></li>
+                        </ul>
+                    <li><a href="" ui-sref="app.menu.events({page: 1})" onclick="scroll(0,0)">{{'EVENTS' | translate }}</a></li>
+                    <li><a href="" ui-sref="app.menu.energopedia" onclick="scroll(0,0)">{{'ENERGOPEDIA' | translate }}</a></li>
+                    <li><a href="#" ui-sref="app.menu.partners" onclick="scroll(0,0)">{{'PARTNERS' | translate }}</a></li>
+                </ul>    
             </div>
-            <div class="col-md-4 col-sd-4 ">
-                <h4>Resource</h4>
-                <ul>
-                    <li><a href="">Get help</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Support</a></li>
-                </ul>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget">
+              <h2>{{'FOLLOW' | translate }}</h2> <!--open in blank window?-->
+              <ul>
+                    <li><a href="https://www.facebook.com/Energy-Management-Institute-113406378721586/" title="Facebook">Facebook</a></li>
+                    <li><a href="https://twitter.com/EMI_Bulgaria" title="Twitter">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/company/energy-management-institute-emi-?trk=pro_other_cmpy" title="LinkedIn">LinkedIn</a></li>
+                    <li><a href="https://www.xing.com/companies/energymanagementinstitute?current=1&literal=Energy+Management+Institute" title="Xing">Xing</a></li>
+                    <li><a href="" title="YouTube">YouTube</a></li>
+                    
+                    <li>
+                      <a class="btn btn-social-icon btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                      </a>
+                    </li>
+                </ul>              
             </div>
-            <div class="col-md-4 col-sd-4">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="" title="Facebook">Facebook</a></li>
-                    <li><a href="" title="Twitter">Twitter</a></li>
-                    <li><a href="" title="LinkedIn">LinkedIn</a></li>
-                    <li><a href="" title="Google+">Google+</a></li>
-                </ul>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget">
+              <h2>{{'CONTACT' | translate }}</h2>
+              <h5 style="font-weight: bold">{{'EMI' | translate }}</h5>
+              <p style="color:red"><span class="glyphicon glyphicon-envelope"> <!-- Can we add email? Which one? Info@emi.bg ? -->
+              </span>&nbsp;&nbsp;&nbsp; email ???
+              </p>
+              <p><span class="glyphicon glyphicon-earphone">
+                </span>&nbsp;&nbsp;&nbsp;{{'TEL' | translate }}
+              </p>
+              <address> 
+                <span class="glyphicon glyphicon-map-marker"></span>
+                &nbsp;{{'SOFIA_1000' | translate }}
+                {{'STREET' | translate }}
+                {{'FLOOR' | translate }}
+              </address> 
             </div>
+          </div>
         </div>
-    </div>
-</footer>
-<!-- End of footer -->
-
+      </div>           
+    </footer>

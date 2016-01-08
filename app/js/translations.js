@@ -32,10 +32,12 @@ function Translations($translateProvider) {
       SOFIA_1000: 'Sofia, 1000',
       STREET: 'Lege Str. 5',
       FLOOR: '1th Floor',
+      TEL: '+359 2 980 07 03',
       PAGE: 'Page',
       OF: 'of',
       SEARCH: 'Search',
-      BACK: 'Back'
+      BACK: 'Back',
+      FOLLOW: 'Follow us'
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -62,11 +64,13 @@ function Translations($translateProvider) {
       ADDRESS: 'Адрес:',
       SOFIA_1000: 'София, 1000',
       STREET: 'ул. Леге 5',
-      FLOOR: '1ви етаж',
+      FLOOR: '1-ви етаж',
+      TEL: '02 980 07 03',
       PAGE: 'Страница',
       OF: 'от',
       SEARCH: 'Търси',
-      BACK: 'Назад'
+      BACK: 'Назад',
+      FOLLOW: 'Последвайте ни'
     });
   $translateProvider.preferredLanguage('bg');
 }
