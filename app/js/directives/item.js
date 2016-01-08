@@ -13,10 +13,10 @@ function item($compile) {
         element.removeAttr('item');
         var articleTemplate = '<flat-article></flat-article>';
         var eventTemplate = '<flat-event></flat-event>';
-        if (scope.item.type === "article") {
+        if (scope.item.itemType === "article") {
             scope.article = scope.item;
             element.html(articleTemplate);
-        } else if (scope.item.type === "event") {
+        } else if (scope.item.itemType === "event") {
             scope.event = scope.item;
             element.html(eventTemplate);
         }
