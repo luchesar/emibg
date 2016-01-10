@@ -1,54 +1,56 @@
 <div>
-<!-- Menu -->
-    <nav class="navbar navbar-inverse" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
+    <nav class="navbar navbar-inverse " role="navigation">
       <div class="container-fluid, header-nav">
-      <div class="navbar-header">
-
-        <a ng-href="#" class="navbar-toggle" ui-sref="app.search.result({q:'',page:1})">
-          <i class="icon-search"></i>
-        </a>
-        <button type="button" class="navbar-toggle">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!--<a class="navbar-brand" href="#" ui-sref="app.menu.home">
-            <i class="icon-home"></i>
-        </a>-->
-      </div>
+        <div class="navbar-header">
+            <a ng-href="#" class="navbar-toggle" ui-sref="app.search.result({q:'',page:1})">
+              <i class="icon-search"></i>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="visible-xs invisible-sm">
+            <a class="navbar-brand" href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
+                    <img src="images/EMI_logo_nav_bar_white.png" alt="EMI" class="navbar-logo">
+            </a>
+            </div>
+                <!--<a class="navbar-brand" href="#" ui-sref="app.menu.home">
+                    <i class="icon-home"></i>
+                </a>-->
+        </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" >
+      <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'" >
         <ul class="nav navbar-nav">
-          <li ui-sref-active="active">
+          <li class="active" ui-sref-active="active">
             <a href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
-                <i class="icon-home"></i>
+                <i class="fa fa-home"></i>
                 {{'' | translate }} <!--doesnt seem to work when there is not text-->
             </a>
           </li>
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.news({page: 1})" ng-click="navCollapsed=true">
-                <i class="icon-graduation-cap"></i>
+                <i class="fa fa-file-text-o"></i>
                 {{'NEWS' | translate }}
             </a>
           </li>
           <li class="dropdown" ui-sref-active="active" dropdown>
               <a href="#" ui-sref="app.menu.analysis" dropdown-toggle>
-                <i class="icon-graduation-cap"></i>
+                <i class="fa fa-balance-scale"></i>
                 {{'ANALYSIS' | translate }} <b class="caret"></b>
               </a>
               <ul class="dropdown-menu inverse-dropdown">
                 <li ui-sref-active="active">
                   <a href="#"ui-sref="app.menu.analysis.emis({page: 1})" ng-click="navCollapsed=true">
-                    <i class="icon-emo-sunglasses"></i>
-                    {{'EMIS_ANALYSIS' | translate }}
+                    <i class="fa fa-book"></i> 
+                     {{'EMIS_ANALYSIS' | translate }}
                   </a>
                 </li>
                 <li ui-sref-active="active">
                   <a href="#"ui-sref="app.menu.analysis.summaries({page: 1})" ng-click="navCollapsed=true">
-                    <i class="icon-doc"></i>
+                    <i class="fa fa-area-chart"></i>
                     {{'SUMMARIES' | translate}}
                   </a>
                 </li>
@@ -56,19 +58,19 @@
           </li>
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="navCollapsed=true">
-                <i class="icon-doc"></i>
+                <i class="fa fa-calendar"></i>
                 {{'EVENTS' | translate }}
             </a>
           </li>
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.energopedia" ng-click="navCollapsed=true">
-                <i class="icon-heart"></i>
+                <i class="fa fa-bolt"></i>
                 {{'ENERGOPEDIA' | translate }}
             </a>
           </li>
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.menu.partners" ng-click="navCollapsed=true">
-                <i class="icon-slideshare"></i>
+                <i class="fa fa-users"></i>
                 {{'PARTNERS' | translate }}
             </a>
           </li>
@@ -88,25 +90,25 @@
           </li>
           <li ui-sref-active="active" dropdown>
             <a href="#" ui-sref="app.menu.about" dropdown-toggle>
-                <i class="icon-vcard, about-us"></i>
+                <i class="fa fa-info-circle"></i>
                 {{'ABOUT_US' | translate }} <b class="caret"></b>
             </a>
             <ul ui-sref-active="active" class="dropdown-menu inverse-dropdown">
               <li ui-sref-active="active">
                 <a href="#" ui-sref="app.menu.about.mission" ng-click="navCollapsed=true">
-                    <i class="icon-language"></i>
+                    <i class="fa fa-bullseye"></i>
                     {{'MISSION' | translate }}
                 </a>
               </li>
               <li ui-sref-active="active">
                 <a href="#" ui-sref="app.menu.about.team" ng-click="navCollapsed=true">
-                    <i class="icon-language"></i>
+                    <i class="fa fa-users"></i>
                     {{'TEAM' | translate }}
                 </a>
               </li>
               <li ui-sref-active="active">
                 <a href="#" ui-sref="app.menu.about.contact" ng-click="navCollapsed=true">
-                    <i class="icon-location"></i>
+                    <i class="fa fa-map-marker"></i>
                     {{'CONTACT' | translate }}
                 </a>
               </li>

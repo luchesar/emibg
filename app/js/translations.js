@@ -11,7 +11,7 @@ function Translations($translateProvider) {
       ABOUT_US: 'About us',
       MISSION: 'Mission',
       TEAM: 'Team',
-      CONTACT: 'Countact',
+      CONTACT: 'Contact',
       OTHER_LANG: 'Бг',
       NEWS: 'News',
       ANALYSIS: "Analysis",
