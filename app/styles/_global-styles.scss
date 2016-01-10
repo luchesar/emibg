@@ -46,6 +46,7 @@ img:hover{
 .navbar {
   border: medium none;
   border-radius: 0;
+  background-color: #252525;
 }
 .navbar-inverse .navbar-nav > li > a {
   border-left: 1px solid #383838;
@@ -63,6 +64,11 @@ img:hover{
   transition: all 0.5s;
 }
 
+.header-nav {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
   background-color: #E63900;
@@ -70,7 +76,7 @@ img:hover{
 
 .navbar-inverse .navbar-nav > .active > a.dropdown-toggle {
   background-color: #E63900;
-}    /* how to select the dropdown menu? */
+}  
 
 .navbar-inverse .navbar-nav > li > a:hover, 
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -79,11 +85,6 @@ img:hover{
 
 .navbar-collapse {
     padding-left: 0px;
-}
-
-.header-nav {
-    padding-left: 0px;
-    padding-right: 0px;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -113,6 +114,10 @@ img:hover{
       background-color: #FF7200;
     }
   }
+}
+
+.dropdown-menu{
+  border-radius: 1px;
 }
 
 .navbar-inverse .navbar-nav > .open > a, 
