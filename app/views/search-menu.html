@@ -10,12 +10,15 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#" ng-click="goBack()">
-                <i class="fa fa-long-arrow-left"></i>
+                <i class="fa fa-arrow-left"></i>
+                <span class="hidden-xs">
+                &nbsp;
                {{'BACK' | translate }}
+               </span>
             </a>
               <form class="navbar-form navbar-left" ng-submit="search()">
                   <!-- Add form control horisontal size <div class="col-xs-4"> -->
-                    <input id="searchField" type="text" class="form-control"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm">
+                    <input id="searchField" type="text" class="search-input"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm">
                   <input type="button" class="btn btn-warning" value="{{'SEARCH' | translate }}" ng-click="search()">
               </form>
           </div>
