@@ -3,11 +3,11 @@
   <carousel interval="myInterval">
     <slide ng-repeat="slide in slides">
       <div ng-repeat="chart in slide" >
-        <div> chart.id: {{chart.id}}</div>
+        <!-- <div> chart.id: {{chart.id}}</div> -->
         <div ui-sref="app.menu.chart({id:chart.id})">
           <chart-panel/>
           <br/>
-          <md-divider ng-if="!$last"></md-divider>
+          <span ng-if="!$last"></span>
         </div>
       </div>
     </slide>

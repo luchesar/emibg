@@ -306,7 +306,7 @@ p.ng-binding {
 }
 
 .panel-default > .panel-heading {
-  background-color: #FBEEE3;
+  background-color: #97BBCD;
 }
 
 //Thumbnails
@@ -325,7 +325,7 @@ p.ng-binding {
 .single_post_content h2 {
     background: #252525 none repeat scroll 0px 0px;
     color: #FFF;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 400;
     margin-left: 0px;
     margin-top: 5px;
@@ -339,6 +339,26 @@ p.ng-binding {
 .single_post_content h2 span {
     background: #E63900 none repeat scroll 0px 0px;
     padding: 6px 12px;
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+
+//Pagination
+
+.pagination > li > a{
+  color: inherit; 
+}
+
+.pagination > li > a:hover, 
+.pagination > li > a:focus, 
+.pagination > li > span:hover, 
+.pagination > li > span:focus {
+  color: white;
+  background-color: #FF7200;
 }
 
 
