@@ -271,9 +271,9 @@ h2 {
   width: 10px;
 }
 
- .search-input {
+.search-input {
       display: inline-block;
-      width: auto;
+      max-width: 60%;
       vertical-align: middle;
       height: 36px;
       padding: 6px 12px;
