@@ -1,12 +1,13 @@
-<md-whiteframe class="md-whiteframe-z4 clickable" layout layout-align="left center" ui-sref=".article({ id: article.id })">
-    <div class="row" style="margin: 5px;">
-        <div class="col-sm-4 col-md-4" style="padding-left:0">
-            <img ng-src="{{article.tumb}}" class="img-thumbnail"  ></img>
-        </div>
-        <div class="col-sm-8 col-md-8">
-            <a href="">
-                <b><h4>{{article.title | lang | limitTo:200}}</h4></b>
-            </a>
-        </div>
+<div class="flat-article-event">
+    <div class="media">
+      <a class="media-left" href="#" ui-sref=".article({ id: article.id })">
+        <img class="media-object" ng-src="{{article.tumb}}">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">{{article.title | lang | limitTo:200}}</h4>
+      </div>
     </div>
-</md-whiteframe>
+</div>
+
+
+

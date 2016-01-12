@@ -313,7 +313,13 @@ p.ng-binding {
 
 .thumbnail {
   height: 510px;
-  border-radius: 1px; 
+  border-radius: 1px;
+  border: none; 
+}
+
+.media-object {
+  width: 112px;
+  margin: 3px;
 }
 
 
