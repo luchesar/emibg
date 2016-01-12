@@ -15,21 +15,26 @@ var currentLang = function(stateParams, translate) {
 /**
 * @ngInject
 */
-function CalendarCtrl($scope,
+function CalendarCtrl($scope,$q,
         $compile, $state, $stateParams, $translate, $filter,
         EventService, uiCalendarConfig) {
 
-    /* event source that contains custom events on the scope */
-    $scope.events = EventService.filter().map(function(event){
-      console.log("Adding event:" + event);
-      return {
-        id: event.id,
-        title: $filter('lang')(event.title),
-        start: moment(event.start).toDate(),
-        end: moment(event.end).toDate()
-      };
-    }).toArray();
+    $scope.eventSources = [];
 
+    /* event source that contains custom events on the scope */
+    var eventsFilter = EventService.filter(10000);
+    eventsFilter.then(function(items) {
+      $scope.events = items.map(function(event){
+        return {
+          id: event.id,
+          title: $filter('lang')(event.title),
+          start: moment(event.start).toDate(),
+          end: moment(event.end).toDate()
+        };
+      });
+      /* event sources array*/
+      $scope.eventSources = [$scope.events];
+    });
     /* alert on eventClick */
     $scope.eventClick = function( event, jsEvent, view){
         $state.go("app.menu.events.event", {page: 1, id: event.id})
@@ -44,9 +49,9 @@ function CalendarCtrl($scope,
 
      /* Render Tooltip */
     $scope.eventRender = function( event, element, view ) { 
-        element.attr({'tooltip': event.title,
-                      'tooltip-append-to-body': true});
-        $compile(element)($scope);
+      element.attr({'tooltip': event.title,
+                    'tooltip-append-to-body': true});
+      $compile(element)($scope);
     };
 
     /* config object */
@@ -63,8 +68,6 @@ function CalendarCtrl($scope,
         eventRender: $scope.eventRender
     };
 
-    /* event sources array*/
-    $scope.eventSources = [$scope.events];
 }
 
 controllersModule.controller('CalendarCtrl', CalendarCtrl);

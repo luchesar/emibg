@@ -6,14 +6,17 @@ var controllersModule = require('./_index');
 * @ngInject
 */
 function EmisAnalysisCtrl($scope, $stateParams, $state, ArticleService, PagingService) {
-  $scope.itemsCount = ArticleService.filterSize(['analysis', 'emis']);
-  PagingService.init($scope, $stateParams, $state);
-  $scope.emisAnalysis = ArticleService.filterPaged(
-    ['analysis', 'emis'],
-    $scope.page,
-    $scope.itemsPerPage,
-    2
-  );
+  ArticleService.filterSize(['emis'])
+  .then(function(count) {
+    $scope.itemsCount = count.count;
+    PagingService.init($scope, $stateParams, $state);
+    ArticleService.filterPaged(
+      ['emis'],
+      $scope.page,
+      $scope.itemsPerPage,
+      2
+    ).then(items => $scope.emisAnalysis = items);
+  });
 }
 
 controllersModule.controller('EmisAnalysisCtrl', EmisAnalysisCtrl);

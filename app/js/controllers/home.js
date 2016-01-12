@@ -6,19 +6,20 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function HomeCtrl($scope, ArticleService, EventService) {
-  var news = ArticleService.filter(['news']).take(6);
-  var analysis = ArticleService.filter(['analysis']).take(5);
-  var events = EventService.filter().take(5);
+function HomeCtrl($scope, $http, $stateParams) {
+  $http.get("/api/home-pages/" + $stateParams.lang || "bg")
+  .then(function(response) {
+    $scope.mainNews = _(response.data.news).take(1).toArray();
+    $scope.news = _(response.data.news).drop(1).toArray();
 
-  $scope.mainNews = news.take(1).toArray();
-  $scope.news = news.drop(1).toArray();
+    $scope.mainAnalysis = _(response.data.analysis).take(1).toArray();
+    $scope.analysis = _(response.data.analysis).drop(1).toArray();
 
-  $scope.mainAnalysis = analysis.take(1).toArray();
-  $scope.analysis = analysis.drop(1).toArray();
+    $scope.mainEvent = _(response.data.events).take(1).toArray();
+    $scope.events = _(response.data.events).drop(1).toArray();
 
-  $scope.mainEvent = events.take(1).toArray();
-  $scope.events = events.drop(1).toArray();
+    $scope.slideItems = response.data.slides;
+  });
 }
 
 controllersModule.controller('HomeCtrl', HomeCtrl);

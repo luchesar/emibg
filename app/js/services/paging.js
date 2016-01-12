@@ -5,29 +5,28 @@ var servicesModule = require('./_index.js');
 function PagingService() {
   var service = {};
 
-  var pageNumber = function($scope, $stateParams) {
+  service.pageNumber = function($stateParams) {
     var p = $stateParams.page;
     p = p || 1;
-    if (p < 1) {
-      return 1;
-    } else if (p > $scope.pageCount) {
-      return $scope.pageCount;
-    } else {
-      return p;
-    }
+    if (p < 1) return 1;
+    else return p;
+  }
+
+  service.itemsPerPage = 26;
+
+  service.pageCount = function(itemsCount) {
+    return Math.ceil(itemsCount / service.itemsPerPage);
   }
 
   service.init = function($scope, $stateParams, $state, onPageChange) {
-    $scope.itemsPerPage = 4;
-    $scope.pageCount = Math.ceil($scope.itemsCount / $scope.itemsPerPage);
-    $scope.page = pageNumber($scope, $stateParams);
+    $scope.page = service.pageNumber($stateParams);
 
     $scope.$watch('page', onPageChange || function() {
       $state.go('.', {page: $scope.page});
     });
 
     $scope.hasNext = function() {
-      return $scope.page * $scope.itemsPerPage < $scope.itemsCount;
+      return $scope.page * service.itemsPerPage < $scope.itemsCount;
     }
 
     $scope.hasPrev = function() {
