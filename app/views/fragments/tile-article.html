@@ -1,15 +1,10 @@
-
-  <figure style="cursor:pointer;" ui-sref=".article({ id: article.id })">
-    <figcaption>
-       <img ng-src="{{article.tumb}}" width="100%">
-    </figcaption>
-    <p> 
-      <a href="">
-        <h2>{{article.title | lang | limitTo:200}}</h2>
-      </a>
-      <p>
-        {{article.html | lang | htmlToPlainText | limitTo: 180}}...
-      </p>
-    </p>
-  </figure>
+<figure style="cursor:pointer;" ui-sref=".article({ id: article.id })">
+    <div class="thumbnail">
+      <img ng-src="{{article.tumb}}" width="100%" alt="...">
+      <div class="caption">
+        <h3>{{article.title | lang | limitTo:200}}</h3>
+        <p>{{article.html | lang | htmlToPlainText | limitTo: 180}}...</p>
+      </div>
+    </div>
+</figure>
 
