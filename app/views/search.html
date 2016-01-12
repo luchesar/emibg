@@ -1,6 +1,6 @@
 <div ng-controller="SearchCtrl">
    <ui-view/>
-       <div layout="column" layout-fill>Търсене във всички статии и събития</div>
+       <div layout="column" layout-fill>{{'SEARCH_EVERYWHERE' | translate}}</div>
    <div >
        <div ng-repeat="rowItems in items" layout="column" layout-fill style="padding-bottom: 13px;" >
            <div class="row">
@@ -10,10 +10,22 @@
            </div>
        </div>
        <div ng-hide="!items.length">
-       {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}} tet test test
-       <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"></md-button>
-       <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
+       <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
        </div>
    </div>
-   <div ng-hide="items.length" layout="column" layout-fill>Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.</div>
+   <div ng-hide="items.length" layout="column" layout-fill>{{'NOTHING_FOUND' | translate}}</div>
 </div>
