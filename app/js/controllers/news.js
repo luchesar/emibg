@@ -16,7 +16,7 @@ function NewsCtrl($scope, $stateParams, $http, $state, PagingService) {
   $http.get(
     "/api/articles/paged/" +
     ($stateParams.lang ||  "bg") +
-    "?categories=emis&p=" + PagingService.pageNumber($stateParams) +
+    "?categories=news&p=" + PagingService.pageNumber($stateParams) +
     "&size=" + PagingService.itemsPerPage
   )
   .then(function(response) {
