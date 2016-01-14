@@ -1,19 +1,29 @@
 'use strict'
 
 var controllersModule = require('./_index');
+var _ = require('lazy.js');
 
-function AllEventsCtrl($scope, $stateParams, $state, EventService, PagingService) {
+function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
   $scope.pageCount = "Loading";
-  EventService.filterSize()
-  .then(function(count) {
-    $scope.itemsCount = count.count;
-    PagingService.init($scope, $stateParams, $state);
-    EventService.filterPaged(
-      $scope.page,
-      $scope.itemsPerPage,
-      2
-    ).then(items => $scope.events = items);
- });
+  PagingService.init($scope, $stateParams, $state, function(){
+    $state.go('.', {page: $scope.page});
+  });
+
+  $http.get(
+    "/api/events/paged/" +
+    ($stateParams.lang ||  "bg") +
+    "?p=" + PagingService.pageNumber($stateParams) +
+    "&size=" + PagingService.itemsPerPage
+  )
+  .then(function(response) {
+    $scope.itemsCount = response.data.size;
+    $scope.pageCount = PagingService.pageCount($scope.itemsCount);
+    $scope.events = _(response.data.items)
+        .chunk(2).toArray();
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
 }
 
 controllersModule.controller('AllEventsCtrl', AllEventsCtrl);

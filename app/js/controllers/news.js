@@ -12,7 +12,6 @@ function NewsCtrl($scope, $stateParams, $http, $state, PagingService) {
     $state.go('.', {page: $scope.page});
   });
 
-
   $http.get(
     "/api/articles/paged/" +
     ($stateParams.lang ||  "bg") +
