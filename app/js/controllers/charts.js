@@ -11,13 +11,13 @@ function ChartsCtrl($scope, $filter) {
   $scope.myInterval = 10000;
   var translatedChartObjs = data.charts.reduce(function(o, chart) {
     o[chart.id] = {
-        id: chart.id,
-        type: chart.type,
-        title: $filter("lang")(chart.title),
-        labels: $filter("lang")(chart.labels),
-        series: $filter("lang")(chart.series),
-        data: chart.data,
-        legend: chart.legend
+      id: chart.id,
+      type: chart.type,
+      title: $filter("lang")(chart.title),
+      labels: $filter("lang")(chart.labels),
+      series: $filter("lang")(chart.series),
+      data: chart.data,
+      legend: chart.legend
     };
     return o;
   }, {});

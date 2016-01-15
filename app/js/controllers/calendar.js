@@ -15,15 +15,32 @@ var currentLang = function(stateParams, translate) {
 /**
 * @ngInject
 */
-function CalendarCtrl($scope,$q,
+function CalendarCtrl($scope, $q,
         $compile, $state, $stateParams, $translate, $filter,
         EventService, uiCalendarConfig) {
-
-    $scope.eventSources = [];
+    
+    $scope.events = [];
+    $scope.eventSources = [
+      function(start, end, timezone, cb) {
+        cb($scope.events);
+      }
+    ];
 
     /* event source that contains custom events on the scope */
     var eventsFilter = EventService.filter(10000);
     eventsFilter.then(function(items) {
+      $scope.uiConfig = {
+          height: 450,
+          editable: false,
+          header: {
+            left: 'title',
+            center: '',
+            right: 'today prev,next'
+          },
+          lang: currentLang($stateParams, $translate),
+          eventClick: $scope.eventClick,
+          eventRender: $scope.eventRender
+      };
       $scope.events = items.map(function(event){
         return {
           id: event.id,
@@ -32,9 +49,8 @@ function CalendarCtrl($scope,$q,
           end: moment(event.end).toDate()
         };
       });
-      /* event sources array*/
-      $scope.eventSources = [$scope.events];
     });
+
     /* alert on eventClick */
     $scope.eventClick = function( event, jsEvent, view){
         $state.go("app.menu.events.event", {page: 1, id: event.id})
@@ -55,18 +71,6 @@ function CalendarCtrl($scope,$q,
     };
 
     /* config object */
-    $scope.uiConfig = {
-        height: 450,
-        editable: false,
-        header: {
-          left: 'title',
-          center: '',
-          right: 'today prev,next'
-        },
-        lang: currentLang($stateParams, $translate),
-        eventClick: $scope.eventClick,
-        eventRender: $scope.eventRender
-    };
 
 }
 
