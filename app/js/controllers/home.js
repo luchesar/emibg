@@ -7,7 +7,7 @@ var _ = require('lazy.js');
 * @ngInject
 */
 function HomeCtrl($scope, $http, $stateParams) {
-  $http.get("/api/home-pages/" + $stateParams.lang || "bg")
+  $http.get("/api/home-pages/" + ($stateParams.lang || "bg"))
   .then(function(response) {
     $scope.mainNews = _(response.data.news).take(1).toArray();
     $scope.news = _(response.data.news).drop(1).toArray();

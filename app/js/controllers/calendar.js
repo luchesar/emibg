@@ -18,7 +18,6 @@ var currentLang = function(stateParams, translate) {
 function CalendarCtrl($scope, $q,
         $compile, $state, $stateParams, $translate, $filter,
         EventService, uiCalendarConfig) {
-    
     $scope.events = [];
     $scope.eventSources = [
       function(start, end, timezone, cb) {
