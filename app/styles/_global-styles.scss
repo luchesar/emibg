@@ -4,6 +4,14 @@ body {
 background:#f5f5f5;
 }
 
+h1,h2,h3,h4,h5,h6{
+ font-family: Roboto, UILanguageFont, Arial, sans-serif;  // font family not working ?
+}
+
+h2 {
+  line-height: 23px;
+}
+
 ul{
   padding: 0;
   margin: 0;
@@ -24,9 +32,6 @@ a:focus{
   text-decoration: none;
 }
 
-h2{ 
-  line-height: 23px;
-}
 img{
  border:none;
 }
@@ -402,6 +407,60 @@ p.ng-binding {
   padding: 0 0 4px;
   text-transform: uppercase;
 }
+
+
+//Single Page Content
+
+.single_page_content {
+  display: inline;
+  float: left;
+  padding-top: 20px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 40px;
+  margin-bottom: 50px;
+}
+.single_page_content img{
+  max-width: 100%;
+  // width: 320px;
+  // height: 213px;
+  margin: 0px 15px 15px 0px;
+}
+.single_page_content ul{
+  position: relative;
+  padding-left: 25px;
+}
+.single_page_content ul li{
+  line-height: 25px;
+}
+.single_page_content ul li:before {
+  content: "";
+  height: 5px;
+  left: 5px;
+  position: absolute;
+  width: 9px;
+  margin-top: 8px;
+}
+.single_page_content ul li:hover{
+  opacity: 0.75;
+}
+.single_page_content h2{
+  line-height: 35px;
+}
+.single_page_content h3{
+  line-height: 30px;
+}
+.single_page_content h4{
+  line-height: 25px;
+}
+.single_page_content h4{
+  line-height: 20px;
+}
+
+.single_page_content p{
+  line-height: 17.5px;
+}
+
 
 
 //Social links 
