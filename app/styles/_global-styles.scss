@@ -2,10 +2,11 @@
 
 body {
 background:#f5f5f5;
+font-family: 'Open Sans', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
- font-family: Roboto, UILanguageFont, Arial, sans-serif;  // font family not working ?
+ font-family: 'Arimo', sans-serif;
 }
 
 h2 {
@@ -20,7 +21,7 @@ ul{
 
 a{ 
   text-decoration: none;
-  color: #2f2f2f;
+  color: #0A4595;
   
 }
 a:hover{
@@ -34,8 +35,10 @@ a:focus{
 
 img{
  border:none;
+ border-radius: 1px;
 }
-img:hover{
+
+a img:hover {
   opacity: 0.75;
 }
 
@@ -139,6 +142,10 @@ img:hover{
 
 /* Navbar Search*/
 
+.navbar-brand {
+    height: 52px;
+}
+
 .navbar-inverse .navbar-brand {
   color: #fff;
 }
@@ -223,10 +230,6 @@ img:hover{
   text-transform: uppercase;
 }
 
-h2 {
-  line-height: 23px;
-}
-
 .navbar-logo {
   max-width:100%;
   max-height:100%;
@@ -300,7 +303,7 @@ h2 {
 }
 
 
-//About team
+//About team -- e.g. Panel
 
 p.ng-binding {
   margin: 0px;
@@ -311,7 +314,19 @@ p.ng-binding {
 }
 
 .panel-default > .panel-heading {
-  background-color: #97BBCD;
+  //background-color: #658ABC;
+  background-color: #252525;
+  color: #fff;
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-radius: 1px;
+}
+
+.pie-legend li span {
+    border-radius: 1px !important;
 }
 
 //Thumbnails
@@ -339,11 +354,13 @@ p.ng-binding {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 30px;
+    border-radius: 1px;
 }
 
 .single_post_content h2 span {
     background: #E63900 none repeat scroll 0px 0px;
     padding: 6px 12px;
+    border-radius: 1px;
 }
 
 .disabled {
@@ -366,6 +383,11 @@ p.ng-binding {
   background-color: #FF7200;
 }
 
+.pagination > li:last-child > a, .pagination > li:last-child > span,
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    border-radius: 1px;
+}
+
 //Partners
 
 .partner {
@@ -383,7 +405,7 @@ p.ng-binding {
   display: inline;
   width: 100%;
   background-color: #fff;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 
 .left_content{
@@ -398,23 +420,26 @@ p.ng-binding {
   display: inline;
   width: 100%;
 }
-.single_page>h1{
-  color: #333;
-  font-family: Oswald,arial,Georgia,serif;
+.single_page h1{
+  color: #E63900;
+  font-family: 'Arimo', sans-serif;
   font-size: 30px;
-  line-height: 1.4em;
-  margin: 10px 0 -10px;
+  line-height: 1.2em;
+  margin: 10px 0 10px;
   padding: 0 0 4px;
   text-transform: uppercase;
 }
 
-
+p.ng-binding {
+    margin-bottom: 2%;
+    text-align: justify
+}
 //Single Page Content
 
 .single_page_content {
   display: inline;
   float: left;
-  padding-top: 20px;
+  padding-top: 0px;
   width: 100%;
   border-bottom: 1px solid #ddd;
   padding-bottom: 40px;
@@ -457,13 +482,17 @@ p.ng-binding {
   line-height: 20px;
 }
 
-.single_page_content p{
-  line-height: 17.5px;
-}
+// .single_page_content p{
+//   line-height: 18px;
+// }
 
 
 
 //Social links 
+
+.social_link {
+  margin-bottom: 20px;
+}
 
 .sociallink_nav {
   text-align: center;
