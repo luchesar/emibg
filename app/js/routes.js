@@ -153,6 +153,10 @@ url: '/summaries/{page:int}',
     url: '/charts/{page:int}',
     templateUrl: 'admin/charts.html'
   })
+  .state('app.admin.article', {
+    url: '/article/{id:string}',
+    templateUrl: 'fragments/full-article.html'
+  })
   ;
 }
 

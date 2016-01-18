@@ -19,7 +19,7 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, Cha
     $scope.itemsCount = response.data.size;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount);
     $scope.charts = _(response.data.items.map(ChartsService.translate))
-        .chunk(2).toArray();
+        .chunk(3).toArray();
   })
   .catch(function(err) {
     console.log(err);
