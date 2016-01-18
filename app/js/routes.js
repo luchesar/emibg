@@ -9,7 +9,6 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $urlRouterProvider
     .when('/', '/bg/home')
-    .when('/admin/', '/admin/articles/1')
     .otherwise('/bg/home');
 
   $stateProvider
@@ -146,6 +145,11 @@ url: '/summaries/{page:int}',
     url: '/articles/{page:int}',
     templateUrl: 'admin/articles.html'
   })
+  .state('app.admin.events', {
+    url: '/events/{page:int}',
+    templateUrl: 'admin/events.html'
+  })
+  ;
 }
 
 module.exports = Routes;

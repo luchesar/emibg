@@ -1,0 +1,13 @@
+<div ng-controller="AllEventsCtrl" layout="column">
+   <ui-view/>
+   <div >
+       <div ng-repeat="rowEvents in events" layout="column" layout-fill style="padding-bottom: 13px;" >
+         <div class="col-sm-12 col-md-12" ng-repeat="event in rowEvents">
+            <flat-admin-event></flat-admin-event>
+         </div>
+       </div>
+       {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}
+       <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>
+       <md-button ng-click="nextPage()" class="md-primary md-raised" ng-disabled="!hasNext()">></md-button>
+   </div>
+</div>
