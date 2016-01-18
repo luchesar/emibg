@@ -138,9 +138,14 @@ url: '/summaries/{page:int}',
       'menu@': { templateUrl: 'admin/menu.html' },
       'banner@': {template: ''},
       'right-column@': {template: ''},
-      'footer': {template: ''}
+      'footer@': {template: ''},
+      'content@': { template: '<ui-view/>' }
     }
-  });
+  })
+  .state('app.admin.articles', {
+    url: '/articles/{page:int}',
+    templateUrl: 'admin/articles.html'
+  })
 }
 
 module.exports = Routes;

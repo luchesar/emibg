@@ -1,0 +1,26 @@
+<div ng-controller="AdminArticlesCtrl" layout="column">
+   <ui-view/>
+   <div >
+       <div ng-repeat="rowArticles in news" layout="column" layout-fill style="padding-bottom: 13px;" >
+           <div class="col-sm-12 col-md-12" ng-repeat="article in rowArticles">
+              <flat-admin-article></flat-admin-article>
+           </div>
+       </div>
+
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+   </div>
+</div>
