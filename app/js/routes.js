@@ -9,8 +9,8 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $urlRouterProvider
     .when('/', '/bg/home')
-    .when('/admin', '/admin')
-    .otherwise('/bg');
+    .when('/admin/', '/admin/articles/1')
+    .otherwise('/bg/home');
 
   $stateProvider
   .state('app', {
