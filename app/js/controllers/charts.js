@@ -7,23 +7,13 @@ var data = require('../data.js');
 /**
 * @ngInject
 */
-function ChartsCtrl($scope, $filter, $http) {
+function ChartsCtrl($scope, $filter, $http, ChartsService) {
   $scope.myInterval = 10000;
 
   $http.get("/api/home-pages/sliderCharts")
   .then(function(response) {
     var translatedSlides = response.data.map(function(slide) {
-      return slide.map(function(chart) {
-        return {
-          id: chart.id,
-          type: chart.type,
-          title: $filter("lang")(chart.title),
-          labels: $filter("lang")(chart.labels),
-          series: $filter("lang")(chart.series),
-          data: chart.data,
-          legend: chart.legend
-        };
-      })
+      return slide.map(ChartsService.translate);
     })
     $scope.slides = translatedSlides;
   })

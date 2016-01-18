@@ -21,8 +21,7 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
   .then(function(response) {
     $scope.itemsCount = response.data.size;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount);
-    $scope.news = _(response.data.items)
-        .chunk(2).toArray();
+    $scope.articles = response.data.items;
   })
   .catch(function(err) {
     console.log(err);

@@ -1,10 +1,12 @@
-<div ng-controller="AdminEventsCtrl" layout="column">
+<div ng-controller="AdminChartsCtrl" layout="column">
    <ui-view/>
    <div >
-       <div ng-repeat="event in events" layout="column" layout-fill style="padding-bottom: 13px;" >
-         <div class="col-sm-12 col-md-12">
-            <flat-admin-event></flat-admin-event>
-         </div>
+       <div ng-repeat="rowCharts in charts" layout="column" layout-fill style="padding-bottom: 13px;" >
+          <div class="row">
+            <div class="col-sm-6 col-md-6" ng-repeat="chart in rowCharts">
+              <flat-admin-chart></flat-admin-chart>
+            </div>
+          </div>
        </div>
        {{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}
        <md-button ng-click="previousPage()" class="md-primary md-raised" ng-disabled="!hasPrev()"><</md-button>

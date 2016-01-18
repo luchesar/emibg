@@ -18,7 +18,6 @@
             </div>
         </div>
     
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'" >
         <ul class="nav navbar-nav">
           <li class="active" ui-sref-active="active">
@@ -40,7 +39,7 @@
             </a>
           </li>
           <li ui-sref-active="active">
-            <a href="#" ui-sref="app.admin.charts" ng-click="navCollapsed=true">
+            <a href="#" ui-sref="app.admin.charts({page: 1})" ng-click="navCollapsed=true">
                 <i class="fa fa-bolt"></i>
                 Графики
             </a>
@@ -48,7 +47,7 @@
           <li ui-sref-active="active">
             <a href="#" ui-sref="app.admin.homepage" ng-click="navCollapsed=true">
                 <i class="fa fa-users"></i>
-                Начална Страница
+                Конфигуриране на Начална Страница
             </a>
           </li>
         </ul>

@@ -149,6 +149,10 @@ url: '/summaries/{page:int}',
     url: '/events/{page:int}',
     templateUrl: 'admin/events.html'
   })
+  .state('app.admin.charts', {
+    url: '/charts/{page:int}',
+    templateUrl: 'admin/charts.html'
+  })
   ;
 }
 

@@ -1,8 +1,8 @@
 <div ng-controller="AdminArticlesCtrl" layout="column">
    <ui-view/>
    <div >
-       <div ng-repeat="rowArticles in news" layout="column" layout-fill style="padding-bottom: 13px;" >
-           <div class="col-sm-12 col-md-12" ng-repeat="article in rowArticles">
+       <div ng-repeat="article in articles" layout="column" layout-fill style="padding-bottom: 13px;" >
+           <div class="col-sm-12 col-md-12">
               <flat-admin-article></flat-admin-article>
            </div>
        </div>
