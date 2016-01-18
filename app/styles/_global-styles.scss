@@ -219,7 +219,6 @@ a img:hover {
 
 .footer a:hover {
   color: #FF7200;
-  opacity: 0.75;
 }
 
 .footer_widget>h2 {
@@ -491,7 +490,7 @@ p.ng-binding {
 //Social links 
 
 .social_link {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .sociallink_nav {
@@ -540,6 +539,85 @@ p.ng-binding {
 .sociallink_nav li:nth-child(5) > a {
   background: none repeat scroll 0 0 #c92228;
 }
+
+// Social Nav Bar FOOTER
+
+footer .sociallink_nav {
+  text-align: left;
+}
+
+.sociallink_nav li a {
+  color: #fff;
+  display: inline-block;
+  font-size: 17px;
+  padding: 6px 10px;
+  margin: 0px 3px;
+}
+
+footer .sociallink_nav li:nth-child(1) > a {
+  background: none repeat scroll 0 0 #989898;
+  padding: 8px 15px;
+}
+footer .sociallink_nav li:nth-child(2) > a {
+  background: none repeat scroll 0 0 #888888;
+}
+footer .sociallink_nav li:nth-child(3) > a {
+  background: none repeat scroll 0 0 #787878;
+}
+footer .sociallink_nav li:nth-child(4) > a {
+  background: none repeat scroll 0 0 #686868;
+}
+footer .sociallink_nav li:nth-child(5) > a {
+  background: none repeat scroll 0 0 #585858;
+}
+
+
+footer .sociallink_nav li a:hover{
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -os-transform: none;
+  transform: none; 
+}
+footer .sociallink_nav li a:hover i{
+   -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -os-transform: none;
+  transform: none;
+}
+footer .sociallink_nav li:nth-child(1) > a:hover {
+  background: none repeat scroll 0 0 #3b5998;
+  color: #fff;
+}
+footer .sociallink_nav li:nth-child(2) > a:hover {
+  background: none repeat scroll 0 0 #00acee;
+  color: #fff;
+}
+footer .sociallink_nav li:nth-child(3) > a:hover {
+  background: none repeat scroll 0 0 #dd4b39;
+  color: #fff;
+}
+footer .sociallink_nav li:nth-child(4) > a:hover {
+  background: none repeat scroll 0 0 #0e76a8;
+  color: #fff;
+}
+footer .sociallink_nav li:nth-child(5) > a:hover {
+  background: none repeat scroll 0 0 #c92228;
+  color: #fff;
+}
+
+
+//Footer Language
+
+footer .btn-warning{
+  background-color: #787878;
+  border-color: #787878;
+  width: 100px;
+}
+
+
+
 
 
 

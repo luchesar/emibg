@@ -39,7 +39,10 @@ function Translations($translateProvider) {
       BACK: 'Back',
       FOLLOW: 'Follow us',
       SEARCH_EVERYWHERE: 'Searching in all articles',
-      NOTHING_FOUND: 'Your search did not match any documents.'
+      NOTHING_FOUND: 'Your search did not match any documents.',
+      LANGUAGE: "Language",
+      BULGARIAN: "Български",
+      ENGLISH: "Английски"
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -74,7 +77,10 @@ function Translations($translateProvider) {
       BACK: 'Назад',
       FOLLOW: 'Последвайте ни',
       SEARCH_EVERYWHERE: 'Търсене във всички статии и събития',
-      NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.'
+      NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.',
+      LANGUAGE: "Език",
+      BULGARIAN: "Bulgarian",
+      ENGLISH: "English"
     });
   $translateProvider.preferredLanguage('bg');
 }
