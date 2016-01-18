@@ -12,8 +12,8 @@
       <link rel="stylesheet" href="css/main.css">
       <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
-    <div class="visible-md visible-lg">
+  <body ng-controller="IndexCtrl">
+    <div class="visible-md visible-lg" ng-hide="bannerHidden">
       <div class="banner">
         <div class="container">
            <div ui-view="banner"></div>
@@ -25,10 +25,10 @@
       <div id="main" class="container">
         <div ui-view="menu"></div>
         <div class="row">
-          <div class="col-sm-12 col-md-8">
+          <div class="col-sm-12 {{contentMdWidth}}">
             <div ui-view="content"></div>
           </div>
-          <div class="col-sm-12 col-md-4">
+          <div class="col-sm-12 {{rightMdWidth}}">
             <div ui-view="right-column"></div>
           </div>
         </div>
