@@ -155,7 +155,7 @@ url: '/summaries/{page:int}',
   })
   .state('app.admin.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    templateUrl: 'admin/article.html'
   })
   ;
 }
