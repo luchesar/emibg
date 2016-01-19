@@ -1,4 +1,11 @@
 <div ng-controller="AdminArticleCtrl">
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+  </div>
+  <button ng-click="save()">Запис</button>
+  <button class="pull-right" ng-click="cancel()">Отказ</button>
   <h3><b>
     <div ui-tinymce="tinymceTitleOptions" ng-model="title"></div>
   </b></h3>
