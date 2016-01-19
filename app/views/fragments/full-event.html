@@ -1,5 +1,40 @@
-<div ng-controller="FullEventCtrl">
-    <h3><b>{{ event.title | lang }}</b></h3>
-    <md-divider></md-divider>
-    <p><div ng-bind-html="eventHtml"></div></p>
-</div>
+<div class="contentSection">
+	<div class="left_content">
+        <div class="single_page">
+
+			<div ng-controller="FullEventCtrl">
+			    <h1>{{ event.title | lang }}</h1>
+
+			    <table class="table">
+		          <tr>
+		            <td class="td1"><p>{{'EVENT_TYPE' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.type | lang }}</p></td>
+		           </tr>
+		           <tr>
+		            <td class="td1"><p>{{'ORGANIZER' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.organiser | lang }}</p></td>
+		           </tr>
+		           <tr>
+		            <td class="td1"><p>{{'DATE' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.start | lang }}</p></td>
+		           </tr>
+		           <tr>
+		            <td class="td1"><p>{{'PLACE' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.place | lang }}</p></td>
+		           </tr>
+		           <tr>
+		            <td class="td1"><p>{{'TIME' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.start.getMinutes | lang }}</p></td>
+		           </tr>
+		           <tr>
+		            <td class="td1"><p>{{'ACCESS' | translate}}:</p></td>
+		            <td class="td2"><p>{{ event.access | lang }}</p></td>
+		           </tr>
+		        </table>
+
+			    <p><div ng-bind-html="eventHtml"></div></p>
+			</div>
+
+		</div>
+	</div>
+</div>			

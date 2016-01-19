@@ -60,7 +60,7 @@ a img:hover {
   border-left: 1px solid #383838;
   color: #ddd;
   display: inline-block;
-  height: 50px;
+  height: 52px;
   line-height: 50px;
   padding: 0 14px;
   text-shadow: 0 1px 1px #000;
@@ -422,9 +422,9 @@ p.ng-binding {
 .single_page h1{
   color: #E63900;
   font-family: 'Arimo', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.2em;
-  margin: 10px 0 10px;
+  margin: 10px 0 20px;
   padding: 0 0 4px;
   text-transform: uppercase;
 }
@@ -546,7 +546,7 @@ footer .sociallink_nav {
   text-align: left;
 }
 
-.sociallink_nav li a {
+footer .sociallink_nav li a {
   color: #fff;
   display: inline-block;
   font-size: 17px;
@@ -556,7 +556,7 @@ footer .sociallink_nav {
 
 footer .sociallink_nav li:nth-child(1) > a {
   background: none repeat scroll 0 0 #989898;
-  padding: 8px 15px;
+  padding: 6px 13px;
 }
 footer .sociallink_nav li:nth-child(2) > a {
   background: none repeat scroll 0 0 #888888;
@@ -616,7 +616,20 @@ footer .btn-warning{
   width: 100px;
 }
 
+//Event Table
 
+.table {
+  margin-top: 6%;
+}
+
+.table .ng-binding {
+    text-align: left;
+}
+
+.td1 {
+  color: #E63900;
+  background-color: #F8F8F8; 
+}
 
 
 

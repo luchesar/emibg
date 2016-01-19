@@ -42,7 +42,14 @@ function Translations($translateProvider) {
       NOTHING_FOUND: 'Your search did not match any documents.',
       LANGUAGE: "Language",
       BULGARIAN: "Български",
-      ENGLISH: "Английски"
+      ENGLISH: "Английски",
+      EVENT_TYPE: "Type of event",
+      ORGANIZER: "Organizer",
+      DATE: "Date",
+      PLACE: "Place",
+      TIME: "Time",
+      ACCESS: "Access"
+
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -80,7 +87,13 @@ function Translations($translateProvider) {
       NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.',
       LANGUAGE: "Език",
       BULGARIAN: "Bulgarian",
-      ENGLISH: "English"
+      ENGLISH: "English",
+      EVENT_TYPE: "Вид на събитието",
+      ORGANIZER: "Организатор",
+      DATE: "Дата",
+      PLACE: "Място",
+      TIME: "Час",
+      ACCESS: "Достъп"
     });
   $translateProvider.preferredLanguage('bg');
 }
