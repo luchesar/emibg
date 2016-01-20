@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http) {
+function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce) {
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
 
@@ -19,8 +19,6 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   };
 
   $scope.save = function() {
-    $scope.article.html.bg = $scope.editedHtml;
-    $scope.article.title.bg = $scope.editedTitle || $scope.article.title.bg;
     $http.put("/api/articles/" + $scope.article.id, $scope.article)
     .then(function(response) {
       console.log("article saved");
@@ -40,7 +38,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     options.browser_spellcheck = true;
     options.init_instance_callback = function(editor) {
       var textContentTrigger = function() {
-        onChange($scope, editor);
+        onChange(editor);
       };
 
       editor.on('KeyUp', textContentTrigger);
@@ -53,19 +51,33 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     return options;
   }
 
-  $scope.tinymceOptions = editorOptions({
-    plugins : "advlist autolink link image imagetools lists charmap print preview autolink lists spellchecker pagebreak layer table save insertdatetime preview media searchreplace print contextmenu paste directionality fullscreen noneditable visualchars nonbreaking template google_tools placeholder",
-  
-  }, function($scope, editor) {
-    $scope.editedHtml = jQuery(editor.getElement()).html();
-  });
+  var htmlOptions = function(updateProperty) {
+    return editorOptions({
+      plugins : "advlist autolink link image imagetools lists charmap print preview autolink lists spellchecker pagebreak layer table save insertdatetime preview media searchreplace print contextmenu paste directionality fullscreen noneditable visualchars nonbreaking template google_tools placeholder",
+      }, function(editor) {
+        updateProperty(jQuery(editor.getElement()).html());
+      });
+  }
 
-  $scope.tinymceTitleOptions = editorOptions({
-    toolbar: 'undo redo',
-    menubar: false
-  }, function($scope, editor) {
-    $scope.editedTitle = jQuery(editor.getElement()).text();
+  var titleOptions = function(updateProperty) {
+    return editorOptions({
+        toolbar: 'undo redo',
+        menubar: false
+      }, function(editor) {
+        updateProperty(jQuery(editor.getElement()).text());
+      });
+  }
+
+  $scope.htmlBgOptions = htmlOptions(function(html) {
+      $scope.article.html.bg = html;
+      $scope.bgHtml = $sce.trustAsHtml(html);
   });
+  $scope.htmlEnOptions = htmlOptions(function(html) {
+      $scope.article.html.en = html;
+      $scope.enHtml = $sce.trustAsHtml(html);
+  });
+  $scope.titleBgOptions = titleOptions(title => $scope.article.title.bg = title);
+  $scope.titleEnOptions = titleOptions(title => $scope.article.title.en = title);
 
   ArticleService.article($stateParams.id)
   .then(function(article) {
@@ -75,6 +87,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.articleType.news = _(article.category).contains('news');
     $scope.articleType.emis = _(article.category).contains('emis');
     $scope.articleType.summaries =_(article.category).contains('summaries');
+    $scope.title = JSON.parse(JSON.stringify(article.title));
+    $scope.html = JSON.parse(JSON.stringify(article.html));
     
     $scope.$watchCollection('articleType', function () {
       $scope.article.categories = [];
@@ -84,6 +98,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
         }
       });
     });
+    $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
+
   })
   .catch(err => console.log(err));
 }

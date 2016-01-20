@@ -25,19 +25,19 @@
         </div>
         <div class="form-group">
           <h3><b>
-            <div ui-tinymce="tinymceTitleOptions" ng-model="article.title.bg" placeholder="Заглавие на Български"></div>
+            <div ui-tinymce="titleBgOptions" ng-model="title.bg" placeholder="Заглавие на Български"></div>
           </b></h3>
           <md-divider></md-divider>
-          <div ui-tinymce="tinymceOptions" ng-model="article.html.bg" placeholder="Съдържание на Български"></div>
+          <div ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
            
           
         </div>
         <div class="form-group">
           <h3><b>
-            <div ui-tinymce="tinymceTitleOptions" ng-model="article.title.en" placeholder="Заглавие на Английски"></div>
+            <div ui-tinymce="titleEnOptions" ng-model="title.en" placeholder="Заглавие на Английски"></div>
           </b></h3>
           <md-divider></md-divider>
-          <div ui-tinymce="tinymceOptions" ng-model="article.html.en" placeholder="Съдържание на Английски"></div>
+          <div ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
         </div>
         <div class="form-group">
           <label>Тагове</label>
@@ -46,6 +46,19 @@
       </form>
     </uib-tab>
     <uib-tab heading="Изглед" active="true">
+       <div class="row">
+         <div class="col-sm-12 col-md-4">
+           <tile-article/>
+         </div>
+         <div class="col-sm-12 col-md-8">
+           <flat-article/>
+         </div>
+       </div>
+       <div class="row">
+         <h3><b>{{ article.title | lang }}</b></h3>
+         <md-divider></md-divider>
+         <p><div ng-bind-html="bgHtml || article.html.bg"></div></p>
+       </div>
     </uib-tab>
   </uib-tabset>
 </div>
