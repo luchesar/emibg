@@ -1,4 +1,5 @@
 <div ng-controller="AdminArticleCtrl">
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
   <button ng-click="save()">Запис</button>
 
   <div class="btn-group">
@@ -13,7 +14,7 @@
 
   <button class="pull-right" ng-click="cancel()">Отказ</button>
   <uib-tabset>
-    <uib-tab heading="Редакция" active="true">
+    <uib-tab heading="Редакция">
       <form>
         <div class="form-group">
           <label>Автор Кирилица</label>
@@ -45,7 +46,7 @@
         </div>
       </form>
     </uib-tab>
-    <uib-tab heading="Изглед" active="true">
+    <uib-tab heading="Изглед">
        <div class="row">
          <div class="col-sm-12 col-md-4">
            <tile-article/>

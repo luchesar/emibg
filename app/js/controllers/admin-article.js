@@ -7,6 +7,7 @@ var _ = require('lazy.js');
 * @ngInject
 */
 function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce) {
+  $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
 
@@ -19,15 +20,19 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   };
 
   $scope.save = function() {
+    $scope.alerts = [];
     $http.put("/api/articles/" + $scope.article.id, $scope.article)
     .then(function(response) {
-      console.log("article saved");
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успещно")});
     })
-    .catch(function(err){
-       $scope.err = err;
-       console.log(err);
-     })
+    .catch(function(err) {
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише статията в момента. Моля опитайте след малко."});
+    });
   }
+
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
 
 
   var editorOptions = function(options, onChange) {
@@ -99,9 +104,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       });
     });
     $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
-
   })
-  .catch(err => console.log(err));
+  .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
 }
 
 controllersModule.controller('AdminArticleCtrl', AdminArticleCtrl);
