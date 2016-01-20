@@ -1,10 +1,10 @@
 <figure class="article-event" ui-sref=".event({ id: event.id })">
     <div class="thumbnail">
       <img ng-src="{{event.tumb}}" width="100%" alt="...">
-      	<div class="gradient-container">
-		      <div class="caption">
+      	<div class="caption">
+		      <div class="gradient-container">
 		        <h3>{{event.title | lang | limitTo:100}}</h3>
-		        <p>{{event.html | lang | htmlToPlainText | limitTo: 300}}...</p>
+		        <p>{{event.html | lang | htmlToPlainText | limitTo: 260}}...</p>
 		        <div class="gradient"></div>
 		      </div>
 		</div>

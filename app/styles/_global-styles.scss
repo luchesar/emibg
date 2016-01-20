@@ -77,7 +77,6 @@ a img:hover {
     padding-right: 0px;
 }
 
-
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
   background-color: #E63900;
 }
@@ -108,8 +107,9 @@ a img:hover {
   font-size: 24px;
 }
 
-.navbar-inverse .navbar-nav > li:first-child a:hover {
-  color: #fff;
+.navbar-right > li:nth-child(2) > a{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .inverse-dropdown{
@@ -675,13 +675,19 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 
 //Footer Language
 
-footer .btn-warning{
+.footer .btn-warning{
   background-color: #787878;
   border-color: #787878;
   width: 100px;
 } 
 
+.footer li {
+  padding-bottom: 6px;
+}
 
+.footer ul>ul>li {
+  padding-left: 20px;
+}
 //Event Table
 
 .table {
