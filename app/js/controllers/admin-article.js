@@ -19,7 +19,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
   $scope.save = function() {
     $scope.article.html.bg = $scope.editedHtml;
-    $scope.article.title.bg = $scope.editedTitle;
+    $scope.article.title.bg = $scope.editedTitle || $scope.article.title.bg;
     $http.put("/api/articles/" + $scope.article.id, $scope.article)
     .then(function(response) {
       console.log("article saved");
@@ -32,7 +32,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
   var editorOptions = function(options, onChange) {
     options.inline = true;
-    options.language = 'bg',
+    options.language = $stateParams.lang || 'bg',
     options.skin = 'lightgray';
     options.theme = 'modern';
     options.browser_spellcheck = true;
