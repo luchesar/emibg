@@ -32,6 +32,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
   var editorOptions = function(options, onChange) {
     options.inline = true;
+    options.language = 'bg',
     options.skin = 'lightgray';
     options.theme = 'modern';
     options.browser_spellcheck = true;
