@@ -344,7 +344,7 @@ p.ng-binding {
 //Thumbnails
 
 .thumbnail {
-  height: 520px;
+  height: 500px;
   border-radius: 1px;
   //border: none; 
 }
@@ -356,8 +356,7 @@ p.ng-binding {
 
 .caption {
   overflow: hidden;
-  height: 230px;
-  // background-color: yellow;
+  height: 200px;
 }
 
 .caption h3 {
@@ -366,6 +365,8 @@ p.ng-binding {
   margin-bottom: 12px;
 }
 
+
+// Gradient - thumbnails
 
 .gradient-container {
     position:relative;
@@ -386,11 +387,24 @@ p.ng-binding {
 }​
 
 
+.article-event h4 {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.flat {
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 92px;
+  overflow: hidden;
+}
 
 .media-object {
-  width: 112px;
-  margin: 3px;
+  height: 80px;
 }
+
+
 
 .single_post_content h2 {
     background: #252525 none repeat scroll 0px 0px;
@@ -416,11 +430,6 @@ p.ng-binding {
 .disabled {
    pointer-events: none;
    cursor: default;
-}
-
-.flat-article-event h4 {
-  font-size: 16px;
-  line-height: 21px;
 }
 
 .media-heading {
