@@ -13,7 +13,8 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
     "/api/events/paged/" +
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + PagingService.itemsPerPage
+    "&size=" + PagingService.itemsPerPage +
+    "&published=both"
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;

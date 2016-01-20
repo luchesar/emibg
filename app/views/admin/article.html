@@ -24,22 +24,26 @@
           <label>Автор Латиница</label>
           <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Author" ng-model="article.autor.en">
         </div>
-        <div class="form-group">
+      </form>
+        <p>
           <h3><b>
             <div ui-tinymce="titleBgOptions" ng-model="title.bg" placeholder="Заглавие на Български"></div>
           </b></h3>
-          <md-divider></md-divider>
+        </p>
+        <md-divider></md-divider>
+        <p>
           <div ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
-           
-          
-        </div>
-        <div class="form-group">
+        </p>
+        <p>
           <h3><b>
             <div ui-tinymce="titleEnOptions" ng-model="title.en" placeholder="Заглавие на Английски"></div>
           </b></h3>
-          <md-divider></md-divider>
+        </p>
+        <md-divider></md-divider>
+        <p>
           <div ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
-        </div>
+        </p>
+      <form>
         <div class="form-group">
           <label>Тагове</label>
           <input type="text" class="form-control" placeholder="таг1 таг2" ng-model="article.tags">

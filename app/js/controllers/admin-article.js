@@ -19,8 +19,20 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     }
   };
 
+  var nullify = function(field) {
+    if(field.bg != null && field.bg != undefined && field.bg.trim() === "")
+      field.bg = null;
+    if(field.en != null && field.en != undefined && field.en.trim() === "")
+      field.en = null;
+  }
+
   $scope.save = function() {
     $scope.alerts = [];
+
+    // Remove the empty props to be able to filter with exists in ES
+    nullify($scope.article.title);
+    nullify($scope.article.html);
+
     $http.put("/api/articles/" + $scope.article.id, $scope.article)
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успещно")});
@@ -96,7 +108,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.html = JSON.parse(JSON.stringify(article.html));
     
     $scope.$watchCollection('articleType', function () {
-      $scope.article.categories = [];
+      $scope.article.category = [];
       angular.forEach($scope.articleType, function (value, key) {
         if (value) {
           $scope.article.category.push(key);
