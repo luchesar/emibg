@@ -1,6 +1,7 @@
 'use strict'
 
 var controllersModule = require('./_index');
+var _ = require('lazy.js');
 
 /**
 * @ngInject
@@ -30,6 +31,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
      })
   }
 
+
   var editorOptions = function(options, onChange) {
     options.inline = true;
     options.language = $stateParams.lang || 'bg',
@@ -52,7 +54,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   }
 
   $scope.tinymceOptions = editorOptions({
-    plugins : "autolink,lists,spellchecker,pagebreak,layer,table,save,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,template,google_tools",
+    plugins : "advlist autolink link image imagetools lists charmap print preview autolink lists spellchecker pagebreak layer table save insertdatetime preview media searchreplace print contextmenu paste directionality fullscreen noneditable visualchars nonbreaking template google_tools placeholder",
   
   }, function($scope, editor) {
     $scope.editedHtml = jQuery(editor.getElement()).html();
@@ -68,8 +70,20 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   ArticleService.article($stateParams.id)
   .then(function(article) {
     $scope.article = article;
-    $scope.html = $filter('lang')(article.html);
-    $scope.title = $filter('lang')(article.title);
+    
+    $scope.articleType = {};
+    $scope.articleType.news = _(article.category).contains('news');
+    $scope.articleType.emis = _(article.category).contains('emis');
+    $scope.articleType.summaries =_(article.category).contains('summaries');
+    
+    $scope.$watchCollection('articleType', function () {
+      $scope.article.categories = [];
+      angular.forEach($scope.articleType, function (value, key) {
+        if (value) {
+          $scope.article.category.push(key);
+        }
+      });
+    });
   })
   .catch(err => console.log(err));
 }

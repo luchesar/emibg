@@ -1,14 +1,51 @@
 <div ng-controller="AdminArticleCtrl">
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-default">Left</button>
-    <button type="button" class="btn btn-default">Middle</button>
-    <button type="button" class="btn btn-default">Right</button>
-  </div>
   <button ng-click="save()">Запис</button>
+
+  <div class="btn-group">
+    <label class="btn btn-primary" ng-model="articleType.news" uib-btn-checkbox>Новини</label>
+    <label class="btn btn-primary" ng-model="articleType.emis" uib-btn-checkbox>Анализи на EMI</label>
+    <label class="btn btn-primary" ng-model="articleType.summaries" uib-btn-checkbox>Анализи Резюмета</label>
+   </div>
+
+  <div class="btn-group">
+    <label class="btn btn-primary" ng-model="article.published" uib-btn-checkbox>Публикувано</label>
+  </div>
+
   <button class="pull-right" ng-click="cancel()">Отказ</button>
-  <h3><b>
-    <div ui-tinymce="tinymceTitleOptions" ng-model="title"></div>
-  </b></h3>
-  <md-divider></md-divider>
-  <div ui-tinymce="tinymceOptions" ng-model="html"></div>
+  <uib-tabset>
+    <uib-tab heading="Редакция" active="true">
+      <form>
+        <div class="form-group">
+          <label>Автор Кирилица</label>
+          <input type="text" class="form-control" placeholder="Автор" ng-model="article.author.bg">
+        </div>
+        <div class="form-group">
+          <label>Автор Латиница</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Author" ng-model="article.autor.en">
+        </div>
+        <div class="form-group">
+          <h3><b>
+            <div ui-tinymce="tinymceTitleOptions" ng-model="article.title.bg" placeholder="Заглавие на Български"></div>
+          </b></h3>
+          <md-divider></md-divider>
+          <div ui-tinymce="tinymceOptions" ng-model="article.html.bg" placeholder="Съдържание на Български"></div>
+           
+          
+        </div>
+        <div class="form-group">
+          <h3><b>
+            <div ui-tinymce="tinymceTitleOptions" ng-model="article.title.en" placeholder="Заглавие на Английски"></div>
+          </b></h3>
+          <md-divider></md-divider>
+          <div ui-tinymce="tinymceOptions" ng-model="article.html.en" placeholder="Съдържание на Английски"></div>
+        </div>
+        <div class="form-group">
+          <label>Тагове</label>
+          <input type="text" class="form-control" placeholder="таг1 таг2" ng-model="article.tags">
+        </div>
+      </form>
+    </uib-tab>
+    <uib-tab heading="Изглед" active="true">
+    </uib-tab>
+  </uib-tabset>
 </div>

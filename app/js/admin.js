@@ -19,6 +19,7 @@ require('angular-chart.js');
 require('angular-ui-calendar');
 require('angular-resource');
 require('angular-ui-tinymce');
+require('angular-ui-bootstrap');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -43,6 +44,7 @@ angular.element(document).ready(function() {
     'pascalprecht.translate',
     'chart.js',
     'ui.calendar',
+    'ui.bootstrap',
     'ngResource',
     'lbServices',
     'ui.tinymce'

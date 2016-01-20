@@ -98,6 +98,7 @@
     "angular-resource": "^1.4.8",
     "angular-touch": "^1.4.0",
     "angular-translate": "~2.7.0",
+    "angular-ui-bootstrap": "^1.1.0",
     "angular-ui-calendar": "^1.0.2",
     "angular-ui-tinymce": "0.0.5",
     "bootstrap-social": "^4.11.0",
