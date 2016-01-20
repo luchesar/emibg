@@ -1,8 +1,8 @@
-<div class="flat-article-event">
+<div class="article-event" ui-sref=".article({ id: article.id })">
     <div class="media">
-      <a class="media-left" href="#" ui-sref=".event({ id: event.id })">
+      <div class="media-left">
         <img class="media-object" ng-src="{{event.tumb}}">
-      </a>
+      </div>
       <div class="media-body">
         <h4 class="media-heading">{{event.title | lang | limitTo:200}}</h4>
       </div>
