@@ -21,7 +21,7 @@ var ngAnnotate   = require('browserify-ngannotate');
 function buildScript(file) {
 
   var bundler = browserify({
-    entries: config.browserify.entries,
+    entries: config.browserifyAdmin.entries,
     debug: true,
     cache: {},
     packageCache: {},
@@ -49,7 +49,7 @@ function buildScript(file) {
 
   function rebundle() {
     var stream = bundler.bundle();
-    var createSourcemap = global.isProd && config.browserify.sourcemap;
+    var createSourcemap = global.isProd && config.browserifyAdmin.sourcemap;
 
     gutil.log('Rebundle...');
 
@@ -66,11 +66,8 @@ function buildScript(file) {
   }
 
   return rebundle();
-
 }
 
 gulp.task('browserifyAdmin', function() {
-
-  return buildScript('main.js');
-
+  return buildScript(config.browserifyAdmin.bundleName);
 });

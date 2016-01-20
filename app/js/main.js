@@ -18,7 +18,6 @@ require('angular-translate');
 require('angular-chart.js');
 require('angular-ui-calendar');
 require('angular-resource');
-require('angular-ui-tinymce');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -44,8 +43,7 @@ angular.element(document).ready(function() {
     'chart.js',
     'ui.calendar',
     'ngResource',
-    'lbServices',
-    'ui.tinymce'
+    'lbServices'
   ];
 
   // mount on window for testing
