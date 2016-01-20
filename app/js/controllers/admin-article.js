@@ -51,7 +51,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   }
 
   $scope.tinymceOptions = editorOptions({
-    plugins : 'advlist autolink link image lists charmap print preview',
+    plugins : "autolink,lists,spellchecker,pagebreak,layer,table,save,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,template",
+  
   }, function($scope, editor) {
     $scope.editedHtml = jQuery(editor.getElement()).html();
   });

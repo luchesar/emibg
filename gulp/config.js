@@ -62,6 +62,12 @@ module.exports = {
     'sourcemap' : true
   },
 
+  'browserifyAdmin': {
+    'entries'   : ['./app/js/admin.js'],
+    'bundleName': 'admin.js',
+    'sourcemap' : true
+  },
+
   'test': {
     'karma': 'test/karma.conf.js',
     'protractor': 'test/protractor.conf.js'

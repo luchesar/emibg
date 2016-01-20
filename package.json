@@ -94,6 +94,7 @@
   },
   "dependencies": {
     "angular-chart.js": "^0.7.2",
+    "angular-google-picker": "^0.2.2",
     "angular-resource": "^1.4.8",
     "angular-touch": "^1.4.0",
     "angular-translate": "~2.7.0",
