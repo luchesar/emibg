@@ -8,7 +8,12 @@ function SearchCtrl($scope, $stateParams, $http, $state, PagingService) {
     $state.go('.', {q: $stateParams.q, page: $scope.page});
   });
 
-  $http.get("/api/searches/bg?q=" + ($stateParams.q || "*") + "&p=" + PagingService.pageNumber($stateParams)+ "&size=" + PagingService.itemsPerPage)
+  var lang = $stateParams.lang || "bg";
+
+  $http.get("/api/searches/" + lang +
+           "?q=" + ($stateParams.q || "*") +
+           "&p=" + PagingService.pageNumber($stateParams) +
+           "&size=" + PagingService.itemsPerPage)
   .then(function(response) {
     $scope.itemsCount = response.data.total;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount);
