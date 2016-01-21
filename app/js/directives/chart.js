@@ -6,7 +6,6 @@ var directivesModule = require('./_index.js');
  * @ngInject
  */
 function chart($compile) {
-
   return {
     restrict: 'A',
     link: function(scope, element, attributes) {

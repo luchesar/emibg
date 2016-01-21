@@ -157,6 +157,10 @@ url: '/summaries/{page:int}',
     url: '/article/{id:string}',
     templateUrl: 'admin/article.html'
   })
+  .state('app.admin.event', {
+    url: '/event/{id:string}',
+    templateUrl: 'admin/event.html'
+  })
   ;
 }
 
