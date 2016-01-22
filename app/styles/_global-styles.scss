@@ -25,7 +25,7 @@ a{
   
 }
 a:hover{
-  color: #FF7200;
+  color: #E67E08;
   text-decoration: none;
 }
 a:focus{
@@ -54,10 +54,10 @@ a img:hover {
 .navbar {
   border: medium none;
   border-radius: 0;
-  background-color: #252525;
+  background-color: #1f446f;
 }
 .navbar-inverse .navbar-nav > li > a {
-  border-left: 1px solid #383838;
+  border-left: 1px solid #35567d;
   color: #ddd;
   display: inline-block;
   height: 52px;
@@ -78,16 +78,16 @@ a img:hover {
 }
 
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
-  background-color: #E63900;
+  background-color: #E24F14;
 }
 
 .navbar-inverse .navbar-nav > .active > a.dropdown-toggle {
-  background-color: #E63900;
+  background-color: #E24F14;
 }  
 
 .navbar-inverse .navbar-nav > li > a:hover, 
 .navbar-inverse .navbar-nav > li > a:focus {
-    background-color: #FF7200;
+    background-color: #E67E08;
 }
 
 .navbar-collapse {
@@ -113,13 +113,13 @@ a img:hover {
 }
 
 .inverse-dropdown{
-  background-color: #222;
-  border-color: #080808;
+  background-color: #1F446F;
+  border-color: #35567d;
   &>li>a{
     color: #fff;
     &:hover{
       color: #fff;
-      background-color: #FF7200;
+      background-color: #E67E08;
     }
   }
 }
@@ -135,13 +135,13 @@ a img:hover {
 .navbar-inverse .navbar-nav > .open > a, 
 .navbar-inverse .navbar-nav > .open > a:hover, 
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #E63900;
+    background-color: #E24F14;
     color: #fff; }
 
 .dropdown-menu > .active > a, 
 .dropdown-menu > .active > a:hover, 
 .dropdown-menu > .active > a:focus {
-  background-color: #E63900;
+  background-color: #E24F14;
 } 
 
 /* Navbar Search*/
@@ -156,12 +156,12 @@ a img:hover {
 
 .navbar-inverse .navbar-brand:hover,  {
   color: #fff;
-  background-color: #FF7200;
+  background-color: #E67E08;
 }
 
 .navbar-inverse .navbar-brand:focus {
   color: #fff;
-  background-color: #E63900;
+  background-color: #E24F14;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -170,8 +170,8 @@ a img:hover {
 
 .btn-warning {
   color: #fff;
-  background-color: #FF7200;
-  border-color: #FF7200;
+  background-color: #E67E08;
+  border-color: #E67E08;
 }
 
 .btn-warning:hover, 
@@ -181,8 +181,8 @@ a img:hover {
 .btn-warning.active, 
 .open > .btn-warning.dropdown-toggle {
   color: #fff;
-  background-color: #E63900;
-  border-color: #E63900;
+  background-color: #E24F14;
+  border-color: #E24F14;
 }
 
 
@@ -192,7 +192,7 @@ a img:hover {
 }
 
 .btn:focus {
-  border-color: #FF7200;
+  border-color: #E67E08;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 114, 0, 0.8);
 }
@@ -206,7 +206,7 @@ a img:hover {
 //BANNER
 
 .banner {
-  background-color: #252525;
+  background-color: #1f446f;
   background-image: url(/images/banner.png); 
   height:180px;
   display: inline;
@@ -234,7 +234,7 @@ a img:hover {
 }
 
 .footer a:hover {
-  color: #FF7200;
+  color: #E67E08;
 }
 
 .footer_widget>h2 {
@@ -317,7 +317,7 @@ a img:hover {
     }
 
 .search-input:focus {
-  border-color: #FF7200;
+  border-color: #E67E08;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 114, 0, 0.8);
 }
@@ -339,7 +339,7 @@ p.ng-binding {
 
 .panel-default > .panel-heading {
   //background-color: #658ABC;
-  background-color: #252525;
+  background-color: #1f446f;
   color: #fff;
 }
 
@@ -419,7 +419,7 @@ p.ng-binding {
 
 
 .single_post_content h2 {
-    background: #252525 none repeat scroll 0px 0px;
+    background: #1f446f none repeat scroll 0px 0px;
     color: #FFF;
     font-size: 26px;
     font-weight: 400;
@@ -434,7 +434,7 @@ p.ng-binding {
 }
 
 .single_post_content h2 span {
-    background: #E63900 none repeat scroll 0px 0px;
+    background: #E24F14 none repeat scroll 0px 0px;
     padding: 6px 12px;
     border-radius: 1px;
 }
@@ -463,7 +463,7 @@ p.ng-binding {
 .pagination > li > span:hover, 
 .pagination > li > span:focus {
   color: white;
-  background-color: #FF7200;
+  background-color: #E67E08;
 }
 
 .pagination > li:last-child > a, .pagination > li:last-child > span,
@@ -504,7 +504,7 @@ p.ng-binding {
   width: 100%;
 }
 .single_page h1{
-  color: #E63900;
+  color: #E24F14;
   font-family: 'Arimo', sans-serif;
   font-size: 25px;
   line-height: 1.2em;
@@ -711,7 +711,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 }
 
 .td1 {
-  color: #E63900;
+  color: #E24F14;
   background-color: #F8F8F8; 
 }
 
