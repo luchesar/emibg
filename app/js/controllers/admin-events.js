@@ -47,20 +47,24 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
   }
 
   $scope.alerts = [];
-
+  
+  var publishedFilterInitialEvent = true;
   $scope.$watchCollection('publishedFilter', function () {
-    var publishedFilter = $scope.publishedFilter;
-    if (publishedFilter.published && publishedFilter.notPublished) {
-      $scope.published = "both";
-    } else if (publishedFilter.published && !publishedFilter.notPublished) {
-      $scope.published = "true";
-    } else if (!publishedFilter.published && publishedFilter.notPublished) {
-      $scope.published = "false";
-    } else {
-      console.log("none");
-      $scope.published = "none";
+    if (!publishedFilterInitialEvent) {
+      var publishedFilter = $scope.publishedFilter;
+      if (publishedFilter.published && publishedFilter.notPublished) {
+        $scope.published = "both";
+      } else if (publishedFilter.published && !publishedFilter.notPublished) {
+        $scope.published = "true";
+      } else if (!publishedFilter.published && publishedFilter.notPublished) {
+        $scope.published = "false";
+      } else {
+        console.log("none");
+        $scope.published = "none";
+      }
+      fetchEvents();
     }
-    fetchEvents();
+    publishedFilterInitialEvent = false;
   });
 
   $scope.closeAlert = function(index) {

@@ -56,32 +56,40 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
   $scope.articleType = {news: true, emis: true, summaries: true};
   //$scope.showAllCategories = { selected:false};
 
+  var articleTypeInitialEvent = true;
   $scope.$watchCollection('articleType', function () {
-    $scope.showCategories = "";
-    angular.forEach($scope.articleType, function (value, key) {
-      if (value) {
-        $scope.showCategories = $scope.showCategories + key + ",";
+    if (!articleTypeInitialEvent) {
+      $scope.showCategories = "";
+      angular.forEach($scope.articleType, function (value, key) {
+        if (value) {
+          $scope.showCategories = $scope.showCategories + key + ",";
+        }
+      });
+      if ($scope.showCategories === "") {
+        $scope.showCategories = "some string that is not a category";
       }
-    });
-    if ($scope.showCategories === "") {
-      $scope.showCategories = "some string that is not a category";
+      fetchArticles();
     }
-    fetchArticles();
+    articleTypeInitialEvent = false;
   });
 
+  var publishedFilterInitialEvent = true;
   $scope.$watchCollection('publishedFilter', function () {
-    var publishedFilter = $scope.publishedFilter;
-    if (publishedFilter.published && publishedFilter.notPublished) {
-      $scope.published = "both";
-    } else if (publishedFilter.published && !publishedFilter.notPublished) {
-      $scope.published = "true";
-    } else if (!publishedFilter.published && publishedFilter.notPublished) {
-      $scope.published = "false";
-    } else {
-      console.log("none");
-      $scope.published = "none";
+    if (!publishedFilterInitialEvent) {
+      var publishedFilter = $scope.publishedFilter;
+      if (publishedFilter.published && publishedFilter.notPublished) {
+        $scope.published = "both";
+      } else if (publishedFilter.published && !publishedFilter.notPublished) {
+        $scope.published = "true";
+      } else if (!publishedFilter.published && publishedFilter.notPublished) {
+        $scope.published = "false";
+      } else {
+        console.log("none");
+        $scope.published = "none";
+      }
+      fetchArticles();
     }
-    fetchArticles();
+    publishedFilterInitialEvent = false;
   });
 
 
