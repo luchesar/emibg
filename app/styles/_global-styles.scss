@@ -203,13 +203,25 @@ a img:hover {
   border-bottom: 0px;
 }
 
+//BANNER
+
+.banner {
+  background-color: #252525;
+  background-image: url(/images/banner.png); 
+  height:180px;
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+
 /* FOOTER */
 
 
 .footer {
+  background-color: #252525;
   background-image: url(/images/emi-footer.png); 
   background-size: contain;
-  background-color: #252525;
   color: #ddd;
   display: inline;
   float: left;
