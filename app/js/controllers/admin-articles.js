@@ -13,8 +13,8 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
       ($stateParams.lang ||  "bg") +
       "?categories=" + $scope.showCategories +
       "&p=" + PagingService.pageNumber($stateParams) +
-      "&size=" + PagingService.itemsPerPage +
-      "&published=both" +
+      "&size=" + 8 +
+      "&published=" + $scope.published +
       "&requireTitle=false"
     )
     .then(function(response) {
@@ -28,16 +28,33 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
     });
   };
 
-  $scope.alerts = [];
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
-    $state.go('.', {page: $scope.page});
+    $state.go('.', {
+      page: $scope.page,
+      published: $scope.published + "",
+      showCategories: $scope.showCategories
+    });
   });
 
+  if ($stateParams.published === "both") {
+    $scope.published = "both";
+    $scope.publishedFilter = {published: true, notPublished: true};
+  } else if ($stateParams.published === "true") {
+    $scope.published = "true";
+    $scope.publishedFilter = {published: true, notPublished: false};
+  } else if ($stateParams.published === "false") {
+    $scope.published = "false";
+    $scope.publishedFilter = {published: false, notPublished: true};
+  } else {
+    $scope.published = "none";
+    $scope.publishedFilter = {published: false, notPublished: false};
+  }
 
-  $scope.showCategories = "news,emis,analysis";
+  $scope.alerts = [];
+  $scope.showCategories = $stateParams.showCategories || "news,emis,analysis";
   $scope.articleType = {news: true, emis: true, summaries: true};
-  $scope.showAllCategories = { selected:false};
+  //$scope.showAllCategories = { selected:false};
 
   $scope.$watchCollection('articleType', function () {
     $scope.showCategories = "";
@@ -52,13 +69,29 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
     fetchArticles();
   });
 
-  $scope.showAllCategoriesClick = function () {
+  $scope.$watchCollection('publishedFilter', function () {
+    var publishedFilter = $scope.publishedFilter;
+    if (publishedFilter.published && publishedFilter.notPublished) {
+      $scope.published = "both";
+    } else if (publishedFilter.published && !publishedFilter.notPublished) {
+      $scope.published = "true";
+    } else if (!publishedFilter.published && publishedFilter.notPublished) {
+      $scope.published = "false";
+    } else {
+      console.log("none");
+      $scope.published = "none";
+    }
+    fetchArticles();
+  });
+
+
+ /* $scope.showAllCategoriesClick = function () {
     if ($scope.showAllCategories.selected) {
       $scope.articleType = {news: true, emis: true, summaries: true};
       $scope.showCategories = "";
       fetchArticles();
     }
-  };
+  };*/
   
   fetchArticles();
 

@@ -142,7 +142,7 @@ url: '/summaries/{page:int}',
     }
   })
   .state('app.admin.articles', {
-    url: '/articles/{page:int}',
+    url: '/articles/{page:int}?published&showCategories',
     templateUrl: 'admin/articles.html'
   })
   .state('app.admin.events', {
