@@ -1,11 +1,25 @@
 <div ng-controller="AdminArticlesCtrl" layout="column">
    <ui-view/>
    <div >
-       <div ng-repeat="article in articles" layout="column" layout-fill style="padding-bottom: 13px;" >
-           <div class="col-sm-12 col-md-12">
-              <flat-admin-article></flat-admin-article>
-           </div>
-       </div>
+     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+     <div class="btn-group">
+      <label class="btn btn-primary" ng-model="articleType.news" uib-btn-checkbox>Новини</label>
+      <label class="btn btn-primary" ng-model="articleType.emis" uib-btn-checkbox>Анализи на EMI</label>
+      <label class="btn btn-primary" ng-model="articleType.summaries" uib-btn-checkbox>Анализи Резюмета</label>
+      <label class="btn btn-primary" ng-model="showAllCategories.selected" ng-click="showAllCategoriesClick()" uib-btn-checkbox>Покажи всички</label>
+     </div>
+
+     <div class="btn-group">
+       <label class="btn btn-primary" ng-model="article.published" uib-btn-checkbox>Публикувани</label>
+       <label class="btn btn-primary" ng-model="article.published" uib-btn-checkbox>Не публикувани</label>
+     </div>
+
+      <div ng-repeat="article in articles" layout="column" layout-fill style="padding-bottom: 13px;" >
+         <div class="col-sm-12 col-md-12">
+            <flat-admin-article></flat-admin-article>
+         </div>
+      </div>
 
       <nav>
         <ul class="pagination">

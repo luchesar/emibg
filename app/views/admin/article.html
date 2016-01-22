@@ -17,30 +17,34 @@
     <uib-tab heading="Редакция">
       <form>
         <div class="form-group">
-          <label>Автор Кирилица</label>
+          <label>Автор Кирилица:</label>
           <input type="text" class="form-control" placeholder="Автор" ng-model="article.author.bg">
         </div>
         <div class="form-group">
-          <label>Автор Латиница</label>
+          <label>Автор Латиница:</label>
           <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Author" ng-model="article.autor.en">
         </div>
       </form>
         <p>
+          <label>Заглавие:</label>
           <h3><b>
             <div ui-tinymce="titleBgOptions" ng-model="title.bg" placeholder="Заглавие на Български"></div>
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
+          <label>Съдържание</label>
           <div ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
         </p>
         <p>
+          <label>Заглавие на Английски:</label>
           <h3><b>
             <div ui-tinymce="titleEnOptions" ng-model="title.en" placeholder="Заглавие на Английски"></div>
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
+          <label>Съдържание на Английски:</label>
           <div ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
         </p>
       <form>

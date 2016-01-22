@@ -31,7 +31,6 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.article.title);
-    nullify($scope.article.html);
 
     $http.put("/api/articles/" + $scope.article.id, $scope.article)
     .then(function(response) {
@@ -39,6 +38,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише статията в момента. Моля опитайте след малко."});
+      console.log(err);
     });
   }
 
