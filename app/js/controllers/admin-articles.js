@@ -13,7 +13,7 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
       ($stateParams.lang ||  "bg") +
       "?categories=" + $scope.showCategories +
       "&p=" + PagingService.pageNumber($stateParams) +
-      "&size=" + 8 +
+      "&size=8" +
       "&published=" + $scope.published +
       "&requireTitle=false"
     )

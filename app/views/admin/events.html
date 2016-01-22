@@ -1,6 +1,27 @@
 <div ng-controller="AdminEventsCtrl" layout="column">
    <ui-view/>
    <div >
+     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+     <div class="btn-group">
+       <label class="btn btn-primary" ng-model="publishedFilter.published" uib-btn-checkbox>Публикувани</label>
+       <label class="btn btn-primary" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Не публикувани</label>
+     </div>
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
        <div ng-repeat="event in events" layout="column" layout-fill style="padding-bottom: 13px;" >
          <div class="col-sm-12 col-md-12">
             <flat-admin-event></flat-admin-event>

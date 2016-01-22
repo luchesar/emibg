@@ -146,7 +146,7 @@ url: '/summaries/{page:int}',
     templateUrl: 'admin/articles.html'
   })
   .state('app.admin.events', {
-    url: '/events/{page:int}',
+    url: '/events/{page:int}?published',
     templateUrl: 'admin/events.html'
   })
   .state('app.admin.charts', {

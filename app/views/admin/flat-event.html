@@ -10,6 +10,7 @@
       <div class="media-body">
         <h4 class="media-heading">{{event.title | lang | limitTo:80}}</h4>
         <p>{{event.html | lang | htmlToPlainText | limitTo: 210}}...</p>
+        <p><b>{{event.published ? "Публикувана" : "Не публикувана"}}, Организатор: {{event.organiser.bg}}</b></p>
       </div>
     </div>
 </div>
