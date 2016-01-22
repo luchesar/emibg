@@ -17,7 +17,8 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
     ($stateParams.lang ||  "bg") +
     "?categories=news,amis,analysis&p=" + PagingService.pageNumber($stateParams) +
     "&size=" + PagingService.itemsPerPage +
-    "&published=both"
+    "&published=both" +
+    "&requireTitle=false"
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;
