@@ -16,28 +16,32 @@
       <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="visible-md visible-lg">
-        <div class="container">
-           <div ui-view="banner"></div>
-        </div>
-    </div>
-
-    <div id="wrap">
-      <div id="main" class="container">
-        <div ui-view="menu"></div>
-        <div class="row">
-          <div class="col-sm-12 col-md-8">
-            <div ui-view="content"></div>
+    <div class="wrap">
+      <div class="visible-md visible-lg">
+          <div class="container">
+             <div ui-view="banner"></div>
           </div>
-          <div class="col-sm-12 col-md-4">
-            <div ui-view="right-column"></div>
+      </div>
+
+      <div id="wrap">
+        <div id="main" class="container">
+          <div ui-view="menu"></div>
+          <div class="row">
+            <div class="col-sm-12 col-md-8">
+              <div ui-view="content"></div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <div ui-view="right-column"></div>
+            </div>
           </div>
         </div>
       </div>
+
+      
+        <div ui-view="footer"></div>
+      
+
+      <script src="js/main.js"></script>
     </div>
-
-    <div ui-view="footer"></div>
-
-    <script src="js/main.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 /* Global */
 
 body {
-background:#f5f5f5;
+background-color:#f5f5f5;
 font-family: 'Open Sans', sans-serif;
 }
 
@@ -220,7 +220,7 @@ a img:hover {
 
 .footer {
   background-color: #252525;
-  background-image: url(/images/emi-footer.png); 
+  background-image: url(/images/emi-footer-2.png); 
   background-size: contain;
   color: #ddd;
   display: inline;
@@ -410,6 +410,7 @@ p.ng-binding {
   margin-bottom: 10px;
   height: 92px;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .media-object {
@@ -473,12 +474,12 @@ p.ng-binding {
 
 //Partners
 
-.partner {
-  border:1px solid #DCDCDC;
-  margin: 5px;
-  border-radius: 1px;
-  padding: 5px;
-}
+// .partner {
+//   border:1px solid #DCDCDC;
+//   margin: 5px;
+//   border-radius: 1px;
+//   padding: 5px;
+// }
 
 
 //Arcticles
@@ -517,6 +518,7 @@ p.ng-binding {
     margin-bottom: 2%;
     text-align: justify
 }
+
 //Single Page Content
 
 .single_page_content {
