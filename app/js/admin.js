@@ -20,6 +20,7 @@ require('angular-ui-calendar');
 require('angular-resource');
 require('angular-ui-tinymce');
 require('angular-ui-bootstrap');
+require('../../node_modules/angular-google-picker/src/google-picker');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -45,6 +46,7 @@ angular.element(document).ready(function() {
     'chart.js',
     'ui.calendar',
     'ui.bootstrap',
+    'lk-google-picker',
     'ngResource',
     'lbServices',
     'ui.tinymce'
@@ -55,6 +57,7 @@ angular.element(document).ready(function() {
     .constant('AppSettings', require('./constants'))
     .config(require('./routes'))
     .config(require('./translations'))
+    .config(require('./google-picker-config'))
     .run(require('./on_run'));
 
   angular.bootstrap(document, ['app']);

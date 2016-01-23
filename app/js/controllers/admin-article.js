@@ -118,6 +118,23 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
   })
   .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
+
+
+  $scope.onPicked = function (docs) {
+    docs.map(doc => console.log(JSON.stringify(doc)));
+    var imageInfo = docs.shift();
+    $scope.article.image = {
+      config: {
+        fill: true,
+        horizontalAlign: "center",
+        verticalAlign: "center"
+      },
+      url: imageInfo.url,
+      iconUrl: imageInfo.iconUrl
+    };
+    $scope.$apply();
+    console.log(JSON.stringify($scope.article.image));
+  }
 }
 
 controllersModule.controller('AdminArticleCtrl', AdminArticleCtrl);
