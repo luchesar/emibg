@@ -10,7 +10,13 @@ function flatAdminChart() {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: "admin/flat-chart.html"
+    templateUrl: "admin/flat-chart.html",
+    link: function(scope, element, attributes) {
+      var chart = element.attr('chart');
+      if (chart) {
+        scope.chart = scope.$eval(chart);
+      }
+    }
   };
 
 }
