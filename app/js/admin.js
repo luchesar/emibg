@@ -20,6 +20,7 @@ require('angular-ui-calendar');
 require('angular-resource');
 require('angular-ui-tinymce');
 require('angular-ui-bootstrap');
+require('angular-bootstrap-datetimepicker');
 require('../../node_modules/angular-google-picker/src/google-picker');
 require('./ext/imgLiquid');
 require('./templates');
@@ -49,7 +50,8 @@ angular.element(document).ready(function() {
     'lk-google-picker',
     'ngResource',
     'lbServices',
-    'ui.tinymce'
+    'ui.tinymce',
+    'ui.bootstrap.datetimepicker'
   ];
 
   // mount on window for testing

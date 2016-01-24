@@ -13,6 +13,7 @@ module.exports = {
       'node_modules/fullcalendar/dist/fullcalendar.css',
       'node_modules/bootstrap-social/bootstrap-social.css',
       'node_modules/bootstrap-social/assets/css/font-awesome.css',
+      'node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
       'app/styles/fontello/**/*.css'
     ],
     'destCss': 'build/css/styles.css'

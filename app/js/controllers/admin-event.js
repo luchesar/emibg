@@ -103,6 +103,12 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     $scope.html = JSON.parse(JSON.stringify(event.html));
     $scope.bgHtml = $sce.trustAsHtml(event.html.bg);
     $scope.enHtml = $sce.trustAsHtml(event.html.bg);
+    $scope.startDate = {
+      utcDateValue: event.start,
+      active: true,
+      selectable: true,
+      future: true
+    }
   })
   .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
 }
