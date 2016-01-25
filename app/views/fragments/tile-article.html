@@ -1,8 +1,6 @@
 <figure class="article-event" ui-sref=".article({ id: article.id })">
     <div class="thumbnail">
-      <div liquid-cfg="article.image.config" style="width:100%; height: 260px;">
-        <img ng-src="{{article.image.url}}"></img>
-      </div>
+       <emi-image image="article.image" width="100%" height="260px"></emi-image>
        <div class="caption">
         <div class="gradient-container">
           <h3>{{article.title | lang | limitTo:100}}</h3>
