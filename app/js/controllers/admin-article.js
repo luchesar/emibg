@@ -2,6 +2,7 @@
 
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
+var moment = require('moment');
 
 /**
 * @ngInject
@@ -31,8 +32,15 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.article.title);
+    $scope.article.date = moment().valueOf();
 
-    $http.put("/api/articles/" + $scope.article.id, $scope.article)
+    var method = $http.post;
+    var url = "/api/articles";
+    if ($scope.article.id) {
+      method = $http.put;
+      url = "/api/articles/" + $scope.article.id;
+    }
+    method(url, $scope.article)
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успещно")});
     })
@@ -125,7 +133,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     init({
       title: {bg:'', en:''},
       html: {bg:'', en:''},
-      category: ['news']
+      category: ['news'],
+      image: {}
     });
   }
 
