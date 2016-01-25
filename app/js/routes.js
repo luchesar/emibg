@@ -157,7 +157,7 @@ url: '/summaries/{page:int}',
     url: '/article/{id:string}',
     templateUrl: 'admin/article.html'
   })
-  .state('app.admin.articles.new', {
+  .state('app.admin.newarticle', {
     url: '/new',
     templateUrl: 'admin/article.html'
   })
