@@ -1,39 +1,44 @@
-<footer class="footer">       
+<footer class="footer">  
+    <div class="container">     
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-sm-12">
+        <div class="col-lg-12">
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="footer_widget">
-              <h2><a href="#" ui-sref="app.menu.home" onclick="scroll(0,0)">{{'HOME' | translate }}</h2>
+              <h2><a href="#" ui-sref="app.menu.home" onclick="scroll(0,0)"><i class="fa fa-home"></i>&nbsp;{{'HOME' | translate }}</h2>
                 <ul>
-                    <li><a href="#" ui-sref="app.menu.news({page: 1})" onclick="scroll(0,0)">{{'NEWS' | translate }}</a></li>
-                    <li>{{'ANALYSIS' | translate }}</li>
+                    <li><a href="#" ui-sref="app.menu.news({page: 1})" onclick="scroll(0,0)"><i class="fa fa-file-text-o"></i>&nbsp;{{'NEWS' | translate }}</a></li>
+                    <li><i class="fa fa-balance-scale"></i>&nbsp;{{'ANALYSIS' | translate }}</li>
                         <ul>
-                             <li><a href="#" ui-sref="app.menu.analysis.emis({page: 1})" onclick="scroll(0,0)">&nbsp;&nbsp;&nbsp;{{'EMIS_ANALYSIS' | translate }}</a></li>
-                             <li><a href="#" ui-sref="app.menu.analysis.summaries({page: 1})" onclick="scroll(0,0)">&nbsp;&nbsp;&nbsp;{{'SUMMARIES' | translate }}</a></li>
+                             <li><a href="#" ui-sref="app.menu.analysis.emis({page: 1})" onclick="scroll(0,0)"><i class="fa fa-book"></i>&nbsp;{{'EMIS_ANALYSIS' | translate }}</a></li>
+                             <li><a href="#" ui-sref="app.menu.analysis.summaries({page: 1})" onclick="scroll(0,0)"><i class="fa fa-area-chart"></i>&nbsp;{{'SUMMARIES' | translate }}</a></li>
                         </ul>
-                    <li><a href="" ui-sref="app.menu.events({page: 1})" onclick="scroll(0,0)">{{'EVENTS' | translate }}</a></li>
-                    <li><a href="" ui-sref="app.menu.energopedia" onclick="scroll(0,0)">{{'ENERGOPEDIA' | translate }}</a></li>
-                    <li><a href="#" ui-sref="app.menu.partners" onclick="scroll(0,0)">{{'PARTNERS' | translate }}</a></li>
+                    <li><a href="" ui-sref="app.menu.events({page: 1})" onclick="scroll(0,0)"><i class="fa fa-calendar"></i>&nbsp;{{'EVENTS' | translate }}</a></li>
+                    <li><a href="" ui-sref="app.menu.energopedia" onclick="scroll(0,0)"><i class="fa fa-bolt"></i>&nbsp;{{'ENERGOPEDIA' | translate }}</a></li>
+                    <li><a href="#" ui-sref="app.menu.partners" onclick="scroll(0,0)"><i class="fa fa-users"></i>&nbsp;{{'PARTNERS' | translate }}</a></li>
                 </ul>    
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="footer_widget">
-              <h2>{{'FOLLOW' | translate }}</h2> <!--open in blank window?-->
-              <ul>
-                    <li><a href="https://www.facebook.com/Energy-Management-Institute-113406378721586/" title="Facebook">Facebook</a></li>
-                    <li><a href="https://twitter.com/EMI_Bulgaria" title="Twitter">Twitter</a></li>
-                    <li><a href="https://www.linkedin.com/company/energy-management-institute-emi-?trk=pro_other_cmpy" title="LinkedIn">LinkedIn</a></li>
-                    <li><a href="https://www.xing.com/companies/energymanagementinstitute?current=1&literal=Energy+Management+Institute" title="Xing">Xing</a></li>
-                    <li><a href="" title="YouTube">YouTube</a></li>
-                    
-                    <li>
-                      <a class="btn btn-social-icon btn-twitter">
-                        <span class="fa fa-twitter"></span>
-                      </a>
-                    </li>
-                </ul>              
-            </div>
+              <h2>{{'FOLLOW' | translate }}</h2> 
+              <div class="social_link">
+                <ul class="sociallink_nav">
+                    <li><a href="https://www.facebook.com/Energy-Management-Institute-113406378721586/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/EMI_Bulgaria" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/energy-management-institute-emi-?trk=pro_other_cmpy" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.xing.com/companies/energymanagementinstitute?current=1&literal=Energy+Management+Institute" title="Xing" target="_blank"><i class="fa fa-xing"></i></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></i></a></li>
+                </ul>
+              </div> 
+
+
+              <h2>{{'LANGUAGE' | translate }}</h2> 
+                <div class="language-footer">
+                  <button type="button" class="btn btn-warning"><a ng-href="{{otherLangURL}}">
+                    {{'OTHER_LANG' | translate }}</a>
+                  </button>
+                </div>
+              </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="footer_widget">
@@ -54,5 +59,6 @@
             </div>
           </div>
         </div>
-      </div>           
-    </footer>
+      </div> 
+  </div>          
+</footer>

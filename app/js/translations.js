@@ -12,7 +12,7 @@ function Translations($translateProvider) {
       MISSION: 'Mission',
       TEAM: 'Team',
       CONTACT: 'Contact',
-      OTHER_LANG: 'Бг',
+      OTHER_LANG: 'Български',
       NEWS: 'News',
       ANALYSIS: "Analysis",
       EVENTS: 'Events',
@@ -42,7 +42,17 @@ function Translations($translateProvider) {
       BACK: 'Back',
       FOLLOW: 'Follow us',
       SEARCH_EVERYWHERE: 'Searching in all articles',
-      NOTHING_FOUND: 'Your search did not match any documents.'
+      NOTHING_FOUND: 'Your search did not match any documents.',
+      LANGUAGE: "Language",
+      BULGARIAN: "Български",
+      ENGLISH: "Английски",
+      EVENT_TYPE: "Type of event",
+      ORGANIZER: "Organizer",
+      DATE: "Date",
+      PLACE: "Place",
+      TIME: "Time",
+      ACCESS: "Access"
+
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -50,7 +60,7 @@ function Translations($translateProvider) {
       MISSION: 'Мисия',
       TEAM: 'Екип',
       CONTACT: 'Контакти',
-      OTHER_LANG: 'En',
+      OTHER_LANG: 'English',
       NEWS: 'Новини',
       ANALYSIS: 'Анализи',
       EVENTS: 'Събития',
@@ -80,7 +90,16 @@ function Translations($translateProvider) {
       BACK: 'Назад',
       FOLLOW: 'Последвайте ни',
       SEARCH_EVERYWHERE: 'Търсене във всички статии и събития',
-      NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.'
+      NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.',
+      LANGUAGE: "Език",
+      BULGARIAN: "Bulgarian",
+      ENGLISH: "English",
+      EVENT_TYPE: "Вид на събитието",
+      ORGANIZER: "Организатор",
+      DATE: "Дата",
+      PLACE: "Място",
+      TIME: "Час",
+      ACCESS: "Достъп"
     });
   $translateProvider.preferredLanguage('bg');
 }

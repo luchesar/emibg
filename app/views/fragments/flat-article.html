@@ -1,14 +1,13 @@
-<div class="flat-article-event">
+<div class="article-event flat" ui-sref=".article({ id: article.id })">
     <div class="media">
-      <a class="media-left" href="#" ui-sref=".article({ id: article.id })">
-      <div class="media-object">
-            <div liquid-cfg="article.image.config" style="width:100%; height:80px;" class="img-thumbnail">
-               <img ng-src="{{article.image.url}}"></img>
-            </div>
+      <div class="media-left">
+        <div liquid-cfg="article.image.config" style="width:100%; height:80px;" class="img-thumbnail">
+           <img ng-src="{{article.image.url}}"></img>
         </div>
-      </a>
+        <img class="media-object" ng-src="{{article.tumb}}">
+      </div>
       <div class="media-body">
-        <h4 class="media-heading">{{article.title | lang | limitTo:200}}</h4>
+        <h4 class="media-heading">{{article.title | lang | limitTo:100}}</h4>
       </div>
     </div>
 </div>
