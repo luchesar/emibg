@@ -153,7 +153,7 @@ url: '/summaries/{page:int}',
     url: '/charts/{page:int}',
     templateUrl: 'admin/charts.html'
   })
-  .state('app.admin.articles.article', {
+  .state('app.admin.article', {
     url: '/article/{id:string}',
     templateUrl: 'admin/article.html'
   })
