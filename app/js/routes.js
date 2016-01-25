@@ -157,9 +157,21 @@ url: '/summaries/{page:int}',
     url: '/article/{id:string}',
     templateUrl: 'admin/article.html'
   })
+  .state('app.admin.articles.new', {
+    url: '/new',
+    templateUrl: 'admin/article.html'
+  })
   .state('app.admin.events.event', {
     url: '/event/{id:string}',
     templateUrl: 'admin/event.html'
+  })
+  .state('app.admin.events.new', {
+    url: '/new',
+    templateUrl: 'admin/event.html'
+  })
+  .state('app.admin.charts.chart', {
+    url: '/chart/{id:string}',
+    templateUrl: 'admin/chart.html'
   })
   ;
 }

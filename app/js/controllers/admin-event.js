@@ -95,12 +95,11 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
   $scope.titleBgOptions = titleOptions(title => $scope.event.title.bg = title);
   $scope.titleEnOptions = titleOptions(title => $scope.event.title.en = title);
 
-  EventService.event($stateParams.id)
-  .then(function(event) {
+  var init = function(event) {
     $scope.event = event;
     
-    $scope.title = JSON.parse(JSON.stringify(event.title));
-    $scope.html = JSON.parse(JSON.stringify(event.html));
+    $scope.title = angular.copy(event.title);
+    $scope.html = angular.copy(event.html);
     $scope.bgHtml = $sce.trustAsHtml(event.html.bg);
     $scope.enHtml = $sce.trustAsHtml(event.html.bg);
     $scope.startDate = {
@@ -109,8 +108,22 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       selectable: true,
       future: true
     }
-  })
-  .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
+  };
+
+  if ($stateParams.id) {
+    EventService.event($stateParams.id)
+    .then()
+    .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
+  } else {
+    init({
+      title: {bg:'', en:''},
+      html: {bg:'', en:''},
+      access: {bg:'', en:''},
+      type: {bg:'', en:''},
+      organiser: {bg:'', en:''},
+      place: {bg:'', en:''}
+    });
+  }
 }
 
 controllersModule.controller('AdminEventCtrl', AdminEventCtrl);

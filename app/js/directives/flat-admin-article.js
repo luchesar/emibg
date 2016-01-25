@@ -1,6 +1,7 @@
 'use strict';
 
 var directivesModule = require('./_index.js');
+var moment = require('moment');
 
 /**
  * @ngInject

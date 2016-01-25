@@ -96,16 +96,15 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   $scope.titleBgOptions = titleOptions(title => $scope.article.title.bg = title);
   $scope.titleEnOptions = titleOptions(title => $scope.article.title.en = title);
 
-  ArticleService.article($stateParams.id)
-  .then(function(article) {
+  var init = function(article) {
     $scope.article = article;
     
     $scope.articleType = {};
     $scope.articleType.news = _(article.category).contains('news');
     $scope.articleType.emis = _(article.category).contains('emis');
     $scope.articleType.summaries =_(article.category).contains('summaries');
-    $scope.title = JSON.parse(JSON.stringify(article.title));
-    $scope.html = JSON.parse(JSON.stringify(article.html));
+    $scope.title = angular.copy(article.title);
+    $scope.html = angular.copy(article.html);
     
     $scope.$watchCollection('articleType', function () {
       $scope.article.category = [];
@@ -116,12 +115,21 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       });
     });
     $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
-  })
-  .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
+  }
 
+  if ($stateParams.id) {
+    ArticleService.article($stateParams.id)
+    .then(init)
+    .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
+  } else {
+    init({
+      title: {bg:'', en:''},
+      html: {bg:'', en:''},
+      category: ['news']
+    });
+  }
 
   $scope.onPicked = function (docs) {
-    docs.map(doc => console.log(JSON.stringify(doc)));
     var imageInfo = docs.shift();
     $scope.article.image = {
       config: {
@@ -129,11 +137,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
         horizontalAlign: "center",
         verticalAlign: "center"
       },
-      url: imageInfo.url,
-      iconUrl: imageInfo.iconUrl
+      url: "http://drive.google.com/uc?export=view&id=" + imageInfo.id
     };
     $scope.$apply();
-    console.log(JSON.stringify($scope.article.image));
   }
 }
 
