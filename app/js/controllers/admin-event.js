@@ -29,11 +29,18 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
 
   $scope.save = function() {
     $scope.alerts = [];
+    $scope.event.date = moment().valueOf();
 
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.event.title);
 
-    $http.put("/api/events/" + $scope.event.id, $scope.event)
+    var method = $http.post;
+    var url = "/api/events";
+    if ($scope.event.id) {
+      method = $http.put;
+      url = "/api/events/" + $scope.event.id;
+    }
+    method(url, $scope.event)
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успещно")});
     })
@@ -138,7 +145,8 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       organiser: {bg:'', en:''},
       place: {bg:'', en:''},
       start: +moment(),
-      end: +moment() + 3600000
+      end: +moment() + 3600000,
+      image: {}
     });
   }
 }
