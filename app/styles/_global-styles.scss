@@ -238,6 +238,14 @@ a img:hover {
     padding-top: 7px;
 }
 
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #35567d;
+}
+
+.navbar-collpase li:hover {
+  background-color: white;
+}
+
 //BANNER
 
 .banner {
