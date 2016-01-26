@@ -718,6 +718,78 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 }
 
 
+// carousel
+
+// .carousel-caption h1 {
+//   font-family: 'Arimo', sans-serif;
+//   font-size: 25px;
+//   line-height: 1.2em;
+//   margin: 10px 0 20px;
+//   padding: 0 0 4px;
+//   text-transform: uppercase;
+// }
+
+
+
+.slider_article {
+  bottom: 25px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  padding: 3% 4%;
+}
+
+.slider_article > h2 {
+    background: none;
+    margin-bottom: 10px;
+}
+.slider_article > h2 a {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 10px;
+  display: inline-block;
+}
+.slider_article > p {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .glyphicon-chevron-left {
+    top: 10%;
+}
+
+.carousel-indicators li {
+  border-radius: 1px;
+  opacity: 0.8;
+  margin: 3px;
+}
+
+.carousel-indicators li:hover {
+  opacity: 1;
+}
+
+
+
+.carousel-indicators .active {
+    margin: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);;
+}
+
+
+
+
+
+
 
 
 
