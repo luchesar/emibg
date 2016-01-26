@@ -1,8 +1,7 @@
 <div class="article-event flat" ui-sref=".article({ id: article.id })">
     <div class="media">
       <div class="media-left">
-        <emi-image image="article.image" width="120px" height="80px"/>
-        <img class="media-object" ng-src="{{article.tumb}}">
+        <emi-image image="article.image" width="120px" height="80px"></emi-image>
       </div>
       <div class="media-body">
         <h4 class="media-heading">{{article.title | lang | limitTo:100}}</h4>

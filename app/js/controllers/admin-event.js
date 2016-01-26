@@ -112,7 +112,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
 
   if ($stateParams.id) {
     EventService.event($stateParams.id)
-    .then()
+    .then(init)
     .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
   } else {
     init({

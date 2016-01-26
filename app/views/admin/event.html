@@ -9,6 +9,9 @@
   <button class="pull-right" ng-click="cancel()">Отказ</button>
   <uib-tabset>
     <uib-tab heading="Редакция">
+        <div class="form-group">
+          <image-picker image="event.image" width="400px", height="300px"></image-picker>
+        </div>
       <div class="row">
          <div class="col-md-4">
             Начална дата и час:
@@ -106,9 +109,7 @@
               <div class="col-md-12">
                 <carousel>
                   <slide>
-                    <div liquid-cfg="event.image.config" style="width:100%; height:520px;" class="img-thumbnail">
-                      <img ng-src="{{event.image.url}}">
-                    </div>
+                    <emi-image image="event.image" width="100%" height="520px"></emi-image>
                     <div class="carousel-caption">
                       <h2>{{event.title | lang}}</h2>
                       <h4> {{event.html | lang | htmlToPlainText | limitTo: 180}}...</h4>

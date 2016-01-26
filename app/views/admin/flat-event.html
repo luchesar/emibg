@@ -2,9 +2,7 @@
     <div class="media">
       <a class="media-left" href="#" ui-sref="app.admin.events.event({ id: event.id })">
         <div class="media-object">
-            <div liquid-cfg="event.image.config" style="width:100%; height:80px;" class="img-thumbnail">
-                <img ng-src="{{event.image.url}}"></img>
-            </div>
+          <emi-image image="event.image" width="120px" height="90px"></emi-image>
         </div>
       </a>
       <div class="media-body">
