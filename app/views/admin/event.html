@@ -14,30 +14,23 @@
         </div>
       <div class="row">
          <div class="col-md-4">
-            Начална дата и час:
-            <datetimepicker 
-              data-ng-model="startDate" 
-              data-on-set-time="setStartDate(newDate, oldDate)" 
-              data-datetimepicker-config="{ dropdownSelector: '.dropdown-toggle' }">
-            </datetimepicker>
+            <b>Начална дата и час:</b>
+            <input type="date"
+                   id="exampleInput"
+                   name="input"
+                   ng-model="newstart.date"
+                   placeholder="yyyy-MM-dd"
+                   min="0001-01-01"
+                   ng-change="setStartDate()"/>
+            <input type="time" name="input" ng-model="newstart.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setStartDate()"/>
          </div>
          <div class="col-md-4">
-            Крайна дата и час:
-            <datetimepicker 
-              data-ng-model="endDate"
-              data-on-set-time="setDateDate(newDate, oldDate)">
-            </datetimepicker>
-         </div>
-         <div class="col=md-4">
-            <div class="dropdown">
-                <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">
-                    Click here to show calendar
-                </a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="startDate"
-                                    data-datetimepicker-config="{ dropdownSelector: '.dropdown-toggle' }"></datetimepicker>
-                </ul>
-            </div>
+            <b>Крайна дата и час:</b>
+            <input type="date"
+                   id="exampleInput"
+                   name="input"
+                   ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" required ng-change="setEndDate()"/>
+            <input type="time" name="input" ng-model="newend.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setEndDate()"/>
          </div>
       </div>
       <form>

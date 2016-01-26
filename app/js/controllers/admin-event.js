@@ -2,6 +2,7 @@
 
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
+var moment = require('moment');
 
 /**
 * @ngInject
@@ -95,6 +96,14 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
   $scope.titleBgOptions = titleOptions(title => $scope.event.title.bg = title);
   $scope.titleEnOptions = titleOptions(title => $scope.event.title.en = title);
 
+  $scope.setStartDate = function() {
+    $scope.event.start = $scope.newstart.date.getTime() + $scope.newstart.time.getTime();
+  }
+
+  $scope.setEndDate = function() {
+    $scope.event.end = $scope.newend.date.getTime() + $scope.newend.time.getTime();
+  }
+
   var init = function(event) {
     $scope.event = event;
     
@@ -102,11 +111,17 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     $scope.html = angular.copy(event.html);
     $scope.bgHtml = $sce.trustAsHtml(event.html.bg);
     $scope.enHtml = $sce.trustAsHtml(event.html.bg);
-    $scope.startDate = {
-      utcDateValue: event.start,
-      active: true,
-      selectable: true,
-      future: true
+    var timeFormat = "HH-mm-ss";
+    var dateFormat = "YYYY-MM-DD";
+    var start = moment(event.start);
+    var end = moment(event.end);
+    $scope.newstart = {
+      date: moment(start).hour(0).minutes(0).seconds(0).toDate(),
+      time: moment(0).hour(start.hour()).minutes(start.minutes()).seconds(start.seconds()).toDate()
+    }
+    $scope.newend = {
+      date: moment(end).hour(0).minutes(0).seconds(0).toDate(),
+      time: moment(0).hour(end.hour()).minutes(end.minutes()).seconds(end.seconds()).toDate()
     }
   };
 
@@ -121,7 +136,9 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       access: {bg:'', en:''},
       type: {bg:'', en:''},
       organiser: {bg:'', en:''},
-      place: {bg:'', en:''}
+      place: {bg:'', en:''},
+      start: +moment(),
+      end: +moment() + 3600000
     });
   }
 }
