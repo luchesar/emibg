@@ -42,6 +42,8 @@ a img:hover {
   opacity: 0.75;
 }
 
+
+
 /* Navbar */
 
 #navArea{
@@ -58,7 +60,7 @@ a img:hover {
 }
 .navbar-inverse .navbar-nav > li > a {
   border-left: 1px solid #35567d;
-  color: #ddd;
+  color: #EBEBEB;
   display: inline-block;
   height: 52px;
   line-height: 50px;
@@ -79,6 +81,7 @@ a img:hover {
 
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
   background-color: #E24F14;
+  border-bottom: 1px solid #35567d;
 }
 
 .navbar-inverse .navbar-nav > .active > a.dropdown-toggle {
@@ -146,8 +149,14 @@ a img:hover {
 
 /* Navbar Search*/
 
+
+.navbar-toggle {
+  padding: 10px;
+}
+
 .navbar-brand {
     height: 52px;
+    margin-right: 5px;
 }
 
 .navbar-inverse .navbar-brand {
@@ -165,7 +174,7 @@ a img:hover {
 }
 
 .navbar-inverse .navbar-toggle {
-    color: #ddd;
+    color: #EBEBEB;
 }
 
 .btn-warning {
@@ -203,6 +212,32 @@ a img:hover {
   border-bottom: 0px;
 }
 
+
+//NAVBAR collapse
+
+.navbar-inverse .navbar-toggle,
+ {
+    background-color: #1F446F;
+    border-color: #35567d;
+    border-radius: 1px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #E67E08;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #E24F14;
+}
+
+
+//Navbar collapse icons 
+.navbar-collapse-search {
+    padding-bottom: 8px;
+    padding-top: 7px;
+}
+
 //BANNER
 
 .banner {
@@ -222,7 +257,7 @@ a img:hover {
   background-color: #252525;
   background-image: url(/images/emi-footer-2.png); 
   background-size: contain;
-  color: #ddd;
+  color: #EBEBEB;
   display: inline;
   float: left;
   padding: 10px 30px 48px;
@@ -248,14 +283,14 @@ a img:hover {
 .navbar-logo {
   max-width:100%;
   max-height:100%;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .navbar-toggle {
   margin-bottom: auto;
 }
-/* NavBar Collapse */
+/* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
     .navbar-header {
@@ -405,7 +440,7 @@ p.ng-binding {
 }
 
 .flat {
-  border: 1px solid #ddd;
+  border: 1px solid #EBEBEB;
   padding: 5px;
   margin-bottom: 10px;
   height: 92px;
@@ -526,7 +561,7 @@ p.ng-binding {
   float: left;
   padding-top: 0px;
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #EBEBEB;
   padding-bottom: 40px;
   margin-bottom: 50px;
 }
@@ -569,7 +604,7 @@ p.ng-binding {
 //Social links 
 
 .social_link {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .sociallink_nav {
@@ -716,6 +751,90 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   color: #E24F14;
   background-color: #F8F8F8; 
 }
+
+
+// carousel
+
+// .carousel-caption h1 {
+//   font-family: 'Arimo', sans-serif;
+//   font-size: 25px;
+//   line-height: 1.2em;
+//   margin: 10px 0 20px;
+//   padding: 0 0 4px;
+//   text-transform: uppercase;
+// }
+
+
+
+.slider_article {
+  bottom: 25px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  padding: 3% 4%;
+}
+
+.slider_article > h2 {
+    background: none;
+    margin-bottom: 10px;
+}
+.slider_article > h2 a {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 10px;
+  display: inline-block;
+}
+.slider_article > p {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.slider .carousel-control .glyphicon-chevron-right,
+.slider .carousel-control .glyphicon-chevron-left {
+    top: 10%;
+}
+
+.carousel-indicators li {
+  border-radius: 1px;
+  opacity: 0.8;
+  margin: 3px;
+}
+
+.carousel-indicators li:hover {
+  opacity: 1;
+}
+
+
+
+.carousel-indicators .active {
+    margin: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);;
+}
+
+
+//CALENDAR
+
+.fc-toolbar h2{
+  text-transform: uppercase;
+  font-size: 23px;
+}
+
+.fc-state-default {
+  border-radius: 1px !important;
+  background-image: none !important;
+}
+
+
+
 
 
 
