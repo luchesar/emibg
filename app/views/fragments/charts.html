@@ -5,7 +5,7 @@
       <div ng-repeat="chart in slide" >
         <!-- <div> chart.id: {{chart.id}}</div> -->
         <div ui-sref="app.menu.chart({id:chart.id})">
-          <chart-panel/>
+          <chart-panel></chart-panel>
           <br/>
           <span ng-if="!$last"></span>
         </div>

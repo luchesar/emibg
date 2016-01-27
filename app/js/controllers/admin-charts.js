@@ -3,7 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, ChartsService) {
+function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService) {
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {page: $scope.page});
@@ -19,8 +19,7 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, Cha
   .then(function(response) {
     $scope.itemsCount = response.data.size;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount);
-    $scope.charts = _(response.data.items.map(ChartsService.translate))
-        .chunk(3).toArray();
+    $scope.charts = _(response.data.items).chunk(3).toArray();
   })
   .catch(function(err) {
     console.log(err);

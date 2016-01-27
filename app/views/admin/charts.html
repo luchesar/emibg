@@ -3,8 +3,8 @@
    <div >
        <div ng-repeat="rowCharts in charts" layout="column" layout-fill style="padding-bottom: 13px;" >
           <div class="row">
-            <div class="col-sm-4 col-md-4" ng-repeat="grafika in rowCharts">
-              <flat-admin-chart chart="grafika"></flat-admin-chart>
+            <div class="col-sm-4 col-md-4" ng-repeat="chart in rowCharts">
+              <flat-admin-chart chart="chart"></flat-admin-chart>
             </div>
           </div>
        </div>

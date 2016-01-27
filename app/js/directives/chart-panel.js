@@ -12,14 +12,10 @@ function chartPanel($compile) {
     transclude: true,
     templateUrl: "fragments/chart-panel.html",
     link: function(scope, element, attributes) {
-      var chart = element.attr('chart');
+      var chart = element.attr('chart') || 'chart';
       if (chart) {
         scope.chart = scope.$eval(chart);
       }
-      /*scope.$watch("chart", function() {
-        var compiledChart = $compile(element);
-        compiledChart(scope);
-      });*/
     }
   };
 
