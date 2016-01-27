@@ -20,16 +20,32 @@
         <input type="radio" ng-model="chart.type" value="chart-line">
         Линейна
       </label><br/>
+      <label>
+        <input type="checkbox" ng-model="chart.legend">
+        Показване на легенда
+       </label><br/>
+      <label>
+        <textarea ng-model="chart.series"></textarea>
+        Серия
+       </label><br/>
+      <label>
+        <textarea ng-model="chart.labels"></textarea>
+        Етикети
+       </label><br/>
+      <label>
+        <textarea ng-model="chart.data"></textarea>
+        Данни
+       </label><br/>
     </div>
  </div>
   <form>
     <div class="form-group">
       <label>Заглавие Кирилица:</label>
-      <input type="text" class="form-control" placeholder="Автор" ng-model="article.author.bg">
+      <input type="text" class="form-control" placeholder="Заглавие" ng-model="chart.title.bg">
     </div>
     <div class="form-group">
-      <label>Заглавие Латиница:</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Author" ng-model="article.autor.en">
+      <label>Заглавие на Английски:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Заглавие на Английски" ng-model="chart.title.en">
     </div>
   </form>
 </div>

@@ -16,7 +16,7 @@ function chart($compile, ChartsService) {
         var chartObj = scope.$eval(chartObjStr);
         var translated = chartObjStr + 'translated';
         scope[translated] = ChartsService.translate(chartObj);
-        var template = '<canvas class="' + chartObjStr + ' ' + chartObj.type + '" data="' + chartObjStr + '.data" labels="' + translated + '.labels" legend="' + translated.legend + '" series="' + translated + '.series"></canvas>';
+        var template = '<canvas class="' + chartObjStr + ' ' + chartObj.type + '" data="' + chartObjStr + '.data" labels="' + translated + '.labels" legend="' + chartObj.legend + '" series="' + translated + '.series"></canvas>';
         element.html(template);
         element.removeAttr('chart');
         var compiledChart = $compile(element);
