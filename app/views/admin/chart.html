@@ -4,10 +4,20 @@
   <button ng-click="save()">Запис</button>
   <button class="pull-right" ng-click="cancel()">Отказ</button>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-sm-12 col-md-7">
       <chart-panel></chart-panel>
+      <form>
+        <div class="form-group">
+          <label>Заглавие Кирилица:</label>
+          <input type="text" class="form-control" placeholder="Заглавие" ng-model="chart.title.bg">
+        </div>
+        <div class="form-group">
+          <label>Заглавие на Английски:</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Заглавие на Английски" ng-model="chart.title.en">
+        </div>
+      </form>
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-12 col-md-5">
       <label>
         <input type="radio" ng-model="chart.type" value="chart-pie">
         Kръгова
@@ -24,28 +34,26 @@
         <input type="checkbox" ng-model="chart.legend">
         Показване на легенда
        </label><br/>
-      <label>
-        <textarea ng-model="chart.series"></textarea>
-        Серия
-       </label><br/>
-      <label>
-        <textarea ng-model="chart.labels"></textarea>
-        Етикети
-       </label><br/>
-      <label>
-        <textarea ng-model="chart.data"></textarea>
-        Данни
-       </label><br/>
+       <div class="row">
+         <div class="col-md-4">
+          <label>
+            Етикети:
+            <textarea style="height:450px" ng-model="edit.labels"></textarea>
+           </label><br/>
+         </div>
+         <div class="col-md-4">
+            <label>
+              Данни:
+              <textarea style="height:450px" ng-model="edit.data"></textarea>
+             </label><br/>
+         </div>
+         <div class="col-md-4">
+          <label ng-hide="chart.type === 'chart.pie'">
+            Серия:
+            <textarea style="height:450px" ng-model="edit.series"></textarea>
+           </label><br/>
+         </div>
+       </div>
     </div>
  </div>
-  <form>
-    <div class="form-group">
-      <label>Заглавие Кирилица:</label>
-      <input type="text" class="form-control" placeholder="Заглавие" ng-model="chart.title.bg">
-    </div>
-    <div class="form-group">
-      <label>Заглавие на Английски:</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Заглавие на Английски" ng-model="chart.title.en">
-    </div>
-  </form>
 </div>

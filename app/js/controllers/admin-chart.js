@@ -7,7 +7,7 @@ var moment = require('moment');
 /**
 * @ngInject
 */
-function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService) {
+function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService, $sce) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -24,14 +24,11 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     $scope.alerts = [];
     $scope.chart.date = moment().valueOf();
 
-    // Remove the empty props to be able to filter with exists in ES
-    nullify($scope.chart.title);
-
     var method = $http.post;
     var url = "/api/charts";
     if ($scope.chart.id) {
       method = $http.put;
-      url = "/api/charts/" + $scope.event.id;
+      url = "/api/charts/" + $scope.chart.id;
     }
     method(url, $scope.chart)
     .then(function(response) {
@@ -48,7 +45,18 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
 
 
   var init = function(chart) {
+    $scope.edit = {};
+    $scope.edit.data = JSON.stringify(chart.data, null, 2);
+    $scope.edit.series = JSON.stringify(chart.series, null, 2);
+    $scope.edit.labels = JSON.stringify(chart.labels, null, 2);
     $scope.chart = chart;
+
+    $scope.$watchCollection('edit', function() {
+      $scope.chart.data = JSON.parse($scope.edit.data);
+      $scope.chart.labels = JSON.parse($scope.edit.labels);
+      if ($scope.chart.series) 
+        $scope.chart.series = JSON.parse($scope.edit.series);
+    });
   };
 
   if ($stateParams.id) {
@@ -59,7 +67,10 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
   } else {
     init({
       title: {bg:'', en:''},
-      type: 'chart-bar'
+      type: 'chart-bar',
+      data: [],
+      series: [],
+      labels: []
     });
   }
 }
