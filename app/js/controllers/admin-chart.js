@@ -3,6 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
+var uuid = require('uuid');
 
 /**
 * @ngInject
@@ -23,6 +24,9 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
   $scope.save = function() {
     $scope.alerts = [];
     $scope.chart.date = moment().valueOf();
+    if (!$scope.chart.itemId) {
+      $scope.chart.itemId = uuid.v1();
+    }
 
     var method = $http.post;
     var url = "/api/charts";
