@@ -1,7 +1,7 @@
 <div ng-controller="AdminChartCtrl">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
 
-  <button ng-click="save()">Запис</button>
+  <button class="btn btn-success" ng-click="save()">Запис</button>
   <button class="pull-right" ng-click="cancel()">Отказ</button>
   <div class="row">
     <div class="col-sm-12 col-md-7">
