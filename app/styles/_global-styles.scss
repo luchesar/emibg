@@ -772,7 +772,9 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 //   text-transform: uppercase;
 // }
 
-
+.img-thumbnail {
+  border-radius: 1px;
+}
 
 .slider_article {
   bottom: 25px;
@@ -784,7 +786,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 
 .slider_article > h2 {
     background: none;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .slider_article > h2 a {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
