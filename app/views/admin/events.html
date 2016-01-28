@@ -4,7 +4,7 @@
      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
      <div class="btn-group">
        <label class="btn btn-primary" ng-model="publishedFilter.published" uib-btn-checkbox>Публикувани</label>
-       <label class="btn btn-primary" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Не публикувани</label>
+       <label class="btn btn-primary" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Непубликувани</label>
      </div>
      <label class="btn btn-danger" ui-sref="app.admin.newevent">Създаване на ново събитие</label>
       <nav>

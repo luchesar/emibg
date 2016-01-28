@@ -8,7 +8,7 @@
       <div class="media-body">
         <h4 class="media-heading">{{article.title | lang | limitTo:80}}</h4>
         <p>{{article.html | lang | htmlToPlainText | limitTo: 210}}...</p>
-        <p><b>{{article.published ? "Публикувана" : "Не публикувана"}}, Категории: {{article.category}} Автор: {{article.author.bg}}</b></p>
+        <p><b>{{article.published ? "Публикувана" : "Непубликувана"}}, Категории: {{article.category}} Автор: {{article.author.bg}}</b></p>
         <p> <b>Референция за началната страница: </b> {{article.itemId}} </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <div ng-controller="AdminEventCtrl">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-  <button ng-click="save()">Запис</button>
+  <button class="btn btn-success" ng-click="save()">Запис</button>
 
   <div class="btn-group">
     <label class="btn btn-primary" ng-model="event.published" uib-btn-checkbox>Публикувано</label>
