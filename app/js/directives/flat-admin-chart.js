@@ -12,7 +12,7 @@ function flatAdminChart() {
     transclude: true,
     templateUrl: "admin/flat-chart.html",
     link: function(scope, element, attributes) {
-      var chart = element.attr('chart');
+      var chart = element.attr('chart') || 'chart';
       if (chart) {
         scope.chart = scope.$eval(chart);
       }

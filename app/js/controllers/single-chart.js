@@ -6,10 +6,10 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function SingleChartCtrl($scope, $stateParams, $http, $filter, ChartsService) {
+function SingleChartCtrl($scope, $stateParams, $http, $filter) {
   $http.get("/api/charts/" + $stateParams.id)
   .then(function(response) {
-      $scope.chart = ChartsService.translate(response.data);
+      $scope.chart = response.data;
   })
   .catch(function(err) {
     console.log(err);

@@ -158,18 +158,22 @@ url: '/summaries/{page:int}',
     templateUrl: 'admin/article.html'
   })
   .state('app.admin.newarticle', {
-    url: '/new',
+    url: '/newarticle',
     templateUrl: 'admin/article.html'
   })
   .state('app.admin.events.event', {
     url: '/event/{id:string}',
     templateUrl: 'admin/event.html'
   })
-  .state('app.admin.events.new', {
-    url: '/new',
+  .state('app.admin.newevent', {
+    url: '/newevent',
     templateUrl: 'admin/event.html'
   })
-  .state('app.admin.charts.chart', {
+  .state('app.admin.chart', {
+    url: '/chart/{id:string}',
+    templateUrl: 'admin/chart.html'
+  })
+  .state('app.admin.newchart', {
     url: '/chart/{id:string}',
     templateUrl: 'admin/chart.html'
   })
