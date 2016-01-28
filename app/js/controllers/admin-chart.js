@@ -68,9 +68,10 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     init({
       title: {bg:'', en:''},
       type: 'chart-bar',
-      data: [],
-      series: [],
-      labels: []
+      data: [[405,40,20],[39,39,22],[20,20,60]],
+      series: [{"bg": "Вятър","en": "Wind"},{"bg": "ВЕЦ","en": "Water"},{"bg": "Слънчева","en": "Sun"}],
+      labels: [{"bg": "България","en": "Bulgaria"},{"bg": "Сърбия","en": "Serbia"},{"bg": "ЕС","en": "EU"}],
+      legend: true
     });
   }
 }

@@ -1,5 +1,21 @@
 <div ng-controller="AdminChartsCtrl" layout="column">
    <ui-view/>
+     <label class="btn btn-danger" ui-sref="app.admin.newchart">Създаване на нова графика</label>
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+          <li>
+            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
    <div >
        <div ng-repeat="rowCharts in charts" layout="column" layout-fill style="padding-bottom: 13px;" >
           <div class="row">
