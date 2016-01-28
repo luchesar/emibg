@@ -8,8 +8,6 @@ var data = require('../data.js');
 * @ngInject
 */
 function ChartsCtrl($scope, $filter, $http) {
-  $scope.myInterval = 10000;
-
   $http.get("/api/home-pages/sliderCharts")
   .then(function(response) {
     $scope.slides = response.data;

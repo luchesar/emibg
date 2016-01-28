@@ -1,0 +1,44 @@
+<div ng-controller="AdminHomepageCtrl">
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+  <button ng-click="save()">Запис</button>
+  <button class="pull-right" ng-click="cancel()">Отказ</button>
+  <form>
+    <div class="form-group">
+      <label>Слайд 1 референция:</label>
+      <input type="text" class="form-control" placeholder="Въведете номера на статия" ng-model="items[0].itemId">
+    </div>
+    <div class="form-group">
+      <label>Слайд 2 референция:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете номера на статия" ng-model="items[1].itemId">
+    </div>
+    <div class="form-group">
+      <label>Слайд 3 референция:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете номера на статия" ng-model="items[2].itemId">
+    </div>
+    <div class="form-group">
+      <label>Графика 1 на слайд 1:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете номера на статия" ng-model="charts[0].charts[0]">
+    </div>
+    <div class="form-group">
+      <label>Графика 2 на слайд 1:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете референция на графика" ng-model="charts[0].charts[1]">
+    </div>
+    <div class="form-group">
+      <label>Графика 3 на слайд 1:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете референция на графика" ng-model="charts[0].charts[2]">
+    </div>
+    <div class="form-group">
+      <label>Графика 1 на слайд 2:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете референция на графика" ng-model="charts[1].charts[0]">
+    </div>
+    <div class="form-group">
+      <label>Графика 2 на слайд 2:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете референция на графика" ng-model="charts[1].charts[1]">
+    </div>
+    <div class="form-group">
+      <label>Графика 3 на слайд 2:</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Въведете референция на графика" ng-model="charts[1].charts[2]">
+    </div>
+  </form>
+</div>

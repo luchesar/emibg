@@ -161,7 +161,7 @@ url: '/summaries/{page:int}',
     url: '/newarticle',
     templateUrl: 'admin/article.html'
   })
-  .state('app.admin.events.event', {
+  .state('app.admin.event', {
     url: '/event/{id:string}',
     templateUrl: 'admin/event.html'
   })
@@ -176,6 +176,10 @@ url: '/summaries/{page:int}',
   .state('app.admin.newchart', {
     url: '/chart/{id:string}',
     templateUrl: 'admin/chart.html'
+  })
+  .state('app.admin.homepage', {
+    url: '/homepage',
+    templateUrl: 'admin/homepage.html'
   })
   ;
 }
