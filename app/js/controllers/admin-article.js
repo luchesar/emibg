@@ -3,6 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
+var uuid = require('uuid');
 
 /**
 * @ngInject
@@ -33,6 +34,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.article.title);
     $scope.article.date = moment().valueOf();
+    if (!$scope.article.itemId) {
+      $scope.article.itemId = uuid.v1();
+    }
 
     var method = $http.post;
     var url = "/api/articles";

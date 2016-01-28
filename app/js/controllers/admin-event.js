@@ -3,6 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
+var uuid = require('uuid');
 
 /**
 * @ngInject
@@ -30,6 +31,9 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
   $scope.save = function() {
     $scope.alerts = [];
     $scope.event.date = moment().valueOf();
+    if (!$scope.event.itemId) {
+      $scope.event.itemId = uuid.v1();
+    }
 
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.event.title);
