@@ -52,7 +52,7 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
   }
 
   $scope.alerts = [];
-  $scope.showCategories = $stateParams.showCategories || "news,emis,analysis";
+  $scope.showCategories = $stateParams.showCategories || "news,emis,summaries";
   $scope.articleType = {news: true, emis: true, summaries: true};
   //$scope.showAllCategories = { selected:false};
 

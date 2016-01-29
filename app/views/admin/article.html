@@ -3,13 +3,13 @@
   <button class="btn btn-success" ng-click="save()">Запис</button>
 
   <div class="btn-group">
-    <label class="btn btn-primary" ng-model="articleType.news" uib-btn-checkbox>Новини</label>
-    <label class="btn btn-primary" ng-model="articleType.emis" uib-btn-checkbox>Анализи на EMI</label>
-    <label class="btn btn-primary" ng-model="articleType.summaries" uib-btn-checkbox>Анализи Резюмета</label>
+    <label>&nbsp;&nbsp;&nbsp;<input type="radio" ng-model="articleType" value="news">&nbsp;Новини&nbsp;&nbsp;</label>
+    <label><input type="radio" ng-model="articleType" value="emis">&nbsp;Анализи на EMI&nbsp;&nbsp;</label>
+    <label><input type="radio" ng-model="articleType" value="summaries">&nbsp;Анализи Резюмета&nbsp;&nbsp;&nbsp;&nbsp;</label>
    </div>
 
   <div class="btn-group">
-    <label class="btn btn-primary" ng-model="article.published" uib-btn-checkbox>Публикувано</label>
+    <input type="checkbox" ng-model="article.published">&nbsp;Публикувано</label>
   </div>
 
   <button class="pull-right" ng-click="cancel()">Отказ</button>

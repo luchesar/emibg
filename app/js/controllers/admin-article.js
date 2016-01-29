@@ -110,21 +110,15 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
 
   var init = function(article) {
     $scope.article = article;
-    
-    $scope.articleType = {};
-    $scope.articleType.news = _(article.category).contains('news');
-    $scope.articleType.emis = _(article.category).contains('emis');
-    $scope.articleType.summaries =_(article.category).contains('summaries');
+
+    $scope.articleType = article.category.reduce(function(prev, curr) {
+      return curr ? curr : prev;
+    }, 'news');
     $scope.title = angular.copy(article.title);
     $scope.html = angular.copy(article.html);
-    
-    $scope.$watchCollection('articleType', function () {
-      $scope.article.category = [];
-      angular.forEach($scope.articleType, function (value, key) {
-        if (value) {
-          $scope.article.category.push(key);
-        }
-      });
+
+    $scope.$watch('articleType', function () {
+      $scope.article.category = [$scope.articleType];
     });
     $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
   }
