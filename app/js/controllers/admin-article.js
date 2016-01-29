@@ -58,9 +58,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.alerts.splice(index, 1);
   };
 
-
-  var editorOptions = function(options, onChange) {
-    options.inline = true;
+  var editorOptions = function(options, inline, onChange) {
+    options.inline = inline;
     options.language = $stateParams.lang || 'bg',
     options.skin = 'lightgray';
     options.theme = 'modern';
@@ -83,7 +82,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   var htmlOptions = function(updateProperty) {
     return editorOptions({
       plugins : "advlist autolink link image imagetools lists charmap print preview autolink lists spellchecker pagebreak layer table save insertdatetime preview media searchreplace print contextmenu paste directionality fullscreen noneditable visualchars nonbreaking template google_tools placeholder",
-      }, function(editor) {
+      },
+      false,
+      function(editor) {
         updateProperty(jQuery(editor.getElement()).html());
       });
   }
@@ -92,7 +93,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     return editorOptions({
         toolbar: 'undo redo',
         menubar: false
-      }, function(editor) {
+      },
+      true,
+      function(editor) {
         updateProperty(jQuery(editor.getElement()).text());
       });
   }
@@ -114,13 +117,15 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.articleType = article.category.reduce(function(prev, curr) {
       return curr ? curr : prev;
     }, 'news');
+    $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
     $scope.title = angular.copy(article.title);
     $scope.html = angular.copy(article.html);
+    $scope.$emit('title', $scope.title);
+    $scope.$emit('html', $scope.html);
 
     $scope.$watch('articleType', function () {
       $scope.article.category = [$scope.articleType];
     });
-    $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
   }
 
   if ($stateParams.id) {
