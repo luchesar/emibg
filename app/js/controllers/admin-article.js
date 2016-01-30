@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce) {
+function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce, $timeout) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -118,10 +118,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       return curr ? curr : prev;
     }, 'news');
     $scope.bgHtml = $sce.trustAsHtml(article.html.bg);
-    $scope.title = angular.copy(article.title);
-    $scope.html = angular.copy(article.html);
-    $scope.$emit('title', $scope.title);
-    $scope.$emit('html', $scope.html);
+    $scope.enHtml = $sce.trustAsHtml(article.html.en);
+    var html = angular.copy(article.html);
+    $scope.html = html;
 
     $scope.$watch('articleType', function () {
       $scope.article.category = [$scope.articleType];

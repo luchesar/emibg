@@ -103,7 +103,7 @@
     "angular-translate": "~2.7.0",
     "angular-ui-bootstrap": "^1.1.0",
     "angular-ui-calendar": "^1.0.2",
-    "angular-ui-tinymce": "0.0.5",
+    "angular-ui-tinymce": "github:angular-ui/ui-tinymce",
     "bootstrap-social": "^4.11.0",
     "chart.js": "^1.0.2",
     "fontello-installer": "0.0.2",
@@ -112,7 +112,6 @@
     "jquery": "^2.1.4",
     "lazy.js": "^0.4.0",
     "moment": "^2.10.6",
-    "tinymce": "^4.3.3",
     "uuid": "^2.0.1"
   }
 }
