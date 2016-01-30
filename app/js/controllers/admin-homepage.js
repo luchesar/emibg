@@ -28,7 +28,7 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q) {
 
     var sav = function(url, thing) {
       var method = $http.post;
-      var sendUrl = "";
+      var sendUrl = url;
       if (thing.id) {
         method = $http.put;
         sendUrl = url + "/" + thing.id;
@@ -56,15 +56,21 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q) {
   var charts = $http.get(chartsUrl + "?filter[limit]=2");
   $q.all([items, charts])
   .then(function(result) {
-    var serverItems = result[0].data || [
-     {type: "", itemId: ""},
-     {type: "", itemId: ""},
-     {type: "", itemId: ""}
-    ];
-    var serverCharts = result[1].data || [
-      { charts: ["", "", ""]},
-      { charts: ["", "", ""]}
-    ];
+    var serverItems = result[0].data;
+    if (serverItems.length < 1) {
+      serverItems =  [
+       {type: "no-type", itemId: ""},
+       {type: "no-type", itemId: ""},
+       {type: "no-type", itemId: ""}
+      ];
+    }
+    var serverCharts = result[1].data;
+   if (serverCharts.length < 1) {
+     serverCharts =  [
+        { charts: ["", "", ""]},
+        { charts: ["", "", ""]}
+      ];
+    }
     $scope.items = serverItems;
     $scope.charts = serverCharts;
   })
