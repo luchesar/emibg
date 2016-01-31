@@ -14,6 +14,7 @@ module.exports = {
       'node_modules/bootstrap-social/bootstrap-social.css',
       'node_modules/bootstrap-social/assets/css/font-awesome.css',
       'node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css',
+      'node_modules/angular-ui-grid/ui-grid.css',
       'app/styles/fontello/**/*.css'
     ],
     'destCss': 'build/css/styles.css'
