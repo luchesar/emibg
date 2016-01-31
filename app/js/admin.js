@@ -29,6 +29,7 @@ require('./services/_index');
 require('./directives/_index');
 require('./filters/_index');
 require('./lb-services.js');
+require('../../node_modules/angular-ui-grid/ui-grid.js');
 
 // create and bootstrap application
 angular.element(document).ready(function() {
@@ -51,7 +52,10 @@ angular.element(document).ready(function() {
     'ngResource',
     'lbServices',
     'ui.tinymce',
-    'ui.bootstrap.datetimepicker'
+    'ui.bootstrap.datetimepicker',
+    'ui.grid',
+    'ui.grid.edit',
+    'ui.grid.cellNav'
   ];
 
   // mount on window for testing
