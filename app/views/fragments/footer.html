@@ -44,17 +44,24 @@
             <div class="footer_widget">
               <h2>{{'CONTACT' | translate }}</h2>
               <h5 style="font-weight: bold">{{'EMI' | translate }}</h5>
-              <p style="color:red"><span class="glyphicon glyphicon-envelope"> <!-- Can we add email? Which one? Info@emi.bg ? -->
-              </span>&nbsp;&nbsp;&nbsp; email ???
+              <a href=“mailto:emi@emi-bg.com”>
+                <span class="glyphicon glyphicon-envelope"></span>
+                &nbsp; emi@emi-bg.com
+              </a>
               </p>
-              <p><span class="glyphicon glyphicon-earphone">
-                </span>&nbsp;&nbsp;&nbsp;{{'TEL' | translate }}
+              <p>
+                <a href="tel:{{'TEL' | translate }}">
+                  <span class="glyphicon glyphicon-earphone">
+                  </span>&nbsp;&nbsp;&nbsp;{{'TEL' | translate }}
+                </a>
               </p>
               <address> 
-                <span class="glyphicon glyphicon-map-marker"></span>
-                &nbsp;{{'SOFIA_1000' | translate }}
-                {{'STREET' | translate }}
-                {{'FLOOR' | translate }}
+                <a href="#" ui-sref="app.menu.about.contact">
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                  &nbsp;{{'SOFIA_1000' | translate }}
+                  {{'STREET' | translate }}
+                  {{'FLOOR' | translate }}
+                </a>
               </address> 
             </div>
           </div>

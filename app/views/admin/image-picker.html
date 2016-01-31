@@ -1,6 +1,7 @@
-<div>
-  <div liquid-cfg="$$$imagePickerImage.config" style="width:{{$$$width}}; height:{{$$$height}};" class="img-thumbnail">
-     <img ng-src="{{$$$imagePickerImage.url}}"></img>
-  </div>
-  <a href="#" class="btn" lk-google-picker on-picked="onPicked(docs)">Промяна на изображението</a>
+<div lk-google-picker on-picked="onPicked(docs)">
+	<a href="#" lk-google-picker on-picked="onPicked(docs)">
+	  <div liquid-cfg="$$$imagePickerImage.config" style="width:{{$$$width}}; height:{{$$$height}};" class="img-thumbnail">
+	     <img ng-src="{{$$$imagePickerImage.url}}"></img>
+	  </div>
+	</a>
 </div>

@@ -17,6 +17,9 @@ function imagePicker($compile) {
         scope.$watch(imageObjStr + ".url", function() {
           console.log("image changed");
           var imageObj = scope.$eval(imageObjStr);
+          if (!imageObj.url) {
+            imageObj.url = "https://placeholdit.imgix.net/~text?txtsize=33&txt=Изберете Изображение&w=400&h=300"
+          }
           scope.$$$imagePickerImage = imageObj;
           $compile(element.contents())(scope);
         });
