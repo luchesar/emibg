@@ -88,15 +88,22 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
       }
       return 'cell-data';
     };
+
+    var cellEditable = function($s){
+      return $s.rowRenderIndex > 1 || $s.colRenderIndex > 1;
+    }
     
     var colDefs = Object.keys(gridData[0]).map( columnName => {
-      return {field: columnName, cellClass: cellClass};
+      return {field: columnName, cellClass: cellClass, cellEditableCondition: cellEditable};
     });
     $scope.colDefs.splice(0, $scope.colDefs.length);
-    colDefs.forEach(col => 
-        $scope.colDefs.push(col));
+    colDefs.forEach(col => $scope.colDefs.push(col));
     $scope.gridOptions.data = gridData;
   };
+
+  $scope.$on('ngGridEventEndCellEdit', function (event) {
+    console.log("data:" + JSON.stringify($scope.gridOptions.data));
+  });
 
   var objectToArray = function(p) {
     var result = [];
