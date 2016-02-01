@@ -151,9 +151,7 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
   };
 
   var init = function(chart) {
-    $scope.edit = {};
     $scope.chart = chart;
-
     toGridDataSeries(chart);
   };
 

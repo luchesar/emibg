@@ -24,8 +24,9 @@ function chart($compile, ChartsService) {
           compiledChart(scope);
         }
       };
-      if (chartObj) scope.$watchCollection(chartObj, listener)
-      else scope.$watchCollection(chartObjStr, listener);
+      //if (chartObj) scope.$watchCollection(chartObj, listener)
+      //else 
+        scope.$watchCollection(chartObjStr, listener);
     }
   };
 }
