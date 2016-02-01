@@ -51,28 +51,52 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     if ($scope.chart.labels.length > 0)
       $scope.chart.labels.splice($scope.chart.labels.length - 1, 1);
     $scope.chart.data.forEach(row => {if(row.length > 0) row.splice(row.length -1, 1)});
-    toGridDataSeries($scope.chart);
+    toGridData($scope.chart);
   }
   
   $scope.addColumn = function() {
     $scope.chart.labels.push({bg: "Етикет", en: "Label"});
     $scope.chart.data.forEach(row => row.push(10));
-    toGridDataSeries($scope.chart);
+    toGridData($scope.chart);
+    forceUpdateDiagram();
   }
 
-  $scope.addRow = function() {
+  var addRowSeries = function() {
     $scope.chart.series.push({bg: "Серия", en: "Series"});
     $scope.chart.data.push($scope.chart.labels.map(l => 10));
-    toGridDataSeries($scope.chart);
+    toGridData($scope.chart);
+    forceUpdateDiagram();
   }
 
-  $scope.removeRow = function() {
+  var addRowPie = function() {
+    $scope.chart.labels.push({bg: "Етикет", en: "Label"});
+    $scope.chart.data.push(10);
+    toGridData($scope.chart);
+    forceUpdateDiagram();
+  }
+
+  var removeRowSeries = function() {
     if ($scope.chart.series.length > 0) 
       $scope.chart.series.splice($scope.chart.series.length -1, 1);
     if ($scope.chart.data.length > 0) 
       $scope.chart.data.splice($scope.chart.data.length -1, 1);
-    toGridDataSeries($scope.chart);
+    toGridData($scope.chart);
+    forceUpdateDiagram();
   }
+
+  var removeRowPie = function() {
+    if ($scope.chart.labels.length > 0) {
+      $scope.chart.labels.splice($scope.chart.labels.length - 1, 1);
+    }
+    if ($scope.chart.data.length > 0) {
+      $scope.chart.data.splice($scope.chart.data.length - 1, 1);
+    }
+    toGridData($scope.chart);
+    forceUpdateDiagram();
+  }
+
+  $scope.addRow = addRowSeries;
+  $scope.removeRow = removeRowSeries;
 
   var toGridDataSeries = function(chartObj) {
     var labels = chartObj.labels;
@@ -134,6 +158,43 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     return {labels: labels, data: data, series: series};
   }
 
+  var toGridDataPie = function(chartObj) {
+    var labels = chartObj.labels;
+    var data = chartObj.data;
+    
+    var gridData = labels.map(function(l, i) {
+      return {
+        column0: l.bg,
+        column1: l.en,
+        column2: data[i] || 0
+      }
+    });
+    var colDefs = [
+      {field: "column0", cellClass: "cell-labels"},
+      {field: "column1", cellClass: "cell-labels"},
+      {field: "column2", cellClass: "cell-data"}
+    ];
+    $scope.colDefs.splice(0, $scope.colDefs.length);
+    colDefs.forEach(col => $scope.colDefs.push(col));
+    $scope.gridOptions.data = gridData;
+  }
+
+  var fromGridDataPie = function(gridData) {
+    var labels = gridData.map(function(row) {
+      return {bg: row.column0, en: row.column1};
+    });
+    var data = gridData.map(row => row.column2);
+    return {labels: labels, data: data};
+  }
+
+  var forceUpdateDiagram = function() {
+    var update =  fromGridData($scope.gridOptions.data);
+    $scope.chart.labels = update.labels;
+    $scope.chart.data = update.data;
+    if (update.series)
+      $scope.chart.series = update.series;
+  }
+
   $scope.colDefs = [];
   $scope.gridOptions = {
     headerTemplate: '<div class="ui-grid-top-panel" style="text-align: center">Моля въведете данни за диаграмата</div>',
@@ -142,18 +203,44 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     onRegisterApi: function(gridApi) {
       $scope.gridApi = gridApi;
       gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
-        var update =  fromGridDataSeries($scope.gridOptions.data);
-        $scope.chart.labels = update.labels;
-        $scope.chart.data = update.data;
-        $scope.chart.series = update.series;
+        forceUpdateDiagram();
       });
     }
   };
 
+  var toGridData = toGridDataSeries;
+  var fromGridData = fromGridDataSeries;
+
   var init = function(chart) {
     $scope.chart = chart;
-    toGridDataSeries(chart);
+    if (chart.type === 'chart-pie') {
+      toGridData = toGridDataPie;
+      fromGridData = fromGridDataPie;
+      $scope.addRow = addRowPie;
+      $scope.removeRow = removeRowPie;
+    }
+    toGridData(chart);
   };
+ 
+  var initEmpty = {};
+  if ($stateParams.type != 'chart-pie') {
+    initEmpty = {
+      title: {bg:'', en:''},
+      type: 'chart-bar',
+      data: [[405,40,20],[39,39,22],[20,20,60]],
+      series: [{"bg": "Вятър","en": "Wind"},{"bg": "ВЕЦ","en": "Water"},{"bg": "Слънчева","en": "Sun"}],
+      labels: [{"bg": "България","en": "Bulgaria"},{"bg": "Сърбия","en": "Serbia"},{"bg": "ЕС","en": "EU"}],
+      legend: true
+    }
+  } else {
+    initEmpty = {
+      title: {bg:'', en:''},
+      type: 'chart-pie',
+      data: [ 40, 40, 20 ],
+      labels: [ { bg : "Вятър", en : "Wind" }, { bg : "ВЕЦ", en : "Water" }, { bg : "Слънчева", en : "Sun" } ],
+      legend: true
+    }
+  }
 
   if ($stateParams.id) {
     $http.get("/api/charts/" + $stateParams.id)
@@ -161,14 +248,7 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     .then(init)
     .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
   } else {
-    init({
-      title: {bg:'', en:''},
-      type: 'chart-bar',
-      data: [[405,40,20],[39,39,22],[20,20,60]],
-      series: [{"bg": "Вятър","en": "Wind"},{"bg": "ВЕЦ","en": "Water"},{"bg": "Слънчева","en": "Sun"}],
-      labels: [{"bg": "България","en": "Bulgaria"},{"bg": "Сърбия","en": "Serbia"},{"bg": "ЕС","en": "EU"}],
-      legend: true
-    });
+    init(initEmpty);
   }
 }
 

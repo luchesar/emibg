@@ -18,24 +18,22 @@
       </form>
     </div>
     <div class="col-sm-12 col-md-5">
-      <label>
-        <input type="radio" ng-model="chart.type" value="chart-pie">
-        Kръгова
-      </label><br/>
-      <label>
-        <input type="radio" ng-model="chart.type" value="chart-bar">
-        Колонна
-      </label><br/>
-      <label>
-        <input type="radio" ng-model="chart.type" value="chart-line">
-        Линейна
-      </label><br/>
+      <div ng-show="chart.type != 'chart-pie'">
+        <label>
+          <input type="radio" ng-model="chart.type" value="chart-bar">
+          Колонна
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="chart.type" value="chart-line">
+          Линейна
+        </label><br/>
+      </div>
       <label>
         <input type="checkbox" ng-model="chart.legend">
         Показване на легенда
        </label><br/>
-       <button ng-click="addColumn()">Добави колона</button>
-       <button ng-click="removeColumn()">Изтриване колона</button>
+       <button ng-show="chart.type != 'chart-pie'" ng-click="addColumn()">Добави колона</button>
+       <button ng-show="chart.type != 'chart-pie'" ng-click="removeColumn()">Изтриване колона</button>
        <button ng-click="addRow()">Добави ред</button>
        <button ng-click="removeRow()">Изтриване ред</button>
        <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid"></div>

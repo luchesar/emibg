@@ -174,7 +174,7 @@ url: '/summaries/{page:int}',
     templateUrl: 'admin/chart.html'
   })
   .state('app.admin.newchart', {
-    url: '/chart/{id:string}',
+    url: '/newchart/{type:string}',
     templateUrl: 'admin/chart.html'
   })
   .state('app.admin.homepage', {
