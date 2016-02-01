@@ -47,12 +47,42 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     $scope.alerts.splice(index, 1);
   };
 
-  $scope.colDefs = [{field: "column1"}, {field: "column2"}];
+  $scope.colDefs = [];
   $scope.gridOptions = {
     headerTemplate: '<div class="ui-grid-top-panel" style="text-align: center">Моля въведете данни за диаграмата</div>',
     enableCellEditOnFocus: true,
-    columnDefs: $scope.colDefs
+    columnDefs: $scope.colDefs,
+    onRegisterApi: function(gridApi) {
+      $scope.gridApi = gridApi;
+    }
   };
+
+  $scope.removeColumn = function() {
+    if ($scope.chart.labels.length > 0)
+      $scope.chart.labels.splice($scope.chart.labels.length - 1, 1);
+    $scope.chart.data.forEach(row => {if(row.length > 0) row.splice(row.length -1, 1)});
+    toGridDataSeries($scope.chart);
+  }
+  
+  $scope.addColumn = function() {
+    $scope.chart.labels.push({bg: "Етикет", en: "Label"});
+    $scope.chart.data.forEach(row => row.push(10));
+    toGridDataSeries($scope.chart);
+  }
+
+  $scope.addRow = function() {
+    $scope.chart.series.push({bg: "Серия", en: "Series"});
+    $scope.chart.data.push($scope.chart.labels.map(l => 10));
+    toGridDataSeries($scope.chart);
+  }
+
+  $scope.removeRow = function() {
+    if ($scope.chart.series.length > 0) 
+      $scope.chart.series.splice($scope.chart.series.length -1, 1);
+    if ($scope.chart.data.length > 0) 
+      $scope.chart.data.splice($scope.chart.data.length -1, 1);
+    toGridDataSeries($scope.chart);
+  }
 
   var toGridDataSeries = function(chartObj) {
     var labels = chartObj.labels;
