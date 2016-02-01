@@ -47,16 +47,6 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     $scope.alerts.splice(index, 1);
   };
 
-  $scope.colDefs = [];
-  $scope.gridOptions = {
-    headerTemplate: '<div class="ui-grid-top-panel" style="text-align: center">Моля въведете данни за диаграмата</div>',
-    enableCellEditOnFocus: true,
-    columnDefs: $scope.colDefs,
-    onRegisterApi: function(gridApi) {
-      $scope.gridApi = gridApi;
-    }
-  };
-
   $scope.removeColumn = function() {
     if ($scope.chart.labels.length > 0)
       $scope.chart.labels.splice($scope.chart.labels.length - 1, 1);
@@ -131,49 +121,40 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     $scope.gridOptions.data = gridData;
   };
 
-  $scope.$on('ngGridEventEndCellEdit', function (event) {
-    console.log("data:" + JSON.stringify($scope.gridOptions.data));
-  });
-
-  var objectToArray = function(p) {
-    var result = [];
-    for (var key in p) {
-      if (p.hasOwnProperty(key)) {
-        result.push(p[key]);
-      }
-    }
-  };
+  var objectToArray = p => Object.keys(p).filter(k => !k.startsWith("$$")).map(k => p[k])
 
   var fromGridDataSeries = function(gridData) {
     var labelsBg = objectToArray(gridData[0]).slice(2);
-    var labelsEn = objectToArray(gridData[0]).slice(2);
+    var labelsEn = objectToArray(gridData[1]).slice(2);
 
     var labels = labelsBg.map((l,i) => ({bg: l, en: labelsEn[i]}));
-    var data = gridData.filter((o,i) => i > 1).map(objectToArray).map(array => array.slise(2));
+    var data = gridData.filter((o,i) => i > 1).map(objectToArray).map(array => array.slice(2));
     var series = gridData.filter((o,i) => i > 1).map(o => ({bg: o.column0, en: o.column1}));
     
-    return {labels: labels, ata: data, series: series};
+    return {labels: labels, data: data, series: series};
   }
+
+  $scope.colDefs = [];
+  $scope.gridOptions = {
+    headerTemplate: '<div class="ui-grid-top-panel" style="text-align: center">Моля въведете данни за диаграмата</div>',
+    enableCellEditOnFocus: true,
+    columnDefs: $scope.colDefs,
+    onRegisterApi: function(gridApi) {
+      $scope.gridApi = gridApi;
+      gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
+        var update =  fromGridDataSeries($scope.gridOptions.data);
+        $scope.chart.labels = update.labels;
+        $scope.chart.data = update.data;
+        $scope.chart.series = update.series;
+      });
+    }
+  };
 
   var init = function(chart) {
     $scope.edit = {};
-    $scope.edit.data = JSON.stringify(chart.data, null, 2);
-    $scope.edit.series = JSON.stringify(chart.series, null, 2);
-    $scope.edit.labels = JSON.stringify(chart.labels, null, 2);
     $scope.chart = chart;
 
     toGridDataSeries(chart);
-    /*$scope.colDef = [
-      { name: 'column0', enableCellEdit: false, width: '10%' },
-      { name: 'column1', displayName: 'Name (editable)', width: '20%' },
-      { name: 'column2', displayName: 'Age' , type: 'number', width: '10%' }
-    ]*/
-    $scope.$watchCollection('edit', function() {
-      $scope.chart.data = JSON.parse($scope.edit.data);
-      $scope.chart.labels = JSON.parse($scope.edit.labels);
-      if ($scope.chart.series) 
-        $scope.chart.series = JSON.parse($scope.edit.series);
-    });
   };
 
   if ($stateParams.id) {

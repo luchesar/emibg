@@ -6,11 +6,6 @@
   <div class="row">
     <div class="col-sm-12 col-md-7">
       <chart-panel></chart-panel>
-      <button ng-click="addColumn()">Добави колона</button>
-      <button ng-click="removeColumn()">Изтриване колона</button>
-      <button ng-click="addRow()">Добави ред</button>
-      <button ng-click="removeRow()">Изтриване ред</button>
-      <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid"></div>
       <form>
         <div class="form-group">
           <label>Заглавие Кирилица:</label>
@@ -39,26 +34,11 @@
         <input type="checkbox" ng-model="chart.legend">
         Показване на легенда
        </label><br/>
-       <div class="row">
-         <div class="col-md-4">
-          <label>
-            Етикети:
-            <textarea style="height:450px" ng-model="edit.labels"></textarea>
-           </label><br/>
-         </div>
-         <div class="col-md-4">
-            <label>
-              Данни:
-              <textarea style="height:450px" ng-model="edit.data"></textarea>
-             </label><br/>
-         </div>
-         <div class="col-md-4">
-          <label ng-hide="chart.type === 'chart.pie'">
-            Серия:
-            <textarea style="height:450px" ng-model="edit.series"></textarea>
-           </label><br/>
-         </div>
-       </div>
+       <button ng-click="addColumn()">Добави колона</button>
+       <button ng-click="removeColumn()">Изтриване колона</button>
+       <button ng-click="addRow()">Добави ред</button>
+       <button ng-click="removeRow()">Изтриване ред</button>
+       <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid"></div>
     </div>
  </div>
 </div>
