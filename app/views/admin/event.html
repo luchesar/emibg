@@ -3,68 +3,78 @@
   <button class="btn btn-success" ng-click="save()">Запис</button>
 
   <div class="btn-group">
-    <label class="btn btn-primary" ng-model="event.published" uib-btn-checkbox>Публикувано</label>
+    &nbsp;<input type="checkbox" ng-model="event.published">&nbsp;Публикувано</label>
+    <!-- <label class="btn btn-primary" ng-model="event.published" uib-btn-checkbox>Публикувано</label> -->
   </div>
 
-  <button class="pull-right" ng-click="cancel()">Отказ</button>
+  <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
   <uib-tabset>
     <uib-tab heading="Редакция">
         <div class="form-group">
           <image-picker image="event.image" width="400px", height="300px"></image-picker>
         </div>
-      <div class="row">
-         <div class="col-md-4">
-            <b>Начална дата и час:</b>
-            <input type="date"
+      <div style="margin-bottom: 20px;">
+        <form class="form-horizontal" role="form">
+          <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
+            <label class="control-label col-sm-3" for="email" style="text-align: left; padding-top: 0px;">Начална дата и час:</label>
+              <div class="col-sm-9">
+                <input style="line-height: inherit;"
+                     type="date"
+                     id="exampleInput"
+                     name="input"
+                     ng-model="newstart.date"
+                     placeholder="yyyy-MM-dd"
+                     min="0001-01-01"
+                     ng-change="setStartDate()"/>
+                <input style="line-height: inherit;" type="time" name="input" ng-model="newstart.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setStartDate()"/>
+              </div>
+          </div>
+          <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
+            <label class="control-label col-sm-3" for="pwd" style="text-align: left; padding-top: 0px;">Крайна дата и час:</label>
+            <div class="col-sm-9"> 
+              <input style="line-height: inherit;"
+                   type="date"
                    id="exampleInput"
                    name="input"
-                   ng-model="newstart.date"
-                   placeholder="yyyy-MM-dd"
-                   min="0001-01-01"
-                   ng-change="setStartDate()"/>
-            <input type="time" name="input" ng-model="newstart.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setStartDate()"/>
-         </div>
-         <div class="col-md-4">
-            <b>Крайна дата и час:</b>
-            <input type="date"
-                   id="exampleInput"
-                   name="input"
-                   ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" required ng-change="setEndDate()"/>
-            <input type="time" name="input" ng-model="newend.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setEndDate()"/>
-         </div>
+                   ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" requiredng-change="setEndDate()"/>
+              <input style="line-height: inherit;" type="time" name="input" ng-model="newend.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setEndDate()"/>
+            </div>
+          </div>
+        </form>
       </div>
+  
       <form>
         <div class="form-group">
           <label>Организатор Кирилица</label>
-          <input type="text" class="form-control" placeholder="Моля въведете Организатор" ng-model="event.organiser.bg">
+          <input type="text" class="form-control" placeholder="Организатор" ng-model="event.organiser.bg">
         </div>
         <div class="form-group">
           <label>Организатор Латиница</label>
-          <input type="text" class="form-control" placeholder="OrganiserОрганизатор на Английски" ng-model="event.organiser.en">
+          <input type="text" class="form-control" placeholder="Организатор на Английски" ng-model="event.organiser.en">
         </div>
         <div class="form-group">
           <label>Тип достъп</label>
-          <input type="text" class="form-control" placeholder="Моля въведете тип достъп например 'Чрез регистрация'" ng-model="event.access.bg">
+          <input type="text" class="form-control" placeholder="Tип достъп, например 'Чрез регистрация'" ng-model="event.access.bg">
         </div>
         <div class="form-group">
           <label>Тип достъп на Английски</label>
-          <input type="text" class="form-control" placeholder="Моля въведете тип достъп на Английски" ng-model="event.access.en">
+          <input type="text" class="form-control" placeholder="Tип достъп на Английски" ng-model="event.access.en">
         </div>
         <div class="form-group">
           <label>Тип на събитието</label>
-          <input type="text" class="form-control" placeholder="Моля въведете типа на събитието например 'Международна конферения'" ng-model="event.type.bg">
+          <input type="text" class="form-control" placeholder="Tипа на събитиет, например 'Международна конферения'" ng-model="event.type.bg">
         </div>
         <div class="form-group">
           <label>Тип на събитието на Английски</label>
-          <input type="text" class="form-control" placeholder="Моля въведете типа на събитието на Английски" ng-model="event.type.en">
+          <input type="text" class="form-control" placeholder="Tипа на събитието на Английски" ng-model="event.type.en">
         </div>
         <div class="form-group">
           <label>Място на събитието</label>
-          <input type="text" class="form-control" placeholder="Моля въведете мястото на събитието например 'Хотел Шератон'" ng-model="event.place.bg">
+          <input type="text" class="form-control" placeholder="Mясто на събитието, например 'Хотел Шератон'" ng-model="event.place.bg">
         </div>
         <div class="form-group">
           <label>Място на събитието на Английски</label>
-          <input type="text" class="form-control" placeholder="Моля въведете мястото на събитието на Английски" ng-model="event.place.en">
+          <input type="text" class="form-control" placeholder="Mястото на събитието на Английски" ng-model="event.place.en">
         </div>
       </form>
         <p>

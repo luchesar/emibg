@@ -1,7 +1,7 @@
 <div ng-controller="SummariesAnalysisCtrl" layout="column">
    <ui-view/>
    <div >
-       <div ng-repeat="rowArticles in summariesAnalysis" layout="column" layout-fill >
+       <div ng-repeat="rowArticles in summariesAnalysis" layout="column">
             <div class="row">
                <div class="col-sm-6 col-md-6" ng-repeat="article in rowArticles">
                   <flat-article></flat-article>

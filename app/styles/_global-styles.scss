@@ -664,6 +664,10 @@ p.ng-binding {
 
 // Social Nav Bar FOOTER
 
+footer .social_link {
+  margin-bottom: 30px;
+}
+
 footer .sociallink_nav {
   text-align: left;
 }
@@ -789,7 +793,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
     margin-bottom: 15px;
 }
 .slider_article > h2 a {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.38);
   color: #fff;
   font-size: 25px;
   line-height: 30px;
@@ -798,7 +802,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   display: inline-block;
 }
 .slider_article > p {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.38);
   font-size: 16px;
   color: #fff;
   padding: 10px;
@@ -842,6 +846,48 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   border-radius: 1px !important;
   background-image: none !important;
 }
+
+
+
+//Admin style
+
+.admin .btn-primary {
+  background-color: #2A435A;
+  border-color: #2A435A;
+  color: #9C9D9D;
+}
+
+.admin .btn-primary:hover,
+.admin .btn-primary:focus,
+.admin .btn-success:hover,
+.admin .btn-success:focus {
+  background-color: #E67E08;
+  border-color: #E67E08;
+}
+  
+.btn-primary.active {
+  background-color: #4594D9;
+  border-color: #4594D9;
+  color: #fff;
+}
+
+.admin .btn-success {
+  background-color: #2A5A2A;
+  border-color: #2A5A2A;
+  color: #9C9D9D;
+}
+
+.btn-success.active {
+  background-color: #5CB85C;
+  border-color: #5CB85C;
+  color: #fff;
+}
+
+
+
+
+
+
 
 
 
