@@ -9,6 +9,11 @@ function AdminMenuCtrl($scope, $state, EmiAuth) {
   $scope.checkLoggedIn = function() {
     if (!EmiAuth.isLoggedIn()) $state.go('app.login');
   }
+
+  $scope.logout = function() {
+    EmiAuth.logout();
+    $state.go('app.login');
+  }
 }
 
 controllersModule.controller('AdminMenuCtrl', AdminMenuCtrl);

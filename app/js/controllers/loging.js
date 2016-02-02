@@ -23,8 +23,14 @@ function LoginCtrl($scope, $stateParams, $state, $http, EmiAuth) {
       password: $scope.password
     })
     .then(function(response) {
-       $state.go('app.admin');
-       EmiAuth.login(response.data);
+      if (response.status == 401 && response.data.error.code == "LOGIN_FAILED") {
+        $scope.alerts.push({type: 'danger', msg: "Невалидна комбинация от имейл и парола."});
+      } else if (response.status == 200) {
+        EmiAuth.login(response.data);
+        $state.go('app.admin');
+      } else {
+       $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко."});
+      }
     })
     .catch(function(err) {
       if (err.status == 401 && err.data.error.code == "LOGIN_FAILED") {

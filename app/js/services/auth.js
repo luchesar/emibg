@@ -8,24 +8,31 @@ var servicesModule = require('./_index.js');
 function EmiAuth($location, $q) {
   var service = {};
   var cookieName = 'emibguser';
+  service.token = null;//$cookies.getObject(cookieName);
   service.user = null;//$cookies.getObject(cookieName);
 
-  service.login = function(usr) {
-    service.user = usr;
+  service.login = function(token, user) {
+    service.token = token;
+    service.user = user;
     //$cookies.setObject(cookieName, service.user);
   }
 
   service.isLoggedIn = function() {
-    return service.user !== undefined && service.user !== null;
+    return service.token !== undefined && service.token !== null;
   }
 
   service.logout = function() {
+    service.token = null;
     service.user = null;
     //$cookies.remove(cookieName);
   }
 
   service.getAccessToken = function() {
-    return service.user.id;
+    return service.token.id;
+  }
+
+  service.getUser = function() {
+    return service.user;
   }
 
   service.request = function(config) {
