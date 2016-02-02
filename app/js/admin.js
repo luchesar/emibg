@@ -20,16 +20,17 @@ require('angular-ui-calendar');
 require('angular-resource');
 require('angular-ui-tinymce');
 require('angular-ui-bootstrap');
+require('angular-cookies');
 require('angular-bootstrap-datetimepicker');
 require('../../node_modules/angular-google-picker/src/google-picker');
 require('./ext/imgLiquid');
+require('./lb-services.js');
+require('../../node_modules/angular-ui-grid/ui-grid.js');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
 require('./filters/_index');
-require('./lb-services.js');
-require('../../node_modules/angular-ui-grid/ui-grid.js');
 
 // create and bootstrap application
 angular.element(document).ready(function() {
@@ -48,6 +49,7 @@ angular.element(document).ready(function() {
     'chart.js',
     'ui.calendar',
     'ui.bootstrap',
+    'ngCookies',
     'lk-google-picker',
     'ngResource',
     'lbServices',
@@ -64,6 +66,7 @@ angular.element(document).ready(function() {
     .config(require('./routes'))
     .config(require('./translations'))
     .config(require('./google-picker-config'))
+    .config(require('./http-auth'))
     .run(require('./on_run'));
 
   angular.bootstrap(document, ['app']);

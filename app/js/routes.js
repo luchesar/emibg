@@ -21,6 +21,15 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
       'footer': {templateUrl: 'fragments/footer.html'}
     }
   })
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'banner@': {template: ''},
+      'right-column@': {template: ''},
+      'footer@': {template: ''},
+      'content@': { templateUrl: 'login.html' }
+    }
+  })
   .state('app.search', {
     url: '',
     views: {
