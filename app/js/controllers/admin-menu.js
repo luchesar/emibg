@@ -10,6 +10,10 @@ function AdminMenuCtrl($scope, $state, EmiAuth) {
     if (!EmiAuth.isLoggedIn()) $state.go('app.login');
   }
 
+  if (EmiAuth.getUser()) {
+    $scope.email = angular.copy(EmiAuth.getUser().email);
+  }
+
   $scope.logout = function() {
     EmiAuth.logout();
     $state.go('app.login');

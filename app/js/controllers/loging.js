@@ -16,6 +16,15 @@ function LoginCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
   $scope.init();
 
+  var doLogin = function(token) {
+    EmiAuth.login(token);
+    $http.get("/api/Users/" + token.userId)
+    .then(response => 
+        EmiAuth.setUser(response.data))
+    .finally(function() {
+        $state.go('app.admin');})
+  }
+
   $scope.login = function() {
     $scope.alerts = [];
     $http.post('/api/Users/login', {
@@ -26,8 +35,7 @@ function LoginCtrl($scope, $stateParams, $state, $http, EmiAuth) {
       if (response.status == 401 && response.data.error.code == "LOGIN_FAILED") {
         $scope.alerts.push({type: 'danger', msg: "Невалидна комбинация от имейл и парола."});
       } else if (response.status == 200) {
-        EmiAuth.login(response.data);
-        $state.go('app.admin');
+        doLogin(response.data);
       } else {
        $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко."});
       }

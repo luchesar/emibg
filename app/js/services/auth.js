@@ -7,14 +7,28 @@ var servicesModule = require('./_index.js');
  */
 function EmiAuth($location, $q) {
   var service = {};
-  var cookieName = 'emibguser';
-  service.token = null;//$cookies.getObject(cookieName);
-  service.user = null;//$cookies.getObject(cookieName);
+  var tokenKeyName = 'emibgtoken';
+  var userKeyName = 'emibguser';
+  var storage = window.localStorage;
+  service.token = null;
+  service.user = null;
 
-  service.login = function(token, user) {
+  if (storage.getItem(tokenKeyName)) {
+    service.token = angular.fromJson(storage.getItem(tokenKeyName));
+  }
+
+  if (storage.getItem(userKeyName)) {
+    service.user = angular.fromJson(storage.getItem(userKeyName));
+  }
+
+  service.login = function(token) {
     service.token = token;
+    if (token) storage.setItem(tokenKeyName, angular.toJson(token));
+  }
+
+  service.setUser = function(user) {
     service.user = user;
-    //$cookies.setObject(cookieName, service.user);
+    if (user) storage.setItem(userKeyName, angular.toJson(user));
   }
 
   service.isLoggedIn = function() {
@@ -24,7 +38,8 @@ function EmiAuth($location, $q) {
   service.logout = function() {
     service.token = null;
     service.user = null;
-    //$cookies.remove(cookieName);
+    storage.removeItem(tokenKeyName);
+    storage.removeItem(userKeyName);
   }
 
   service.getAccessToken = function() {
