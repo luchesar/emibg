@@ -230,7 +230,8 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
       data: [[405,40,20],[39,39,22],[20,20,60]],
       series: [{"bg": "Вятър","en": "Wind"},{"bg": "ВЕЦ","en": "Water"},{"bg": "Слънчева","en": "Sun"}],
       labels: [{"bg": "България","en": "Bulgaria"},{"bg": "Сърбия","en": "Serbia"},{"bg": "ЕС","en": "EU"}],
-      legend: true
+      legend: true,
+      deleted: false
     }
   } else {
     initEmpty = {
@@ -238,7 +239,8 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
       type: 'chart-pie',
       data: [ 40, 40, 20 ],
       labels: [ { bg : "Вятър", en : "Wind" }, { bg : "ВЕЦ", en : "Water" }, { bg : "Слънчева", en : "Sun" } ],
-      legend: true
+      legend: true,
+      deleted: false
     }
   }
 

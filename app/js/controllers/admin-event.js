@@ -150,7 +150,15 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       place: {bg:'', en:''},
       start: +moment(),
       end: +moment() + 3600000,
-      image: {}
+      image: {
+        config: {
+          fill: true,
+          horizontalalign: "center",
+          verticalalign: "center"
+        }
+      },
+      published: false,
+      deleted: false
     });
   }
 }

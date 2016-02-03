@@ -136,7 +136,15 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       title: {bg:'', en:''},
       html: {bg:'', en:''},
       category: ['news'],
-      image: {}
+      image: {
+        config: {
+          fill: true,
+          horizontalalign: "center",
+          verticalalign: "center"
+        }
+      },
+      published: false,
+      deleted: false
     });
   }
 
@@ -145,8 +153,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.article.image = {
       config: {
         fill: true,
-        horizontalAlign: "center",
-        verticalAlign: "center"
+        horizontalalign: "center",
+        verticalalign: "center"
       },
       url: "http://drive.google.com/uc?export=view&id=" + imageInfo.id
     };

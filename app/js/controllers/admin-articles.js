@@ -41,10 +41,10 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
     $scope.published = "both";
     $scope.publishedFilter = {published: true, notPublished: true};
   } else if ($stateParams.published === "true") {
-    $scope.published = "true";
+    $scope.published = true;
     $scope.publishedFilter = {published: true, notPublished: false};
   } else if ($stateParams.published === "false") {
-    $scope.published = "false";
+    $scope.published = false;
     $scope.publishedFilter = {published: false, notPublished: true};
   } else {
     $scope.published = "none";
