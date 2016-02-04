@@ -1,9 +1,9 @@
 <div ng-controller="AdminHomepageCtrl">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
 
-  <button ng-click="save()">Запис</button>
-  <button class="pull-right" ng-click="cancel()">Отказ</button>
-  <form>
+  <button class="btn btn-success" ng-click="save()">Запис</button>
+  <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
+  <form style="margin-top:20px;">
     <div class="form-group">
       <label>Слайд 1 референция:</label>
       <input type="text" class="form-control" placeholder="Въведете номера на статия" ng-model="items[0].itemId">
