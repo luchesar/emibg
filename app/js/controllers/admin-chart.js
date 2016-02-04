@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService, $sce, $timeout) {
+function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService, $sce, $timeout, EmiAuth) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -34,7 +34,7 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
       method = $http.put;
       url = "/api/charts/" + $scope.chart.id;
     }
-    method(url, $scope.chart)
+    method(url, $scope.chart, EmiAuth.addAuthHeader({}))
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Графиката е записана успещно")});
     })

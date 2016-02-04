@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce, $timeout) {
+function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce, $timeout, EmiAuth) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -44,7 +44,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       method = $http.put;
       url = "/api/articles/" + $scope.article.id;
     }
-    method(url, $scope.article)
+    method(url, $scope.article, EmiAuth.addAuthHeader({}))
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успещно")});
     })

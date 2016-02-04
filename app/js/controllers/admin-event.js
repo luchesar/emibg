@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope, $state, Events, $http, $sce) {
+function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope, $state, Events, $http, $sce, EmiAuth) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -44,7 +44,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       method = $http.put;
       url = "/api/events/" + $scope.event.id;
     }
-    method(url, $scope.event)
+    method(url, $scope.event, EmiAuth.addAuthHeader({}))
     .then(function(response) {
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успещно")});
     })

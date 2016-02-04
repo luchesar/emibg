@@ -35,6 +35,16 @@ function EmiAuth($location, $q) {
     return service.token !== undefined && service.token !== null;
   }
 
+  service.addAuthHeader = function(config) {
+    if (service.isLoggedIn()) {
+      if (!config.headers) {
+        config.headers = {};
+      }
+      config.headers['Authorization'] = service.getAccessToken();
+    }
+    return config;
+  }
+
   service.logout = function() {
     service.token = null;
     service.user = null;
@@ -51,9 +61,7 @@ function EmiAuth($location, $q) {
   }
 
   service.request = function(config) {
-    if (service.isLoggedIn()) {
-      config.headers['Authorization'] = service.getAccessToken();
-    }
+    service.addAuthHeader(config.headers);
     return config;
   };
 

@@ -3,7 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
+function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService, EmiAuth) {
   var fetchEvents = function() {
     $http.get(
       "/api/events/paged/" +
@@ -26,7 +26,10 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
 
   $scope.delete = function(id) {
     $scope.alerts = [];
-    $http.delete("/api/events/delete/" + id)
+    $http.delete(
+      "/api/events/delete/" + id,
+      EmiAuth.addAuthHeader({})
+    )
     .then(response => {
       $scope.events = $scope.events.filter(event => event.id != id);
       $scope.alerts.push({type: 'success', msg: "Събитието е успешно изтрито!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
@@ -37,7 +40,10 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
   }
 
   $scope.restore = function(id) {
-    $http.delete("/api/events/delete/" + id,{params: {"delete": "false"}})
+    $http.delete(
+      "/api/events/delete/" + id,
+      EmiAuth.addAuthHeader({params: {"delete": "false"}})
+    )
     .then(response => {
       $state.go('.', {
         page: $scope.page,

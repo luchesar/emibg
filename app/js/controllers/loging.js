@@ -18,9 +18,8 @@ function LoginCtrl($scope, $stateParams, $state, $http, EmiAuth) {
 
   var doLogin = function(token) {
     EmiAuth.login(token);
-    $http.get("/api/Users/" + token.userId)
-    .then(response => 
-        EmiAuth.setUser(response.data))
+    $http.get("/api/Users/" + token.userId, EmiAuth.addAuthHeader({}))
+    .then(response => EmiAuth.setUser(response.data))
     .finally(function() {
         $state.go('app.admin');})
   }

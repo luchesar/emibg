@@ -3,7 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService) {
+function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, EmiAuth) {
   $scope.alerts = [];
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
@@ -30,7 +30,10 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService) {
 
   $scope.delete = function(id) {
     $scope.alerts = [];
-    $http.delete("/api/charts/delete/" + id)
+    $http.delete(
+      "/api/charts/delete/" + id,
+      EmiAuth.addAuthHeader({})
+    )
     .then(response => {
       if (response.status === 500) {
         $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие графиката. Грешка: " + response.data.error.message});
@@ -46,7 +49,10 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService) {
 
   $scope.restore = function(id) {
     $scope.alerts = [];
-    $http.delete("/api/charts/delete/" + id,{params: {"delete": "false"}})
+    $http.delete(
+      "/api/charts/delete/" + id,
+      EmiAuth.addAuthHeader({params: {"delete": "false"}})
+    )
     .then(response => {
       $state.go('.', {page: $scope.page}, {reload: true});
     })

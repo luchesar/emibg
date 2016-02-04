@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $sce) {
+function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $sce, EmiAuth) {
   var fetchArticles = function() {
     $scope.alerts = [];
     $http.get(
@@ -31,7 +31,10 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $
 
   $scope.delete = function(id) {
     $scope.alerts = [];
-    $http.delete("/api/articles/delete/" + id)
+    $http.delete(
+      "/api/articles/delete/" + id,
+      EmiAuth.addAuthHeader({})
+    )
     .then(response => {
       $scope.articles = $scope.articles.filter(article => article.id != id);
       $scope.alerts.push({type: 'success', msg: "Статията е успешно изтрита!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
@@ -42,7 +45,10 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $
   }
 
   $scope.restore = function(id) {
-    $http.delete("/api/articles/delete/" + id,{params: {"delete": "false"}})
+    $http.delete(
+      "/api/articles/delete/" + id,
+      EmiAuth.addAuthHeader({params: {"delete": "false"}})
+    )
     .then(response => {
       $state.go('.', {
         page: $scope.page,
