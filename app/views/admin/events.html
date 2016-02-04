@@ -2,11 +2,13 @@
    <ui-view/>
    <div >
      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
-     <div class="admin btn-group">
-       <label class="btn btn-success" ng-model="publishedFilter.published" uib-btn-checkbox>Публикувани</label>
-       <label class="btn btn-success" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Непубликувани</label>
-     </div>
-     <label class="btn btn-danger" ui-sref="app.admin.newevent">Създаване на ново събитие</label>
+     <div class="info-row-admin-large">
+       <div class="admin btn-group">
+         <label class="btn btn-success" ng-model="publishedFilter.published" uib-btn-checkbox>Публикувани</label>
+         <label class="btn btn-success" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Непубликувани</label>
+       </div>
+       <label class="btn btn-danger" ui-sref="app.admin.newevent">Създаване на ново събитие</label>
+      </div>
       <nav>
         <ul class="pagination">
           <li>

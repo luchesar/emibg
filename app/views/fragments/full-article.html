@@ -8,14 +8,42 @@
 			    </div>
 			</div>
 			<div class="social_link">
+
+				<!-- FB share script    
+				    <div id="fb-root"></div>
+				      <script>(function(d, s, id) {
+				        var js, fjs = d.getElementsByTagName(s)[0];
+				        if (d.getElementById(id)) return;
+				        js = d.createElement(s); js.id = id;
+				        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+				        fjs.parentNode.insertBefore(js, fjs);
+				      }(document, 'script', 'facebook-jssdk'));</script>
+
+				    <div class="wrap">
+				      <div class="visible-md visible-lg">
+				          <div class="container">
+				             <div ui-view="banner"></div>
+				          </div>
+				      </div>
+
+				      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="icon"></div>
+
+				 end of FB script -->
+
+
+
+
 				<ul class="sociallink_nav">
-				  <li><a itle="Share to Facebook. Opens in a new window." data-toolttip-text="Share to Facebook. Opens in a new window." onclick="yt.window.popup(&quot;http:\/\/www.facebook.com\/dialog\/share?app_id=87741124305\u0026href=https%3A\/\/www.youtube.com\/attribution_link%3Fa%3Dxnj6u42qhaw%26u%3D%252Fwatch%253Fv%253DNzvgikxo3k8%2526feature%253Dshare\u0026display=popup\u0026redirect_uri=https:\/\/www.youtube.com\/facebook_redirect&quot;, {'height': 560,'width': 530,'scrollbars': true});yt.net.ping.send(&quot;\/sharing_services?share_source=watch\u0026feature=share\u0026name=FACEBOOK\u0026vertical=1\u0026relative_url=%2Fwatch%3Fv%3DNzvgikxo3k8%26feature%3Dshare\u0026id=10\u0026attribution_tag=xnj6u42qhaw\u0026v=Nzvgikxo3k8&quot;);return false;" data-service-name="FACEBOOK" class="yt-uix-tooltip share-service-button share-facebook-icon" data-tooltip-text="Share to Facebook. Opens in a new window." aria-labelledby="yt-uix-tooltip120-arialabel"><i class="fa fa-facebook"></i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				  <li><a href="https://developers.facebook.com/docs/plugins/" data-layout="icon"><i class="fa fa-facebook"></i></a></li>
+				  <li>
+				  	<a href="https://twitter.com/share" target="_blank"><i class="fa fa-twitter"></i></a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				  </li>
 				  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				  <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				  <li><a href="https://api.linkedin.com/v1/people/~/shares?format=json"><i class="fa fa-linkedin"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
+

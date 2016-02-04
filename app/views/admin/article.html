@@ -1,18 +1,20 @@
 <div ng-controller="AdminArticleCtrl">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-  <button class="btn btn-success" ng-click="save()">Запис</button>
+  <div class="info-row-admin">
+    <button class="btn btn-success" ng-click="save()">Запис</button>
 
-  <div class="btn-group">
-    <label>&nbsp;&nbsp;&nbsp;<input type="radio" ng-model="articleType" value="news">&nbsp;Новини&nbsp;&nbsp;</label>
-    <label><input type="radio" ng-model="articleType" value="emis">&nbsp;Анализи на EMI&nbsp;&nbsp;</label>
-    <label><input type="radio" ng-model="articleType" value="summaries">&nbsp;Анализи Резюмета&nbsp;&nbsp;&nbsp;&nbsp;</label>
-   </div>
+    <div class="btn-group">
+      <label>&nbsp;&nbsp;&nbsp;<input type="radio" ng-model="articleType" value="news">&nbsp;Новини&nbsp;&nbsp;</label>
+      <label><input type="radio" ng-model="articleType" value="emis">&nbsp;Анализи на EMI&nbsp;&nbsp;</label>
+      <label><input type="radio" ng-model="articleType" value="summaries">&nbsp;Анализи Резюмета&nbsp;&nbsp;&nbsp;&nbsp;</label>
+     </div>
 
-  <div class="btn-group">
-    <input type="checkbox" ng-model="article.published">&nbsp;Публикувано</label>
+    <div class="btn-group">
+      <input type="checkbox" ng-model="article.published">&nbsp;Публикувано</label>
+    </div>
+
+    <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
   </div>
-
-  <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
   <uib-tabset>
     <uib-tab heading="Редакция">
       <form>

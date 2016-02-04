@@ -1,13 +1,12 @@
 <div ng-controller="AdminEventCtrl">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-  <button class="btn btn-success" ng-click="save()">Запис</button>
-
-  <div class="btn-group">
-    &nbsp;<input type="checkbox" ng-model="event.published">&nbsp;Публикувано</label>
-    <!-- <label class="btn btn-primary" ng-model="event.published" uib-btn-checkbox>Публикувано</label> -->
+  <div class="info-row-admin">
+    <button class="btn btn-success" ng-click="save()">Запис</button>
+    <div class="btn-group">&nbsp;
+      <input type="checkbox" ng-model="event.published">&nbsp;Публикувано</label>
+    </div>
+    <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
   </div>
-
-  <button class="btn btn-danger" style="float:right;" ng-click="cancel()">Отказ</button>
   <uib-tabset>
     <uib-tab heading="Редакция">
         <div class="form-group">

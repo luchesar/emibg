@@ -58,6 +58,10 @@ a img:hover {
   border-radius: 0;
   background-color: #1f446f;
 }
+
+.navbar-inverse {
+      min-height:52px;
+    }
 .navbar-inverse .navbar-nav > li > a {
   border-left: 1px solid #35567d;
   color: #EBEBEB;
@@ -81,7 +85,6 @@ a img:hover {
 
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
   background-color: #E24F14;
-  border-bottom: 1px solid #35567d;
 }
 
 .navbar-inverse .navbar-nav > .active > a.dropdown-toggle {
@@ -263,7 +266,7 @@ a img:hover {
 
 .footer {
   background-color: #252525;
-  background-image: url(/images/emi-footer-2.png); 
+  background-image: url(/images/emi-footer.png);
   background-size: contain;
   color: #EBEBEB;
   display: inline;
@@ -282,7 +285,7 @@ a img:hover {
 
 .footer_widget>h2 {
   border-bottom: 3px solid #666666;
-  font-family: Helvetica,arial,Georgia,serif;
+  font-family: 'Arimo', sans-serif;
   font-size: 16px;
   padding: 10px 0;
   text-transform: uppercase;
@@ -558,7 +561,7 @@ p.ng-binding {
 }
 
 p.ng-binding {
-    margin-bottom: 2%;
+    // margin-bottom: 2%;
     text-align: justify
 }
 
@@ -831,7 +834,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
     margin: 3px;
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.6);;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 
@@ -839,12 +842,29 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 
 .fc-toolbar h2{
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 19px;
 }
 
 .fc-state-default {
   border-radius: 1px !important;
   background-image: none !important;
+}
+
+.fc-prev-button:hover,
+.fc-prev-button:focus,
+.fc-next-button:hover,
+.fc-prev-button:focus,
+.fc-today-button:hover,
+.fc-today-button:focus
+ {
+  background-color: #E67E08;
+  color:#fff;
+}
+
+.fc-event {
+  background-color: #E67E08 !important;
+  border-radius: 1px !important;
+  border-color: #E67E08 !important;
 }
 
 
@@ -857,12 +877,16 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   color: #9C9D9D;
 }
 
-.admin .btn-primary:hover,
-.admin .btn-primary:focus,
 .admin .btn-success:hover,
 .admin .btn-success:focus {
-  background-color: #E67E08;
-  border-color: #E67E08;
+  background-color: #4CAE4C;
+  border-color: #4CAE4C;
+}
+
+.admin .btn-primary:hover,
+.admin .btn-primary:focus {
+  background-color: #3174AF;
+  border-color: #3174AF;
 }
   
 .btn-primary.active {
@@ -882,6 +906,141 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   border-color: #5CB85C;
   color: #fff;
 }
+
+
+.form-control,
+.nav-tabs > li > a {
+  border-radius: 1px;
+}
+
+button {
+  border-radius: 1px !important;
+  background-image: none !important;
+}
+
+.info-row-admin {
+  background-color: #E9E7E7; 
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.info-row-admin-large {
+  background-color: #E9E7E7; 
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+//login screen 
+
+
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Arimo', sans-serif;;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.4em;
+  font-family: 'Arimo', sans-serif;
+  margin-bottom: 0px;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arimo', sans-serif;;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+} 
+
+.login-help{
+  font-size: 12px;
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+
 
 
 
