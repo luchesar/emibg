@@ -13,11 +13,11 @@ function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
     "/api/events/paged/" +
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + PagingService.itemsPerPage
+    "&size=" + $scope.itemsPerPage
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;
-    $scope.pageCount = PagingService.pageCount($scope.itemsCount);
+    $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.events = _(response.data.items)
         .chunk(2).toArray();
   })

@@ -16,11 +16,11 @@ function NewsCtrl($scope, $stateParams, $http, $state, PagingService) {
     "/api/articles/paged/" +
     ($stateParams.lang ||  "bg") +
     "?categories=news&p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + PagingService.itemsPerPage
+    "&size=" + $scope.itemsPerPage
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;
-    $scope.pageCount = PagingService.pageCount($scope.itemsCount);
+    $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.news = _(response.data.items)
         .chunk(2).toArray();
   })
