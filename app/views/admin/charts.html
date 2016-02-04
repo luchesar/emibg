@@ -1,4 +1,5 @@
 <div ng-controller="AdminChartsCtrl" layout="column">
+   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
    <ui-view/>
      <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-bar'})">Нова Линейна или Колонна диаграма</label>
      <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-pie'})">Нова Кгъгова диаграма</label>
