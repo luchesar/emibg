@@ -1,7 +1,9 @@
 <div ng-controller="AdminChartsCtrl" layout="column">
    <ui-view/>
-     <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-bar'})">Нова Линейна или Колонна диаграма</label>
-     <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-pie'})">Нова Кгъгова диаграма</label>
+      <div class="info-row-admin-large">
+         <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-bar'})">Нова Линейна или Колонна диаграма</label>
+         <label class="btn btn-danger" ui-sref="app.admin.newchart({type:'chart-pie'})">Нова Кгъгова диаграма</label>
+      </div>
       <nav>
         <ul class="pagination">
           <li>

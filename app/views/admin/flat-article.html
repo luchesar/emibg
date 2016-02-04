@@ -1,12 +1,12 @@
 <div class="flat-article-event">
     <div class="media">
-      <a class="media-left" href="#" ui-sref="app.admin.article({ id: article.id })">
+      <a class="media-left media-top" href="#" ui-sref="app.admin.article({ id: article.id })">
         <div class="media-object">
           <emi-image image="article.image" width="120px" height="90px"></emi-image>
         </div>
       </a>
       <div class="media-body">
-        <h4 class="media-heading">{{article.title | lang | limitTo:80}}</h4>
+        <h4 class="media-heading">{{article.title | lang | limitTo:80}}<span class="label label-danger">Danger</span></h4>
         <p>{{article.html | lang | htmlToPlainText | limitTo: 210}}...</p>
         <p><b>{{article.published ? "Публикувана" : "Непубликувана"}}, Категории: {{article.category}} Автор: {{article.author.bg}}</b></p>
         <p> <b>Референция за началната страница: </b> {{article.itemId}} <a href="#" ng-click="delete(article.id)"><i class="fa fa-trash-o fa-lg"></i></a></p>
