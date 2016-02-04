@@ -12,21 +12,21 @@ function PagingService() {
     else return p;
   }
 
-  service.itemsPerPage = 26;
 
-  service.pageCount = function(itemsCount) {
-    return Math.ceil(itemsCount / service.itemsPerPage);
+  service.pageCount = function(itemsCount, itemsPerPage) {
+    return Math.ceil(itemsCount / itemsPerPage);
   }
 
   service.init = function($scope, $stateParams, $state, onPageChange) {
     $scope.page = service.pageNumber($stateParams);
+    $scope.itemsPerPage = 26;
 
     $scope.$watch('page', onPageChange || function() {
       $state.go('.', {page: $scope.page});
     });
 
     $scope.hasNext = function() {
-      return $scope.page * service.itemsPerPage < $scope.itemsCount;
+      return $scope.page * $scope.itemsPerPage < $scope.itemsCount;
     }
 
     $scope.hasPrev = function() {

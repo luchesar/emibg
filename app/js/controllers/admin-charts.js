@@ -10,16 +10,18 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService) {
     $state.go('.', {page: $scope.page});
   });
 
+  $scope.itemsPerPage = 9;
+
   $http.get(
     "/api/charts/paged/" +
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + PagingService.itemsPerPage +
+    "&size=" + $scope.itemsPerPage +
     "&published=both"
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;
-    $scope.pageCount = PagingService.pageCount($scope.itemsCount);
+    $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.charts = _(response.data.items).chunk(3).toArray();
   })
   .catch(function(err) {

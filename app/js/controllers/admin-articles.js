@@ -14,13 +14,13 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $
       ($stateParams.lang ||  "bg") +
       "?categories=" + $scope.showCategories +
       "&p=" + PagingService.pageNumber($stateParams) +
-      "&size=8" +
+      "&size=" + $scope.itemsPerPage +
       "&published=" + $scope.published +
       "&requireTitle=false"
     )
     .then(function(response) {
       $scope.itemsCount = response.data.size;
-      $scope.pageCount = PagingService.pageCount($scope.itemsCount);
+      $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
       $scope.articles = response.data.items;
     })
     .catch(function(err) {
@@ -63,6 +63,7 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $
       showCategories: $scope.showCategories
     });
   });
+  $scope.itemsPerPage = 8;
 
   if ($stateParams.published === "both") {
     $scope.published = "both";
