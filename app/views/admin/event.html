@@ -78,22 +78,25 @@
         </div>
       </form>
         <p>
+          <label>Заглавие:</label>
           <h3><b>
-            <div ui-tinymce="titleBgOptions" ng-model="title.bg" placeholder="Заглавие на Български"></div>
+            <input type="text" class="form-control" placeholder="Заглавие на Български" ng-model="event.title.bg">
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
-          <div ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
+          <label>Съдържание</label>
+          <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
         </p>
         <p>
+          <label>Заглавие на Английски:</label>
           <h3><b>
-            <div ui-tinymce="titleEnOptions" ng-model="title.en" placeholder="Заглавие на Английски"></div>
+            <input type="text" class="form-control" placeholder="Заглавие на Английски" ng-model="event.title.en">
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
-          <div ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
+          <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
         </p>
       <form>
         <div class="form-group">

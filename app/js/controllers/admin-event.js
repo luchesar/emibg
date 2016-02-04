@@ -57,9 +57,8 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     $scope.alerts.splice(index, 1);
   };
 
-
   var editorOptions = function(options, onChange) {
-    options.inline = true;
+    options.inline = false;
     options.language = $stateParams.lang || 'bg',
     options.skin = 'lightgray';
     options.theme = 'modern';
@@ -87,15 +86,6 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       });
   }
 
-  var titleOptions = function(updateProperty) {
-    return editorOptions({
-        toolbar: 'undo redo',
-        menubar: false
-      }, function(editor) {
-        updateProperty(jQuery(editor.getElement()).text());
-      });
-  }
-
   $scope.htmlBgOptions = htmlOptions(function(html) {
       $scope.event.html.bg = html;
       $scope.bgHtml = $sce.trustAsHtml(html);
@@ -104,8 +94,6 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       $scope.event.html.en = html;
       $scope.enHtml = $sce.trustAsHtml(html);
   });
-  $scope.titleBgOptions = titleOptions(title => $scope.event.title.bg = title);
-  $scope.titleEnOptions = titleOptions(title => $scope.event.title.en = title);
 
   $scope.setStartDate = function() {
     $scope.event.start = $scope.newstart.date.getTime() + $scope.newstart.time.getTime();
