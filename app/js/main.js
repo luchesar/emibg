@@ -18,6 +18,7 @@ require('angular-translate');
 require('angular-chart.js');
 require('angular-ui-calendar');
 require('angular-resource');
+require('angular-scroll');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -43,7 +44,8 @@ angular.element(document).ready(function() {
     'chart.js',
     'ui.calendar',
     'ngResource',
-    'lbServices'
+    'lbServices',
+    'duScroll'
   ];
 
   // mount on window for testing
