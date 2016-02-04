@@ -9,7 +9,7 @@
         <h4 class="media-heading">{{event.title | lang | limitTo:80}}</h4>
         <p>{{event.html | lang | htmlToPlainText | limitTo: 210}}...</p>
         <p><b>{{event.published ? "Публикувана" : "Непубликувана"}}, Организатор: {{event.organiser.bg}}</b></p>
-        <p> <b>Референция за началната страница: </b> {{event.itemId}} </p>
+        <p> <b>Референция за началната страница: </b> {{event.itemId}} <a href="#" ng-click="delete(event.id)"><i class="fa fa-trash-o fa-lg"></i></a></p>
       </div>
     </div>
 </div>

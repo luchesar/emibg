@@ -24,6 +24,31 @@ function AdminEventsCtrl($scope, $stateParams, $http, $state, PagingService) {
     });
   }
 
+  $scope.delete = function(id) {
+    $scope.alerts = [];
+    $http.delete("/api/events/delete/" + id)
+    .then(response => {
+      $scope.events = $scope.events.filter(event => event.id != id);
+      $scope.alerts.push({type: 'success', msg: "Събитието е успешно изтрито!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
+    })
+    .catch(err => {
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие събитието. Моля опитайте след малко."});
+    })
+  }
+
+  $scope.restore = function(id) {
+    $http.delete("/api/events/delete/" + id,{params: {"delete": "false"}})
+    .then(response => {
+      $state.go('.', {
+        page: $scope.page,
+        published: $scope.published + ""
+      }, {reload: true});
+    })
+    .catch(err => {
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се възтанови изтритото събитие."});
+    })
+  }
+
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {

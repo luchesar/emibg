@@ -1,7 +1,7 @@
 <div ng-controller="AdminEventsCtrl" layout="column">
    <ui-view/>
    <div >
-     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
      <div class="admin btn-group">
        <label class="btn btn-success" ng-model="publishedFilter.published" uib-btn-checkbox>Публикувани</label>
        <label class="btn btn-success" ng-model="publishedFilter.notPublished" uib-btn-checkbox>Непубликувани</label>
