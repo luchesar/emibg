@@ -84,7 +84,6 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
       } else if (!publishedFilter.published && publishedFilter.notPublished) {
         $scope.published = "false";
       } else {
-        console.log("none");
         $scope.published = "none";
       }
       fetchArticles();
