@@ -2,7 +2,7 @@
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
   <button class="btn btn-success" ng-click="save()">Запис</button>
 
-  <div class="btn-group"> {{event.published}}
+  <div class="btn-group">
     &nbsp;<input type="checkbox" ng-model="event.published">&nbsp;Публикувано</label>
     <!-- <label class="btn btn-primary" ng-model="event.published" uib-btn-checkbox>Публикувано</label> -->
   </div>
