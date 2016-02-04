@@ -23,6 +23,7 @@ require('angular-ui-bootstrap');
 require('angular-cookies');
 require('angular-bootstrap-datetimepicker');
 require('../../node_modules/angular-google-picker/src/google-picker');
+require('../../node_modules/angular-bind-html-compile/angular-bind-html-compile.js');
 require('./ext/imgLiquid');
 require('./lb-services.js');
 require('../../node_modules/angular-ui-grid/ui-grid.js');
@@ -57,7 +58,8 @@ angular.element(document).ready(function() {
     'ui.bootstrap.datetimepicker',
     'ui.grid',
     'ui.grid.edit',
-    'ui.grid.cellNav'
+    'ui.grid.cellNav',
+    'angular-bind-html-compile'
   ];
 
   // mount on window for testing

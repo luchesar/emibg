@@ -93,6 +93,7 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
+    "angular-bind-html-compile": "github:incuna/angular-bind-html-compile",
     "angular-bootstrap-datetimepicker": "^0.4.0",
     "angular-bootstrap-switch": "^0.4.1",
     "angular-chart.js": "^0.7.2",

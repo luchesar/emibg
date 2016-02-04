@@ -6,8 +6,9 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
+function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService, $sce) {
   var fetchArticles = function() {
+    $scope.alerts = [];
     $http.get(
       "/api/articles/paged/" +
       ($stateParams.lang ||  "bg") +
@@ -27,6 +28,32 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
       console.log(err);
     });
   };
+
+  $scope.delete = function(id) {
+    $scope.alerts = [];
+    $http.delete("/api/articles/delete/" + id)
+    .then(response => {
+      $scope.articles = $scope.articles.filter(article => article.id != id);
+      $scope.alerts.push({type: 'success', msg: "Статията е успешно изтрита!<a href='#' ng-click=\"restore('" + id + "')\">UNDO</a>"});
+    })
+    .catch(err => {
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се изтрие статията. Моля опитайте след малко."});
+    })
+  }
+
+  $scope.restore = function(id) {
+    $http.delete("/api/articles/delete/" + id,{params: {"delete": "false"}})
+    .then(response => {
+      $state.go('.', {
+        page: $scope.page,
+        published: $scope.published + "",
+        showCategories: $scope.showCategories
+      }, {reload: true});
+    })
+    .catch(err => {
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се възтанови изтритата статията."});
+    })
+  }
 
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
@@ -91,15 +118,6 @@ function AdminArticlesCtrl($scope, $stateParams, $http, $state, PagingService) {
     publishedFilterInitialEvent = false;
   });
 
-
- /* $scope.showAllCategoriesClick = function () {
-    if ($scope.showAllCategories.selected) {
-      $scope.articleType = {news: true, emis: true, summaries: true};
-      $scope.showCategories = "";
-      fetchArticles();
-    }
-  };*/
-  
   fetchArticles();
 
   $scope.closeAlert = function(index) {
