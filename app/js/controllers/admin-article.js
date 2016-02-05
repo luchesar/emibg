@@ -46,7 +46,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     }
     method(url, $scope.article, EmiAuth.addAuthHeader({}))
     .then(function(response) {
-      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успещно")});
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успешно")});
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише статията в момента. Моля опитайте след малко."});

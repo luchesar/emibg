@@ -36,7 +36,7 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
     }
     method(url, $scope.chart, EmiAuth.addAuthHeader({}))
     .then(function(response) {
-      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Графиката е записана успещно")});
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Графиката е записана успешно")});
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише графиката в момента. Моля опитайте след малко."});

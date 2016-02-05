@@ -46,7 +46,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     }
     method(url, $scope.event, EmiAuth.addAuthHeader({}))
     .then(function(response) {
-      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успещно")});
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успешно")});
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише събитието в момента. Моля опитайте след малко."});

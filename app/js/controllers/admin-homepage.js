@@ -7,7 +7,7 @@ var data = require('../data.js');
 /**
 * @ngInject
 */
-function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q) {
+function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth) {
   var itemsUrl = "/api/homeItemsSliders";
   var chartsUrl = "/api/homeChartsSliders";
 
@@ -33,7 +33,7 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q) {
         method = $http.put;
         sendUrl = url + "/" + thing.id;
       }
-      return method(sendUrl, thing);
+      return method(sendUrl, thing, EmiAuth.addAuthHeader({}));
     }
 
     var promises = $scope.items.map(item => sav(itemsUrl, item))
