@@ -1,15 +1,32 @@
-<div ng-controller="AllPartnersCtrl" layout="column">
-		<div ng-repeat="partner in allPartners" layout="column" layout-fill>
-			<div class="article-event flat partner">
-			    <div class="media">
+<!-- <div ng-controller="AllPartnersCtrl" layout="column">
+	<div ng-repeat="partner in allPartners" layout="column" layout-fill>
+		<div class="article-event flat partner">
+			  <div class="media">
 			      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
-			        <img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}">
+			        <img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}" >
 			      </a>
-			      <div class="media-body">
-			        <h4 class="media-heading">{{partner.title | lang}}</h4>
+			      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
+			        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
 			      </div>
-			    </div>
-		    </div>
-		</div>
+			  </div>
+		  </div>
+	</div>
+</div>  -->
+
+
+<!-- New Test for safari No Media elemnt
+ -->
+
+ <div ng-controller="AllPartnersCtrl" layout="column">
+	<div ng-repeat="partner in allPartners" layout="column" layout-fill>
+		<a ng-href= "{{partner.site}}" target="_blank">
+			<img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}">
+	    </a>
+	    <a style="float:right;" ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
+	</div>
 </div> 
+
+-->
+
+
 
