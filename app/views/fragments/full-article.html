@@ -4,6 +4,11 @@
 			<div ng-controller="FullArticleCtrl">
 			    <div class="single_page_content">
 			    	<h1>{{ article.title | lang }}</h1>
+			    	<div class="post_commentbox">
+		                <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
+		                <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
+		                <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span>
+		             </div>
 			    	<p><div ng-bind-html="articleHtml"></div></p>
 			    </div>
 			</div>

@@ -3,8 +3,8 @@
     <slide ng-repeat="slide in slides" active="slide.active" >
       <img ng-src="{{slide.image}}" class="img-thumbnail">
       <div class="carousel-caption">
-        <h2>{{slide.title | lang}}</h2>
-        <p>{{slide.text | lang}}</p>
+        <h2>{{slide.title | lang | limitTo:100}}</h2>
+        <p>{{slide.text | lang | limitTo:100}}</p>
       </div>
     </slide>
   </carousel>
