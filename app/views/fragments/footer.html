@@ -2,23 +2,23 @@
     <div class="container">     
       <div class="row">
         <div class="col-lg-12">
-          <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="col-lg-4 col-md-4">
             <div class="footer_widget">
-              <h2><a href="#" ui-sref="app.menu.home" onclick="scroll(0,0)"><i class="fa fa-home"></i>&nbsp;{{'HOME' | translate }}</h2>
+              <h2><a href="#" ui-sref="app.menu.home" ng-click="scrollToTop()"><i class="fa fa-home"></i>&nbsp;{{'HOME' | translate }}</h2>
                 <ul>
                     <li><a href="#" ui-sref="app.menu.news({page: 1})" ng-click="scrollToTop()"><i class="fa fa-file-text-o"></i>&nbsp;{{'NEWS' | translate }}</a></li>
                     <li><i class="fa fa-balance-scale"></i>&nbsp;{{'ANALYSIS' | translate }}</li>
                         <ul>
-                             <li><a href="#" ui-sref="app.menu.analysis.emis({page: 1})" onclick="scroll(0,0)"><i class="fa fa-book"></i>&nbsp;{{'EMIS_ANALYSIS' | translate }}</a></li>
-                             <li><a href="#" ui-sref="app.menu.analysis.summaries({page: 1})" onclick="scroll(0,0)"><i class="fa fa-area-chart"></i>&nbsp;{{'SUMMARIES' | translate }}</a></li>
+                             <li><a href="#" ui-sref="app.menu.analysis.emis({page: 1})" ng-click="scrollToTop()"><i class="fa fa-book"></i>&nbsp;{{'EMIS_ANALYSIS' | translate }}</a></li>
+                             <li><a href="#" ui-sref="app.menu.analysis.summaries({page: 1})" ng-click="scrollToTop()"><i class="fa fa-area-chart"></i>&nbsp;{{'SUMMARIES' | translate }}</a></li>
                         </ul>
-                    <li><a href="" ui-sref="app.menu.events({page: 1})" onclick="scroll(0,0)"><i class="fa fa-calendar"></i>&nbsp;{{'EVENTS' | translate }}</a></li>
-                    <li><a href="" ui-sref="app.menu.energopedia" onclick="scroll(0,0)"><i class="fa fa-bolt"></i>&nbsp;{{'ENERGOPEDIA' | translate }}</a></li>
-                    <li><a href="#" ui-sref="app.menu.partners" onclick="scroll(0,0)"><i class="fa fa-users"></i>&nbsp;{{'PARTNERS' | translate }}</a></li>
+                    <li><a href="" ui-sref="app.menu.events({page: 1})" ng-click="scrollToTop()"><i class="fa fa-calendar"></i>&nbsp;{{'EVENTS' | translate }}</a></li>
+                    <li><a href="" ui-sref="app.menu.energopedia" ng-click="scrollToTop()"><i class="fa fa-bolt"></i>&nbsp;{{'ENERGOPEDIA' | translate }}</a></li>
+                    <li><a href="#" ui-sref="app.menu.partners" ng-click="scrollToTop()"><i class="fa fa-users"></i>&nbsp;{{'PARTNERS' | translate }}</a></li>
                 </ul>    
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="col-lg-4 col-md-4">
             <div class="footer_widget">
               <h2>{{'FOLLOW' | translate }}</h2> 
               <div class="social_link">
@@ -40,7 +40,7 @@
                 </div>
               </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="col-lg-4 col-md-4">
             <div class="footer_widget">
               <h2>{{'CONTACT' | translate }}</h2>
               <h5 style="font-weight: bold">{{'EMI' | translate }}</h5>
@@ -56,7 +56,7 @@
                 </a>
               </p>
               <address> 
-                <a href="#" ui-sref="app.menu.about.contact">
+                <a href="#" ui-sref="app.menu.about.contact" ng-click="scrollToTop()">
                   <span class="glyphicon glyphicon-map-marker"></span>
                   &nbsp;{{'SOFIA_1000' | translate }}
                   {{'STREET' | translate }}
