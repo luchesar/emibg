@@ -1,4 +1,4 @@
-<div class="flat-article-event">
+<div class="flat-article-event admin">
     <div class="media">
       <a class="media-left" href="#" ui-sref="app.admin.event({ id: event.id })">
         <div class="media-object">
@@ -6,10 +6,10 @@
         </div>
       </a>
       <div class="media-body">
-        <h4 class="media-heading">{{event.title | lang | limitTo:80}}</h4>
-        <p>{{event.html | lang | htmlToPlainText | limitTo: 210}}...</p>
-        <p><b>{{event.published ? "Публикувана" : "Непубликувана"}}, Организатор: {{event.organiser.bg}}</b></p>
-        <p> <b>Референция за началната страница: </b> {{event.itemId}} <a href="#" ng-click="delete(event.id)"><i class="fa fa-trash-o fa-lg"></i></a></p>
+        <h4 class="media-heading">{{event.title | lang | limitTo:60}}&nbsp;&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(event.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
+        <p>{{event.html | lang | htmlToPlainText | limitTo: 130}}...</p>
+        <p><b>{{event.published ? "Публикувана" : "Непубликувана"}}, Автор: {{event.author.bg}}, Организатор: {{event.organiser.bg}}</b></p>
+        <p> <b>Референция за началната страница: </b><span style="color:#2A5A2A">{{event.itemId}}</span></p>
       </div>
     </div>
 </div>

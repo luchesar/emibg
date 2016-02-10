@@ -1,4 +1,4 @@
-<div class="flat-article-event">
+<div class="flat-article-event admin">
     <div class="media">
       <a class="media-left media-top" href="#" ui-sref="app.admin.article({ id: article.id })">
         <div class="media-object">
@@ -6,10 +6,10 @@
         </div>
       </a>
       <div class="media-body">
-        <h4 class="media-heading">{{article.title | lang | limitTo:80}}</h4>
-        <p>{{article.html | lang | htmlToPlainText | limitTo: 210}}...</p>
-        <p><b>{{article.published ? "Публикувана" : "Непубликувана"}}, Категории: {{article.category}} Автор: {{article.author.bg}}</b></p>
-        <p> <b>Референция за началната страница: </b> {{article.itemId}} <a href="#" ng-click="delete(article.id)"><i class="fa fa-trash-o fa-lg"></i></a></p>
+        <h4 class="media-heading">{{article.title | lang | limitTo:60}}&nbsp;&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(article.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
+        <p>{{article.html | lang | htmlToPlainText | limitTo: 130}}...</p>
+        <p><b>{{article.published ? "Публикувана" : "Непубликувана"}}, Категории: {{article.category}}, Автор: {{article.author.bg}}</b></p>
+        <p> <b>Референция за началната страница: </b><span style="color:#2A5A2A"> {{article.itemId}}</span></p>
       </div>
     </div>
 </div>

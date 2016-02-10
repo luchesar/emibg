@@ -1,7 +1,11 @@
-<div class="flat-article-event">
+<div class="flat-article-event admin">
       <a href="#" ui-sref="app.admin.chart({ id: chart.id })">
           <chart-panel/>
       </a>
-        <p> <b>Референция за началната страница: </b> {{chart.itemId}} <a href="#" ng-click="delete(chart.id)"><i class="fa fa-trash-o fa-lg"></i></a></p>
+      	<h4 class="chart-delete"><span class="label label-danger" style="float:right; margin:2px; color:#fff;">
+        	<a href="#" ng-click="delete(chart.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
+        <p> <b>Референция за началната страница: </b></p>
+        <p><span style="color:#2A5A2A"> {{chart.itemId}}</span></p>
+        	
 </div>
 

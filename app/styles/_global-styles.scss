@@ -84,11 +84,11 @@ a img:hover {
 }
 
 .navbar-inverse .navbar-nav > .active > a.ng-binding {
-  background-color: #E24F14;
+  background-color: #CA1B05;
 }
 
 .navbar-inverse .navbar-nav > .active > a.dropdown-toggle {
-  background-color: #E24F14;
+  background-color: #CA1B05;
 }  
 
 .navbar-inverse .navbar-nav > li > a:hover, 
@@ -141,13 +141,13 @@ a img:hover {
 .navbar-inverse .navbar-nav > .open > a, 
 .navbar-inverse .navbar-nav > .open > a:hover, 
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #E24F14;
+    background-color: #CA1B05;
     color: #fff; }
 
 .dropdown-menu > .active > a, 
 .dropdown-menu > .active > a:hover, 
 .dropdown-menu > .active > a:focus {
-  background-color: #E24F14;
+  background-color: #CA1B05;
 } 
 
 /* Navbar Search*/
@@ -173,7 +173,7 @@ a img:hover {
 
 .navbar-inverse .navbar-brand:focus {
   color: #fff;
-  background-color: #E24F14;
+  background-color: #CA1B05;
 }
 
 .navbar-inverse .navbar-toggle {
@@ -193,8 +193,8 @@ a img:hover {
 .btn-warning.active, 
 .open > .btn-warning.dropdown-toggle {
   color: #fff;
-  background-color: #E24F14;
-  border-color: #E24F14;
+  background-color: #CA1B05;
+  border-color: #CA1B05;
 }
 
 
@@ -231,7 +231,7 @@ a img:hover {
 }
 
 .navbar-inverse .navbar-toggle:hover {
-  background-color: #E24F14;
+  background-color: #CA1B05;
 }
 
 
@@ -481,7 +481,7 @@ p.ng-binding {
 }
 
 .single_post_content h2 span {
-    background: #E24F14 none repeat scroll 0px 0px;
+    background: #CA1B05 none repeat scroll 0px 0px;
     padding: 6px 12px;
     border-radius: 1px;
 }
@@ -508,8 +508,8 @@ p.ng-binding {
   width: 100%;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 30px;
   padding: 5px 0px;
 }
 
@@ -543,16 +543,6 @@ p.ng-binding {
     border-radius: 1px;
 }
 
-//Partners
-
-// .partner {
-//   border:1px solid #DCDCDC;
-//   margin: 5px;
-//   border-radius: 1px;
-//   padding: 5px;
-// }
-
-
 //Arcticles
 
 .contentSection{
@@ -576,7 +566,7 @@ p.ng-binding {
   width: 100%;
 }
 .single_page h1{
-  color: #E24F14;
+  color: #CA1B05;
   font-family: 'Arimo', sans-serif;
   font-size: 25px;
   line-height: 1.2em;
@@ -777,6 +767,8 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 .footer ul>ul>li {
   padding-left: 20px;
 }
+
+
 //Event Table
 
 .table {
@@ -788,21 +780,10 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 }
 
 .td1 {
-  color: #E24F14;
+  color: #CA1B05;
   background-color: #F8F8F8; 
 }
 
-
-// carousel
-
-// .carousel-caption h1 {
-//   font-family: 'Arimo', sans-serif;
-//   font-size: 25px;
-//   line-height: 1.2em;
-//   margin: 10px 0 20px;
-//   padding: 0 0 4px;
-//   text-transform: uppercase;
-// }
 
 .img-thumbnail {
   border-radius: 1px;
@@ -897,6 +878,13 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 }
 
 
+//Charts
+
+.bar-legend li span, .chart-legend li span, .line-legend li span, .pie-legend li span, {
+  border-radius: 1px !important;
+}
+
+
 //Admin style
 
 .admin .btn-primary {
@@ -907,8 +895,8 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 
 .admin .btn-success:hover,
 .admin .btn-success:focus {
-  background-color: #4CAE4C;
-  border-color: #4CAE4C;
+  background-color: #3c8b3c;
+  border-color: #3c8b3c;
 }
 
 .admin .btn-primary:hover,
@@ -953,11 +941,26 @@ button {
 }
 
 .info-row-admin-large {
-  background-color: #E9E7E7; 
+  background-color: #F7F7F7; 
   padding: 10px;
   margin-bottom: 10px;
 }
 
+.label {
+  border-radius: 1px;
+}
+
+.flat-article-event.admin {
+  background-color: #F7F7F7;
+}
+
+.flat-article-event.admin p{
+  margin: 2px;
+}
+
+.flat-article-event.admin .chart-delete a{
+  color: #fff;
+}
 
 //login screen 
 
@@ -1066,6 +1069,34 @@ button {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+
+//Eurolectric Ad
+
+.euroelectric img {
+  display: inline;
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.energopedia img {
+  display: inline;
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+//Charts
+
+.panel-body:hover {
+  cursor: pointer;
+}
+
+
+
+///////////////////
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
