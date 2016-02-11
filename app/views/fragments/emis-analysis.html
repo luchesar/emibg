@@ -1,7 +1,7 @@
-<div ng-controller="EmisAnalysisCtrl" layout="column">
+<div ng-controller="EmisAnalysisCtrl">
    <ui-view/>
    <div>
-       <div ng-repeat="rowArticles in emisAnalysis" layout="column">
+       <div ng-repeat="rowArticles in emisAnalysis">
             <div class="row">
                <div class="col-sm-6 col-md-6" ng-repeat="article in rowArticles">
                   <flat-article></flat-article>

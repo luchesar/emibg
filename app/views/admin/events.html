@@ -1,4 +1,4 @@
-<div ng-controller="AdminEventsCtrl" layout="column">
+<div ng-controller="AdminEventsCtrl">
    <ui-view/>
    <div >
      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
@@ -25,7 +25,7 @@
         </ul>
       </nav>
 
-       <div ng-repeat="event in events" layout="column" layout-fill style="padding-bottom: 13px;" >
+       <div ng-repeat="event in events" style="padding-bottom: 13px;" >
          <div class="col-sm-12 col-md-12">
             <flat-admin-event></flat-admin-event>
          </div>

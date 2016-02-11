@@ -1,8 +1,8 @@
 <div ng-controller="SearchCtrl">
    <ui-view/>
-       <div layout="column" layout-fill style="padding-botom: 20px;">{{'SEARCH_EVERYWHERE' | translate}}</div>
+       <div style="padding-botom: 20px;">{{'SEARCH_EVERYWHERE' | translate}}</div>
    <div >
-       <div ng-repeat="rowItems in items" layout="column" layout-fill style="padding-bottom: 13px;" >
+       <div ng-repeat="rowItems in items">
            <div class="row">
                <div class="col-sm-6 col-md-6" ng-repeat="item in rowItems">
                  <div item></div>
@@ -27,5 +27,5 @@
       </nav>
        </div>
    </div>
-   <div ng-hide="items.length" layout="column" layout-fill>{{'NOTHING_FOUND' | translate}}</div>
+   <div ng-hide="items.length">{{'NOTHING_FOUND' | translate}}</div>
 </div>

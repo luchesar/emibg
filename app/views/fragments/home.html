@@ -1,4 +1,4 @@
-<div layout="column">
+<div>
    <ui-view/>
    <div ng-controller="HomeCtrl" class="single_post_content">
       <div>
@@ -22,12 +22,12 @@
         </h2> 
       <div class="row">
         <div class="col-sm-6 col-md-6">
-            <div ng-repeat="article in mainNews" layout="column" layout-fill>
+            <div ng-repeat="article in mainNews">
                 <tile-article/>
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            <div ng-repeat="article in news" layout="column" layout-fill>
+            <div ng-repeat="article in news">
                <flat-article/>
             </div>
         </div>
@@ -38,11 +38,11 @@
             <h2>
               <span>{{'ANALYSIS' | translate }}</span>
             </h2>
-            <div ng-repeat="article in mainAnalysis" layout="column" layout-fill>
+            <div ng-repeat="article in mainAnalysis">
                 <tile-article/>
             </div>
             <br/>
-            <div ng-repeat="article in analysis" layout="column" layout-fill>
+            <div ng-repeat="article in analysis">
                 <flat-article/>
             </div>
           </div>
@@ -50,11 +50,11 @@
             <h2>
               <span>{{'EVENTS' | translate }}</span>
             </h2>
-            <div ng-repeat="event in mainEvent" layout="column" layout-fill>
+            <div ng-repeat="event in mainEvent">
                 <tile-event/>
             </div>
             <br/>
-            <div ng-repeat="event in events" layout="column" layout-fill>
+            <div ng-repeat="event in events">
                 <flat-event/>
             </diiv>
           </div>

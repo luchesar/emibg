@@ -1,4 +1,4 @@
-<div ng-controller="AdminChartsCtrl" layout="column">
+<div ng-controller="AdminChartsCtrl">
    <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" bind-html-compile="alert.msg"></uib-alert>
    <ui-view/>
       <div class="info-row-admin-large">
@@ -21,7 +21,7 @@
         </ul>
       </nav>
    <div >
-       <div ng-repeat="rowCharts in charts" layout="column" layout-fill style="padding-bottom: 13px;" >
+       <div ng-repeat="rowCharts in charts" style="padding-bottom: 13px;" >
           <div class="row">
             <div class="col-sm-4 col-md-4" ng-repeat="chart in rowCharts">
               <flat-admin-chart chart="chart"></flat-admin-chart>

@@ -1,8 +1,8 @@
-<div ng-controller="AllEventsCtrl" layout="column">
+<div ng-controller="AllEventsCtrl">
    <ui-view/>
    <div>
     
-       <div ng-repeat="rowEvents in events" layout="column">
+       <div ng-repeat="rowEvents in events">
             <div class="row">
                <div class="col-sm-6 col-md-6" ng-repeat="event in rowEvents">
                   <flat-event></flat-event>
