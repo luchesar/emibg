@@ -10,7 +10,7 @@ var data = require('../data.js');
 function ChartsCtrl($scope, $filter, $http) {
   $http.get("/api/home-pages/sliderCharts")
   .then(function(response) {
-    $scope.slides = response.data;
+    $scope.slides = response.data.map(slide => slide.filter(chart => chart)).filter(slide => slide.length > 0);
   })
   .catch(err => console.log(err));
 }
