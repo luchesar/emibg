@@ -6,7 +6,8 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function SingleChartCtrl($scope, $stateParams, $http, $filter) {
+function SingleChartCtrl($scope, $stateParams, $http, $filter, $document) {
+  $document.scrollTopAnimated(0, 190);
   $http.get("/api/charts/" + $stateParams.id)
   .then(function(response) {
       $scope.chart = response.data;
