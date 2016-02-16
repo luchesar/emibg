@@ -88,7 +88,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
           'insertdatetime media nonbreaking save table contextmenu directionality',
           'template paste textcolor colorpicker textpattern'
         ],
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link google_tools image | print preview media | forecolor backcolor',
+        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link google_tools image | print preview media | forecolor',
         image_caption: true,
         image_advtab: true
       },
