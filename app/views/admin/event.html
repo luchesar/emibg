@@ -9,9 +9,9 @@
   </div>
   <uib-tabset>
     <uib-tab heading="Редакция">
-        <div class="form-group">
-          <image-picker image="event.image" width="400px", height="300px"></image-picker>
-        </div>
+      <div class="form-group">
+        <image-picker image="event.image" width="400px", height="300px"></image-picker>
+      </div>
       <div style="margin-bottom: 20px;">
         <form class="form-horizontal" role="form">
           <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
@@ -19,7 +19,6 @@
               <div class="col-sm-9">
                 <input style="line-height: inherit;"
                      type="date"
-                     id="exampleInput"
                      name="input"
                      ng-model="newstart.date"
                      placeholder="yyyy-MM-dd"
@@ -33,9 +32,8 @@
             <div class="col-sm-9"> 
               <input style="line-height: inherit;"
                    type="date"
-                   id="exampleInput"
                    name="input"
-                   ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" requiredng-change="setEndDate()"/>
+                   ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" required ng-change="setEndDate()"/>
               <input style="line-height: inherit;" type="time" name="input" ng-model="newend.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setEndDate()"/>
             </div>
           </div>
