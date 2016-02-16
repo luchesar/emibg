@@ -15,7 +15,7 @@ var currentLang = function(stateParams, translate) {
 /**
 * @ngInject
 */
-function CalendarCtrl($scope, $q,
+function CalendarCtrl($scope, $q, $http,
         $compile, $state, $stateParams, $translate, $filter,
         EventService, uiCalendarConfig) {
     $scope.events = [];
@@ -26,8 +26,13 @@ function CalendarCtrl($scope, $q,
     ];
 
     /* event source that contains custom events on the scope */
-    var eventsFilter = EventService.filter(10000);
-    eventsFilter.then(function(items) {
+    $http.get(
+      "/api/events/paged/" +
+      ($stateParams.lang ||  "bg") +
+      "?p=1" +
+      "&size=10000"
+    )
+    .then(function(response) {
       $scope.uiConfig = {
           height: 450,
           editable: false,
@@ -40,7 +45,7 @@ function CalendarCtrl($scope, $q,
           eventClick: $scope.eventClick,
           eventRender: $scope.eventRender
       };
-      $scope.events = items.map(function(event){
+      $scope.events = response.data.items.map(function(event){
         return {
           id: event.id,
           title: $filter('lang')(event.title),
@@ -48,6 +53,9 @@ function CalendarCtrl($scope, $q,
           end: moment(event.end).toDate()
         };
       });
+    })
+    .catch(function(err) {
+      console.log(err);
     });
 
     /* alert on eventClick */
