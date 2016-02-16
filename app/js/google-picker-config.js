@@ -6,7 +6,8 @@
 function GooglePickerConfig(lkGoogleSettingsProvider) {
   lkGoogleSettingsProvider.configure({
     apiKey   : 'AIzaSyAxItrIDH-hbw82UDivzpkCe05QxM59k84',
-    clientId : '524266717583-l85f2bq571rbiiq0v9rea70mkmi5omhs.apps.googleusercontent.com'
+    clientId : '524266717583-l85f2bq571rbiiq0v9rea70mkmi5omhs.apps.googleusercontent.com',
+    locale: 'bg'
   });
   lkGoogleSettingsProvider.views = [
     'DocsView().setIncludeFolders(true).setMimeTypes("image/jpeg,imagea/jpg,image/png,")',

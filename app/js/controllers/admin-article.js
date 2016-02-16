@@ -90,7 +90,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
         ],
         toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link google_tools image | print preview media | forecolor',
         image_caption: true,
-        image_advtab: true
+        image_advtab: true,
+        language : "bg",
       },
       false,
       function(editor) {
