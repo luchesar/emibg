@@ -1,54 +1,28 @@
 <div class="contentSection">
-	<div class="left_content">
-        <div class="single_page">
-			<div ng-controller="FullArticleCtrl">
-			    <div class="single_page_content">
-			    	<h1>{{ article.title | lang }}</h1>
-			    	<div class="post_commentbox">
-		                <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
-		                <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
-		                <!-- <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span> -->
-		             </div>
-			    	<p><div ng-bind-html="articleHtml"></div></p>
-			    </div>
-			</div>
-			<div class="social_link">
-
-				<!-- FB share script    
-				    <div id="fb-root"></div>
-				      <script>(function(d, s, id) {
-				        var js, fjs = d.getElementsByTagName(s)[0];
-				        if (d.getElementById(id)) return;
-				        js = d.createElement(s); js.id = id;
-				        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
-				        fjs.parentNode.insertBefore(js, fjs);
-				      }(document, 'script', 'facebook-jssdk'));</script>
-
-				    <div class="wrap">
-				      <div class="visible-md visible-lg">
-				          <div class="container">
-				             <div ui-view="banner"></div>
-				          </div>
-				      </div>
-
-				      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="icon"></div>
-
-				 end of FB script -->
-
-
-
-
-				<ul class="sociallink_nav">
-				  <li><a href="https://developers.facebook.com/docs/plugins/" data-layout="icon"><i class="fa fa-facebook"></i></a></li>
-				  <li>
-				  	<a href="https://twitter.com/share" target="_blank"><i class="fa fa-twitter"></i></a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-				  </li>
-				  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				  <li><a href="https://api.linkedin.com/v1/people/~/shares?format=json"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+  <div class="left_content">
+     <div class="single_page">
+       <div ng-controller="FullArticleCtrl">
+         <div class="single_page_content">
+           <h1>{{ article.title | lang }}</h1>
+           <div class="post_commentbox">
+              <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
+              <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
+              <!-- <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span> -->
+              </div>
+                <p><div ng-bind-html="articleHtml"></div></p>
+              </div>
+            </div>
+            <div class="social_link">
+              <ul class="sociallink_nav">
+                <li><a href="https://developers.facebook.com/docs/plugins/" data-layout="icon"><i class="fa fa-facebook"></i></a></li>
+                <li>
+                  <a href="https://twitter.com/share" target="_blank"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://api.linkedin.com/v1/people/~/shares?format=json"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+         </div>
+    </div>
 </div>
 
