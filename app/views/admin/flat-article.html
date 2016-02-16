@@ -8,7 +8,7 @@
       <div class="media-body">
         <h4 class="media-heading">{{article.title | lang | limitTo:60}}&nbsp;&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(article.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
         <p>{{article.html | lang | htmlToPlainText | limitTo: 130}}...</p>
-        <p><b>{{article.published ? "Публикувана" : "Непубликувана"}}, Категории: {{article.category}}, Автор: {{article.author.bg}}</b></p>
+        <p style="padding-top:2px; border-top:1px solid #E6E6E6;"><span style="color:#D9534F">{{article.published ? "Публикувана" : "Непубликувана"}}</span>, Категории: {{article.category}}, Автор: {{article.author.bg}}</p>
         <p> <b>Референция за началната страница: </b><span style="color:#2A5A2A"> {{article.itemId}}</span></p>
       </div>
     </div>
