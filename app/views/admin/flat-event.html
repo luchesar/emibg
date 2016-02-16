@@ -7,8 +7,7 @@
       </a>
       <div class="media-body">
         <h4 class="media-heading">{{event.title | lang | limitTo:60}}&nbsp;&nbsp;<span class="label label-danger" style="float:right; margin:2px;"><a href="#" ng-click="delete(event.id)"><i class="fa fa-trash-o fa-lg"></i></a></span></h4>
-        <p>{{event.html | lang | htmlToPlainText | limitTo: 130}}...</p>
-        <p><b>{{event.published ? "Публикувана" : "Непубликувана"}}, Автор: {{event.author.bg}}, Организатор: {{event.organiser.bg}}</b></p>
+        <p style="padding-top:2px; border-top:1px solid #E6E6E6;"><span style="color:#D9534F">{{event.published ? "Публикувана" : "Непубликувана"}}</span>, Автор: {{event.author.bg}}, Организатор: {{event.organiser.bg}}</p>
         <p> <b>Референция за началната страница: </b><span style="color:#2A5A2A">{{event.itemId}}</span></p>
       </div>
     </div>

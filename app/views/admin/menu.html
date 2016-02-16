@@ -1,5 +1,5 @@
 <div ng-controller="AdminMenuCtrl" ng-init="checkLoggedIn()">
-    <nav class="navbar navbar-inverse " role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
       <div class="container-fluid, header-nav">
         <div class="navbar-header">
             <!-- <a ng-href="#" class="navbar-toggle" ui-sref="app.search.result({q:'',page:1})">
@@ -13,10 +13,10 @@
             </button>
         </div>
     
-      <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'" >
+      <div id="navbar" >
         <ul class="nav navbar-nav">
           <li class="active" ui-sref-active="active">
-            <a href="http://emibgrhc-emibg.rhcloud.com/bg/home" ui-sref="app.menu.admin" ng-click="navCollapsed=true" target="_blank">
+            <a href="https://emibgrhc-emibg.rhcloud.com/bg/home" ui-sref="app.menu.admin" ng-click="navCollapsed=true" target="_blank">
                 <i class="fa fa-home"></i>
                 {{'' | translate }} <!--doesnt seem to work when there is not text-->
             </a>
