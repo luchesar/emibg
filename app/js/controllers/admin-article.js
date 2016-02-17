@@ -46,6 +46,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     }
     method(url, $scope.article, EmiAuth.addAuthHeader({}))
     .then(function(response) {
+      $scope.article = response.data;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успешно")});
     })
     .catch(function(err) {
