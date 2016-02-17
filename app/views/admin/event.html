@@ -24,7 +24,7 @@
                      placeholder="yyyy-MM-dd"
                      min="0001-01-01"
                      ng-change="setStartDate()"/>
-                <input style="line-height: inherit;" type="time" name="input" ng-model="newstart.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setStartDate()"/>
+                <input style="line-height: inherit;" type="time" name="input" ng-model="newstart.time" placeholder="HH:mm" min="00:00" max="23:59" required ng-change="setStartDate()"/>
               </div>
           </div>
           <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
@@ -34,7 +34,7 @@
                    type="date"
                    name="input"
                    ng-model="newend.date" placeholder="yyyy/MM/dd" min="0001-01-01" ng-max="3099-01-01" required ng-change="setEndDate()"/>
-              <input style="line-height: inherit;" type="time" name="input" ng-model="newend.time" placeholder="HH:mm:ss" min="00:00:00" max="23:59:59" required ng-change="setEndDate()"/>
+              <input style="line-height: inherit;" type="time" name="input" ng-model="newend.time" placeholder="HH:mm" min="00:00" max="23:59" required ng-change="setEndDate()"/>
             </div>
           </div>
         </form>

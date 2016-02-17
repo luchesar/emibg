@@ -16,7 +16,8 @@ function EmisAnalysisCtrl($scope, $stateParams, $http, $state, PagingService) {
     "/api/articles/paged/" +
     ($stateParams.lang ||  "bg") +
     "?categories=emis&p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + $scope.itemsPerPage
+    "&size=" + $scope.itemsPerPage +
+    "&orderby=publicationDate%20DESC"
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;

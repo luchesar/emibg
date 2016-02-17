@@ -141,6 +141,9 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       $scope.article.category = [$scope.articleType];
     });
 
+    if (!article.publicationDate) {
+      article.publicationDate = +moment();
+    }
     var publicationDate = moment(article.publicationDate);
     $scope.newPublicationDate = {
       date: moment(publicationDate).hour(0).minutes(0).seconds(0).toDate(),
