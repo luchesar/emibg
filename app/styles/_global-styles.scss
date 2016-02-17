@@ -72,7 +72,7 @@ a img:hover {
   display: block;
   height: 52px;
   line-height: 50px;
-  padding: 0 14px !important;
+  padding: 0 14px;
   text-shadow: 0 1px 1px #000;
   text-transform: uppercase;
   -webkit-transition: all 0.5s;
@@ -275,10 +275,7 @@ a img:hover {
 
 //Navbar Right Dropdown collapse
 
-.navbar-right .dropdown-menu {
-    right: auto;
-    left: auto;
-}
+
 
 //BANNER
 
@@ -335,6 +332,22 @@ a img:hover {
 /* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
+
+    .navbar-right > li:nth-child(2) > a{
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .navbar-right .dropdown-menu {
+    right: auto;
+    left: auto;
+    }  
+
+    .search-input {
+      display: inline-block;
+      max-width: 44%;
+    }
+
     .navbar-header {
         float: none;
         height:52px;
@@ -382,7 +395,7 @@ a img:hover {
 
 .search-input {
       display: inline-block;
-      max-width: 44%;
+  
       vertical-align: middle;
       height: 36px;
       padding: 6px 12px;
