@@ -1,0 +1,15 @@
+===== Login ====
+* Enter valid user name and password
+* Invalid user name and password
+
+* While not logged in go to various urls that require authentication. They should all redirect to the login page.
+** admin, articles, edit article, events, edit event, charts edit chart etc.
+
+* While logged in go to various urls that require authentication. They should open up without asking a password.
+** admin, articles, edit article, events, edit event, charts edit chart etc.
+
+* Access the authenticated endpoints without the authentication token. 401 Unauthorized should be gotten back.
+
+==== Articles & Events ====
+==== Charts ====
+==== Fron page config ====

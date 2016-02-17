@@ -21,6 +21,24 @@
         <div class="form-group">
           <image-picker image="article.image" width="400px", height="300px"/>
         </div>
+      </form>
+      <div style="margin-bottom: 20px;">
+        <form class="form-horizontal" role="form">
+          <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
+            <label class="control-label col-sm-3" for="email" style="text-align: left; padding-top: 0px;">Дата на публикуване:</label>
+              <div class="col-sm-9">
+              <input style="line-height: inherit;"
+                 type="date"
+                 name="input"
+                 ng-model="newPublicationDate.date"
+                 placeholder="yyyy-MM-dd"
+                 min="0001-01-01"
+                 ng-change="setPublicationDate()"/>
+              </div>
+          </div>
+        </form>
+      </div>
+      <form>
         <div class="form-group">
           <label>Автор Кирилица:</label>
           <input type="text" class="form-control" placeholder="Автор" ng-model="article.author.bg">

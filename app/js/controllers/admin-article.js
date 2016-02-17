@@ -121,6 +121,10 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
   });
   $scope.titleBgOptions = titleOptions(title => $scope.article.title.bg = title);
   $scope.titleEnOptions = titleOptions(title => $scope.article.title.en = title);
+  
+  $scope.setPublicationDate = function() {
+    $scope.article.publicationDate = $scope.newPublicationDate.date.getTime();
+  }
 
   var init = function(article) {
     $scope.article = article;
@@ -136,6 +140,11 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     $scope.$watch('articleType', function () {
       $scope.article.category = [$scope.articleType];
     });
+
+    var publicationDate = moment(article.publicationDate);
+    $scope.newPublicationDate = {
+      date: moment(publicationDate).hour(0).minutes(0).seconds(0).toDate(),
+    }
   }
 
   if ($stateParams.id) {
