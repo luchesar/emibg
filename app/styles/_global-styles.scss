@@ -69,7 +69,7 @@ a img:hover {
 .navbar-inverse .navbar-nav > li > a {
   border-left: 1px solid #456488;
   color: #EBEBEB;
-  display: inline-block;
+  display: block;
   height: 52px;
   line-height: 50px;
   padding: 0 14px;
@@ -135,11 +135,11 @@ a img:hover {
 }
 
 .dropdown-menu{
-  border-radius: 1px;
+  border-radius: 0px;
+  padding: 0px 0px 1px;
 }
-
-.dropdown-menu > li > a {
-  line-height: 40px;
+.dropdown-menu li{
+  padding-top: 1px;
 }
 
 .navbar-inverse .navbar-nav > .open > a, 
@@ -153,6 +153,25 @@ a img:hover {
 .dropdown-menu > .active > a:focus {
   background-color: $navbar-active-color;
 } 
+
+//Dropdown Style - Mobile
+
+.navbar-inverse .navbar-nav .open .dropdown-menu a{
+  color: #fff !important;
+  height: 52px;
+  line-height: 50px;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: $navbar-active-color;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu a:hover,
+.navbar-inverse .navbar-nav .open .dropdown-menu a:focus  {
+    color: #fff;
+    background-color: $navbar-hover-color !important;
+}
 
 /* Navbar Search*/
 
@@ -253,6 +272,11 @@ a img:hover {
   background-color: white;
 }
 
+
+//Navbar Right Dropdown collapse
+
+
+
 //BANNER
 
 .banner {
@@ -269,8 +293,8 @@ a img:hover {
 
 
 .footer {
-  background-color: #252525;
-  background-image: url(/images/emi-footer.png);
+  background-color: $navbar-color/1.7;
+  background-image: url(/images/emi-footer-2.png);
   background-size: contain;
   color: #EBEBEB;
   display: inline;
@@ -308,6 +332,22 @@ a img:hover {
 /* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
+
+    .navbar-right > li:nth-child(2) > a{
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .navbar-right .dropdown-menu {
+    right: auto;
+    left: auto;
+    }  
+
+    .search-input {
+      display: inline-block;
+      max-width: 44%;
+    }
+
     .navbar-header {
         float: none;
         height:52px;
@@ -355,7 +395,7 @@ a img:hover {
 
 .search-input {
       display: inline-block;
-      max-width: 44%;
+  
       vertical-align: middle;
       height: 36px;
       padding: 6px 12px;
@@ -1089,7 +1129,7 @@ button {
   display: inline;
   float: left;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .energopedia img {
@@ -1106,6 +1146,11 @@ button {
 }
 
 
+// Admin Chart Style
+
+.ui-grid-row-header-cell {
+  background-color: red !important;
+}
 
 ///////////////////
 

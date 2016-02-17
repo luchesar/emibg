@@ -24,7 +24,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div id="navbar" class="navbar-collapse collapse" ng-class="!navCollapsed && 'in'"  ngCloak>
         <ul class="nav navbar-nav">
-          <li class="active" ui-sref-active="active">
+          <li class="active visible-md visible-lg" ui-sref-active="active">
             <a href="#" ui-sref="app.menu.home" ng-click="navCollapsed=true">
                 <i class="fa fa-home"></i>
                 {{'' | translate }} <!--doesnt seem to work when there is not text-->
@@ -77,14 +77,18 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li ui-sref="app.search.result({q:'*',page:1})">
+          <li class="visible-md visible-lg" ui-sref="app.search.result({q:'*',page:1})">
             <a href="#">
               <i class="fa fa-search"></i>
             </a>
           </li>
           <li>
             <a ng-href="{{otherLangURL}}">
-              <i class="fa fa-language"></i></i>
+              <i class="fa fa-language"></i>
+              <span class="hidden-md hidden-lg">
+                &nbsp;
+               {{'LANGUAGE' | translate }}
+               </span>
             </a>
           </li>
           <li ui-sref-active="active" dropdown>
