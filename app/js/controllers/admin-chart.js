@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService, $sce, $timeout, EmiAuth) {
+function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http, ChartsService, $sce, $timeout, EmiAuth, ErrorHandling) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -34,12 +34,13 @@ function AdminChartCtrl($scope, $stateParams, $filter, $rootScope, $state, $http
       method = $http.put;
       url = "/api/charts/" + $scope.chart.id;
     }
-    method(url, $scope.chart, EmiAuth.addAuthHeader({}))
-    .then(function(response) {
+    ErrorHandling.handle(method(url, $scope.chart, EmiAuth.addAuthHeader({})))
+    .then(function(data) {
+      $scope.chart = data;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Графиката е записана успешно")});
     })
     .catch(function(err) {
-      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише графиката в момента. Моля опитайте след малко."});
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише графиката в момента. Моля опитайте отново. " + err});
     });
   }
 
