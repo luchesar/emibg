@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope, $state, Events, $http, $sce, EmiAuth) {
+function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope, $state, Events, $http, $sce, EmiAuth, ErrorHandling) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -44,12 +44,13 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
       method = $http.put;
       url = "/api/events/" + $scope.event.id;
     }
-    method(url, $scope.event, EmiAuth.addAuthHeader({}))
-    .then(function(response) {
+    ErrorHandling.handle(method(url, $scope.event, EmiAuth.addAuthHeader({})))
+    .then(function(data) {
+      $scope.event = data;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успешно")});
     })
     .catch(function(err) {
-      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише събитието в момента. Моля опитайте след малко."});
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише събитието в момента. Моля опитайте отново." + err});
     });
   }
 

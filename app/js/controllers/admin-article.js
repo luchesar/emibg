@@ -8,7 +8,7 @@ var uuid = require('uuid');
 /**
 * @ngInject
 */
-function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce, $timeout, EmiAuth) {
+function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootScope, $state, Articles, $http, $sce, $timeout, EmiAuth, ErrorHandling) {
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
   $scope.previousStateParams = $rootScope.previousStateParams;
@@ -44,13 +44,13 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
       method = $http.put;
       url = "/api/articles/" + $scope.article.id;
     }
-    method(url, $scope.article, EmiAuth.addAuthHeader({}))
-    .then(function(response) {
-      $scope.article = response.data;
+    ErrorHandling.handle(method(url, $scope.article, EmiAuth.addAuthHeader({})))
+    .then(function(data) {
+      $scope.article = data;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успешно")});
     })
     .catch(function(err) {
-      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише статията в момента. Моля опитайте след малко."});
+      $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише статията в момента. Моля опитайте отново. " + err});
       console.log(err);
     });
   }
@@ -156,6 +156,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
   } else {
     init({
+      author: {bg:'', en:''},
       title: {bg:'', en:''},
       html: {bg:'', en:''},
       category: ['news'],

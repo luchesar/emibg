@@ -17,7 +17,8 @@ function AdminChartsCtrl($scope, $stateParams, $http, $state, PagingService, Emi
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
     "&size=" + $scope.itemsPerPage +
-    "&published=both"
+    "&published=both" +
+    "&requireTitle=false"
   )
   .then(function(response) {
     $scope.itemsCount = response.data.size;
