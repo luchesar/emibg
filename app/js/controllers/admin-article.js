@@ -37,6 +37,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     if (!$scope.article.itemId) {
       $scope.article.itemId = uuid.v1();
     }
+    $scope.article.html = $scope.html;
 
     var method = $http.post;
     var url = "/api/articles";
@@ -47,6 +48,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     ErrorHandling.handle(method(url, $scope.article, EmiAuth.addAuthHeader({})))
     .then(function(data) {
       $scope.article = data;
+      $scope.html = data.html;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Статията е записана успешно")});
     })
     .catch(function(err) {
@@ -80,6 +82,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     return options;
   }
 
+  var editor = null
+
   var htmlOptions = function(updateProperty) {
     return editorOptions(
       {
@@ -94,10 +98,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
         image_advtab: true,
         language : "bg",
       },
-      false,
-      function(editor) {
-        updateProperty(jQuery(editor.getElement()).html());
-      });
+      false
+    );
   }
 
   var titleOptions = function(updateProperty) {
@@ -105,10 +107,8 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
         toolbar: 'undo redo',
         menubar: false
       },
-      true,
-      function(editor) {
-        updateProperty(jQuery(editor.getElement()).text());
-      });
+      true
+    );
   }
 
   $scope.htmlBgOptions = htmlOptions(function(html) {
