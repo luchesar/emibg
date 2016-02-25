@@ -7,6 +7,8 @@
   <div class="row" style="margin-top:10px;">
     <div class="col-sm-12 col-md-7">
       <chart-panel></chart-panel>
+    </div>
+    <div class="col-sm-12 col-md-5">
       <form>
         <div class="form-group">
           <label>Заглавие Кирилица:</label>
@@ -17,8 +19,6 @@
           <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Заглавие на Английски" ng-model="chart.title.en">
         </div>
       </form>
-    </div>
-    <div class="col-sm-12 col-md-5">
       <div ng-show="chart.type != 'chart-pie'">
         <label>
           <input type="radio" ng-model="chart.type" value="chart-bar">
@@ -33,13 +33,15 @@
         <input type="checkbox" ng-model="chart.legend">
         Показване на легенда
        </label><br/>
-       <div style="margin-top:10px;">
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
          <button ng-show="chart.type != 'chart-pie'" ng-click="addColumn()">Добави колона</button>
          <button ng-show="chart.type != 'chart-pie'" ng-click="removeColumn()">Изтриване колона</button>
          <button ng-click="addRow()">Добави ред</button>
          <button ng-click="removeRow()">Изтриване ред</button>
-        </div>
-        <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid" style="margin-top:10px;"></div>
+      </div>
     </div>
+    <div class="gridStyle" ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav class="grid" style="margin-top:10px;"></div>
  </div>
 </div>
