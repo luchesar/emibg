@@ -9,6 +9,8 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $urlRouterProvider
     .when('/', '/bg/home')
+    .when('/bg', '/bg/home')
+    .when('/en', '/en/home')
     .otherwise('/bg/home');
 
   $stateProvider
@@ -43,11 +45,11 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.search.result.event', {
     url: '/event/{id:string}',
-    templateUrl: 'fragments/full-event.html'
+    views: {'content@': { templateUrl: 'fragments/full-event.html' }}
   })
   .state('app.search.result.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    views: { 'content@': { templateUrl: 'fragments/full-article.html' }}
   })
   .state('app.menu', {
     url: '',
@@ -62,11 +64,11 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.home.event', {
     url: '/event/{id:string}',
-    templateUrl: 'fragments/full-event.html'
+    views: {'content@': { templateUrl: 'fragments/full-event.html' }}
   })
   .state('app.menu.home.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    views: {'content@': { templateUrl: 'fragments/full-article.html' }}
   })
   .state('app.menu.news', {
     url: '/news/{page:int}',
@@ -74,7 +76,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.news.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    views: {'content@': { templateUrl: 'fragments/full-article.html' }}
   })
   .state('app.menu.analysis', {
     url: '/analysis',
@@ -87,7 +89,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('app.menu.analysis.emis.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    views: {'content@': { templateUrl: 'fragments/full-article.html' }}
   })
   .state('app.menu.analysis.summaries', {
 url: '/summaries/{page:int}',
@@ -95,7 +97,7 @@ url: '/summaries/{page:int}',
   })
   .state('app.menu.analysis.summaries.article', {
     url: '/article/{id:string}',
-    templateUrl: 'fragments/full-article.html'
+    views: {'content@': { templateUrl: 'fragments/full-article.html' }}
   })
   .state('app.menu.events', {
     url: '/events/{page:int}',
@@ -103,7 +105,7 @@ url: '/summaries/{page:int}',
   })
   .state('app.menu.events.event', {
     url: '/event/{id:string}',
-    templateUrl: 'fragments/full-event.html'
+    views: {'content@': { templateUrl: 'fragments/full-event.html' }}
   })
   .state('app.menu.energopedia', {
     url: '/energopedia',
