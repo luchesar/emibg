@@ -46,7 +46,8 @@ angular.element(document).ready(function() {
     'lbServices',
     'duScroll',
     'socialLinks',
-    'ngAnimate'
+    'ngAnimate',
+    'ngAria'
   ];
 
   // mount on window for testing
