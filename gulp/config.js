@@ -8,7 +8,6 @@ module.exports = {
     'src' : 'app/styles/**/*.scss',
     'dest': 'build/css',
     'css' : [
-      'node_modules/angular-material/angular-material.css',
       'node_modules/angular-chart.js/dist/angular-chart.css',
       'node_modules/fullcalendar/dist/fullcalendar.css',
       'node_modules/bootstrap-social/bootstrap-social.css',
