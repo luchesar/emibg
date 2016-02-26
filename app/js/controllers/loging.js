@@ -31,19 +31,21 @@ function LoginCtrl($scope, $stateParams, $state, $http, EmiAuth) {
       password: $scope.password
     })
     .then(function(response) {
-      if (response.status == 401 && response.data.error.code == "LOGIN_FAILED") {
+      if (response.status < 0) {
+        $scope.alerts.push({type: 'danger', msg: "Не е възможно да се осъществи връзка със сървъра"});
+      } else if (response.status == 401 && response.data.error.code == "LOGIN_FAILED") {
         $scope.alerts.push({type: 'danger', msg: "Невалидна комбинация от имейл и парола."});
       } else if (response.status == 200) {
         doLogin(response.data);
       } else {
-       $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко."});
+       $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко." + response.data.error.message});
       }
     })
     .catch(function(err) {
       if (err.status == 401 && err.data.error.code == "LOGIN_FAILED") {
         $scope.alerts.push({type: 'danger', msg: "Невалидна комбинация от имейл и парола."});
       } else {
-        $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко."});
+        $scope.alerts.push({type: 'danger', msg: "Поради възникнала в момента не е възможен логин. Моля опитайте след малко." + response.data.error.message});
       }
       console.log(JSON.stringify(err));
     });
