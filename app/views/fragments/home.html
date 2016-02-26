@@ -3,7 +3,7 @@
                               
    <div ng-controller="HomeCtrl" class="single_post_content">
       <div>
-          <carousel class="slider" interval="myInterval">
+          <carousel class="slider" interval="sliderInterval">
             <slide ng-repeat="slide in slideItems" active="slide.active" style="cursor: pointer;">
               <div  class="clickable" ui-sref="{{slide.sref}}">
                 <div liquid-cfg="slide.image.config" style="width:100%; height:480px;" class="img-thumbnail">

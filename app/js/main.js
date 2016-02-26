@@ -45,7 +45,8 @@ angular.element(document).ready(function() {
     'ngResource',
     'lbServices',
     'duScroll',
-    'socialLinks'
+    'socialLinks',
+    'ngAnimate'
   ];
 
   // mount on window for testing
