@@ -11,7 +11,6 @@ var angular = require('angular');
 require('angular-ui-router');
 require('angular-aria');
 require('angular-animate');
-require('angular-material');
 require('angular-touch');
 require('angular-bootstrap-npm');
 require('angular-translate');
@@ -19,6 +18,7 @@ require('angular-chart.js');
 require('angular-ui-calendar');
 require('angular-resource');
 require('angular-scroll');
+require('angular-social-links');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -38,14 +38,14 @@ angular.element(document).ready(function() {
     'app.directives',
     'app.filters',
     'ngTouch',
-    'ngMaterial',
     'ui.bootstrap',
     'pascalprecht.translate',
     'chart.js',
     'ui.calendar',
     'ngResource',
     'lbServices',
-    'duScroll'
+    'duScroll',
+    'socialLinks'
   ];
 
   // mount on window for testing

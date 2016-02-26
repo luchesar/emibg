@@ -1,46 +1,52 @@
 <div class="contentSection">
-	<div class="left_content">
-        <div class="single_page">
+  <div class="left_content">
+    <div class="single_page">
+      <div ng-controller="FullEventCtrl">
+        <h1>{{ event.title | lang }}</h1>
+        <div class="post_commentbox">
+        <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
+        <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
+   <!-- <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span> -->
+        </div>
+          <table class="table">
+          <tr>
+            <td class="td1"><p>{{'EVENT_TYPE' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.type | lang }}</p></td>
+          </tr>
+          <tr>
+            <td class="td1"><p>{{'ORGANIZER' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.organiser | lang }}</p></td>
+          </tr>
+          <tr>
+            <td class="td1"><p>{{'DATE' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.start | date:'dd-MM-yyyy' }}</p></td>
+          </tr>
+          <tr>
+            <td class="td1"><p>{{'PLACE' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.place | lang }}</p></td>
+          </tr>
+            <tr>
+            <td class="td1"><p>{{'TIME' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.start | date:'HH:mm'}}</p></td>
+          </tr>
+          <tr>
+            <td class="td1"><p>{{'ACCESS' | translate}}:</p></td>
+            <td class="td2"><p>{{ event.access | lang }}</p></td>
+          </tr>
+        </table>
 
-			<div ng-controller="FullEventCtrl">
-			    <h1>{{ event.title | lang }}</h1>
-
-			    <div class="post_commentbox">
-	                <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
-	                <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
-	                <!-- <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span> -->
-	             </div>
-
-			    <table class="table">
-		          <tr>
-		            <td class="td1"><p>{{'EVENT_TYPE' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.type | lang }}</p></td>
-		           </tr>
-		           <tr>
-		            <td class="td1"><p>{{'ORGANIZER' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.organiser | lang }}</p></td>
-		           </tr>
-		           <tr>
-		            <td class="td1"><p>{{'DATE' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.start | date:'dd-MM-yyyy' }}</p></td>
-		           </tr>
-		           <tr>
-		            <td class="td1"><p>{{'PLACE' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.place | lang }}</p></td>
-		           </tr>
-		           <tr>
-		            <td class="td1"><p>{{'TIME' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.start | date:'HH:mm'}}</p></td>
-		           </tr>
-		           <tr>
-		            <td class="td1"><p>{{'ACCESS' | translate}}:</p></td>
-		            <td class="td2"><p>{{ event.access | lang }}</p></td>
-		           </tr>
-		        </table>
-
-			    <p><div ng-bind-html="eventHtml"></div></p>
-			</div>
-
-		</div>
-	</div>
-</div>			
+        <p><div ng-bind-html="eventHtml"></div></p>
+      </div>
+      <div class="social_link">
+        <ul class="sociallink_nav">
+          <li><a href="" social-facebook><i class="fa fa-facebook"></i></a></li>
+          <li>
+            <a href="" social-twitter><i class="fa fa-twitter"></i></a>
+          </li>
+          <li><a href="" social-gplus><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="" social-linkedin><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
