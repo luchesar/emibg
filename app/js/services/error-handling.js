@@ -9,7 +9,7 @@ function ErrorHandling($q) {
     return responsePromise.then(
       function(response) {
         if (response.status < 0) {
-          return $q.reject("Не може да се достъпи сървъра.");
+          return $q.reject("Не може да се осъществи връзка със сървъра.");
         } else if (response.status >= 400) {
           return $q.reject(response.data.error.message);
         } else {

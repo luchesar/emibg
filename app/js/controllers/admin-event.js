@@ -34,7 +34,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     if (!$scope.event.itemId) {
       $scope.event.itemId = uuid.v1();
     }
-
+    $scope.event.html = $scope.html;
     // Remove the empty props to be able to filter with exists in ES
     nullify($scope.event.title);
 
@@ -47,6 +47,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     ErrorHandling.handle(method(url, $scope.event, EmiAuth.addAuthHeader({})))
     .then(function(data) {
       $scope.event = data;
+      $scope.html = data.html;
       $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успешно")});
     })
     .catch(function(err) {
@@ -92,9 +93,8 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
         image_caption: true,
         image_advtab: true,
         language : "bg",
-      }, function(editor) {
-        updateProperty(jQuery(editor.getElement()).html());
-      });
+      }
+    );
   }
 
   $scope.htmlBgOptions = htmlOptions(function(html) {

@@ -19,6 +19,7 @@ function HomeCtrl($scope, $http, $stateParams) {
     $scope.events = _(response.data.events).drop(1).toArray();
 
     $scope.slideItems = response.data.slides;
+    $scope.sliderInterval = 10000;
   });
 }
 

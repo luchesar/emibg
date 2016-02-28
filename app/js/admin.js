@@ -11,7 +11,6 @@ var angular = require('angular');
 require('angular-ui-router');
 require('angular-aria');
 require('angular-animate');
-require('angular-material');
 require('angular-touch');
 require('angular-bootstrap-npm');
 require('angular-translate');
@@ -44,7 +43,6 @@ angular.element(document).ready(function() {
     'app.directives',
     'app.filters',
     'ngTouch',
-    'ngMaterial',
     'ui.bootstrap',
     'pascalprecht.translate',
     'chart.js',

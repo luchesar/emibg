@@ -51,7 +51,8 @@ function Translations($translateProvider) {
       DATE: "Date",
       PLACE: "Place",
       TIME: "Time",
-      ACCESS: "Access"
+      ACCESS: "Access",
+      LOGIN: "Login"
 
     })
     .translations('bg', {
@@ -99,7 +100,8 @@ function Translations($translateProvider) {
       DATE: "Дата",
       PLACE: "Място",
       TIME: "Час",
-      ACCESS: "Достъп"
+      ACCESS: "Достъп",
+      LOGIN: "Логин"
     });
   $translateProvider.preferredLanguage('bg');
 }

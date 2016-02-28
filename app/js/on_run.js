@@ -3,21 +3,12 @@
 /**
  * @ngInject
  */
-function OnRun($rootScope, $stateParams, $translate, $location, AppSettings) {
+function OnRun($rootScope, $stateParams, $translate, $location, $filter, $timeout, AppSettings) {
 
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $rootScope.previousState = fromState ? fromState.name : undefined;
     $rootScope.previousStateParams = fromParams;
-
-    $rootScope.pageTitle = '';
-
-    if ( toState.title ) {
-      $rootScope.pageTitle += toState.title;
-      $rootScope.pageTitle += ' \u2014 ';
-    }
-
-    $rootScope.pageTitle += AppSettings.appTitle;
 
     if($stateParams.lang !== undefined){
         var otherLang = $stateParams.lang === 'bg' ? 'en' : 'bg';
@@ -25,6 +16,19 @@ function OnRun($rootScope, $stateParams, $translate, $location, AppSettings) {
         $rootScope.otherLangURL = $location.absUrl().replace('/' + $stateParams.lang, '/' +otherLang);
         $translate.use($stateParams.lang);
     }
+
+    $timeout(function() {
+      $rootScope.pageTitle = '';
+      if (toState.data && toState.data.title ) {
+        if (typeof toState.data.title === 'string') {
+          $rootScope.pageTitle += $filter("translate")(toState.data.title);
+        } else {
+          $rootScope.pageTitle += $filter("lang")(toState.data.title);
+        }
+        $rootScope.pageTitle += ' \u2014 ';
+      }
+      $rootScope.pageTitle += AppSettings.appTitle;
+    });
   });
 
 }
