@@ -270,8 +270,8 @@ var partners = [
               "en": "Diyana Stoyanova"
             },
             "job": {
-              "bg": "Програми и проекти",
-              "en": "Programmes and Projects"
+              "bg": "Комуникации",
+              "en": "Communication Officer"
             },
             "email": "diyana.stoyanova@emi-bg.com",
             "phone": {
