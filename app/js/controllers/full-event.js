@@ -7,6 +7,8 @@ var controllersModule = require('./_index');
 */
 function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $filter, $document, $timeout) {
   $document.scrollTopAnimated(0, 190);
+
+  $scope.alerts = [];
   EventService.event($stateParams.id)
   .then(function(event) {
     $scope.event = event;
@@ -14,6 +16,10 @@ function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $fi
     $timeout(function() {
       $rootScope.pageTitle = $filter('lang')(event.title) + ' \u2014 ' + $rootScope.pageTitle;
     }, 20);
+  })
+  .catch(err => {
+    $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
+    console.log("APP ERROR: " + err);
   });
 }
 

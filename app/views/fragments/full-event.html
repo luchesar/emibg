@@ -2,6 +2,7 @@
   <div class="left_content">
     <div class="single_page">
       <div ng-controller="FullEventCtrl">
+         <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
         <div class="single_page_content">
           <h1>{{ event.title | lang }}</h1>
           <div class="post_commentbox">

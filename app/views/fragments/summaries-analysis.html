@@ -1,4 +1,5 @@
 <div ng-controller="SummariesAnalysisCtrl">
+   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
    <div >
        <div ng-repeat="rowArticles in summariesAnalysis">
             <div class="row">

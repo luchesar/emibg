@@ -1,4 +1,5 @@
 <div ng-controller="AllEventsCtrl">
+   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
    <div>
        <div ng-repeat="rowEvents in events">
             <div class="row">

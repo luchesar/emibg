@@ -24,6 +24,7 @@ function HomeCtrl($scope, $http, $stateParams, ErrorHandling) {
   })
   .catch(err => {
       $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
+      console.log("APP ERROR: " + err);
   });
 }
 

@@ -6,7 +6,7 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function ArticleService($stateParams, $q, $http, Articles) {
+function ArticleService($stateParams, $q, $http, Articles, ErrorHandling) {
 
   var service = {};
 
@@ -46,7 +46,7 @@ function ArticleService($stateParams, $q, $http, Articles) {
   }
 
   service.article = function(id) {
-    return $http.get("/api/articles/" + id).then(response => response.data);
+    return ErrorHandling.handle($http.get("/api/articles/" + id));
   };
 
   return service;

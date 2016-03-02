@@ -7,7 +7,7 @@ var _ = require('lazy.js');
  * @ngInject
  */
 //function EventService($q, $http) {
-function EventService($stateParams, $q, $http, Events) {
+function EventService($stateParams, $q, $http, Events, ErrorHandling) {
 
   var service = {};
 
@@ -16,7 +16,7 @@ function EventService($stateParams, $q, $http, Events) {
     where["title." + $stateParams.lang] = {regexp: "[^$]"};
     return where;
   }
-  
+
   service.filterPaged = function(page, itemsPerPage, itemsPerRow) {
     return Events.find({
       filter: {
@@ -43,7 +43,7 @@ function EventService($stateParams, $q, $http, Events) {
   }
 
   service.event = function(id) {
-    return $http.get("/api/events/" + id).then(response => response.data);
+    return ErrorHandling.handle($http.get("/api/events/" + id));
   };
 
   return service;
