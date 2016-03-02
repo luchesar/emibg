@@ -6,20 +6,24 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function HomeCtrl($scope, $http, $stateParams) {
-  $http.get("/api/home-pages/" + ($stateParams.lang || "bg"))
-  .then(function(response) {
-    $scope.mainNews = _(response.data.news).take(1).toArray();
-    $scope.news = _(response.data.news).drop(1).toArray();
+function HomeCtrl($scope, $http, $stateParams, ErrorHandling) {
+  $scope.alerts = [];
+  ErrorHandling.handle($http.get("/api/home-pages/" + ($stateParams.lang || "bg")))
+  .then(function(data) {
+    $scope.mainNews = _(data.news).take(1).toArray();
+    $scope.news = _(data.news).drop(1).toArray();
 
-    $scope.mainAnalysis = _(response.data.analysis).take(1).toArray();
-    $scope.analysis = _(response.data.analysis).drop(1).toArray();
+    $scope.mainAnalysis = _(data.analysis).take(1).toArray();
+    $scope.analysis = _(data.analysis).drop(1).toArray();
 
-    $scope.mainEvent = _(response.data.events).take(1).toArray();
-    $scope.events = _(response.data.events).drop(1).toArray();
+    $scope.mainEvent = _(data.events).take(1).toArray();
+    $scope.events = _(data.events).drop(1).toArray();
 
-    $scope.slideItems = response.data.slides;
+    $scope.slideItems = data.slides;
     $scope.sliderInterval = 10000;
+  })
+  .catch(err => {
+      $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
   });
 }
 

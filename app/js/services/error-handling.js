@@ -17,7 +17,11 @@ function ErrorHandling($q) {
         }
       },
       function(err) {
-        return $q.reject(err.data.error.message);
+        if (err.status < 0) {
+          return $q.reject("Не може да се осъществи връзка със сървъра.");
+        } else {
+          return $q.reject(err.data.error.message);
+        }
       }
     );
   }

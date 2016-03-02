@@ -1,5 +1,6 @@
 <div>
    <div ng-controller="HomeCtrl" class="single_post_content">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
       <div>
           <carousel class="slider" interval="sliderInterval">
             <slide ng-repeat="slide in slideItems" active="slide.active" style="cursor: pointer;">
