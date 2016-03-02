@@ -1,6 +1,6 @@
 <div ng-controller="SearchCtrl">
-   <ui-view/>
-       <div>{{'SEARCH_EVERYWHERE' | translate}}</div>
+   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+   <div>{{'SEARCH_EVERYWHERE' | translate}}</div>
    <div >
        <div ng-repeat="rowItems in items">
            <div class="row">
