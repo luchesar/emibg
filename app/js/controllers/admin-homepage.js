@@ -67,6 +67,17 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
     });
   }
 
+  $scope.updateChartTitle = function(i, j) {
+    ChartsService.findByItemId($scope.charts[i].charts[j])
+    .then(chart => {
+      if (chart && chart.title) {
+        $scope.chartTitles[i][j] = chart.title.bg;
+      } else {
+        $scope.chartTitles[i][j] = missingItemTitle;
+      }
+    });
+  }
+
   var items = $http.get(itemsUrl + "?filter[limit]=3");
   var charts = $http.get(chartsUrl + "?filter[limit]=2");
   $q.all([items, charts])

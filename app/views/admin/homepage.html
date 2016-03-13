@@ -6,32 +6,32 @@
   </div>
   <form style="margin-top:20px;">
     <div class="form-group" ng-repeat="item in items">
-      <label>Слайд {{$index + 1}} референция Заглавие: {{itemTitles[$index]}}:</label>
+      <label>Слайд {{$index + 1}} референция Заглавие: <span style="font-size: 150%;">{{itemTitles[$index]}}</span></label>
       <input type="text" class="form-control" placeholder="Въведете номера на статия" ng-model="item.itemId" ng-change="updateItemTitle(item.itemId, $index)">
     </div>
     <div class="form-group">
-      <label>Графика 1 на слайд 1: {{chartTitles[0][0]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете номера на статия" ng-model="charts[0].charts[0]">
+      <label>Графика 1 на слайд 1: <span style="font-size: 150%;">{{chartTitles[0][0]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете номера на статия" ng-model="charts[0].charts[0]" ng-change="updateChartTitle(0,0)">
     </div>
     <div class="form-group">
-      <label>Графика 2 на слайд 1:{{chartTitles[0][1]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[0].charts[1]">
+      <label>Графика 2 на слайд 1:<span style="font-size: 150%;">{{chartTitles[0][1]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[0].charts[1]" ng-change="updateChartTitle(0,1)">
     </div>
     <div class="form-group">
-      <label>Графика 3 на слайд 1:{{chartTitles[0][2]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[0].charts[2]">
+      <label>Графика 3 на слайд 1:<span style="font-size: 150%;">{{chartTitles[0][2]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[0].charts[2]"ng-change="updateChartTitle(0,2)">
     </div>
     <div class="form-group">
-      <label>Графика 1 на слайд 2:{{chartTitles[1][0]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[0]">
+      <label>Графика 1 на слайд 2:<span style="font-size: 150%;">{{chartTitles[1][0]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[0]"ng-change="updateChartTitle(1,0)">
     </div>
     <div class="form-group">
-      <label>Графика 2 на слайд 2:{{chartTitles[1][1]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[1]">
+      <label>Графика 2 на слайд 2:<span style="font-size: 150%;">{{chartTitles[1][1]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[1]"ng-change="updateChartTitle(1,1)">
     </div>
     <div class="form-group">
-      <label>Графика 3 на слайд 2:{{chartTitles[1][2]}}</label>
-      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[2]">
+      <label>Графика 3 на слайд 2:<span style="font-size: 150%;">{{chartTitles[1][2]}}</span></label>
+      <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[2]"ng-change="updateChartTitle(1,2)">
     </div>
   </form>
 </div>
