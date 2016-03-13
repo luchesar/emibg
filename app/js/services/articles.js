@@ -49,6 +49,18 @@ function ArticleService($stateParams, $q, $http, Articles, ErrorHandling) {
     return ErrorHandling.handle($http.get("/api/articles/" + id));
   };
 
+  service.findByItemId = function(itemId, orElse) {
+    return Articles.findOne({filter: { where: {"itemId":itemId}}})
+    .$promise
+    .then(function(article) {
+      if (article && article.itemId === itemId) {
+        return article;
+      } else if (orElse) {
+        return orElse();
+      }
+    });
+  }
+
   return service;
 }
 

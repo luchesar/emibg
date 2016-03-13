@@ -7,7 +7,7 @@ var data = require('../data.js');
 /**
 * @ngInject
 */
-function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth) {
+function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth, ArticleService, EventService, ChartsService) {
   var itemsUrl = "/api/homeItemsSliders";
   var chartsUrl = "/api/homeChartsSliders";
 
@@ -52,6 +52,10 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth)
     $scope.alerts.splice(index, 1);
   };
 
+  var loadItem = function(chartItem) {
+    return ArticleService.findByItemId(chartItem.itemId, function() { return EventService.findByItemId(chartItem.itemId)});
+  }
+
   var items = $http.get(itemsUrl + "?filter[limit]=3");
   var charts = $http.get(chartsUrl + "?filter[limit]=2");
   $q.all([items, charts])
@@ -73,6 +77,21 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth)
     }
     $scope.items = serverItems;
     $scope.charts = serverCharts;
+
+    $q.all(serverItems.map(loadItem))
+    .then(function(items) {
+      $scope.itemTitles = items.map(item => {
+        if (item && item.title) return item.title.bg
+      });
+    });
+
+    $q.all(serverCharts.map(charts => $q.all(charts.charts.map(ChartsService.findByItemId))))
+    .then(charts => {
+      $scope.chartTitles = charts.map(charts => charts.map(chart => {
+        if (chart && chart.title) return chart.title.bg;
+      }));
+      console.log("chart titles;"+ $scope.chartTitles );
+    });
   })
   .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
 }

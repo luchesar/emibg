@@ -46,6 +46,18 @@ function EventService($stateParams, $q, $http, Events, ErrorHandling) {
     return ErrorHandling.handle($http.get("/api/events/" + id));
   };
 
+  service.findByItemId = function(itemId, orElse) {
+    return Events.findOne({ filter: { where: {"itemId":itemId}}})
+    .$promise
+    .then(function(event) {
+      if (event && event.itemId === itemId) {
+        return event;
+      } else if (orElse) {
+        return orElse();
+      }
+    });
+  }
+
   return service;
 }
 

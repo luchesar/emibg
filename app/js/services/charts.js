@@ -7,7 +7,7 @@ var _ = require('lazy.js');
 /**
  * @ngInject
  */
-function ChartsService($stateParams, $filter) {
+function ChartsService($stateParams, $filter, Charts) {
   var service = {};
 
   service.translate = function(chart) {
@@ -21,6 +21,16 @@ function ChartsService($stateParams, $filter) {
       legend: chart.legend
     };
   };
+
+  service.findByItemId = function(itemId) {
+    return Charts.findOne({filter: { where: {"itemId":itemId}}})
+    .$promise
+    .then(function(chart) {
+      if (chart && chart.itemId === itemId) {
+        return chart;
+      }
+    });
+  }
 
   return service;
 }
