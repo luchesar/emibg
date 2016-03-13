@@ -8,6 +8,7 @@ var data = require('../data.js');
 * @ngInject
 */
 function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth, ArticleService, EventService, ChartsService) {
+  var missingItemTitle = 'не може да се намери статия или събитие с тази референция';
   var itemsUrl = "/api/homeItemsSliders";
   var chartsUrl = "/api/homeChartsSliders";
 
@@ -52,8 +53,18 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
     $scope.alerts.splice(index, 1);
   };
 
-  var loadItem = function(chartItem) {
-    return ArticleService.findByItemId(chartItem.itemId, function() { return EventService.findByItemId(chartItem.itemId)});
+  var loadItem = function(itemId) {
+    return ArticleService.findByItemId(itemId, function() { return EventService.findByItemId(itemId)});
+  }
+
+  $scope.updateItemTitle = function(itemId, index) {
+    loadItem(itemId).then(item => { 
+      if ( item && item.title) {
+        $scope.itemTitles[index] = item.title.bg;
+      } else {
+        $scope.itemTitles[index] = missingItemTitle;
+      }
+    });
   }
 
   var items = $http.get(itemsUrl + "?filter[limit]=3");
@@ -78,10 +89,12 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
     $scope.items = serverItems;
     $scope.charts = serverCharts;
 
-    $q.all(serverItems.map(loadItem))
+    $q.all(serverItems.map(item => loadItem(item.itemId)))
     .then(function(items) {
       $scope.itemTitles = items.map(item => {
-        if (item && item.title) return item.title.bg
+        if (item && item.title)
+          return item.title.bg
+        else return missingItemTitle;
       });
     });
 
@@ -90,7 +103,6 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
       $scope.chartTitles = charts.map(charts => charts.map(chart => {
         if (chart && chart.title) return chart.title.bg;
       }));
-      console.log("chart titles;"+ $scope.chartTitles );
     });
   })
   .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
