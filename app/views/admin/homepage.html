@@ -33,5 +33,11 @@
       <label>Графика 3 на слайд 2:<span style="font-size: 150%;">{{chartTitles[1][2]}}</span></label>
       <input type="text" class="form-control" placeholder="Въведете референция на графика" ng-model="charts[1].charts[2]"ng-change="updateChartTitle(1,2)">
     </div>
+    <div class="form-group">
+      <label>Видео:</label>
+      <input type="text" class="form-control" placeholder="Въведете YouTube видео линк" ng-model="video.videoUrl">
+      <iframe width="100%" height="250px" src="{{videoUrl}}" frameborder="0" allowfullscreen style:"padding:10%"></iframe>
+      </iframe>
+    </div>
   </form>
 </div>

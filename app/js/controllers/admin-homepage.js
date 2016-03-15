@@ -11,6 +11,7 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
   var missingItemTitle = 'не може да се намери статия или събитие с тази референция';
   var itemsUrl = "/api/homeItemsSliders";
   var chartsUrl = "/api/homeChartsSliders";
+  var videosUrl = "/api/homeVideos";
 
   $scope.alerts = [];
   $scope.previousState = $rootScope.previousState;
@@ -38,7 +39,8 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
     }
 
     var promises = $scope.items.map(item => sav(itemsUrl, item))
-      .concat($scope.charts.map(chart => sav(chartsUrl, chart)));
+      .concat($scope.charts.map(chart => sav(chartsUrl, chart)))
+      .push(sav(videosUrl, $scope.video));
 
     $q.all(promises)
     .then(function(response) {
@@ -78,28 +80,20 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
     });
   }
 
-  var items = $http.get(itemsUrl + "?filter[limit]=3");
-  var charts = $http.get(chartsUrl + "?filter[limit]=2");
-  $q.all([items, charts])
-  .then(function(result) {
-    var serverItems = result[0].data;
-    if (serverItems.length < 1) {
-      serverItems =  [
-       {type: "no-type", itemId: ""},
-       {type: "no-type", itemId: ""},
-       {type: "no-type", itemId: ""}
-      ];
-    }
-    var serverCharts = result[1].data;
-   if (serverCharts.length < 1) {
-     serverCharts =  [
-        { charts: ["", "", ""]},
-        { charts: ["", "", ""]}
-      ];
-    }
-    $scope.items = serverItems;
-    $scope.charts = serverCharts;
+  var defaultServerItesm = [
+   {type: "no-type", itemId: ""},
+   {type: "no-type", itemId: ""},
+   {type: "no-type", itemId: ""}
+  ];
 
+  var defaultServerCharts = [
+    { charts: ["", "", ""]},
+    { charts: ["", "", ""]}
+  ];
+
+  var defaultServerVideo = {videoUrl: ""};
+
+  var loadItemTitles = function(serverItems) {
     $q.all(serverItems.map(item => loadItem(item.itemId)))
     .then(function(items) {
       $scope.itemTitles = items.map(item => {
@@ -108,13 +102,42 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
         else return missingItemTitle;
       });
     });
+  }
 
+  var loadChartTitles = function(serverCharts) {
     $q.all(serverCharts.map(charts => $q.all(charts.charts.map(ChartsService.findByItemId))))
     .then(charts => {
       $scope.chartTitles = charts.map(charts => charts.map(chart => {
         if (chart && chart.title) return chart.title.bg;
       }));
     });
+  }
+
+  var items = $http.get(itemsUrl + "?filter[limit]=3");
+  var charts = $http.get(chartsUrl + "?filter[limit]=2");
+  var video = $http.get(videosUrl + "?filter[limit]=1");
+  $q.all([items, charts, video])
+  .then(function(result) {
+    var serverItems = result[0].data;
+    if (serverItems.length < 1) serverItems = defaultServerItesm;
+    var serverCharts = result[1].data;
+    if (serverCharts.length < 1) serverCharts = defaultServerCharts;
+    var serverVideo = result[2].data
+    if (serverVideo.length < 1) serverVideo = defaultServerVideo;
+    else serverVideo = serverVideo[0];
+    $scope.items = serverItems;
+    $scope.charts = serverCharts;
+    $scope.video = serverVideo;
+    if ($scope.video.videoUrl)
+      $scope.videoUrl = $sce.trustAsResourceUrl($scope.video.videoUrl);
+
+    $scope.$watch('video.videoUrl', function() {
+      if ($scope.video.videoUrl)
+        $scope.videoUrl = $sce.trustAsResourceUrl($scope.video.videoUrl);
+    });
+
+    loadItemTitles(serverItems);
+    loadChartTitles(serverCharts);
   })
   .catch(err => $scope.alerts.push({type: 'danger', msg: err + ""}));
 }

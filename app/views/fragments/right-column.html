@@ -1,34 +1,32 @@
-<!-- The right column -->
 <div>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <div class="euroelectric">
-        <a href="http://www.eurelectric.org/" target="_balnk">
-          <img src="/images/euroelectric.jpg" alt="Euroelectric">
-        </a>
-        </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="euroelectric">
+      <a href="http://www.eurelectric.org/" target="_balnk">
+        <img src="/images/euroelectric.jpg" alt="Euroelectric">
+      </a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-            <div ng-include="'fragments/charts.html'"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div ng-include="'fragments/charts.html'"></div>
+    </div>
+  </div>
+  </p>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div ng-controller="CalendarCtrl">
+          <div ui-calendar="uiConfig" class="calendar" ng-model="eventSources"></div>
       </div>
     </div>
-    </p>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <div ng-controller="CalendarCtrl">
-            <div ui-calendar="uiConfig" class="calendar" ng-model="eventSources"></div>
-        </div>
-      </div>
+  </div>
+  </p>
+  <div class="row">
+    <div class="col-sm-12 col-md-12" ng-controller="HomeVideoCtrl">
+      <iframe width="100%" height="250px" src="{{video}}" frameborder="0" allowfullscreen style:"padding:10%"></iframe>
+      </iframe>
     </div>
-    </p>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <iframe width="100%" height="250px" src="https://www.youtube.com/embed/-jGMsh4iRPk" frameborder="0" allowfullscreen style:"padding:10%"></iframe>
-        </iframe>
-      </div>
-    </div>
-    </p>
+  </div>
+  </p>
 </div>
-<!-- End of the right column -->
