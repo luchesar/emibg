@@ -32,8 +32,8 @@ function Translations($translateProvider) {
       ABOUT_CONTACT_CONTENT: 'contact EN', 
       EMI: 'Energy Management  Institute',
       ADDRESS: 'Address:',
-      SOFIA_1000: 'Sofia, 1000',
-      STREET: 'Lege Str. 5',
+      SOFIA_1000: 'Sofia 1000, ',
+      STREET: 'Lege Str. 5, ',
       FLOOR: '2nd Floor',
       TEL: '+359 2 980 07 03',
       PAGE: 'Page',
@@ -52,7 +52,8 @@ function Translations($translateProvider) {
       PLACE: "Place",
       TIME: "Time",
       ACCESS: "Access",
-      LOGIN: "Login"
+      LOGIN: "Login",
+      AUTHOR: "Author"
 
     })
     .translations('bg', {
@@ -81,8 +82,8 @@ function Translations($translateProvider) {
       ABOUT_CONTACT_CONTENT: 'CONTACT BG', 
       EMI: 'Институт за Енергиен Мениджмънт', 
       ADDRESS: 'Адрес:',
-      SOFIA_1000: 'София, 1000',
-      STREET: 'ул. Леге 5',
+      SOFIA_1000: 'София 1000, ',
+      STREET: 'ул. Леге 5, ',
       FLOOR: '2-ри етаж',
       TEL: '02 980 07 03',
       PAGE: 'Страница',
@@ -101,7 +102,8 @@ function Translations($translateProvider) {
       PLACE: "Място",
       TIME: "Час",
       ACCESS: "Достъп",
-      LOGIN: "Логин"
+      LOGIN: "Логин",
+      AUTHOR: "Автор"
     });
   $translateProvider.preferredLanguage('bg');
 }

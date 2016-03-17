@@ -15,7 +15,7 @@
       <div style="margin-bottom: 20px;">
         <form class="form-horizontal" role="form">
           <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
-            <label class="control-label col-sm-3" for="email" style="text-align: left; padding-top: 0px;">Начална дата и час:</label>
+            <label class="control-label col-sm-3" for="email" style="text-align: left; padding-top: 0px;">Начална дата и час</label>
               <div class="col-sm-9">
                 <input style="line-height: inherit;"
                      type="date"
@@ -28,7 +28,7 @@
               </div>
           </div>
           <div class="form-group" style="background-color:#f8f8f8; padding:0.4%;">
-            <label class="control-label col-sm-3" for="pwd" style="text-align: left; padding-top: 0px;">Крайна дата и час:</label>
+            <label class="control-label col-sm-3" for="pwd" style="text-align: left; padding-top: 0px;">Крайна дата и час</label>
             <div class="col-sm-9"> 
               <input style="line-height: inherit;"
                    type="date"
@@ -42,63 +42,63 @@
   
       <form>
         <div class="form-group">
-          <label>Организатор Кирилица</label>
+          <label>Организатор (на Български)</label>
           <input type="text" class="form-control" placeholder="Организатор" ng-model="event.organiser.bg">
         </div>
         <div class="form-group">
-          <label>Организатор Латиница</label>
-          <input type="text" class="form-control" placeholder="Организатор на Английски" ng-model="event.organiser.en">
+          <label>Организатор (на Английски)</label>
+          <input type="text" class="form-control" placeholder="Организатор (на Английски)" ng-model="event.organiser.en">
         </div>
         <div class="form-group">
-          <label>Тип достъп</label>
-          <input type="text" class="form-control" placeholder="Tип достъп, например 'Чрез регистрация'" ng-model="event.access.bg">
+          <label>Тип достъп (на Български)</label>
+          <input type="text" class="form-control" placeholder="Tип достъп (на Български)" ng-model="event.access.bg">
         </div>
         <div class="form-group">
-          <label>Тип достъп на Английски</label>
-          <input type="text" class="form-control" placeholder="Tип достъп на Английски" ng-model="event.access.en">
+          <label>Тип достъп (на Английски)</label>
+          <input type="text" class="form-control" placeholder="Tип достъп (на Английски)" ng-model="event.access.en">
         </div>
         <div class="form-group">
-          <label>Тип на събитието</label>
-          <input type="text" class="form-control" placeholder="Tипа на събитиет, например 'Международна конферения'" ng-model="event.type.bg">
+          <label>Тип на събитието (на Български)</label>
+          <input type="text" class="form-control" placeholder="Tип на събитието (на Български)" ng-model="event.type.bg">
         </div>
         <div class="form-group">
-          <label>Тип на събитието на Английски</label>
-          <input type="text" class="form-control" placeholder="Tипа на събитието на Английски" ng-model="event.type.en">
+          <label>Тип на събитието (на Английски)</label>
+          <input type="text" class="form-control" placeholder="Tип на събитието (на Английски)" ng-model="event.type.en">
         </div>
         <div class="form-group">
-          <label>Място на събитието</label>
-          <input type="text" class="form-control" placeholder="Mясто на събитието, например 'Хотел Шератон'" ng-model="event.place.bg">
+          <label>Място на събитието (на Български)</label>
+          <input type="text" class="form-control" placeholder="Mясто на събитието (на Български)" ng-model="event.place.bg">
         </div>
         <div class="form-group">
-          <label>Място на събитието на Английски</label>
-          <input type="text" class="form-control" placeholder="Mястото на събитието на Английски" ng-model="event.place.en">
+          <label>Място на събитието (на Английски)</label>
+          <input type="text" class="form-control" placeholder="Mясто на събитието (на Английски)" ng-model="event.place.en">
         </div>
       </form>
         <p>
-          <label>Заглавие:</label>
+          <label>Заглавие (на Български)</label>
           <h3><b>
-            <input type="text" class="form-control" placeholder="Заглавие на Български" ng-model="event.title.bg">
+            <input type="text" class="form-control" placeholder="Заглавие (на Български)" ng-model="event.title.bg">
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
-          <label>Съдържание</label>
-          <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание на Български"></div>
+          <label>Съдържание (на Български)</label>
+          <div style="height:400px" ui-tinymce="htmlBgOptions" ng-model="html.bg" placeholder="Съдържание (на Български)"></div>
         </p>
         <p>
-          <label>Заглавие на Английски:</label>
+          <label>Заглавие (на Английски)</label>
           <h3><b>
-            <input type="text" class="form-control" placeholder="Заглавие на Английски" ng-model="event.title.en">
+            <input type="text" class="form-control" placeholder="Заглавие (на Английски)" ng-model="event.title.en">
           </b></h3>
         </p>
         <md-divider></md-divider>
         <p>
-          <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание на Английски"></div>
+          <div style="height:400px" ui-tinymce="htmlEnOptions" ng-model="html.en" placeholder="Съдържание (на Английски)"></div>
         </p>
       <form>
         <div class="form-group">
           <label>Тагове</label>
-          <input type="text" class="form-control" placeholder="таг1 таг2" ng-model="events.tags">
+          <input type="text" class="form-control" placeholder="таг1, таг2" ng-model="events.tags">
         </div>
       </form>
     </uib-tab>
@@ -129,7 +129,7 @@
          </div>
        </div>
        <div class="row">
-         <h3><b>{{ eevnt.title | lang }}</b></h3>
+         <h3><b>{{ event.title | lang }}</b></h3>
          <md-divider></md-divider>
          <p><div ng-bind-html="bgHtml || event.html.bg"></div></p>
        </div>
