@@ -136,15 +136,17 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     var dateFormat = "YYYY-MM-DD";
     var start = moment(event.start).tz('UTC');
     var end = moment(event.end).tz('UTC');
+    var startDate = start.clone().hour(0).minutes(0).seconds(0);
     var startTime = moment(0).tz('UTC').hour(start.hour()).minutes(start.minutes()).seconds(0);
+    var endDate = end.clone().hour(0).minute(0).seconds(0);
     var endTime = moment(0).tz('UTC').hour(end.hour()).minutes(end.minutes()).seconds(0);
     $scope.newstart = {
-      date: toDate(moment(event.start - startTime.valueOf())),
-      time: toDate(startTime)
+      date: new Date(toDate(startDate).setHours(0)),
+      time: new Date(toDate(startTime).setHours(startTime.hours()))
     }
     $scope.newend = {
-      date: toDate(moment(event.end - endTime.valueOf())),
-      time: toDate(endTime)
+      date: new Date(toDate(endDate).setHours(0)),
+      time: new Date(toDate(endTime).setHours(endTime.hours()))
     }
   };
 
