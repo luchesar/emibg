@@ -21,7 +21,7 @@
             </tr>
             <tr>
               <td class="td1"><p>{{'DATE' | translate}}:</p></td>
-              <td class="td2"><p>{{ event.start | date:'dd-MM-yyyy' }}</p></td>
+              <td class="td2"><p>{{ event.start | date:'dd-MM-yyyy': 'UTC' }}</p></td>
             </tr>
             <tr>
               <td class="td1"><p>{{'PLACE' | translate}}:</p></td>
@@ -29,7 +29,7 @@
             </tr>
               <tr>
               <td class="td1"><p>{{'TIME' | translate}}:</p></td>
-              <td class="td2"><p>{{ event.start | date:'HH:mm'}}</p></td>
+              <td class="td2"><p>{{ event.start | date:'HH:mm': 'UTC'}}</p></td>
             </tr>
             <tr>
               <td class="td1"><p>{{'ACCESS' | translate}}:</p></td>

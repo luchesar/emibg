@@ -3,6 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
+var tz = require('moment-timezone');
 var uuid = require('uuid');
 
 /**
@@ -107,31 +108,43 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
   });
 
   $scope.setStartDate = function() {
-    $scope.event.start = $scope.newstart.date.getTime() + $scope.newstart.time.getTime();
+    $scope.event.start = toMillisUTC($scope.newstart.date) + toMillisUTC($scope.newstart.time);
   }
 
   $scope.setEndDate = function() {
-    $scope.event.end = $scope.newend.date.getTime() + $scope.newend.time.getTime();
+    $scope.event.end = toMillisUTC($scope.newend.date) + toMillisUTC($scope.newend.time);
+  }
+
+  var toDate = function(momentDate) {
+    return new Date(momentDate.tz('UTC').format('YYYY-MM-DDTHH:mm:ss') + moment().format('Z'))
+  }
+
+  var toMillisUTC = function(jsDate) {
+    var format = moment(jsDate).format();
+    var noTimezone = format.substring(0, format.length - 6) + 'Z';
+    return moment(noTimezone).valueOf();
   }
 
   var init = function(event) {
     $scope.event = event;
-    
+
     $scope.title = angular.copy(event.title);
     $scope.html = angular.copy(event.html);
     $scope.bgHtml = $sce.trustAsHtml(event.html.bg);
     $scope.enHtml = $sce.trustAsHtml(event.html.bg);
     var timeFormat = "HH-mm-ss";
     var dateFormat = "YYYY-MM-DD";
-    var start = moment(event.start);
-    var end = moment(event.end);
+    var start = moment(event.start).tz('UTC');
+    var end = moment(event.end).tz('UTC');
+    var startTime = moment(0).tz('UTC').hour(start.hour()).minutes(start.minutes()).seconds(0);
+    var endTime = moment(0).tz('UTC').hour(end.hour()).minutes(end.minutes()).seconds(0);
     $scope.newstart = {
-      date: moment(start).hour(0).minutes(0).seconds(0).toDate(),
-      time: moment(0).hour(start.hour()).minutes(start.minutes()).seconds(start.seconds()).toDate()
+      date: toDate(moment(event.start - startTime.valueOf())),
+      time: toDate(startTime)
     }
     $scope.newend = {
-      date: moment(end).hour(0).minutes(0).seconds(0).toDate(),
-      time: moment(0).hour(end.hour()).minutes(end.minutes()).seconds(end.seconds()).toDate()
+      date: toDate(moment(event.end - endTime.valueOf())),
+      time: toDate(endTime)
     }
   };
 
