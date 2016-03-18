@@ -4,10 +4,10 @@
        <div ng-controller="FullArticleCtrl">
          <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
          <div class="single_page_content">
-           <h1>{{ article.title | lang }}</h1>
+           <h1>{{article.title | lang }}</h1>
            <div class="post_commentbox">
-              <span><i class="fa fa-user"></i>{{ article.author | lang }}</span>
-              <span><i class="fa fa-calendar"></i>{{article.date | lang}}</span>
+              <span><i class="fa fa-user"></i>{{'AUTHOR' | translate}}:&nbsp<b>{{article.author | lang }}</b></span>
+              <span><i class="fa fa-calendar"></i>{{'DATE' | translate}}:&nbsp<b>{{ article.publicationDate | date:'dd-MM-yyyy' }}</b></span>
               <!-- <span><i class="fa fa-tags"></i>{{article.tags | lang}}</span> -->
             </div>
                 <p><div ng-bind-html="articleHtml"></div></p>
