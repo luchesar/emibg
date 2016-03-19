@@ -3,6 +3,8 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 var moment = require('moment');
+var tz = require('moment-timezone');
+var timeUtils = require('./time-utils');
 
 var currentLang = function(stateParams, translate) {
     if (stateParams.lang !== undefined) {
@@ -49,8 +51,8 @@ function CalendarCtrl($scope, $q, $http,
         return {
           id: event.id,
           title: $filter('lang')(event.title),
-          start: moment(event.start).toDate(),
-          end: moment(event.end).toDate()
+          start: timeUtils.toDate(moment(event.start).tz('UTC')),
+          end: timeUtils.toDate(moment(event.end).tz('UTC'))
         };
       });
     })

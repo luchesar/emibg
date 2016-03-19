@@ -5,6 +5,7 @@ var _ = require('lazy.js');
 var moment = require('moment');
 var tz = require('moment-timezone');
 var uuid = require('uuid');
+var timeUtils = require('./time-utils');
 
 /**
 * @ngInject
@@ -108,21 +109,13 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
   });
 
   $scope.setStartDate = function() {
-    $scope.event.start = toMillisUTC($scope.newstart.date) + toMillisUTC($scope.newstart.time);
+    $scope.event.start = timeUtils.toMillisUTC($scope.newstart.date) +
+      timeUtils.toMillisUTC($scope.newstart.time);
   }
 
   $scope.setEndDate = function() {
-    $scope.event.end = toMillisUTC($scope.newend.date) + toMillisUTC($scope.newend.time);
-  }
-
-  var toDate = function(momentDate) {
-    return new Date(momentDate.tz('UTC').format('YYYY-MM-DDTHH:mm:ss') + moment().format('Z'))
-  }
-
-  var toMillisUTC = function(jsDate) {
-    var format = moment(jsDate).format();
-    var noTimezone = format.substring(0, format.length - 6) + 'Z';
-    return moment(noTimezone).valueOf();
+    $scope.event.end = timeUtils.toMillisUTC($scope.newend.date) +
+      timeUtils.toMillisUTC($scope.newend.time);
   }
 
   var init = function(event) {
@@ -141,12 +134,12 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     var endDate = end.clone().hour(0).minute(0).seconds(0);
     var endTime = moment(0).tz('UTC').hour(end.hour()).minutes(end.minutes()).seconds(0);
     $scope.newstart = {
-      date: new Date(toDate(startDate).setHours(0)),
-      time: new Date(toDate(startTime).setHours(startTime.hours()))
+      date: timeUtils.toDate(startDate, 0),
+      time: timeUtils.toDate(startTime)
     }
     $scope.newend = {
-      date: new Date(toDate(endDate).setHours(0)),
-      time: new Date(toDate(endTime).setHours(endTime.hours()))
+      date: timeUtils.toDate(endDate, 0),
+      time: timeUtils.toDate(endTime)
     }
   };
 
