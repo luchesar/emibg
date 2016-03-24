@@ -93,24 +93,26 @@ var partners = [
      "site": "http://aes.bg/"
   },
 
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Овергаз Инк.",
-       "en": "Overgas"
-     },
-     "tumb": "images/partners_thumbs/emi_members_overgas.jpg",
-     "site": "http://www.overgas.bg/"
-  },
+<!---->
 
   { 
     "type": "partner",
      "title": {
-       "bg": "Българска Асоциация за Природен Газ",
-       "en": "Bulgarian Association Natural Gas"
+       "bg": "Българска фотоволтаична асоциация",
+       "en": "Bulgarian photovoltaic association"
      },
-     "tumb": "images/partners_thumbs/emi_partners_naturalgas.jpg",
-     "site": "http://www.naturalgas.bg/"
+     "tumb": "images/partners_thumbs/emi_partners_bpva.jpg",
+     "site": "http://www.bpva.org/"
+    },
+
+    { 
+    "type": "partner",
+     "title": {
+       "bg": "Университет за национално и световно стопанство",
+       "en": "University of National and World Economy"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_unwe.jpg",
+     "site": "http://www.unwe.bg/"
   },
 
   { 
@@ -126,11 +128,51 @@ var partners = [
   { 
     "type": "partner",
      "title": {
+       "bg": "Дипломатически институт при МВнР",
+       "en": "Diplomatic Institute - Ministry of Foreign Affairs"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bdi.jpg",
+     "site": "http://bdi.mfa.government.bg/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
+       "bg": "Българска Асоциация за Природен Газ",
+       "en": "Bulgarian Association Natural Gas"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_naturalgas.jpg",
+     "site": "http://www.naturalgas.bg/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
        "bg": "Българска федерация на индустриалните енергийн консуматори",
        "en": "Bulgarian Industrial Association"
      },
      "tumb": "images/partners_thumbs/emi_partners_bfiec.jpg",
      "site": "http://bfiec.org/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
+       "bg": "Черноморски изследователски енергиен център",
+       "en": "Black Sea Energy Research Centre"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bserc.jpg",
+     "site": "http://www.bserc.eu/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
+       "bg": "Национален комитет на България в Световния енергиен съвет",
+       "en": "National Committee of Bulgaria for the World Energy Council"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_wec.jpg",
+     "site": "http://www.wec-bulgaria.org/about-us/wec/"
   },
 
   { 
@@ -156,72 +198,34 @@ var partners = [
   { 
     "type": "partner",
      "title": {
-       "bg": "Дипломатически институт при МВнР",
-       "en": "Diplomatic Institute - Ministry of Foreign Affairs"
+       "bg": "Овергаз Инк.",
+       "en": "Overgas"
      },
-     "tumb": "images/partners_thumbs/emi_partners_bdi.jpg",
-     "site": "http://bdi.mfa.government.bg/"
-  },
+     "tumb": "images/partners_thumbs/emi_members_overgas.jpg",
+     "site": "http://www.overgas.bg/"
+  }
 
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Национален комитет на България в Световния енергиен съвет",
-       "en": "National Committee of Bulgaria for the World Energy Council"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_wec.jpg",
-     "site": "http://www.wec-bulgaria.org/about-us/wec/"
-  },
+  //{ 
+  //   "type": "partner",
+  //    "title": {
+  //      "bg": "3E News",
+  //      "en": "3E News"
+  //    },
+  //    "tumb": "images/partners_thumbs/emi_partners_3e.jpg",
+  //    "site": "http://3e-news.net/"
+  // },
 
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Черноморски изследователски енергиен център",
-       "en": "Black Sea Energy Research Centre"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_bserc.jpg",
-     "site": "http://www.bserc.eu/"
-  },
+  // { 
+  //   "type": "partner",
+  //    "title": {
+  //      "bg": "Капитал",
+  //      "en": "Capital"
+  //    },
+  //    "tumb": "images/partners_thumbs/emi_partners_capital.jpg",
+  //    "site": "http://www.capital.bg/"
+  // }
 
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Университет за национално и световно стопанство",
-       "en": "University of National and World Economy"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_unwe.jpg",
-     "site": "http://www.unwe.bg/"
-  },
 
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "3E News",
-       "en": "3E News"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_3e.jpg",
-     "site": "http://3e-news.net/"
-  },
-
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Капитал",
-       "en": "Capital"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_capital.jpg",
-     "site": "http://www.capital.bg/"
-  },
-
-  { 
-    "type": "partner",
-     "title": {
-       "bg": "Българска фотоволтаична асоциация",
-       "en": "Bulgarian photovoltaic association"
-     },
-     "tumb": "images/partners_thumbs/emi_partners_bpva.jpg",
-     "site": "http://www.bpva.org/"
-    }
 
   ]
 
