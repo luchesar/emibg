@@ -18,6 +18,7 @@ function Translations($translateProvider) {
       EVENTS: 'Events',
       ENERGOPEDIA: 'Energopedia',
       PARTNERS: 'Partners',
+      MEMBERS: "Members",
       EMIS_ANALYSIS: 'EMI\'s',
       SUMMARIES: 'Summaries', 
       ARTICLES: 'Articles',
@@ -55,6 +56,7 @@ function Translations($translateProvider) {
       LOGIN: "Login",
       AUTHOR: "Author"
 
+
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -68,6 +70,7 @@ function Translations($translateProvider) {
       EVENTS: 'Събития',
       ENERGOPEDIA: 'Енергопедия',
       PARTNERS: 'Партньори',
+      MEMBERS: "Членове",
       EMIS_ANALYSIS: 'на EMI',
       SUMMARIES: 'Резюмета',
       ARTICLES: 'Статии',

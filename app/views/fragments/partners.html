@@ -1,15 +1,33 @@
 <div ng-controller="AllPartnersCtrl">
-	<div ng-repeat="partner in allPartners">
-		<div class="article-event flat partner">
-			  <div class="media">
-			      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
-			        <img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}" >
-			      </a>
-			      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
-			        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
-			      </div>
+	<div class="single_post_content">
+		<h2><span>{{'MEMBERS' | translate }}</span></h2>
+		<div ng-repeat="partner in members">
+			<div class="article-event flat partner">
+				  <div class="media">
+				      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
+				        <img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}" >
+				      </a>
+				      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
+				        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
+				      </div>
+				  </div>
 			  </div>
-		  </div>
+		</div>
+	</div>
+	<div class="single_post_content members">
+		<h2><span>{{'PARTNERS' | translate }}</span></h2>
+		<div ng-repeat="partner in partners">
+			<div class="article-event flat partner">
+				  <div class="media">
+				      <a class="media-left" ng-href= "{{partner.site}}" target="_blank">
+				        <img class="media-object" class="img-thumbnail-partners" ng-src="{{partner.tumb}}" >
+				      </a>
+				      <div class="media-body"  ng-href= "{{partner.site}}" target="_blank">
+				        <a ng-href= "{{partner.site}}" target="_blank"><h4 class="media-heading">{{partner.title | lang}}</h4></a>
+				      </div>
+				  </div>
+			 </div>
+		</div>
 	</div>
 </div> 
 
