@@ -54,7 +54,7 @@ var homeChartsSlider = [
   ]
 
 var partners = [
-  { 
+  {  "type": "member",
      "title": {
        "bg": "ЕВН България",
        "en": "EVN Bulgaria"
@@ -63,7 +63,8 @@ var partners = [
      "site": "http://www.evn.bg/"
   },
 
-  { 
+  {   
+    "type": "member",
      "title": {
        "bg": "Енерго-Про България",
        "en": "Energo-Pro Bulgaria"
@@ -72,16 +73,8 @@ var partners = [
      "site": "https://www.energo-pro.bg/"
   },
 
-{ 
-     "title": {
-       "bg": "Овергаз Инк.",
-       "en": "Overgas"
-     },
-     "tumb": "images/partners_thumbs/emi_members_overgas.jpg",
-     "site": "http://www.overgas.bg/"
-  },
-
   { 
+    "type": "member",
      "title": {
        "bg": "ЧЕЗ България",
        "en": "CEZ Bulgaria"
@@ -91,6 +84,27 @@ var partners = [
   },
 
   { 
+    "type": "member",
+     "title": {
+       "bg": "Ей и Ес 3С Марица Изток І",
+       "en": "AES – 3C Maritza East I."
+     },
+     "tumb": "images/partners_thumbs/emi_members_aes.jpg",
+     "site": "http://aes.bg/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
+       "bg": "Овергаз Инк.",
+       "en": "Overgas"
+     },
+     "tumb": "images/partners_thumbs/emi_members_overgas.jpg",
+     "site": "http://www.overgas.bg/"
+  },
+
+  { 
+    "type": "partner",
      "title": {
        "bg": "Българска Асоциация за Природен Газ",
        "en": "Bulgarian Association Natural Gas"
@@ -100,6 +114,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Българска стопанска камара",
        "en": "Bulgarian Industrial Association"
@@ -109,6 +124,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Българска федерация на индустриалните енергийн консуматори",
        "en": "Bulgarian Industrial Association"
@@ -118,6 +134,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Български енергиен и минен форум",
        "en": "Bulgarian Energy and Mining Forum"
@@ -127,6 +144,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Българско училище за политика",
        "en": "Bulgarian School of politics"
@@ -136,6 +154,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Дипломатически институт при МВнР",
        "en": "Diplomatic Institute - Ministry of Foreign Affairs"
@@ -145,6 +164,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Национален комитет на България в Световния енергиен съвет",
        "en": "National Committee of Bulgaria for the World Energy Council"
@@ -154,6 +174,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Черноморски изследователски енергиен център",
        "en": "Black Sea Energy Research Centre"
@@ -163,6 +184,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Университет за национално и световно стопанство",
        "en": "University of National and World Economy"
@@ -172,6 +194,7 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "3E News",
        "en": "3E News"
@@ -181,13 +204,25 @@ var partners = [
   },
 
   { 
+    "type": "partner",
      "title": {
        "bg": "Капитал",
        "en": "Capital"
      },
      "tumb": "images/partners_thumbs/emi_partners_capital.jpg",
      "site": "http://www.capital.bg/"
-  }
+  },
+
+  { 
+    "type": "partner",
+     "title": {
+       "bg": "Българска фотоволтаична асоциация",
+       "en": "Bulgarian photovoltaic association"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_bpva.jpg",
+     "site": "http://www.bpva.org/"
+    }
+
   ]
 
   var teams = [
@@ -280,6 +315,24 @@ var partners = [
             },
             "image": "images/thumbs/thumb5.jpg" 
           },
+
+          {
+            "id": "6",
+            "name": {
+              "bg": "Анжела Тонева",
+              "en": "Angela Toneva"
+            },
+            "job": {
+              "bg": "Регулаторни и административни въпроси",
+              "en": "Regulatory and administrative issues"
+            },
+            "email": "angela.toneva@emi-bg.com",
+            "phone": {
+              "bg": "(02) 980 07 03",
+              "en": "+359 2 980 07 03"
+            },
+            "image": "images/thumbs/thumb5.jpg" 
+          }
 
    ]
 
