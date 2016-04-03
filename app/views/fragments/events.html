@@ -1,29 +1,61 @@
-<div ng-controller="AllEventsCtrl">
-   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-   <div>
-       <div ng-repeat="rowEvents in events">
-            <div class="row">
-               <div class="col-sm-6 col-md-6" ng-repeat="event in rowEvents">
-                  <flat-event></flat-event>
-               </div>
-           </div>
-       </div>
+<div class="single_post_content members">
+  <h2><span>{{'FUTURE_EVENTS' | translate }}</span></h2>
+  <div ng-controller="AllEventsCtrl">
+     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+     <div>
+         <div ng-repeat="rowEvents in events">
+              <div class="row">
+                 <div class="col-sm-6 col-md-6" ng-repeat="event in rowEvents">
+                    <flat-event></flat-event>
+                 </div>
+             </div>
+         </div>
+        <nav>
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+             <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+            <li>
+              <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+     </div>
+  </div>
+</div>
 
-      <nav>
-        <ul class="pagination">
-          <li>
-            <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-           <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
-          <li>
-            <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-   </div>
+<div class="single_post_content members">
+  <h2><span>{{'PAST_EVENTS' | translate }}</span></h2>
+  <div ng-controller="PastEventsCtrl">
+     <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+     <div>
+         <div ng-repeat="rowEvents in events">
+              <div class="row">
+                 <div class="col-sm-6 col-md-6" ng-repeat="event in rowEvents">
+                    <flat-event></flat-event>
+                 </div>
+             </div>
+         </div>
+        <nav>
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+             <li class="disabled"><a href="#">{{'PAGE' | translate}} {{page}} {{'OF' | translate}} {{pageCount}}</a></li>
+            <li>
+              <a href="#" aria-label="Next" ng-click="nextPage()" ng-disabled="!hasNext()">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+     </div>
+  </div>
 </div>

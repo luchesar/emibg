@@ -54,9 +54,9 @@ function Translations($translateProvider) {
       TIME: "Time",
       ACCESS: "Access",
       LOGIN: "Login",
-      AUTHOR: "Author"
-
-
+      AUTHOR: "Author",
+      FUTURE_EVENTS: "Upcoming Events",
+      PAST_EVENTS: "Past Events"
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -106,7 +106,9 @@ function Translations($translateProvider) {
       TIME: "Час",
       ACCESS: "Достъп",
       LOGIN: "Логин",
-      AUTHOR: "Автор"
+      AUTHOR: "Автор",
+      FUTURE_EVENTS: "Предстоящи събития",
+      PAST_EVENTS: "Отминали събития"
     });
   $translateProvider.preferredLanguage('bg');
 }

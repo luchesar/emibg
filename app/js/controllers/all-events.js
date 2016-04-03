@@ -3,7 +3,7 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
+var controllerLogic = function($scope, $stateParams, $http, $state, PagingService, ErrorHandling, filtercode) {
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {page: $scope.page});
@@ -14,7 +14,8 @@ function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService, Error
     "/api/events/paged/" +
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
-    "&size=" + $scope.itemsPerPage
+    "&size=" + $scope.itemsPerPage +
+    (filtercode ? "&filtercode=" + filtercode : "")
   ))
   .then(function(data) {
     $scope.itemsCount = data.size;
@@ -28,4 +29,13 @@ function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService, Error
   });
 }
 
+function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
+  controllerLogic($scope, $stateParams, $http, $state, PagingService, ErrorHandling, "futureevents");
+}
+
+function PastEventsCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
+  controllerLogic($scope, $stateParams, $http, $state, PagingService, ErrorHandling, "pastevents");
+}
+
 controllersModule.controller('AllEventsCtrl', AllEventsCtrl);
+controllersModule.controller('PastEventsCtrl', PastEventsCtrl);
