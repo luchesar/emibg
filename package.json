@@ -120,6 +120,7 @@
     "lazy.js": "^0.4.0",
     "moment": "^2.10.6",
     "moment-timezone": "^0.5.2",
-    "uuid": "^2.0.1"
+    "uuid": "^2.0.1",
+    "osmosis": "^0.1.3"
   }
 }
