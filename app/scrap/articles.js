@@ -32,16 +32,17 @@ var handleNews = function(news) {
 
   _(details).split(",").each(function(element) {
     var element = element.trim();
-    console.log("constructor:" + element.indexOf);
     if (element.indexOf("от:") == 0) {
       news.author = {};
       news.author.bg = element.substring(3).trim();
     } else if (element.indexOf("дата:") == 0) {
       news.date = moment(element.substring(5).trim(), "DD.MM.YYYY").valueOf();
+      news.publicationDate = news.date;
     }
   });
   news.id = ObjectId(news.date);
   news._id = news.id;
+  news.itemId = news.id;
   news.category = ["news"];
   news.migrated = true;
   news.deleted = false;
@@ -57,17 +58,18 @@ var handleNews = function(news) {
   return news;
 };
 
-var insertArticle = function(news) {
-  db.collection('articles').insert(news, function(err, result) {
-    if (err) console.log("ERROR cannot add an article with title:" + news.title.bg + JSON.stringify(err));
-    if (result) console.log('SUCCESS adding an article with title:' + news.title.bg);
+var insert = function(item) {
+  if (item.date > moment("10.03.2016", "DD.MM.YYYY").valueOf()) return;
+  db.collection('articles').insert(item, function(err, result) {
+    if (err) console.log("ERROR cannot add an article with title:" + item.title.bg + JSON.stringify(err));
+    if (result) console.log('SUCCESS adding an article with title:' + item.title.bg);
   });
 };
 
-//newsStream()
-//.map(handleNews)
-//.forEach(insertArticle, function(err) {console.log("err:" + err);});
 newsStream()
-.scan(function(acc, next) {return acc + 1;}, 0)
-.forEach(function(next) { console.log("NEXT:" + next);})
+.map(handleNews)
+.forEach(insert, function(err) {console.log("err:" + err);});
+//newsStream()
+//.scan(function(acc, next) {return acc + 1;}, 0)
+//.forEach(function(next) { console.log("NEXT:" + next);})
 
