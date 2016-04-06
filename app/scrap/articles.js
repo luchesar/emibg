@@ -26,6 +26,12 @@ var newsStream = function() {
   return newsStream;
 }
 
+var id = function(millis) {
+  var timestamp = Math.floor(millis / 1000);
+  var hex = ('00000000' + timestamp.toString(16)).substr(-8); // zero padding
+  return new ObjectId(hex + new ObjectId().str.substring(8));
+}
+
 var handleNews = function(news) {
   var details = news.details;
   delete news.details;
@@ -40,9 +46,9 @@ var handleNews = function(news) {
       news.publicationDate = news.date;
     }
   });
-  news.id = ObjectId(news.date);
+  news.id = id(news.date);
   news._id = news.id;
-  news.itemId = news.id;
+  news.itemId = news.id.toString(16);
   news.category = ["news"];
   news.migrated = true;
   news.deleted = false;
@@ -59,7 +65,10 @@ var handleNews = function(news) {
 };
 
 var insert = function(item) {
-  if (item.date > moment("10.03.2016", "DD.MM.YYYY").valueOf()) return;
+  if (item.date > moment("10.03.2016", "DD.MM.YYYY").valueOf()) {
+    console.log("I am not going to insert that because its after 10.03.2016");
+    return;
+  }
   db.collection('articles').insert(item, function(err, result) {
     if (err) console.log("ERROR cannot add an article with title:" + item.title.bg + JSON.stringify(err));
     if (result) console.log('SUCCESS adding an article with title:' + item.title.bg);
