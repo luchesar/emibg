@@ -114,7 +114,19 @@ var newsStream = function() {
         follow: ".initiatives_block > .cat_title > p.cat_name > a",
         titleSelector: '.initiatives_header > p'
       })
-    ).map(handle("news"))
+    ).map(handle("news")),
+    Rx.Observable.merge(
+      articleStream({
+        indexPage: 'http://www.emi-bg.com/index.php?class=4' ,
+        follow: '.item_block > .cat_title > p.cat_name > a',
+        titleSelector: '.blog_header > p'
+      }),
+      articleStream({
+        indexPage: 'http://www.emi-bg.com/index.php?catid=12',
+        follow: ".item_block > .cat_title > p.cat_name > a",
+        titleSelector: '.analysis_header > p'
+      })
+    ).map(handle("summaries"))
   );
 }
 
