@@ -17,9 +17,11 @@
           </carousel>
       </div>
       <br/>
-        <h2>
-          <span>{{'NEWS' | translate }}</span>
-        </h2> 
+        <a href="#" ui-sref="app.menu.news({page: 1})">
+          <h2>
+            <span>{{'NEWS' | translate }}</span>
+          </h2> 
+        </a>
       <div class="row">
         <div class="col-sm-6 col-md-6">
             <div ng-repeat="article in mainNews">
@@ -35,9 +37,11 @@
       <br/>
       <div class="row">
           <div class="col-sm-6 col-md-6">
-            <h2>
-              <span>{{'ANALYSIS' | translate }}</span>
-            </h2>
+            <a href="#" ui-sref="app.menu.analysis.emis({page: 1})">
+              <h2>
+                <span>{{'ANALYSIS' | translate }}</span>
+              </h2>
+            </a>
             <div ng-repeat="article in mainAnalysis">
                 <tile-article/>
             </div>
@@ -47,9 +51,11 @@
             </div>
           </div>
           <div class="col-sm-6 col-md-6">
-            <h2>
-              <span>{{'EVENTS' | translate }}</span>
-            </h2>
+            <a href="#" ui-sref="app.menu.events({page: 1})">
+              <h2>
+                <span>{{'EVENTS' | translate }}</span>
+              </h2>
+            </a>
             <div ng-repeat="event in mainEvent">
                 <tile-event/>
             </div>

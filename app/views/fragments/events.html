@@ -1,4 +1,4 @@
-<div class="single_post_content members">
+<div class="single_post_content">
   <h2><span>{{'FUTURE_EVENTS' | translate }}</span></h2>
   <div ng-controller="AllEventsCtrl">
      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
