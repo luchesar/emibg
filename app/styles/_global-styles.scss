@@ -292,7 +292,7 @@ a img:hover {
 /* FOOTER */
 
 
-.footer {
+.footer{
   background-color: $navbar-color/1.7;
   background-image: url(/images/emi-footer-2.png);
   background-size: contain;
@@ -308,6 +308,8 @@ a img:hover {
 }
 
 .footer a:hover {
+  padding-left: 10px;
+  font-weight: bold;
   color: $navbar-hover-color;
 }
 
@@ -448,6 +450,7 @@ p.ng-binding {
 .thumbnail {
   height: 500px;
   border-radius: 1px;
+  margin-top: none;
   //border: none; 
 }
 
@@ -804,12 +807,25 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   width: 100px;
 } 
 
+.footer .btn-warning:hover {
+  background-color: $navbar-hover-color;
+} 
+
+
 .footer li {
   padding-bottom: 6px;
 }
 
 .footer ul>ul>li {
   padding-left: 20px;
+}
+
+.footer .sociallink_nav a:hover {
+  padding-left: none;
+}
+
+.language-footer a:hover {
+  padding-left: 0px;
 }
 
 
