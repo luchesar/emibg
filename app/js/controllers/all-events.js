@@ -3,7 +3,8 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-var controllerLogic = function($scope, $stateParams, $http, $state, PagingService, ErrorHandling, filtercode) {
+var controllerLogic = function($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, filtercode) {
+  $document.scrollTopAnimated(0, 190);
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {page: $scope.page});

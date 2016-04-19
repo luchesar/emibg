@@ -471,7 +471,7 @@ p.ng-binding {
 }
 
 
-// Gradient - thumbnails
+//Gradient - thumbnails
 
 .gradient-container {
     position:relative;
@@ -491,6 +491,7 @@ p.ng-binding {
     background: linear-gradient(to bottom,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 90%);
 }​
 
+//////////
 
 .article-event h4 {
   font-size: 16px;
@@ -908,7 +909,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 
 .fc {
   background-color: #fff;
-  padding: 1.5%;
+  padding: 1.5% 0;
 }
 
 .fc-toolbar h2{
@@ -1190,4 +1191,7 @@ button {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
+
+
+
 
