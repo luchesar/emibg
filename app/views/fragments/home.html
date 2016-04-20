@@ -2,6 +2,7 @@
    <div ng-controller="HomeCtrl" class="single_post_content">
       <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
       <div>
+        <!-- Carousel  -->
           <carousel class="slider" interval="sliderInterval">
             <slide ng-repeat="slide in slideItems" active="slide.active" style="cursor: pointer;">
               <div  class="clickable" ui-sref="{{slide.sref}}">
@@ -15,13 +16,22 @@
               </div>  
             </slide>
           </carousel>
+
+        <!-- Carousel placeholder  -->
+          <div style="width:100%; height:480px;" class="img-thumbnail">
+          </div>
+
       </div>
+
       <br/>
+
         <a href="#" ui-sref="app.menu.news({page: 1})" ng-click="scrollToTop()">
           <h2>
             <span>{{'NEWS' | translate }}</span>
           </h2> 
         </a>
+
+      <!-- News   -->
       <div class="row">
         <div class="col-sm-6 col-md-6">
             <div ng-repeat="article in mainNews">
@@ -34,6 +44,19 @@
             </div>
         </div>
       </div>
+
+      <!-- News Placeholder  -->
+      <div class="row" >
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div ng-repeat="article in news">
+            <div class="article-event flat"></div>
+          </div>
+        </div>
+      </div>
+
       <br/>
       <div class="row">
           <div class="col-sm-6 col-md-6">
@@ -42,12 +65,23 @@
                 <span>{{'ANALYSIS' | translate }}</span>
               </h2>
             </a>
+
+            <!-- Analysis -->
             <div ng-repeat="article in mainAnalysis">
                 <tile-article/>
             </div>
             <div ng-repeat="article in analysis">
                 <flat-article/>
             </div>
+
+            <!-- Analysis -->
+            <div ng-repeat="article in mainAnalysis">
+                <div class="thumbnail"></div>
+            </div>
+            <div ng-repeat="article in analysis">
+                <div class="article-event flat"></div>
+            </div>
+
           </div>
           <div class="col-sm-6 col-md-6">
             <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="scrollToTop()">
@@ -55,12 +89,21 @@
                 <span>{{'EVENTS' | translate }}</span>
               </h2>
             </a>
+            <!-- Events -->
             <div ng-repeat="event in mainEvent">
                 <tile-event/>
             </div>
             <div ng-repeat="event in events">
                 <flat-event/>
-            </diiv>
+            </div>
+
+            <!-- Events Placeholder -->
+            <div ng-repeat="event in mainEvent">
+                <div class="thumbnail"></div>
+            </div>
+            <div ng-repeat="event in events">
+                <div class="article-event flat"></div>
+            </div>
           </div>
       </div>
    </div>
