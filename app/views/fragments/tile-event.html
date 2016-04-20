@@ -1,8 +1,8 @@
 <figure class="article-event" ui-sref=".event({ id: event.id })">
     <div class="thumbnail">
       <emi-image image="event.image" width="100%" height="225px"></emi-image>
-      <div class="caption">
-            <div class="gradient-container">
+      <div class="caption gradient-container" stye="background-color:green;">
+            <div>
               <h3>{{event.title | lang | limitTo:100}}</h3>
               <p>{{event.html | lang | htmlToPlainText | limitTo: 260}}...</p>
               <div class="gradient"></div>

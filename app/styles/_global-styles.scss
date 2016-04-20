@@ -423,6 +423,7 @@ p.ng-binding {
 //Gradient - thumbnails
 
 .gradient-container {
+    // background-color: red;
     position:relative;
 }
 
@@ -430,15 +431,17 @@ p.ng-binding {
     position:absolute;
     z-index:2;
     right:0; bottom:0; left:0;
-    height:110px;
+    height:50%;
     background: url(data:image/svg+xml;base64,alotofcodehere);
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 40%, rgba(255,255,255,1) 90%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(255,255,255,0)), color-stop(90%,rgba(255,255,255,1)));
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 90%);
-    background: -o-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 90%);
-    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 90%);
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 90%);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 40%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 40%,rgba(255,255,255,1) 100%);
 }​
+
+
 
 //////////
 
@@ -897,6 +900,14 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   color:#fff;
 }
 
+.fc-prev-button:active,
+.fc-next-button:active,
+.fc-today-button:active
+ {
+  background-color: $navbar-active-color;
+}
+
+
 .fc-event {
   background-color: $navbar-hover-color !important;
   border-radius: 1px !important;
@@ -908,7 +919,10 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
 }
 
 .fc h2 {
-  padding-left: 5px;
+  padding-left: 10px !important;
+}
+.fc-next-button {
+  margin-right: 10px !important;
 }
 
 //Charts
@@ -1112,7 +1126,7 @@ button {
   display: inline;
   float: left;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 10px;
 }
 
