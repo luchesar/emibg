@@ -1180,13 +1180,13 @@ button {
 
 @media (max-width: 991px) {
 
-    .thumbnail {
-      margin-bottom: 10px;
-    }
+    // .thumbnail {
+    //   margin-bottom: 10px;
+    // }
 
-    h2.home-events {
-      margin-top: 30px;
-    }
+    // h2.home-events {
+    //   margin-top: 30px;
+    // }
 
     .single_post_content.events h2 {
       font-size: 21px;
@@ -1245,6 +1245,17 @@ button {
     }
     .collapsing {
         overflow: hidden!important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .thumbnail {
+      margin-bottom: 10px;
+    }
+
+    h2.home-events {
+      margin-top: 30px;
     }
 }
 
