@@ -2,6 +2,8 @@
 @import 'typography';
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 @import 'global-styles';
+@import 'loader';
+
 
 .carousel-control.left, .carousel-control.right {
     background-image: none;
@@ -17,9 +19,9 @@ html,body {
 
 .wrap {
   min-height: 100%; 
-  // background-image: url(/images/emi-background.jpg);
+  //background-image: url(/images/emi-background.jpg);
   background-color: #F8FAFB;
-  //background-color: #444;
+  background-color: #444;
   background-size: cover;
 }
 

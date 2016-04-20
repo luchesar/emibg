@@ -19,6 +19,7 @@
 
         <!-- Carousel placeholder  -->
           <div style="width:100%; height:480px;" class="img-thumbnail">
+            <div class="loader-xl"></div>
           </div>
 
       </div>
@@ -48,14 +49,19 @@
       <!-- News Placeholder  -->
       <div class="row" >
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail"></div>
-        </div>
-        <div class="col-sm-6 col-md-6">
-          <div ng-repeat="article in news">
-            <div class="article-event flat"></div>
+          <div class="thumbnail">
+            <div class="loader-m"></div>
           </div>
         </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+        </div>
       </div>
+      <!-- END News Placeholder  -->
 
       <br/>
       <div class="row">
@@ -74,15 +80,23 @@
                 <flat-article/>
             </div>
 
-            <!-- Analysis -->
-            <div ng-repeat="article in mainAnalysis">
-                <div class="thumbnail"></div>
+          <!-- Analysis Placeholder-->
+            <div class="thumbnail">
+              <div class="loader-m"></div>
             </div>
-            <div ng-repeat="article in analysis">
-                <div class="article-event flat"></div>
+            <div>
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
             </div>
 
-          </div>
+          <!-- END Analysis Placeholder-->
+
+        </div>
+
+          
+
           <div class="col-sm-6 col-md-6">
             <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="scrollToTop()">
               <h2 class="home-events">
@@ -98,12 +112,16 @@
             </div>
 
             <!-- Events Placeholder -->
-            <div ng-repeat="event in mainEvent">
-                <div class="thumbnail"></div>
-            </div>
-            <div ng-repeat="event in events">
-                <div class="article-event flat"></div>
-            </div>
+                <div class="thumbnail">
+                  <div class="loader-m"></div>
+                </div>
+                <div>
+                  <div class=" flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                </div>
+            <!-- END Events Placeholder -->
           </div>
       </div>
    </div>
