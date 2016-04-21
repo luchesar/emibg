@@ -1,12 +1,10 @@
 <figure class="article-event" ui-sref=".article({ id: article.id })">
     <div class="thumbnail">
        <emi-image image="article.image" width="100%" height="225px"></emi-image>
-       <div class="caption">
-        <div class="gradient-container">
+       <div class="caption gradient-container">
           <h3>{{article.title | lang | limitTo:100}}</h3>
           <p>{{article.html | lang | htmlToPlainText | limitTo: 240}}...</p>
           <div class="gradient"></div>
-        </div>
       </div>
     </div>
 </figure>
