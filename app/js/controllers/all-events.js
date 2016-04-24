@@ -3,7 +3,10 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-var controllerLogic = function($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, filtercode) {
+/**
+* @ngInject
+*/
+var controllerLogic = function($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, filtercode, order) {
   $document.scrollTopAnimated(0, 190);
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
@@ -16,6 +19,7 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
     ($stateParams.lang ||  "bg") +
     "?p=" + PagingService.pageNumber($stateParams) +
     "&size=" + $scope.itemsPerPage +
+    "&orderby=start%20" + order +
     (filtercode ? "&filtercode=" + filtercode : "")
   ))
   .then(function(data) {
@@ -30,12 +34,12 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
   });
 }
 
-function AllEventsCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
-  controllerLogic($scope, $stateParams, $http, $state, PagingService, ErrorHandling, "futureevents");
+function AllEventsCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
+  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "futureevents", "ASC");
 }
 
-function PastEventsCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
-  controllerLogic($scope, $stateParams, $http, $state, PagingService, ErrorHandling, "pastevents");
+function PastEventsCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
+  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "pastevents", "DESC");
 }
 
 controllersModule.controller('AllEventsCtrl', AllEventsCtrl);
