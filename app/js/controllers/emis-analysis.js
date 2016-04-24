@@ -6,7 +6,8 @@ var _ = require('lazy.js');
 /**
 * @ngInject
 */
-function EmisAnalysisCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
+function EmisAnalysisCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
+  $document.scrollTopAnimated(0, 190);
   $scope.pageCount = "Loading";
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {page: $scope.page});
