@@ -15,11 +15,11 @@ function SearchCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHan
            "?q=" + ($stateParams.q || "*") +
            "&p=" + PagingService.pageNumber($stateParams) +
            "&size=" + $scope.itemsPerPage))
-  .then(function(response) {
-    $scope.itemsCount = response.data.total;
+  .then(function(data) {
+    $scope.itemsCount = data.total;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.items =
-      _(response.data.hits.map(hit => hit._source))
+      _(data.hits.map(hit => hit._source))
         .chunk(2).toArray();
   })
   .catch(err => {
