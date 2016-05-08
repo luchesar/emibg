@@ -11,8 +11,14 @@ function SearchCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHan
   var lang = $stateParams.lang || "bg";
 
   $scope.alerts = [];
+  var searchTerm = $stateParams.q;
+  if (searchTerm)
+    searchTerm = _(searchTerm.split(" "))
+      .filter(word => word.length > 2)
+      .reduce((result, word) => result + " " + word)
+
   ErrorHandling.handle($http.get("/api/searches/" + lang +
-           "?q=" + ($stateParams.q || "*") +
+           "?q=" + (searchTerm || "*") +
            "&p=" + PagingService.pageNumber($stateParams) +
            "&size=" + $scope.itemsPerPage))
   .then(function(data) {
