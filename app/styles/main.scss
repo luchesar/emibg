@@ -3,7 +3,6 @@
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 @import 'global-styles';
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 
 
 .carousel-control.left, .carousel-control.right {
@@ -20,7 +19,6 @@ html,body {
 
 .wrap {
   min-height: 100%; 
-  // background-image: url(/images/emi-background.jpg);
   background-color: #F8FAFB;
   //background-color: #444;
   background-size: cover;
