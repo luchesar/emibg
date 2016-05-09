@@ -312,13 +312,14 @@ a img:hover {
 }
 
 .footer a {
-  color: inherit;
+  color:#EBEBEB;
 }
 
 .footer a:hover {
   padding-left: 6px;
   color: $navbar-hover-color;
 }
+
 
 .footer_widget>h2 {
   border-bottom: 3px solid #666666;
@@ -346,7 +347,6 @@ a img:hover {
 
 .search-input {
       display: inline-block;
-  
       vertical-align: middle;
       height: 36px;
       padding: 6px 12px;
@@ -710,6 +710,10 @@ footer .sociallink_nav li a {
   font-size: 17px;
   padding: 6px 10px;
   margin: 0px 3px;
+}
+
+footer .sociallink_nav li a:hover {
+  padding: 6px 10px;
 }
 
 footer .sociallink_nav li:nth-child(1) > a {
