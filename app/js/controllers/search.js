@@ -3,12 +3,14 @@
 var controllersModule = require('./_index');
 var _ = require('lazy.js');
 
-function SearchCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHandling) {
+function SearchCtrl($scope, $stateParams, $http, $state, $document, $filter, PagingService, ErrorHandling) {
+  $document.scrollTopAnimated(0, 190);
   PagingService.init($scope, $stateParams, $state, function(){
     $state.go('.', {q: $stateParams.q, page: $scope.page});
   });
 
   var lang = $stateParams.lang || "bg";
+  $scope.message = $filter('translate')('SEARCHING');
 
   $scope.alerts = [];
   var searchTerm = $stateParams.q;
@@ -22,6 +24,10 @@ function SearchCtrl($scope, $stateParams, $http, $state, PagingService, ErrorHan
            "&p=" + PagingService.pageNumber($stateParams) +
            "&size=" + $scope.itemsPerPage))
   .then(function(data) {
+    if (data.total > 0)
+      $scope.message = ""
+    else
+      $scope.message = $filter('translate')('NOTHING_FOUND')
     $scope.itemsCount = data.total;
     $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.items =
