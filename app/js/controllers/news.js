@@ -19,7 +19,8 @@ function NewsCtrl($scope, $stateParams, $http, $state, $document, PagingService,
     ($stateParams.lang ||  "bg") +
     "?categories=news&p=" + PagingService.pageNumber($stateParams) +
     "&size=" + $scope.itemsPerPage +
-    "&orderby=publicationDate%20DESC"
+    "&orderby=publicationDate%20DESC" +
+    "&filtercode=no-html"
   ))
   .then(function(data) {
     $scope.itemsCount = data.size;

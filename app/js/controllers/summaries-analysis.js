@@ -19,7 +19,8 @@ function SummariesAnalysisCtrl($scope, $stateParams, $http, $state, $document, P
     ($stateParams.lang ||  "bg") +
     "?categories=summaries&p=" + PagingService.pageNumber($stateParams) +
     "&size=" + $scope.itemsPerPage +
-    "&orderby=publicationDate%20DESC"
+    "&orderby=publicationDate%20DESC" +
+    "&filtercode=no-html"
   ))
   .then(function(data) {
     $scope.itemsCount = data.size;

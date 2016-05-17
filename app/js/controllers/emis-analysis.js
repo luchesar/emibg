@@ -19,7 +19,8 @@ function EmisAnalysisCtrl($scope, $stateParams, $http, $state, $document, Paging
     ($stateParams.lang ||  "bg") +
     "?categories=emis&p=" + PagingService.pageNumber($stateParams) +
     "&size=" + $scope.itemsPerPage +
-    "&orderby=publicationDate%20DESC"
+    "&orderby=publicationDate%20DESC"+
+    "&filtercode=no-html"
   ))
   .then(function(data) {
     $scope.itemsCount = data.size;

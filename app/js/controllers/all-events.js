@@ -35,11 +35,11 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
 }
 
 function AllEventsCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
-  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "futureevents", "ASC");
+  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "no-html-futureevents", "ASC");
 }
 
 function PastEventsCtrl($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling) {
-  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "pastevents", "DESC");
+  controllerLogic($scope, $stateParams, $http, $state, $document, PagingService, ErrorHandling, "no-html-pastevents", "DESC");
 }
 
 controllersModule.controller('AllEventsCtrl', AllEventsCtrl);
