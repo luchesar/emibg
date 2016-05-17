@@ -32,7 +32,8 @@ function CalendarCtrl($scope, $q, $http,
       "/api/events/paged/" +
       ($stateParams.lang ||  "bg") +
       "?p=1" +
-      "&size=10000"
+      "&size=10000" +
+      "&filtercode=no-html"
     )
     .then(function(response) {
       $scope.uiConfig = {
