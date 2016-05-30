@@ -1172,7 +1172,16 @@ button {
 
 .team h3 {
   color: #FFF;
-} 
+}
+
+.panel-title > span {
+  font-size:14px ;
+}
+
+  .team .panel-body {
+    padding-bottom: 5px;
+}
+
 
 
 //partners
