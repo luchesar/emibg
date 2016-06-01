@@ -389,12 +389,19 @@ p.ng-binding {
 
 .panel-heading {
   padding: 10px 15px;
-  border-bottom: 1px solid transparent;
+  border-bottom-width: 0px;
   border-radius: 1px;
+  
 }
 
 .pie-legend li span {
     border-radius: 1px !important;
+}
+
+//About - Mission 
+
+.about-mission p{
+  margin-bottom: 20px;
 }
 
 //Thumbnails
@@ -840,7 +847,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
     margin-bottom: 15px;
 }
 .slider_article > h2 a {
-  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.38);
+  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.58);
   color: #fff;
   font-size: 25px;
   line-height: 30px;
@@ -849,7 +856,7 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   display: inline-block;
 }
 .slider_article > p {
-  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.38);
+  background: none repeat scroll 0 0 rgba(39, 69, 104, 0.58);
   font-size: 16px;
   color: #fff;
   padding: 10px;
@@ -1137,7 +1144,7 @@ button {
   display: inline;
   float: left;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 0px;
 }
 
@@ -1164,6 +1171,14 @@ button {
 .panel {
     margin-bottom: 0px;
 }
+
+.panel.team {
+  margin-bottom: 20px;
+}
+
+.team h3 {
+  color: #FFF;
+} 
 
 
 //partners
@@ -1257,7 +1272,6 @@ button {
     }
 
     .euroelectric img {
-      margin-top: 20px;
       margin-top: 20px;
     }
 }
