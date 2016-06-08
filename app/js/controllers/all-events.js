@@ -13,6 +13,7 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
     $state.go('.', {page: $scope.page});
   });
 
+  $scope.loading = true;
   $scope.alerts = [];
   ErrorHandling.handle($http.get(
     "/api/events/paged/" +
@@ -27,10 +28,12 @@ var controllerLogic = function($scope, $stateParams, $http, $state, $document, P
     $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.events = _(data.items)
         .chunk(2).toArray();
+    $scope.loading = false;
   })
   .catch(err => {
     $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
     console.log("APP ERROR: " + err);
+    $scope.loading = false;
   });
 }
 

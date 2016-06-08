@@ -1,7 +1,8 @@
 <div>
    <div ng-controller="HomeCtrl" class="single_post_content">
       <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-      <div>
+      <div ng-if="loaded" class="animate-if">
+        <!-- Carousel  -->
           <carousel class="slider" interval="sliderInterval">
             <slide ng-repeat="slide in slideItems" active="slide.active" style="cursor: pointer;">
               <div  class="clickable" ui-sref="{{slide.sref}}">
@@ -16,12 +17,20 @@
             </slide>
           </carousel>
       </div>
+    <!-- Carousel placeholder  
+      <div style="width:100%; height:480px;" class="img-thumbnail" ng-show="!loaded">
+        <div class="loader-xl"></div>
+      </div>-->
+
       <br/>
+
         <a href="#" ui-sref="app.menu.news({page: 1})" ng-click="scrollToTop()">
           <h2>
             <span>{{'NEWS' | translate }}</span>
           </h2> 
         </a>
+
+      <!-- News   -->
       <div class="row">
         <div class="col-sm-6 col-md-6">
             <div ng-repeat="article in mainNews">
@@ -34,6 +43,24 @@
             </div>
         </div>
       </div>
+
+      <!-- News Placeholder  -->
+      <div class="row" ng-show="!loaded">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail">
+            <div class="loader-m"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+            <div class="flat"><div class="loader-s"></div></div>
+        </div>
+      </div>
+      <!-- END News Placeholder  -->
+
       <br/>
       <div class="row">
           <div class="col-sm-6 col-md-6">
@@ -42,25 +69,54 @@
                 <span>{{'ANALYSIS' | translate }}</span>
               </h2>
             </a>
+
+            <!-- Analysis -->
             <div ng-repeat="article in mainAnalysis">
                 <tile-article/>
             </div>
             <div ng-repeat="article in analysis">
                 <flat-article/>
             </div>
-          </div>
+
+          <!-- Analysis Placeholder-->
+            <div class="thumbnail" ng-show="loading">
+              <div class="loader-m"></div>
+            </div>
+            <div ng-show="loading">
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
+              <div class="flat"><div class="loader-s"></div></div>
+            </div>
+
+          <!-- END Analysis Placeholder-->
+
+        </div>
           <div class="col-sm-6 col-md-6">
             <a href="#" ui-sref="app.menu.events({page: 1})" ng-click="scrollToTop()">
               <h2 class="home-events">
                 <span>{{'EVENTS' | translate }}</span>
               </h2>
             </a>
+            <!-- Events -->
             <div ng-repeat="event in mainEvent">
                 <tile-event/>
             </div>
             <div ng-repeat="event in events">
                 <flat-event/>
-            </diiv>
+            </div>
+
+            <!-- Events Placeholder -->
+                <div class="thumbnail" ng-show="loading">
+                  <div class="loader-m"></div>
+                </div>
+                <div ng-show="loading">
+                  <div class=" flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                  <div class="flat"><div class="loader-s"></div></div>
+                </div>
+            <!-- END Events Placeholder -->
           </div>
       </div>
    </div>

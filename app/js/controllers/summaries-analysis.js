@@ -13,6 +13,7 @@ function SummariesAnalysisCtrl($scope, $stateParams, $http, $state, $document, P
     $state.go('.', {page: $scope.page});
   });
 
+  $scope.loading = true;
   $scope.alerts = [];
   ErrorHandling.handle($http.get(
     "/api/articles/paged/" +
@@ -27,9 +28,11 @@ function SummariesAnalysisCtrl($scope, $stateParams, $http, $state, $document, P
     $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.summariesAnalysis = _(data.items)
         .chunk(2).toArray();
+    $scope.loading = false;
   })
   .catch(err => {
     $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
+    $scope.loading = false;
   });
 }
 

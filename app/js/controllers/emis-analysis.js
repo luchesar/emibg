@@ -13,6 +13,7 @@ function EmisAnalysisCtrl($scope, $stateParams, $http, $state, $document, Paging
     $state.go('.', {page: $scope.page});
   });
 
+  $scope.loading = true;
   $scope.alerts = [];
   ErrorHandling.handle($http.get(
     "/api/articles/paged/" +
@@ -27,10 +28,12 @@ function EmisAnalysisCtrl($scope, $stateParams, $http, $state, $document, Paging
     $scope.pageCount = PagingService.pageCount($scope.itemsCount, $scope.itemsPerPage);
     $scope.emisAnalysis = _(data.items)
         .chunk(2).toArray();
+    $scope.loading = false;
   })
   .catch(err => {
       $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
       console.log("APP ERROR: " + err);
+      $scope.loading = false;
   });
 }
 
