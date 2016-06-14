@@ -44,7 +44,7 @@ function AdminHomepageCtrl($scope, $rootScope, $state, $http, $sce, $q, EmiAuth,
 
     $q.all(promises)
     .then(function(response) {
-      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Конфигурацията на началната страница е записана успещно")});
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Конфигурацията на началната страница е записана успешно")});
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише конфигурацията на началната страница в момента. Моля опитайте след малко."});
