@@ -1,7 +1,7 @@
 <div class="contentSection">
   <div class="left_content">
-     <div class="single_page">
-       <div ng-controller="FullArticleCtrl">
+     <div class="single_page" ng-controller="FullArticleCtrl">
+       <div>
          <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
          <div class="single_page_content">
            <h1>{{article.title | lang }}</h1>
@@ -18,7 +18,7 @@
               <ul class="sociallink_nav">
                 <li><a href="" social-facebook><i class="fa fa-facebook"></i></a></li>
                 <li>
-                  <a href="" social-twitter><i class="fa fa-twitter"></i></a>
+                  <a href="" social-twitter status="{{article.title | lang}} {{location}}"><i class="fa fa-twitter"></i></a>
                 </li>
                 <li><a href="" social-gplus><i class="fa fa-google-plus"></i></a></li>
                 <li><a href="" social-linkedin><i class="fa fa-linkedin"></i></a></li>

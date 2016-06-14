@@ -5,12 +5,13 @@ var controllersModule = require('./_index');
 /**
 * @ngInject
 */
-function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $filter, $document, $timeout) {
+function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $filter, $document, $timeout, $location) {
   $document.scrollTopAnimated(0, 190);
 
   $scope.alerts = [];
   EventService.event($stateParams.id)
   .then(function(event) {
+    $scope.location = $location.absUrl();
     $scope.event = event;
     $scope.eventHtml = $sce.trustAsHtml($filter('lang')($scope.event.html));
     $timeout(function() {
