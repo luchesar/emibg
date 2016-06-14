@@ -196,6 +196,26 @@ a img:hover {
     margin-right: 5px;
 }
 
+.navbar-brand.emi {
+  padding: 0px; /* firefox bug fix */
+  }
+
+
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 13px;
+  margin: auto 6px; 
+  width: auto;
+}
+
+// .navbar-logo {
+//   max-width:100%;
+//   max-height:100%;
+//   padding-left: 7px;
+//   padding-right: 7px;
+// }
+
 .navbar-inverse .navbar-brand {
   color: #fff;
 }
@@ -332,12 +352,6 @@ a img:hover {
   text-transform: uppercase;
 }
 
-.navbar-logo {
-  max-width:100%;
-  max-height:100%;
-  padding-left: 7px;
-  padding-right: 7px;
-}
 
 .navbar-toggle {
   margin-bottom: auto;
