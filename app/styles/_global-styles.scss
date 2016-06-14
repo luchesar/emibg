@@ -845,12 +845,16 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   position: absolute;
   right: 0;
   padding: 3% 4%;
+  margin-bottom: 24px;
+  max-height: 340px;
+  overflow: hidden;
 }
 
 .slider_article > h2 {
     background: none;
     margin-bottom: 15px;
 }
+
 .slider_article > h2 a {
   background: none repeat scroll 0 0 rgba(39, 69, 104, 0.58);
   color: #fff;
@@ -866,8 +870,10 @@ footer .sociallink_nav li:nth-child(5) > a:hover {
   color: #fff;
   padding: 10px;
   display: inline-block;
-  margin-bottom: 50px;
+
 }
+
+
 
 // Slider Carousel 
 
