@@ -10,6 +10,7 @@
                  </div>
              </div>
          </div>
+         <div ng-hide="events.length">{{'NO_FUTURE_EVENTS' | translate}}</div>
 
         <!-- Future Events Placeholder -->
         <div class="row" ng-show="loading">
@@ -26,7 +27,7 @@
         </div>
         <!--END Future Events Placeholder -->
 
-        <nav>
+        <nav ng-show="events.length">
           <ul class="pagination">
             <li>
               <a href="#" aria-label="Previous" ng-click="previousPage()" ng-disabled="!hasPrev()">

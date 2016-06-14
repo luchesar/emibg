@@ -57,7 +57,8 @@ function Translations($translateProvider) {
       LOGIN: "Login",
       AUTHOR: "Author",
       FUTURE_EVENTS: "Upcoming Events",
-      PAST_EVENTS: "Past Events"
+      PAST_EVENTS: "Past Events",
+      NO_FUTURE_EVENTS: "No upcoming events."
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -110,7 +111,8 @@ function Translations($translateProvider) {
       LOGIN: "Логин",
       AUTHOR: "Автор",
       FUTURE_EVENTS: "Предстоящи събития",
-      PAST_EVENTS: "Отминали събития"
+      PAST_EVENTS: "Отминали събития",
+      NO_FUTURE_EVENTS: "Няма предстоящи събития."
     });
   $translateProvider.preferredLanguage('bg');
 }
