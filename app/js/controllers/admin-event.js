@@ -50,7 +50,7 @@ function AdminEventCtrl($scope, $stateParams, EventService, $filter, $rootScope,
     .then(function(data) {
       $scope.event = data;
       $scope.html = data.html;
-      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записана успешно")});
+      $scope.alerts.push({type: 'success', msg: $sce.trustAsHtml("Събитието е записано успешно")});
     })
     .catch(function(err) {
       $scope.alerts.push({type: 'danger', msg: "Не е възможно да се запише събитието в момента. Моля опитайте отново." + err});

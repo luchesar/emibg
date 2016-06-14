@@ -97,7 +97,7 @@ function Translations($translateProvider) {
       FOLLOW: 'Последвайте ни',
       SEARCH_EVERYWHERE: 'Търсене във всички статии и събития',
       NOTHING_FOUND: 'Няма намерени статии или събития. Моля въведете друг критерий за търсене и опитайте отново.',
-      SEARCHING: 'Извършва се търсене ...',
+      SEARCHING: 'Търсене ...',
       LANGUAGE: "Език",
       BULGARIAN: "Bulgarian",
       ENGLISH: "English",
