@@ -198,7 +198,7 @@ a img:hover {
 
 
 .navbar-brand.emi {
-  padding: 13px; 
+  padding: 12px !important; 
   }
 
 
@@ -1240,6 +1240,11 @@ button {
   margin: 10px auto;
 }
 
+.search-input {
+    display: inline-block;
+    width: 400px;
+}
+
 /* NavBar Collapse Size*/
 
 @media (max-width: 991px) {
@@ -1257,11 +1262,6 @@ button {
     right: auto;
     left: auto;
     }  
-
-    .search-input {
-      display: inline-block;
-      max-width: 44%;
-    }
 
     .navbar-header {
         float: none;
@@ -1316,6 +1316,11 @@ button {
 
     h2.home-events {
       margin-top: 30px;
+    }
+
+       .search-input {
+      display: inline-block;
+      max-width: 44%;
     }
 }
 
