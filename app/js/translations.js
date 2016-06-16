@@ -58,7 +58,9 @@ function Translations($translateProvider) {
       AUTHOR: "Author",
       FUTURE_EVENTS: "Upcoming Events",
       PAST_EVENTS: "Past Events",
-      NO_FUTURE_EVENTS: "No upcoming events."
+      NO_FUTURE_EVENTS: "No upcoming events.",
+      SEO_DESCRIPTION_EMI: "The Energy Management Institute is an non-governmental organization, its mission is to contribute to the sustainable development of the Bulgarian energy sector and its integration to the European Union",
+      SEO_KEYWORDS: 'EMI, Energy Management Institute, ЕМИ, Институт Енергиен Мениджмънт, eurelectric Bulgaria, енергетика, energy, research, energy trainings, енергийна полиика, обучения, events, енергийна инфраструктура '
     })
     .translations('bg', {
       HOME: 'Начало',
@@ -112,7 +114,9 @@ function Translations($translateProvider) {
       AUTHOR: "Автор",
       FUTURE_EVENTS: "Предстоящи събития",
       PAST_EVENTS: "Отминали събития",
-      NO_FUTURE_EVENTS: "Няма предстоящи събития."
+      NO_FUTURE_EVENTS: "Няма предстоящи събития.",
+      SEO_DESCRIPTION_EMI: 'Институтът за Енергиен Мениджмънт (ЕMI) е неправителствена организация, мисията й е да допринася за устойчивото развитие на българската енергетика и интеграцията й към тази на Европейския Съюз.',
+      SEO_KEYWORDS: 'ЕМИ, Институт Енергиен Мениджмънт, Енергиен Мениджмънт, енергетика, поликика, енергийна полиика, обучения, събития, цени ток, газ, въглища, парно, енергийна инфраструктура '
     });
   $translateProvider.preferredLanguage('bg');
 }
