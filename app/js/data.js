@@ -66,8 +66,8 @@ var partners = [
   {   
     "type": "member",
      "title": {
-       "bg": "Енерго-Про България",
-       "en": "Energo-Pro Bulgaria"
+       "bg": "Енерго-Про Варна",
+       "en": "Energo-Pro Varna"
      },
      "tumb": "images/partners_thumbs/emi_members_energo-pro.jpg",
      "site": "https://www.energo-pro.bg/"
