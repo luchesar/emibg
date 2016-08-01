@@ -69,7 +69,7 @@ function AdminArticleCtrl($scope, $stateParams, ArticleService, $filter, $rootSc
     options.browser_spellcheck = true;
     options.init_instance_callback = function(editor) {
       var textContentTrigger = function() {
-        onChange(editor);
+        if (onChange) onChange(editor);
       };
 
       editor.on('KeyUp', textContentTrigger);
