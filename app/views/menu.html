@@ -3,7 +3,9 @@
       <div class="container-fluid, header-nav">
         <div class="navbar-header">
             <a ng-href="#" class="navbar-toggle navbar-collapse-search" ui-sref="app.search.result({q:'',page:1})">
-              <i class="fa fa-search"></i>
+              <label for="searchField">
+                <i class="fa fa-search"></i>
+              </label>
             </a>
             <button type="button" class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed=!navCollapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -78,9 +80,11 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li class="visible-md visible-lg" ui-sref="app.search.result({q:'*',page:1})">
-            <a href="#">
-              <i class="fa fa-search"></i>
-            </a>
+              <a href="#">
+                <label for="searchField">
+                  <i class="fa fa-search"></i>
+                </label>
+              </a>
           </li>
           <li>
             <a ng-href="{{otherLangURL}}">
