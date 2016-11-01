@@ -12,7 +12,7 @@
             </a>
               <form class="navbar-form navbar-left" ng-submit="search()">
                   <!-- Add form control horisontal size <div class="col-xs-4"> -->
-                    <input id="searchField" type="text" class="search-input"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm">
+                    <input id="searchField" type="text" class="search-input"  ng-keypress="onEsk($event)" placeholder="{{'SEARCH' | translate }}" ng-change="search()" ng-model="searchTerm" autofocus>
                   <button type="button" class="btn btn-warning" value="{{'SEARCH' | translate }}" ng-click="search()">
                     <span class="visible-xs"><span class="glyphicon glyphicon-search"></span></span>
                     <span class="hidden-xs">{{'SEARCH' | translate }}</span>
