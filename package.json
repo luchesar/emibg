@@ -95,7 +95,7 @@
   "dependencies": {
     "angular-animate": "^1.5.0",
     "angular-aria": "^1.5.0",
-    "angular-bind-html-compile": "github:incuna/angular-bind-html-compile",
+    "angular-bind-html-compile": "incuna/angular-bind-html-compile",
     "angular-bootstrap-datetimepicker": "^0.4.0",
     "angular-bootstrap-switch": "^0.4.1",
     "angular-chart.js": "^0.7.2",
@@ -110,7 +110,7 @@
     "angular-ui-bootstrap": "^1.1.0",
     "angular-ui-calendar": "^1.0.2",
     "angular-ui-grid": "^3.1.0",
-    "angular-ui-tinymce": "github:angular-ui/ui-tinymce",
+    "angular-ui-tinymce": "angular-ui/ui-tinymce",
     "bootstrap-social": "^4.11.0",
     "chart.js": "1.0.2",
     "fontello-installer": "0.0.2",
