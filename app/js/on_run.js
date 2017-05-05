@@ -3,7 +3,7 @@
 /**
  * @ngInject
  */
-function OnRun($rootScope, $stateParams, $translate, $location, $filter, $timeout, AppSettings) {
+function OnRun($rootScope, $stateParams, $translate, $location, $filter, $timeout, AppSettings, Analytics) {
 
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
