@@ -19,6 +19,7 @@ require('angular-ui-calendar');
 require('angular-resource');
 require('angular-scroll');
 require('angular-social-links');
+require('angular-google-analytics');
 require('./ext/imgLiquid');
 require('./templates');
 require('./controllers/_index');
@@ -47,7 +48,8 @@ angular.element(document).ready(function() {
     'duScroll',
     'socialLinks',
     'ngAnimate',
-    'ngAria'
+    'ngAria',
+    'angular-google-analytics'
   ];
 
   // mount on window for testing
@@ -55,6 +57,7 @@ angular.element(document).ready(function() {
     .constant('AppSettings', require('./constants'))
     .config(require('./routes'))
     .config(require('./translations'))
+    .config(require('./angular-google-analytics'))
     .run(require('./on_run'));
 
   angular.bootstrap(document, ['app']);
