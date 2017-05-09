@@ -7,6 +7,7 @@ function OnRun($rootScope, $stateParams, $translate, $location, $filter, $timeou
 
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    console.log("stateChangeSuccess event:" + event);
     $rootScope.previousState = fromState ? fromState.name : undefined;
     $rootScope.previousStateParams = fromParams;
 
