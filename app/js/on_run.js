@@ -28,9 +28,11 @@ function OnRun($rootScope, $stateParams, $translate, $location, $filter, $timeou
         $rootScope.pageTitle += ' \u2014 ';
       }
       $rootScope.pageTitle += AppSettings.appTitle;
+      $timeout(function() {
+        $rootScope.$broadcast('emiTitleChange');
+      }, 100);
     });
   });
-
 }
 
 module.exports = OnRun;
