@@ -16,6 +16,7 @@ function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $fi
     $scope.eventHtml = $sce.trustAsHtml($filter('lang')($scope.event.html));
     $timeout(function() {
       $rootScope.pageTitle = $filter('lang')(event.title) + ' \u2014 ' + $rootScope.pageTitle;
+      $rootScope.$broadcast('emiTitleChangeAttempt');
     }, 20);
   })
   .catch(err => {

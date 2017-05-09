@@ -16,6 +16,7 @@ function FullArticleCtrl($scope, $rootScope, $sce, $stateParams, ArticleService,
     $scope.articleHtml = $sce.trustAsHtml($filter('lang')($scope.article.html));
     $timeout(function(){
       $rootScope.pageTitle = $filter('lang')(article.title) + ' \u2014 ' + $rootScope.pageTitle;
+      $rootScope.$broadcast('emiTitleChangeAttempt');
     }, 20);
   })
   .catch(err => {
