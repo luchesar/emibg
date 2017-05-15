@@ -17,7 +17,7 @@ function FullEventCtrl($scope, $rootScope, $sce, $stateParams, EventService, $fi
     $timeout(function() {
       $rootScope.pageTitle = $filter('lang')(event.title) + ' \u2014 ' + $rootScope.pageTitle;
       $rootScope.$broadcast('emiTitleChangeAttempt');
-    }, 20);
+    }, 80);
   })
   .catch(err => {
     $scope.alerts.push({type: 'danger', msg: "Ами сега!? Възникнала е грешка по при комуникацията със сървъра. Моля опитайте отново по-късно. " + err});
