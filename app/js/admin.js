@@ -21,6 +21,7 @@ require('angular-ui-tinymce');
 require('angular-ui-bootstrap');
 require('angular-cookies');
 require('angular-bootstrap-datetimepicker');
+require('angular-google-analytics');
 require('../../node_modules/angular-google-picker/src/google-picker');
 require('../../node_modules/angular-bind-html-compile/angular-bind-html-compile.js');
 require('./ext/imgLiquid');
@@ -57,7 +58,8 @@ angular.element(document).ready(function() {
     'ui.grid',
     'ui.grid.edit',
     'ui.grid.cellNav',
-    'angular-bind-html-compile'
+    'angular-bind-html-compile',
+    'angular-google-analytics'
   ];
 
   // mount on window for testing
