@@ -245,6 +245,30 @@ var partners = [
         "bg": "(02) 980 07 03",
         "en": "+359 2 980 07 03"
       },
+      "bio1": {
+        "bg": "Славчо Нейков е с повече от 25 години непрекъснат стаж в енергийния сектор, включително и като главен секретар на Министерство на енергетиката, Комисар в енергийния регулатор, експерт в Секретариата на Енергийната Харта в Брюксел, Директор на Секретариата на Енергийната Общност във Виена.",
+        "en": "Mr. Slavtcho Neykov has more than 25 years non-interrupted experience in the energy sector, including as Secretary General of the Bulgarian Ministry of Energy, Commissioner in the State Energy Regulatory Commission, expert at the Energy Charter Secretariat in Brussels and a Director of the Energy Community Secretariat in Vienna."
+      },
+      "bio2": {
+        "bg": "Освен работата му като служител в държавни и международни институции, той е бил в ръководството на няколко енергийни компании.",
+        "en": "Further to his experience as a state and international official, he has been on the board of managers of several energy companies."
+      },
+      "bio3": {
+        "bg": "Извън енергийния сектор е работил като прокурор и юрисконсулт.",
+        "en": "Prior to his involvement in the energy sector, he has worked as a state prosecutor and a legal advisor."
+      },
+      "bio4": {
+        "bg": "Г-н Нейков е завършил Юридическия факултет на Софийския университет; има също така и двегодишна специализация по международни икономически отношения, както и магистърска степен по европейска интеграция от Университета “Лимерик” в Ирландия.",
+        "en": "In addition to a law degree from the Sofia University, Mr. Neykov has completed two years postgraduate studies on International Economic Relations and Foreign Economic Activities. He also holds Master of Arts in European Integration from the University of Limerick in Ireland."
+      },
+      "bio5": {
+        "bg": "От декември 2014 г. е Председател на УС на Института за енергиен мениджмънт.",
+        "en": "Since the end of 2014, he is the Chairman of the Board of Managers of the Energy Management Institute in Sofia."
+      },
+      "bio6": {
+        "bg": "Член на Борда директорите на ЕВРОЕЛЕКТРИК.",
+        "en": "Mr. Neykov is also a member of the Board of Directors of EURELECTRIC."
+      },
       "image": "images/thumbs/thumb1.jpg" 
     },
 
