@@ -98,6 +98,16 @@ var partners = [
   { 
     "type": "partner",
      "title": {
+       "bg": "Национална енергийна камара",
+       "en": "National Energy Chamber"
+     },
+     "tumb": "images/partners_thumbs/emi_partners_national_energy_chamber.jpg",
+     "site": "http://necbg.eu/bg/"
+  },
+
+  { 
+    "type": "partner",
+     "title": {
        "bg": "Българска фотоволтаична асоциация",
        "en": "Bulgarian photovoltaic association"
      },
