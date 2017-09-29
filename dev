@@ -1,0 +1,1 @@
+docker run -it -v "$(pwd):/app" -v "$(pwd)/../emibg/client:/app/build" -w /app -p "3001:3001" --net=host luchesar/node-npm-gulp:0.10.40 bash
