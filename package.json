@@ -83,7 +83,7 @@
     "vinyl-source-stream": "0.1.1",
     "watchify": "2.0.0",
     "gulp-minify-css": "1.1.1",
-    "bootstrap-sass": "3.3.4",
+    "bootstrap-sass": "3.4.1",
     "angular-bootstrap-npm": "0.13.3"
   },
   "scripts": {
