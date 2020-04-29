@@ -117,7 +117,7 @@
     "fontello-installer": "0.0.2",
     "fullcalendar": "2.4.0",
     "gulp-concat": "2.6.0",
-    "jquery": "2.1.4",
+    "jquery": "3.5.0",
     "lazy.js": "0.4.0",
     "moment": "2.10.6",
     "moment-timezone": "0.5.2",
